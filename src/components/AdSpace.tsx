@@ -9,11 +9,16 @@ export function AdSpace({ className }: AdSpaceProps) {
     <div 
       id="ad-space"
       className={cn(
-        "w-full h-[60px] bg-muted/50 rounded-lg border border-dashed border-border flex items-center justify-center",
+        "w-full h-16 rounded-2xl border-2 border-dashed border-border/50",
+        "bg-gradient-to-r from-muted/30 via-muted/50 to-muted/30",
+        "flex items-center justify-center",
+        "overflow-hidden relative",
         className
       )}
     >
-      <span className="text-xs text-muted-foreground">Ad Space</span>
+      {/* Shimmer effect */}
+      <div className="absolute inset-0 bg-shimmer bg-[length:200%_100%] animate-shimmer opacity-30" />
+      <span className="text-xs text-muted-foreground font-medium relative z-10">Ad Space</span>
     </div>
   );
 }
