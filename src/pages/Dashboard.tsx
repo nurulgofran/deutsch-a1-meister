@@ -6,7 +6,7 @@ import { CircularProgress } from '@/components/CircularProgress';
 import { StreakBadge } from '@/components/StreakBadge';
 import { AdSpace } from '@/components/AdSpace';
 import { useApp } from '@/contexts/AppContext';
-import { questions } from '@/data/questions';
+import { questions } from '@/data/questions/index';
 
 export default function Dashboard() {
   const navigate = useNavigate();

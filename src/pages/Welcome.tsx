@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { GraduationCap, BookOpen, ChevronRight, Sparkles, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { bundeslaender, Bundesland } from '@/data/questions';
+import { bundeslaender, Bundesland } from '@/data/questions/index';
 import { cn } from '@/lib/utils';
 
 interface WelcomeProps {

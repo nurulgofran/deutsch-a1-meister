@@ -1,19 +1,6 @@
-export interface Question {
-  id: string;
-  text_de: string;
-  text_en: string;
-  options: {
-    de: string;
-    en: string;
-  }[];
-  correctIndex: number;
-  category: 'politics' | 'history' | 'society';
-  isStateSpecific: boolean;
-  state?: string;
-}
+import { Question } from './types';
 
-export const questions: Question[] = [
-  // Politics Questions
+export const part1Questions: Question[] = [
   {
     id: "p1",
     text_de: "Was ist die Hauptstadt der Bundesrepublik Deutschland?",
@@ -56,7 +43,6 @@ export const questions: Question[] = [
     category: "politics",
     isStateSpecific: false
   },
-  // History Questions
   {
     id: "h1",
     text_de: "Wann wurde die Berliner Mauer gebaut?",
@@ -99,7 +85,6 @@ export const questions: Question[] = [
     category: "history",
     isStateSpecific: false
   },
-  // Society Questions
   {
     id: "s1",
     text_de: "Welche Farben hat die deutsche Flagge?",
@@ -128,7 +113,6 @@ export const questions: Question[] = [
     category: "society",
     isStateSpecific: false
   },
-  // State-Specific Questions (Berlin)
   {
     id: "b1",
     text_de: "Welches Tier ist das Wappentier von Berlin?",
@@ -160,30 +144,3 @@ export const questions: Question[] = [
     state: "Berlin"
   }
 ];
-
-export const categories = [
-  { id: 'politics', name_de: 'Politik', name_en: 'Politics', icon: 'Landmark' },
-  { id: 'history', name_de: 'Geschichte', name_en: 'History', icon: 'BookOpen' },
-  { id: 'society', name_de: 'Gesellschaft', name_en: 'Society', icon: 'Users' }
-] as const;
-
-export const bundeslaender = [
-  "Baden-Württemberg",
-  "Bayern",
-  "Berlin",
-  "Brandenburg",
-  "Bremen",
-  "Hamburg",
-  "Hessen",
-  "Mecklenburg-Vorpommern",
-  "Niedersachsen",
-  "Nordrhein-Westfalen",
-  "Rheinland-Pfalz",
-  "Saarland",
-  "Sachsen",
-  "Sachsen-Anhalt",
-  "Schleswig-Holstein",
-  "Thüringen"
-] as const;
-
-export type Bundesland = typeof bundeslaender[number];

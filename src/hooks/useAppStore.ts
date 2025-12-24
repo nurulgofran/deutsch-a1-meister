@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Bundesland } from '@/data/questions';
+import { Bundesland } from '@/data/questions/index';
 
 export interface UserProgress {
   questionsAnswered: Record<string, boolean>; // questionId -> correct/incorrect

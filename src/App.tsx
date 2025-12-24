@@ -12,7 +12,7 @@ import Exam from "./pages/Exam";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
-import { Bundesland } from "@/data/questions";
+import { Bundesland } from "@/data/questions/index";
 
 const queryClient = new QueryClient();
 
