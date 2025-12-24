@@ -21,10 +21,10 @@ export function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
-      {/* Glassmorphism background */}
-      <div className="absolute inset-0 glass border-t border-border/50" />
+      {/* Glass background */}
+      <div className="absolute inset-0 bg-card/80 backdrop-blur-xl border-t border-border/50" />
       
-      <div className="relative flex items-center justify-around h-[68px] max-w-lg mx-auto px-2">
+      <div className="relative flex items-center justify-around h-16 max-w-lg mx-auto px-2">
         {navItems.map(({ path, icon: Icon, label_de, label_en }) => {
           const isActive = location.pathname === path;
           
@@ -33,34 +33,34 @@ export function BottomNav() {
               key={path}
               to={path}
               className={cn(
-                "flex flex-col items-center justify-center w-full h-full min-h-[44px] relative",
-                "transition-colors duration-150"
+                "flex flex-col items-center justify-center w-full h-full min-h-[44px] relative group",
+                "transition-colors duration-200"
               )}
             >
-              {/* Active pill indicator */}
+              {/* Active indicator */}
               {isActive && (
-                <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-10 h-1 bg-primary rounded-full" />
+                <div className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-full" />
               )}
               
               <div className={cn(
-                "flex flex-col items-center justify-center transition-transform duration-150",
-                isActive ? "scale-105" : "active:scale-95"
+                "flex flex-col items-center justify-center transition-transform duration-200",
+                isActive ? "scale-105" : "group-active:scale-95"
               )}>
                 <div className={cn(
-                  "p-1.5 rounded-xl transition-colors duration-150",
-                  isActive ? "bg-primary/15" : "bg-transparent"
+                  "p-1.5 rounded-xl transition-colors duration-200",
+                  isActive ? "bg-primary/10" : "bg-transparent"
                 )}>
                   <Icon 
                     className={cn(
-                      "h-6 w-6 transition-colors duration-150",
-                      isActive ? "text-primary" : "text-muted-foreground"
+                      "h-5 w-5 transition-colors duration-200",
+                      isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
                     )} 
                     strokeWidth={isActive ? 2.5 : 2}
                   />
                 </div>
                 <span className={cn(
-                  "text-[11px] mt-0.5 font-semibold tracking-wide transition-colors duration-150",
-                  isActive ? "text-primary" : "text-muted-foreground"
+                  "text-[10px] mt-0.5 font-semibold tracking-wide transition-colors duration-200",
+                  isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
                 )}>
                   {t(label_de, label_en)}
                 </span>

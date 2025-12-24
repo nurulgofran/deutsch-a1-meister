@@ -1,4 +1,6 @@
 import { Landmark, BookOpen, Users, LucideIcon, ChevronRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
 import { useApp } from '@/contexts/AppContext';
 import { cn } from '@/lib/utils';
 
@@ -32,57 +34,70 @@ export function CategoryCard({
   const progressValue = totalQuestions > 0 ? (categoryStats.total / totalQuestions) * 100 : 0;
   const masteredCount = categoryStats.correct;
 
-  const categoryStyles: Record<string, { icon: string; progress: string }> = {
+  const categoryStyles: Record<string, { bg: string; icon: string; accent: string }> = {
     politics: {
-      icon: 'bg-politics/15 text-politics',
-      progress: 'bg-politics'
+      bg: 'from-politics-light to-politics/5',
+      icon: 'bg-politics/20 text-politics',
+      accent: 'bg-politics'
     },
     history: {
-      icon: 'bg-history/15 text-history',
-      progress: 'bg-history'
+      bg: 'from-history-light to-history/5',
+      icon: 'bg-history/20 text-history',
+      accent: 'bg-history'
     },
     society: {
-      icon: 'bg-society/15 text-society',
-      progress: 'bg-society'
+      bg: 'from-society-light to-society/5',
+      icon: 'bg-society/20 text-society',
+      accent: 'bg-society'
     }
   };
 
   const styles = categoryStyles[id] || categoryStyles.politics;
 
   return (
-    <div 
-      className="card-floating p-5 cursor-pointer transition-all hover:shadow-lg active:scale-[0.99]"
+    <Card 
+      className={cn(
+        "cursor-pointer border-0 shadow-card overflow-hidden group",
+        "transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 active:scale-[0.98]",
+        "bg-gradient-to-br",
+        styles.bg
+      )}
       onClick={onClick}
     >
-      <div className="flex items-start gap-4">
-        <div className={cn(
-          "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0",
-          styles.icon
-        )}>
-          <Icon className="h-7 w-7" />
-        </div>
-        
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center justify-between mb-1">
-            <h3 className="font-display font-bold text-lg">
-              {settings.language === 'de' ? name_de : name_en}
-            </h3>
-            <ChevronRight className="h-5 w-5 text-muted-foreground" />
+      <CardContent className="p-5">
+        <div className="flex items-start gap-4">
+          <div className={cn(
+            "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0",
+            "transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3",
+            styles.icon
+          )}>
+            <Icon className="h-7 w-7" />
           </div>
           
-          <p className="text-sm text-muted-foreground font-medium mb-3">
-            {masteredCount}/{totalQuestions} {t('gemeistert', 'mastered')}
-          </p>
-          
-          {/* Chunky progress bar with orange gradient */}
-          <div className="progress-chunky">
-            <div 
-              className="progress-chunky-fill"
-              style={{ width: `${progressValue}%` }}
-            />
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="font-display font-bold text-lg">
+                {settings.language === 'de' ? name_de : name_en}
+              </h3>
+              <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+            </div>
+            
+            <p className="text-sm text-muted-foreground font-medium mb-3">
+              {masteredCount}/{totalQuestions} {t('gemeistert', 'mastered')}
+            </p>
+            
+            <div className="relative h-2.5 bg-background/50 rounded-full overflow-hidden">
+              <div 
+                className={cn(
+                  "absolute inset-y-0 left-0 rounded-full transition-all duration-500",
+                  styles.accent
+                )}
+                style={{ width: `${progressValue}%` }}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

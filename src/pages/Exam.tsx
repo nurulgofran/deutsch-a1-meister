@@ -1,12 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, AlertTriangle, Trophy, XCircle, ChevronRight, History } from 'lucide-react';
+import { ArrowLeft, Clock, AlertTriangle, Trophy, XCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
 import { QuestionCard } from '@/components/QuestionCard';
 import { AdSpace } from '@/components/AdSpace';
 import { useApp } from '@/contexts/AppContext';
 import { questions } from '@/data/questions';
-import { cn } from '@/lib/utils';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -43,12 +44,14 @@ export default function Exam() {
       q => q.isStateSpecific && q.state === settings.bundesland
     );
 
+    // Shuffle and select
     const shuffledGeneral = [...generalQuestions].sort(() => Math.random() - 0.5);
     const shuffledState = [...stateQuestions].sort(() => Math.random() - 0.5);
 
     const selectedGeneral = shuffledGeneral.slice(0, Math.min(30, shuffledGeneral.length));
     const selectedState = shuffledState.slice(0, Math.min(3, shuffledState.length));
 
+    // Fill remaining with general if not enough state questions
     const remaining = TOTAL_QUESTIONS - selectedGeneral.length - selectedState.length;
     const extraGeneral = shuffledGeneral.slice(selectedGeneral.length, selectedGeneral.length + remaining);
 
@@ -136,63 +139,67 @@ export default function Exam() {
   // Intro Screen
   if (examState === 'intro') {
     return (
-      <div className="min-h-screen pb-28 safe-area-top">
-        <div className="px-5 pt-8 pb-5">
-          <h1 className="text-3xl font-display font-bold tracking-tight mb-2">
+      <div className="min-h-screen pb-24 safe-area-top">
+        <div className="px-5 pt-6 pb-4">
+          <h1 className="text-2xl font-bold mb-1">
             {t('Prüfungssimulation', 'Exam Simulation')}
           </h1>
-          <p className="text-muted-foreground font-medium">
+          <p className="text-muted-foreground">
             {t('Teste dein Wissen unter echten Bedingungen', 'Test your knowledge under real conditions')}
           </p>
         </div>
 
-        <div className="px-5 space-y-4 stagger-children">
-          <div className="card-floating p-5 space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center">
-                <Clock className="h-6 w-6 text-secondary-foreground" />
+        <div className="px-5 space-y-4">
+          <Card>
+            <CardContent className="p-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <Clock className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <p className="font-semibold">{t('60 Minuten', '60 Minutes')}</p>
+                  <p className="text-sm text-muted-foreground">{t('Zeitlimit', 'Time limit')}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-display font-bold text-lg">{t('60 Minuten', '60 Minutes')}</p>
-                <p className="text-sm text-muted-foreground font-medium">{t('Zeitlimit', 'Time limit')}</p>
-              </div>
-            </div>
 
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center">
-                <Trophy className="h-6 w-6 text-secondary-foreground" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <Trophy className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <p className="font-semibold">{t('33 Fragen', '33 Questions')}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('30 allgemein + 3 landesspezifisch', '30 general + 3 state-specific')}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="font-display font-bold text-lg">{t('33 Fragen', '33 Questions')}</p>
-                <p className="text-sm text-muted-foreground font-medium">
-                  {t('30 allgemein + 3 landesspezifisch', '30 general + 3 state-specific')}
-                </p>
-              </div>
-            </div>
 
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-success/15 flex items-center justify-center">
-                <AlertTriangle className="h-6 w-6 text-success" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-success/10 flex items-center justify-center">
+                  <AlertTriangle className="h-5 w-5 text-success" />
+                </div>
+                <div>
+                  <p className="font-semibold">{t('17 richtige zum Bestehen', '17 correct to pass')}</p>
+                  <p className="text-sm text-muted-foreground">{t('Mindestpunktzahl', 'Minimum score')}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-display font-bold text-lg">{t('17 richtige zum Bestehen', '17 correct to pass')}</p>
-                <p className="text-sm text-muted-foreground font-medium">{t('Mindestpunktzahl', 'Minimum score')}</p>
-              </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
-          <div className="card-floating p-4 bg-muted/50">
-            <p className="text-sm text-muted-foreground font-medium">
-              {t('Dein ausgewähltes Bundesland: ', 'Your selected state: ')}
-              <strong className="text-foreground">{settings.bundesland}</strong>
-            </p>
-          </div>
+          <Card className="bg-muted/50">
+            <CardContent className="p-4">
+              <p className="text-sm text-muted-foreground">
+                {t(
+                  'Dein ausgewähltes Bundesland: ',
+                  'Your selected state: '
+                )}
+                <strong className="text-foreground">{settings.bundesland}</strong>
+              </p>
+            </CardContent>
+          </Card>
 
           <Button 
-            className={cn(
-              "w-full h-16 text-lg font-display font-bold rounded-2xl",
-              "btn-3d bg-primary hover:bg-primary"
-            )}
+            className="w-full h-14 text-lg font-semibold shadow-button"
             size="lg"
             onClick={startExam}
           >
@@ -207,35 +214,25 @@ export default function Exam() {
   if (examState === 'active' && examQuestions[currentIndex]) {
     const isLastQuestion = currentIndex === examQuestions.length - 1;
     const progressValue = ((currentIndex + 1) / examQuestions.length) * 100;
-    const isLowTime = timeLeft < 300;
+    const isLowTime = timeLeft < 300; // Less than 5 minutes
 
     return (
-      <div className="min-h-screen pb-28 safe-area-top">
+      <div className="min-h-screen pb-24 safe-area-top">
         {/* Header */}
-        <div className="sticky top-0 z-10 glass border-b border-border/50 px-4 py-4">
-          <div className="flex items-center justify-between mb-3">
-            <Button variant="ghost" size="icon" onClick={handleExit} className="rounded-xl">
+        <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border px-4 py-3">
+          <div className="flex items-center justify-between mb-2">
+            <Button variant="ghost" size="icon" onClick={handleExit}>
               <ArrowLeft className="h-5 w-5" />
             </Button>
-            <div className={cn(
-              "flex items-center gap-1.5 px-4 py-2 rounded-full font-display font-bold",
-              isLowTime ? "bg-destructive/15 text-destructive" : "bg-secondary text-secondary-foreground"
-            )}>
+            <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full ${isLowTime ? 'bg-destructive/10 text-destructive' : 'bg-secondary'}`}>
               <Clock className="h-4 w-4" />
-              <span className="font-mono">{formatTime(timeLeft)}</span>
+              <span className="font-mono font-semibold">{formatTime(timeLeft)}</span>
             </div>
-            <div className="text-sm font-display font-bold bg-muted px-3 py-1.5 rounded-full">
+            <div className="text-sm font-medium">
               {currentIndex + 1}/{examQuestions.length}
             </div>
           </div>
-          
-          {/* Chunky progress bar */}
-          <div className="progress-chunky">
-            <div 
-              className="progress-chunky-fill"
-              style={{ width: `${progressValue}%` }}
-            />
-          </div>
+          <Progress value={progressValue} className="h-2" />
         </div>
 
         {/* Question */}
@@ -251,10 +248,7 @@ export default function Exam() {
 
           <div className="mt-6">
             <Button 
-              className={cn(
-                "w-full h-14 text-base font-display font-bold rounded-xl",
-                "btn-3d bg-primary hover:bg-primary"
-              )}
+              className="w-full h-12 text-base font-semibold"
               onClick={handleNext}
               disabled={answers[currentIndex] === undefined}
             >
@@ -266,16 +260,19 @@ export default function Exam() {
 
         {/* Exit Dialog */}
         <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
-          <AlertDialogContent className="rounded-2xl">
+          <AlertDialogContent>
             <AlertDialogHeader>
-              <AlertDialogTitle className="font-display">{t('Prüfung abbrechen?', 'Quit exam?')}</AlertDialogTitle>
+              <AlertDialogTitle>{t('Prüfung abbrechen?', 'Quit exam?')}</AlertDialogTitle>
               <AlertDialogDescription>
-                {t('Dein Fortschritt geht verloren. Bist du sicher?', 'Your progress will be lost. Are you sure?')}
+                {t(
+                  'Dein Fortschritt geht verloren. Bist du sicher?',
+                  'Your progress will be lost. Are you sure?'
+                )}
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel className="rounded-xl">{t('Weitermachen', 'Continue')}</AlertDialogCancel>
-              <AlertDialogAction onClick={confirmExit} className="rounded-xl">
+              <AlertDialogCancel>{t('Weitermachen', 'Continue')}</AlertDialogCancel>
+              <AlertDialogAction onClick={confirmExit}>
                 {t('Abbrechen', 'Quit')}
               </AlertDialogAction>
             </AlertDialogFooter>
@@ -288,54 +285,46 @@ export default function Exam() {
   // Results Screen
   if (examState === 'results') {
     return (
-      <div className="min-h-screen pb-28 safe-area-top">
-        <div className="px-5 pt-12 pb-6 text-center stagger-children">
-          <div className={cn(
-            "w-24 h-24 mx-auto mb-5 rounded-3xl flex items-center justify-center",
-            passed ? "bg-success/15" : "bg-destructive/15",
-            "animate-bounce-in"
-          )}>
+      <div className="min-h-screen pb-24 safe-area-top">
+        <div className="px-5 pt-10 pb-6 text-center">
+          <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${passed ? 'bg-success/10' : 'bg-destructive/10'}`}>
             {passed ? (
-              <Trophy className="h-12 w-12 text-success" />
+              <Trophy className="h-10 w-10 text-success" />
             ) : (
-              <XCircle className="h-12 w-12 text-destructive" />
+              <XCircle className="h-10 w-10 text-destructive" />
             )}
           </div>
-          <h1 className={cn(
-            "text-4xl font-display font-bold mb-2",
-            passed ? "text-success" : "text-destructive"
-          )}>
+          <h1 className={`text-3xl font-bold mb-2 ${passed ? 'text-success' : 'text-destructive'}`}>
             {passed ? t('Bestanden!', 'Passed!') : t('Nicht bestanden', 'Not Passed')}
           </h1>
-          <p className="text-muted-foreground font-medium text-lg">
-            {t('Du hast', 'You scored')} <strong className="text-foreground">{score}</strong> {t('von', 'out of')} <strong className="text-foreground">{examQuestions.length}</strong> {t('Punkten erreicht', 'points')}
+          <p className="text-muted-foreground">
+            {t('Du hast', 'You scored')} <strong>{score}</strong> {t('von', 'out of')} <strong>{examQuestions.length}</strong> {t('Punkten erreicht', 'points')}
           </p>
         </div>
 
         <div className="px-5 space-y-4">
-          <div className="card-floating p-6">
-            <div className="grid grid-cols-2 gap-6 text-center">
-              <div>
-                <p className="text-4xl font-display font-bold text-success">{score}</p>
-                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">{t('Richtig', 'Correct')}</p>
+          <Card>
+            <CardContent className="p-5">
+              <div className="grid grid-cols-2 gap-4 text-center">
+                <div>
+                  <p className="text-3xl font-bold text-primary">{score}</p>
+                  <p className="text-sm text-muted-foreground">{t('Richtig', 'Correct')}</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-bold text-destructive">{examQuestions.length - score}</p>
+                  <p className="text-sm text-muted-foreground">{t('Falsch', 'Wrong')}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-4xl font-display font-bold text-destructive">{examQuestions.length - score}</p>
-                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">{t('Falsch', 'Wrong')}</p>
+              <div className="mt-4 pt-4 border-t text-center">
+                <p className="text-sm text-muted-foreground">
+                  {t('Benötigt zum Bestehen:', 'Required to pass:')} <strong>{PASSING_SCORE}</strong>
+                </p>
               </div>
-            </div>
-            <div className="mt-5 pt-5 border-t border-border text-center">
-              <p className="text-sm text-muted-foreground font-medium">
-                {t('Benötigt zum Bestehen:', 'Required to pass:')} <strong className="text-foreground">{PASSING_SCORE}</strong>
-              </p>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           <Button 
-            className={cn(
-              "w-full h-14 text-base font-display font-bold rounded-xl",
-              "btn-3d bg-primary hover:bg-primary"
-            )}
+            className="w-full h-12 text-base font-semibold"
             onClick={startExam}
           >
             {t('Neue Prüfung starten', 'Start New Exam')}
@@ -343,7 +332,7 @@ export default function Exam() {
 
           <Button 
             variant="outline"
-            className="w-full h-14 text-base font-display font-semibold rounded-xl"
+            className="w-full h-12 text-base"
             onClick={() => setExamState('intro')}
           >
             {t('Zurück zur Übersicht', 'Back to Overview')}
