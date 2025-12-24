@@ -8,6 +8,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Crown, Check, Sparkles, Zap } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
+import { cn } from '@/lib/utils';
 
 interface ProModalProps {
   open: boolean;
@@ -27,24 +28,18 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[360px] rounded-3xl border-0 shadow-card p-0 overflow-hidden">
+      <DialogContent className="max-w-[360px] rounded-3xl border-0 p-0 overflow-hidden">
         {/* Hero gradient */}
-        <div className="bg-gradient-to-br from-accent via-accent to-accent/80 p-6 text-center relative overflow-hidden">
-          {/* Decorative circles */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-white/10 blur-xl" />
-          
-          <div className="relative">
-            <div className="mx-auto w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-4 shadow-lg">
-              <Crown className="h-10 w-10 text-white" />
-            </div>
-            <DialogTitle className="text-2xl font-display font-extrabold text-white">
-              {t('Pro Version', 'Pro Version')}
-            </DialogTitle>
-            <DialogDescription className="text-white/90 font-medium mt-1">
-              {t('Schalte alle Funktionen frei', 'Unlock all features')}
-            </DialogDescription>
+        <div className="bg-gradient-to-br from-accent via-accent to-accent/80 p-6 text-center">
+          <div className="mx-auto w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-4">
+            <Crown className="h-10 w-10 text-white" />
           </div>
+          <DialogTitle className="text-2xl font-display font-bold text-white">
+            {t('Pro Version', 'Pro Version')}
+          </DialogTitle>
+          <DialogDescription className="text-white/90 font-medium mt-1">
+            {t('Schalte alle Funktionen frei', 'Unlock all features')}
+          </DialogDescription>
         </div>
 
         <div className="p-6">
@@ -66,16 +61,19 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
 
           <div className="space-y-3">
             <Button 
-              className="w-full h-14 text-base font-display font-bold gap-2 rounded-xl shadow-button animate-pop" 
+              className={cn(
+                "w-full h-14 text-base font-display font-bold rounded-xl",
+                "btn-3d btn-3d-accent bg-accent hover:bg-accent"
+              )}
               size="lg"
               onClick={() => onOpenChange(false)}
             >
-              <Sparkles className="h-5 w-5" />
+              <Sparkles className="h-5 w-5 mr-2" />
               {t('Pro für 4,99€ kaufen', 'Buy Pro for $4.99')}
             </Button>
             <Button 
               variant="ghost" 
-              className="w-full h-12 font-medium"
+              className="w-full h-12 font-medium rounded-xl"
               onClick={() => onOpenChange(false)}
             >
               {t('Später', 'Maybe later')}
