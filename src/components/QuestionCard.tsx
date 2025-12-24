@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Bookmark, BookmarkCheck } from 'lucide-react';
+import { Bookmark, BookmarkCheck, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Question } from '@/data/questions';
 import { useApp } from '@/contexts/AppContext';
+import { ProModal } from '@/components/ProModal';
 import { cn } from '@/lib/utils';
 
 interface QuestionCardProps {
@@ -26,6 +27,7 @@ export function QuestionCard({
   const { settings, progress, toggleBookmark, t } = useApp();
   const [localSelected, setLocalSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
+  const [showProModal, setShowProModal] = useState(false);
 
   const selected = selectedAnswer ?? localSelected;
   const isBookmarked = progress.bookmarkedQuestions.includes(question.id);
@@ -55,84 +57,116 @@ export function QuestionCard({
     const isSelected = selected === index;
     const isCorrect = index === question.correctIndex;
     
+    const baseClasses = "w-full min-h-[60px] p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop";
+    
     if (!showResult || !showFeedback) {
       return cn(
-        "w-full min-h-[56px] p-4 text-left justify-start font-medium text-base transition-all",
+        baseClasses,
         isSelected 
-          ? "bg-secondary border-2 border-primary" 
-          : "bg-card border-2 border-border hover:border-primary/50"
+          ? "bg-primary/10 border-primary shadow-sm" 
+          : "bg-card border-border hover:border-primary/50 hover:bg-primary/5"
       );
     }
 
     // Show feedback
     if (isCorrect) {
       return cn(
-        "w-full min-h-[56px] p-4 text-left justify-start font-medium text-base",
-        "bg-success/10 border-2 border-success text-success",
-        isSelected && "animate-success-pulse"
+        baseClasses,
+        "bg-success/10 border-success text-success",
+        isSelected && "animate-success-pulse shadow-lg shadow-success/20"
       );
     }
 
     if (isSelected && !isCorrect) {
       return cn(
-        "w-full min-h-[56px] p-4 text-left justify-start font-medium text-base",
-        "bg-destructive/10 border-2 border-destructive text-destructive animate-shake"
+        baseClasses,
+        "bg-destructive/10 border-destructive text-destructive animate-shake"
       );
     }
 
-    return "w-full min-h-[56px] p-4 text-left justify-start font-medium text-base bg-card border-2 border-border opacity-50";
+    return cn(baseClasses, "bg-card border-border opacity-40");
   };
 
   const questionText = settings.language === 'de' ? question.text_de : question.text_en;
 
   return (
-    <Card className="shadow-card animate-slide-up">
-      <CardContent className="p-5">
-        <div className="flex items-start justify-between gap-3 mb-5">
-          <h2 className="text-lg font-semibold leading-snug flex-1">
-            {questionText}
-          </h2>
-          {showBookmark && (
-            <button
-              onClick={() => toggleBookmark(question.id)}
-              className="p-2 -m-2 text-muted-foreground hover:text-accent transition-colors"
-              aria-label={isBookmarked ? t("Lesezeichen entfernen", "Remove bookmark") : t("Lesezeichen hinzufügen", "Add bookmark")}
-            >
-              {isBookmarked ? (
-                <BookmarkCheck className="h-5 w-5 text-accent" />
-              ) : (
-                <Bookmark className="h-5 w-5" />
-              )}
-            </button>
-          )}
-        </div>
-
-        <div className="space-y-3">
-          {question.options.map((option, index) => (
-            <Button
-              key={index}
-              variant="outline"
-              className={getOptionClasses(index)}
-              onClick={() => handleSelect(index)}
-              disabled={showResult && showFeedback}
-            >
-              <span className="inline-flex items-center justify-center w-7 h-7 mr-3 rounded-full bg-muted text-sm font-bold shrink-0">
-                {String.fromCharCode(65 + index)}
-              </span>
-              <span className="text-left">
-                {settings.language === 'de' ? option.de : option.en}
-              </span>
-            </Button>
-          ))}
-        </div>
-
-        {question.isStateSpecific && (
-          <div className="mt-4 text-xs text-muted-foreground flex items-center gap-1">
-            <span className="inline-block w-2 h-2 rounded-full bg-accent"></span>
-            {t(`Landesspezifisch: ${question.state}`, `State-specific: ${question.state}`)}
+    <>
+      <Card className="border-0 shadow-card animate-slide-up overflow-hidden">
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between gap-3 mb-6">
+            <h2 className="text-xl font-display font-bold leading-snug flex-1">
+              {questionText}
+            </h2>
+            {showBookmark && (
+              <button
+                onClick={() => toggleBookmark(question.id)}
+                className={cn(
+                  "p-2.5 -m-2 rounded-xl transition-all duration-200",
+                  isBookmarked 
+                    ? "text-accent bg-accent/10" 
+                    : "text-muted-foreground hover:text-accent hover:bg-accent/5"
+                )}
+                aria-label={isBookmarked ? t("Lesezeichen entfernen", "Remove bookmark") : t("Lesezeichen hinzufügen", "Add bookmark")}
+              >
+                {isBookmarked ? (
+                  <BookmarkCheck className="h-5 w-5" />
+                ) : (
+                  <Bookmark className="h-5 w-5" />
+                )}
+              </button>
+            )}
           </div>
-        )}
-      </CardContent>
-    </Card>
+
+          <div className="space-y-3">
+            {question.options.map((option, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                className={getOptionClasses(index)}
+                onClick={() => handleSelect(index)}
+                disabled={showResult && showFeedback}
+              >
+                <span className={cn(
+                  "inline-flex items-center justify-center w-8 h-8 mr-3 rounded-lg text-sm font-bold shrink-0 transition-colors",
+                  selected === index 
+                    ? "bg-primary text-primary-foreground" 
+                    : "bg-muted text-muted-foreground"
+                )}>
+                  {String.fromCharCode(65 + index)}
+                </span>
+                <span className="text-left font-medium">
+                  {settings.language === 'de' ? option.de : option.en}
+                </span>
+              </Button>
+            ))}
+          </div>
+
+          {/* Show explanation button after answering */}
+          {showResult && showFeedback && (
+            <Button
+              variant="ghost"
+              className="w-full mt-4 h-12 gap-2 text-muted-foreground hover:text-primary"
+              onClick={() => setShowProModal(true)}
+            >
+              <Lightbulb className="h-5 w-5" />
+              {t('Erklärung anzeigen', 'Show explanation')}
+            </Button>
+          )}
+
+          {question.isStateSpecific && (
+            <div className="mt-5 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent animate-pulse-soft"></span>
+                <span className="font-medium">
+                  {t(`Landesspezifisch: ${question.state}`, `State-specific: ${question.state}`)}
+                </span>
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+
+      <ProModal open={showProModal} onOpenChange={setShowProModal} />
+    </>
   );
 }

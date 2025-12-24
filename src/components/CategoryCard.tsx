@@ -1,4 +1,4 @@
-import { Landmark, BookOpen, Users, LucideIcon } from 'lucide-react';
+import { Landmark, BookOpen, Users, LucideIcon, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { useApp } from '@/contexts/AppContext';
@@ -34,44 +34,67 @@ export function CategoryCard({
   const progressValue = totalQuestions > 0 ? (categoryStats.total / totalQuestions) * 100 : 0;
   const masteredCount = categoryStats.correct;
 
-  const categoryColors: Record<string, string> = {
-    politics: 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
-    history: 'from-amber-500/20 to-amber-600/20 border-amber-500/30',
-    society: 'from-purple-500/20 to-purple-600/20 border-purple-500/30'
+  const categoryStyles: Record<string, { bg: string; icon: string; accent: string }> = {
+    politics: {
+      bg: 'from-politics-light to-politics/5',
+      icon: 'bg-politics/20 text-politics',
+      accent: 'bg-politics'
+    },
+    history: {
+      bg: 'from-history-light to-history/5',
+      icon: 'bg-history/20 text-history',
+      accent: 'bg-history'
+    },
+    society: {
+      bg: 'from-society-light to-society/5',
+      icon: 'bg-society/20 text-society',
+      accent: 'bg-society'
+    }
   };
 
-  const iconColors: Record<string, string> = {
-    politics: 'text-blue-600 bg-blue-500/20',
-    history: 'text-amber-600 bg-amber-500/20',
-    society: 'text-purple-600 bg-purple-500/20'
-  };
+  const styles = categoryStyles[id] || categoryStyles.politics;
 
   return (
     <Card 
       className={cn(
-        "cursor-pointer transition-all hover:shadow-card-hover hover:-translate-y-0.5 active:scale-[0.98]",
-        "bg-gradient-to-br border-2",
-        categoryColors[id]
+        "cursor-pointer border-0 shadow-card overflow-hidden group",
+        "transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 active:scale-[0.98]",
+        "bg-gradient-to-br",
+        styles.bg
       )}
       onClick={onClick}
     >
-      <CardContent className="p-4">
-        <div className="flex items-start gap-3">
+      <CardContent className="p-5">
+        <div className="flex items-start gap-4">
           <div className={cn(
-            "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
-            iconColors[id]
+            "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0",
+            "transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3",
+            styles.icon
           )}>
-            <Icon className="h-6 w-6" />
+            <Icon className="h-7 w-7" />
           </div>
           
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-base mb-1">
-              {settings.language === 'de' ? name_de : name_en}
-            </h3>
-            <p className="text-sm text-muted-foreground mb-2">
+            <div className="flex items-center justify-between mb-1">
+              <h3 className="font-display font-bold text-lg">
+                {settings.language === 'de' ? name_de : name_en}
+              </h3>
+              <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
+            </div>
+            
+            <p className="text-sm text-muted-foreground font-medium mb-3">
               {masteredCount}/{totalQuestions} {t('gemeistert', 'mastered')}
             </p>
-            <Progress value={progressValue} className="h-2" />
+            
+            <div className="relative h-2.5 bg-background/50 rounded-full overflow-hidden">
+              <div 
+                className={cn(
+                  "absolute inset-y-0 left-0 rounded-full transition-all duration-500",
+                  styles.accent
+                )}
+                style={{ width: `${progressValue}%` }}
+              />
+            </div>
           </div>
         </div>
       </CardContent>
