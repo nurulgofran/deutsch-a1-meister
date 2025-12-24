@@ -4,9 +4,9 @@ import { ArrowLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CategoryCard } from '@/components/CategoryCard';
 import { QuestionCard } from '@/components/QuestionCard';
-import { Progress } from '@/components/ui/progress';
 import { useApp } from '@/contexts/AppContext';
 import { questions, categories } from '@/data/questions';
+import { cn } from '@/lib/utils';
 
 type ViewMode = 'categories' | 'questions';
 
@@ -61,8 +61,8 @@ export default function Study() {
     const categoryInfo = categories.find(c => c.id === selectedCategory);
     
     return (
-      <div className="min-h-screen pb-24 safe-area-top">
-        {/* Header */}
+      <div className="min-h-screen pb-28 safe-area-top">
+        {/* Header with chunky progress */}
         <div className="sticky top-0 z-10 glass border-b border-border/50 px-4 py-4">
           <div className="flex items-center gap-3 mb-3">
             <Button 
@@ -83,10 +83,10 @@ export default function Study() {
             </div>
           </div>
           
-          {/* Progress bar with gradient */}
-          <div className="relative h-2.5 bg-muted rounded-full overflow-hidden">
+          {/* Chunky progress bar with orange gradient */}
+          <div className="progress-chunky">
             <div 
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary-glow rounded-full transition-all duration-500"
+              className="progress-chunky-fill"
               style={{ width: `${progressValue}%` }}
             />
           </div>
@@ -101,22 +101,28 @@ export default function Study() {
             onAnswer={handleAnswer}
           />
 
-          {/* Next Button */}
+          {/* Next Button - 3D Bubbly */}
           <div className="mt-6">
             {currentQuestionIndex < categoryQuestions.length - 1 ? (
               <Button 
-                className="w-full h-14 text-base font-display font-bold rounded-xl shadow-button animate-pop gap-2"
+                className={cn(
+                  "w-full h-14 text-base font-display font-bold rounded-xl",
+                  "btn-3d bg-primary hover:bg-primary"
+                )}
                 onClick={handleNext}
               >
                 {t('Nächste Frage', 'Next Question')}
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-5 w-5 ml-1" />
               </Button>
             ) : (
               <Button 
-                className="w-full h-14 text-base font-display font-bold rounded-xl shadow-button animate-pop gap-2"
+                className={cn(
+                  "w-full h-14 text-base font-display font-bold rounded-xl",
+                  "btn-3d bg-primary hover:bg-primary"
+                )}
                 onClick={handleBack}
               >
-                <Sparkles className="h-5 w-5" />
+                <Sparkles className="h-5 w-5 mr-2" />
                 {t('Kategorie beenden', 'Finish Category')}
               </Button>
             )}
@@ -127,15 +133,10 @@ export default function Study() {
   }
 
   return (
-    <div className="min-h-screen pb-24 safe-area-top relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-politics/10 blur-3xl" />
-      <div className="absolute top-1/3 -left-40 w-60 h-60 rounded-full bg-history/10 blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 rounded-full bg-society/10 blur-3xl" />
-
+    <div className="min-h-screen pb-28 safe-area-top">
       {/* Header */}
-      <div className="relative px-5 pt-8 pb-6">
-        <h1 className="text-3xl font-display font-extrabold tracking-tight mb-2">
+      <div className="px-5 pt-8 pb-5">
+        <h1 className="text-3xl font-display font-bold tracking-tight mb-2">
           {t('Übungsmodus', 'Study Mode')}
         </h1>
         <p className="text-muted-foreground font-medium">
@@ -144,7 +145,7 @@ export default function Study() {
       </div>
 
       {/* Categories with stagger animation */}
-      <div className="relative px-5 space-y-4 stagger-children">
+      <div className="px-5 space-y-4 stagger-children">
         {categories.map(category => (
           <CategoryCard
             key={category.id}
