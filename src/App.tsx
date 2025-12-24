@@ -16,10 +16,10 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <AppProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <BrowserRouter>
+        <AppProvider>
+          <Toaster />
+          <Sonner />
           <div className="min-h-screen bg-background">
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -30,8 +30,8 @@ const App = () => (
             </Routes>
             <BottomNav />
           </div>
-        </BrowserRouter>
-      </AppProvider>
+        </AppProvider>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
