@@ -7,7 +7,7 @@ import { Progress } from '@/components/ui/progress';
 import { QuestionCard } from '@/components/QuestionCard';
 import { AdSpace } from '@/components/AdSpace';
 import { useApp } from '@/contexts/AppContext';
-import { questions } from '@/data/questions';
+import { questions } from '@/data/questions/index';
 import {
   AlertDialog,
   AlertDialogAction,

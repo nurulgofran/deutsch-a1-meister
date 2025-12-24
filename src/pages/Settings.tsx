@@ -23,7 +23,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { useApp } from '@/contexts/AppContext';
-import { bundeslaender } from '@/data/questions';
+import { bundeslaender } from '@/data/questions/index';
 
 export default function Settings() {
   const { settings, updateSettings, resetProgress, t } = useApp();

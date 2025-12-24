@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Bookmark, BookmarkCheck, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Question } from '@/data/questions';
+import { Question } from '@/data/questions/index';
 import { useApp } from '@/contexts/AppContext';
 import { ProModal } from '@/components/ProModal';
 import { cn } from '@/lib/utils';

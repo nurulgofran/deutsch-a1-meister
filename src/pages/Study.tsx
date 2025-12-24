@@ -6,7 +6,7 @@ import { CategoryCard } from '@/components/CategoryCard';
 import { QuestionCard } from '@/components/QuestionCard';
 import { Progress } from '@/components/ui/progress';
 import { useApp } from '@/contexts/AppContext';
-import { questions, categories } from '@/data/questions';
+import { questions, categories } from '@/data/questions/index';
 
 type ViewMode = 'categories' | 'questions';
 
