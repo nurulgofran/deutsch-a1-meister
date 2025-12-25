@@ -13,7 +13,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundesrat vertritt die Länder. Wenn die Opposition in den Ländern stärker wird, kann die Bundesregierung im Bundesrat ihre Mehrheit verlieren.",
+    explanation_en: "The Bundesrat represents the states. If the opposition becomes stronger in the states, the federal government can lose its majority in the Bundesrat."
   },
   {
     id: "92",
@@ -27,7 +29,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "CSU steht für Christlich Soziale Union. Sie ist die Schwesterpartei der CDU und existiert nur in Bayern.",
+    explanation_en: "CSU stands for Christian Social Union. It is the sister party of the CDU and exists only in Bavaria."
   },
   {
     id: "93",
@@ -41,7 +45,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Zweitstimme bestimmt die Sitzverteilung im Bundestag. Je mehr Zweitstimmen, desto mehr Sitze für die Partei.",
+    explanation_en: "The second vote determines the seat distribution in the Bundestag. The more second votes, the more seats for the party."
   },
   {
     id: "94",
@@ -55,7 +61,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das aktive Wahlrecht für Bundestagswahlen gilt ab 18 Jahren. Bei einigen Landtagswahlen darf man schon ab 16 wählen.",
+    explanation_en: "The right to vote in federal elections applies from age 18. In some state elections, you can vote from age 16."
   },
   {
     id: "95",
@@ -69,7 +77,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "In Deutschland besteht Schulpflicht für alle Kinder. Sie müssen die Schule besuchen, in den meisten Bundesländern 9 Jahre.",
+    explanation_en: "In Germany, compulsory education applies to all children. They must attend school, in most states for 9 years."
   },
   {
     id: "96",
@@ -83,7 +93,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Holocaustleugnung ist in Deutschland nach § 130 StGB strafbar. Die Strafe kann bis zu 5 Jahre Gefängnis betragen.",
+    explanation_en: "Holocaust denial is a crime in Germany under § 130 StGB. The penalty can be up to 5 years imprisonment."
   },
   {
     id: "97",
@@ -97,7 +109,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Arbeitnehmer zahlen automatisch Beiträge zur Sozialversicherung (Kranken-, Renten-, Arbeitslosen- und Pflegeversicherung).",
+    explanation_en: "Employees automatically pay social insurance contributions (health, pension, unemployment, and nursing care insurance)."
   },
   {
     id: "98",
@@ -111,7 +125,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wenn Abgeordnete die Fraktion wechseln, können sich die Mehrheitsverhältnisse ändern. Die Regierung könnte ihre Mehrheit verlieren.",
+    explanation_en: "When members change factions, the majority ratios can change. The government could lose its majority."
   },
   {
     id: "99",
@@ -125,7 +141,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Sozialversicherungsbeiträge werden paritätisch von Arbeitgebern und Arbeitnehmern getragen – jeder zahlt etwa die Hälfte.",
+    explanation_en: "Social insurance contributions are shared equally by employers and employees – each pays about half."
   },
   {
     id: "100",
@@ -139,7 +157,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Lebensversicherung ist eine private Versicherung. Die Sozialversicherung umfasst: Kranken-, Renten-, Arbeitslosen-, Pflege- und Unfallversicherung.",
+    explanation_en: "Life insurance is private insurance. Social insurance includes: health, pension, unemployment, nursing care, and accident insurance."
   },
   {
     id: "101",
@@ -153,7 +173,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gewerkschaften vertreten die Interessen der Arbeitnehmer gegenüber den Arbeitgebern, z.B. bei Tarifverhandlungen.",
+    explanation_en: "Trade unions represent the interests of employees towards employers, e.g. in collective bargaining."
   },
   {
     id: "102",
@@ -167,7 +189,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Bundesverdienstkreuz ist die höchste Auszeichnung der Bundesrepublik für besondere Verdienste um das Gemeinwohl.",
+    explanation_en: "The Federal Cross of Merit is the highest honor in Germany for special services to the common good."
   },
   {
     id: "103",
@@ -181,7 +205,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Ampelkoalition heißt so wegen der Parteifarben: Rot (SPD), Gelb (FDP), Grün (Grüne) – wie eine Ampel.",
+    explanation_en: "The traffic light coalition is named after the party colors: Red (SPD), Yellow (FDP), Green (Greens) – like a traffic light."
   },
   {
     id: "104",
@@ -195,7 +221,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Schwangere Frauen genießen besonderen Kündigungsschutz. Eine Kündigung wegen Schwangerschaft ist verboten (Mutterschutzgesetz).",
+    explanation_en: "Pregnant women have special protection against dismissal. Dismissal due to pregnancy is prohibited (Maternity Protection Act)."
   },
   {
     id: "105",
@@ -209,7 +237,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlhelfer zählen nach Wahlschluss die Stimmen aus. Sie dürfen niemandem in der Wahlkabine helfen – die Wahl ist geheim.",
+    explanation_en: "Election helpers count the votes after polls close. They may not help anyone in the voting booth – voting is secret."
   },
   {
     id: "106",
@@ -223,7 +253,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Hauptaufgabe der Wahlhelfer ist das Auszählen der Stimmen nach Wahlende. Kinder dürfen nicht wählen.",
+    explanation_en: "The main task of election helpers is counting votes after the election. Children are not allowed to vote."
   },
   {
     id: "107",
@@ -237,7 +269,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag wird alle 4 Jahre neu gewählt. Die Legislaturperiode dauert regulär 4 Jahre.",
+    explanation_en: "The Bundestag is elected every 4 years. The legislative period is regularly 4 years."
   },
   {
     id: "108",
@@ -251,7 +285,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlberechtigt für Bundestagswahlen sind alle deutschen Staatsbürger ab 18 Jahren. Wohnort allein reicht nicht.",
+    explanation_en: "All German citizens aged 18 and over are eligible to vote in federal elections. Residence alone is not sufficient."
   },
   {
     id: "109",
@@ -265,7 +301,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Bundestagswahlen finden alle 4 Jahre statt, außer bei vorzeitiger Auflösung des Bundestags.",
+    explanation_en: "Federal elections take place every 4 years, unless the Bundestag is dissolved early."
   },
   {
     id: "110",
@@ -279,7 +317,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Wahlperiode des Bundestages beträgt 4 Jahre. Dann finden Neuwahlen statt.",
+    explanation_en: "The electoral period of the Bundestag is 4 years. Then new elections take place."
   },
   {
     id: "111",
@@ -293,7 +333,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Aufrufe zur Vernichtung eines Staates sind Volksverhetzung und strafbar. Kritik an Politik ist erlaubt, Vernichtungsaufrufe nicht.",
+    explanation_en: "Calls for the destruction of a state constitute incitement to hatred and are punishable. Criticism of policy is allowed, calls for destruction are not."
   },
   {
     id: "112",
@@ -307,7 +349,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlen in Deutschland sind geheim – niemand darf sehen, was man wählt. Dies schützt vor Beeinflussung.",
+    explanation_en: "Elections in Germany are secret – no one may see what you vote. This protects against influence."
   },
   {
     id: "113",
@@ -321,7 +365,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Partei mit den meisten Stimmen (Zweitstimmen) gewinnt die Wahl. Alle Stimmen zählen gleich, unabhängig von Geschlecht oder Beruf.",
+    explanation_en: "The party with the most votes (second votes) wins the election. All votes count equally, regardless of gender or profession."
   },
   {
     id: "114",
@@ -335,7 +381,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "In Deutschland ist Wählen ein Recht, keine Pflicht. Es gibt keine Wahlpflicht wie in manchen anderen Ländern.",
+    explanation_en: "In Germany, voting is a right, not a duty. There is no compulsory voting like in some other countries."
   },
   {
     id: "115",
@@ -349,7 +397,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Aktives Wahlrecht = wählen dürfen. Passives Wahlrecht = gewählt werden können. Beides sind unterschiedliche Rechte.",
+    explanation_en: "Active voting right = being allowed to vote. Passive voting right = being able to be elected. These are different rights."
   },
   {
     id: "116",
@@ -363,7 +413,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Recht zu wählen heißt 'aktives Wahlrecht'. Es gilt für deutsche Staatsbürger ab 18 Jahren.",
+    explanation_en: "The right to vote is called 'active voting right'. It applies to German citizens aged 18 and over."
   },
   {
     id: "117",
@@ -377,7 +429,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die 5%-Hürde verhindert, dass zu viele kleine Parteien ins Parlament kommen. Das sichert stabile Regierungen.",
+    explanation_en: "The 5% threshold prevents too many small parties from entering parliament. This ensures stable governments."
   },
   {
     id: "118",
@@ -391,7 +445,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Makkabi-Sportvereine sind für alle Menschen offen. Sie fördern jüdische Kultur und Sport, diskriminieren aber niemanden.",
+    explanation_en: "Maccabi sports clubs are open to all people. They promote Jewish culture and sport but do not discriminate against anyone."
   },
   {
     id: "119",
@@ -405,7 +461,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Freie Wahlen bedeuten: Niemand darf gezwungen werden zu wählen oder eine bestimmte Partei zu wählen.",
+    explanation_en: "Free elections mean: No one may be forced to vote or to vote for a particular party."
   },
   {
     id: "120",
@@ -419,7 +477,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland hat ein personalisiertes Verhältniswahlrecht: Erststimme für Direktkandidaten (Mehrheit), Zweitstimme für Parteien (Verhältnis).",
+    explanation_en: "Germany has a personalized proportional representation: First vote for direct candidates (majority), second vote for parties (proportional)."
   },
   {
     id: "121",
@@ -433,7 +493,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die 5%-Hürde (Sperrklausel) bedeutet: Parteien brauchen mindestens 5% der Zweitstimmen für den Einzug in den Bundestag.",
+    explanation_en: "The 5% threshold means: Parties need at least 5% of second votes to enter the Bundestag."
   },
   {
     id: "122",
@@ -447,7 +509,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlen sind: allgemein, unmittelbar, frei, gleich und geheim (Art. 38 GG). Diese Grundsätze schützen die Demokratie.",
+    explanation_en: "Elections are: general, direct, free, equal, and secret (Art. 38 Basic Law). These principles protect democracy."
   },
   {
     id: "123",
@@ -461,7 +525,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die 5%-Hürde ist der Mindestanteil an Stimmen, den eine Partei für den Einzug ins Parlament benötigt.",
+    explanation_en: "The 5% threshold is the minimum share of votes a party needs to enter parliament."
   },
   {
     id: "124",
@@ -475,7 +541,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Bei der Bundestagswahl wählt das Volk den Bundestag (das Parlament). Der Kanzler wird dann vom Bundestag gewählt.",
+    explanation_en: "In the federal election, the people elect the Bundestag (parliament). The Chancellor is then elected by the Bundestag."
   },
   {
     id: "125",
@@ -489,7 +557,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Regelmäßige Wahlen ermöglichen friedliche Regierungswechsel. Das Volk entscheidet, wer regiert.",
+    explanation_en: "Regular elections enable peaceful changes of government. The people decide who governs."
   },
   {
     id: "126",
@@ -503,7 +573,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Gemeinde schickt eine Wahlbenachrichtigung mit Informationen zum Wahllokal und Wahltag.",
+    explanation_en: "The municipality sends an election notification with information about the polling station and election day."
   },
   {
     id: "127",
@@ -517,7 +589,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die 5%-Hürde verhindert Zersplitterung des Parlaments. In der Weimarer Republik führten viele kleine Parteien zu instabilen Regierungen.",
+    explanation_en: "The 5% threshold prevents fragmentation of parliament. In the Weimar Republic, many small parties led to unstable governments."
   },
   {
     id: "128",
@@ -531,7 +605,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gewählte Parlamentsmitglieder heißen Abgeordnete. Sie vertreten das Volk im Bundestag oder Landtag.",
+    explanation_en: "Elected members of parliament are called deputies or representatives. They represent the people in the Bundestag or state parliament."
   },
   {
     id: "129",
@@ -545,7 +621,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Volk wählt direkt nur den Bundestag. Der Kanzler wird vom Bundestag gewählt, der Bundespräsident von der Bundesversammlung.",
+    explanation_en: "The people directly elect only the Bundestag. The Chancellor is elected by the Bundestag, the President by the Federal Assembly."
   },
   {
     id: "130",
@@ -560,7 +638,9 @@ export const part3Questions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: false,
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Ein gültiger Stimmzettel hat je ein Kreuz bei Erst- und Zweitstimme. Mehrere Kreuze pro Stimme machen den Zettel ungültig.",
+    explanation_en: "A valid ballot has one cross each for first and second vote. Multiple crosses per vote make the ballot invalid."
   },
   {
     id: "131",
@@ -574,7 +654,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bürgermeister ist das Oberhaupt einer Gemeinde oder Stadt. Er leitet die Kommunalverwaltung.",
+    explanation_en: "The mayor is the head of a municipality or city. He leads the local administration."
   },
   {
     id: "132",
@@ -588,7 +670,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Ehrenamtliche Arbeit ist freiwillig und ohne Bezahlung. Viele Menschen engagieren sich so für die Gesellschaft.",
+    explanation_en: "Volunteer work is voluntary and unpaid. Many people contribute to society in this way."
   },
   {
     id: "133",
@@ -602,7 +686,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Briefwahl ermöglicht die Stimmabgabe per Post. Man muss die Briefwahl vorher beantragen.",
+    explanation_en: "Postal voting allows casting votes by mail. You must apply for postal voting in advance."
   },
   {
     id: "134",
@@ -616,7 +702,9 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Bürgerinitiativen sind eine demokratische Möglichkeit, sich für lokale Anliegen einzusetzen und Einfluss auf politische Entscheidungen zu nehmen.",
+    explanation_en: "Citizens' initiatives are a democratic way to advocate for local concerns and influence political decisions."
   },
   {
     id: "135",
@@ -630,6 +718,8 @@ export const part3Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gewerkschaften vertreten Arbeitnehmer und setzen sich für bessere Arbeitsbedingungen, Löhne und Rechte ein.",
+    explanation_en: "Trade unions represent employees and advocate for better working conditions, wages, and rights."
   }
 ];
