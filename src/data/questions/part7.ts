@@ -426,15 +426,16 @@ export const part7Questions: Question[] = [
     text_de: "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
     text_en: "Which coat of arms belongs to the federal state of Baden-Württemberg?",
     options: [
-      { de: "Bild 1", en: "Image 1" },
-      { de: "Bild 2", en: "Image 2" },
-      { de: "Bild 3", en: "Image 3" },
-      { de: "Bild 4", en: "Image 4" }
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/baden-wuerttemberg.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/bavaria.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/saxony.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/hesse.png" }
     ],
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    hasImages: true
   },
   {
     id: "302",
