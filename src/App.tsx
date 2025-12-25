@@ -8,6 +8,8 @@ import { AppProvider } from "@/contexts/AppContext";
 import { AdProvider } from "@/contexts/AdContext";
 import { BottomNav } from "@/components/BottomNav";
 import { InterstitialAd, RewardedAd } from "@/components/ads";
+import { OfflineBanner } from "@/components/OfflineBanner";
+import { StreakMilestone } from "@/components/StreakMilestone";
 import Dashboard from "./pages/Dashboard";
 import Study from "./pages/Study";
 import Exam from "./pages/Exam";
@@ -29,17 +31,6 @@ function AppContent() {
   }, []);
 
   const handleOnboardingComplete = (bundesland: Bundesland) => {
-    // Save the selected bundesland to settings
-    const currentSettings = storage.get('lid-settings', '{}'); // Store as string if legacy, or object? 
-    // Wait, storage.get handles JSON parse! 
-    // Original code: JSON.parse(localStorage.getItem('lid-settings'))
-    // So storage.get('lid-settings', {}) is correct if stored as JSON.
-    
-    // But wait, the original code looked like:
-    // const currentSettings = localStorage.getItem('lid-settings');
-    // const settings = currentSettings ? JSON.parse(currentSettings) : {};
-    
-    // My storage helper parses automatically.
     const settings: any = storage.get('lid-settings', {});
     settings.bundesland = bundesland;
     storage.set('lid-settings', settings);
@@ -58,6 +49,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background">
+      <OfflineBanner />
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/study" element={<Study />} />
@@ -69,6 +61,8 @@ function AppContent() {
       {/* Global ad overlays */}
       <InterstitialAd />
       <RewardedAd />
+      {/* Streak milestone celebration */}
+      <StreakMilestone />
     </div>
   );
 }

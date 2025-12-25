@@ -8,12 +8,16 @@ const config: CapacitorConfig = {
   plugins: {
     SplashScreen: {
       launchShowDuration: 2000,
-      backgroundColor: '#f5f7fa',
+      // Match app background color (--background: 45 30% 97% in HSL = #FAF8F5)
+      backgroundColor: '#FAF8F5',
       showSpinner: false
     },
     StatusBar: {
-      style: 'light',
-      backgroundColor: '#f5f7fa'
+      style: 'dark',
+      backgroundColor: '#FAF8F5'
+    },
+    Haptics: {
+      // Enable haptic feedback
     }
   }
 };

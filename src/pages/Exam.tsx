@@ -1,14 +1,15 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, AlertTriangle, Trophy, XCircle, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { QuestionCard } from '@/components/QuestionCard';
 import { BannerAd } from '@/components/ads';
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
-import { questions } from '@/data/questions/index';
+import { questions, Question } from '@/data/questions/index';
+import { shuffleOptionsWithCorrectIndex } from '@/lib/utils';
+import { Capacitor } from '@capacitor/core';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -26,20 +27,28 @@ const EXAM_DURATION = 60 * 60; // 60 minutes in seconds
 const TOTAL_QUESTIONS = 33;
 const PASSING_SCORE = 17;
 
+// Track shuffled options per question for correct scoring
+interface ShuffledQuestion {
+  question: Question;
+  shuffledOptions: typeof questions[0]['options'];
+  correctIndexShuffled: number;
+}
+
 export default function Exam() {
   const navigate = useNavigate();
   const { settings, recordExamResult, t } = useApp();
   const { triggerInterstitial } = useAds();
   
   const [examState, setExamState] = useState<ExamState>('intro');
-  const [examQuestions, setExamQuestions] = useState<typeof questions>([]);
+  const [examQuestions, setExamQuestions] = useState<ShuffledQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [timeLeft, setTimeLeft] = useState(EXAM_DURATION);
   const [showExitDialog, setShowExitDialog] = useState(false);
   const [startTime, setStartTime] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Generate exam questions
+  // Generate exam questions with shuffled options
   const generateExam = useCallback(() => {
     const generalQuestions = questions.filter(q => !q.isStateSpecific);
     const stateQuestions = questions.filter(
@@ -65,8 +74,40 @@ export default function Exam() {
     const remaining = TOTAL_QUESTIONS - selectedGeneral.length - selectedState.length;
     const extraGeneral = shuffledGeneral.slice(selectedGeneral.length, selectedGeneral.length + remaining);
 
-    setExamQuestions([...selectedGeneral, ...selectedState, ...extraGeneral].slice(0, TOTAL_QUESTIONS));
+    const combinedQuestions = [...selectedGeneral, ...selectedState, ...extraGeneral].slice(0, TOTAL_QUESTIONS);
+
+    // Shuffle options for each question and track the new correct index
+    const shuffledExamQuestions: ShuffledQuestion[] = combinedQuestions.map(q => {
+      const { shuffledOptions, newCorrectIndex } = shuffleOptionsWithCorrectIndex(q.options, q.correctIndex);
+      return {
+        question: q,
+        shuffledOptions,
+        correctIndexShuffled: newCorrectIndex
+      };
+    });
+
+    setExamQuestions(shuffledExamQuestions);
   }, [settings.bundesland]);
+
+  // Handle Android hardware back button
+  useEffect(() => {
+    if (examState !== 'active') return;
+
+    const handleBackButton = (event: PopStateEvent) => {
+      event.preventDefault();
+      // Push a new state to prevent navigation
+      window.history.pushState(null, '', window.location.href);
+      setShowExitDialog(true);
+    };
+
+    // Push initial state when exam starts
+    window.history.pushState(null, '', window.location.href);
+    window.addEventListener('popstate', handleBackButton);
+
+    return () => {
+      window.removeEventListener('popstate', handleBackButton);
+    };
+  }, [examState]);
 
   // Timer
   useEffect(() => {
@@ -91,14 +132,20 @@ export default function Exam() {
     setCurrentIndex(0);
     setTimeLeft(EXAM_DURATION);
     setStartTime(Date.now());
+    setIsSubmitting(false);
     setExamState('active');
   };
 
   const finishExam = () => {
+    // Prevent duplicate submissions
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+
     const timeSpent = Math.round((Date.now() - startTime) / 1000);
+    // Calculate score using shuffled correct index
     const score = Object.entries(answers).reduce((acc, [index, answer]) => {
-      const question = examQuestions[parseInt(index)];
-      return acc + (question && answer === question.correctIndex ? 1 : 0);
+      const examQ = examQuestions[parseInt(index)];
+      return acc + (examQ && answer === examQ.correctIndexShuffled ? 1 : 0);
     }, 0);
 
     recordExamResult({
@@ -142,11 +189,14 @@ export default function Exam() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  // Results calculation
-  const score = Object.entries(answers).reduce((acc, [index, answer]) => {
-    const question = examQuestions[parseInt(index)];
-    return acc + (question && answer === question.correctIndex ? 1 : 0);
-  }, 0);
+  // Results calculation using shuffled correct index
+  const score = useMemo(() => {
+    return Object.entries(answers).reduce((acc, [index, answer]) => {
+      const examQ = examQuestions[parseInt(index)];
+      return acc + (examQ && answer === examQ.correctIndexShuffled ? 1 : 0);
+    }, 0);
+  }, [answers, examQuestions]);
+  
   const passed = score >= PASSING_SCORE;
 
   // Intro Screen
@@ -225,6 +275,7 @@ export default function Exam() {
 
   // Active Exam Screen
   if (examState === 'active' && examQuestions[currentIndex]) {
+    const currentExamQ = examQuestions[currentIndex];
     const isLastQuestion = currentIndex === examQuestions.length - 1;
     const progressValue = ((currentIndex + 1) / examQuestions.length) * 100;
     const isLowTime = timeLeft < 300; // Less than 5 minutes
@@ -248,16 +299,55 @@ export default function Exam() {
           <Progress value={progressValue} className="h-2" />
         </div>
 
-        {/* Question */}
+        {/* Question - Custom exam rendering to use shuffled options */}
         <div className="p-5">
-          <QuestionCard
-            key={examQuestions[currentIndex].id}
-            question={examQuestions[currentIndex]}
-            showFeedback={false}
-            selectedAnswer={answers[currentIndex] ?? null}
-            onSelectAnswer={handleSelectAnswer}
-            showBookmark={false}
-          />
+          <Card className="border-0 shadow-card overflow-hidden">
+            <CardContent className="p-6">
+              <h2 className="text-xl font-display font-bold leading-snug mb-6">
+                {settings.language === 'de' ? currentExamQ.question.text_de : currentExamQ.question.text_en}
+              </h2>
+
+              <div className="space-y-3">
+                {currentExamQ.shuffledOptions.map((option, index) => {
+                  const isSelected = answers[currentIndex] === index;
+                  return (
+                    <Button
+                      key={index}
+                      variant="outline"
+                      className={`w-full min-h-[60px] h-auto p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop flex items-center gap-3 ${
+                        isSelected 
+                          ? "bg-primary/10 border-primary shadow-sm" 
+                          : "bg-card border-border hover:border-primary/50 hover:bg-primary/5"
+                      }`}
+                      onClick={() => handleSelectAnswer(index)}
+                    >
+                      <span className={`inline-flex items-center justify-center rounded-lg text-sm font-bold shrink-0 w-8 h-8 ${
+                        isSelected 
+                          ? "bg-primary text-primary-foreground" 
+                          : "bg-muted text-muted-foreground"
+                      }`}>
+                        {String.fromCharCode(65 + index)}
+                      </span>
+                      <span className="text-left font-medium flex-1 whitespace-normal break-words">
+                        {settings.language === 'de' ? option.de : option.en}
+                      </span>
+                    </Button>
+                  );
+                })}
+              </div>
+
+              {currentExamQ.question.isStateSpecific && (
+                <div className="mt-5 pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent animate-pulse-soft"></span>
+                    <span className="font-medium">
+                      {t(`Landesspezifisch: ${currentExamQ.question.state}`, `State-specific: ${currentExamQ.question.state}`)}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
 
           <div className="mt-6">
             <Button 
