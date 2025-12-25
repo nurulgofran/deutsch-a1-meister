@@ -8,6 +8,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Crown, Check, Sparkles, Zap } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
+import { useAds } from '@/contexts/AdContext';
+import { toast } from 'sonner';
 
 interface ProModalProps {
   open: boolean;
@@ -16,6 +18,7 @@ interface ProModalProps {
 
 export function ProModal({ open, onOpenChange }: ProModalProps) {
   const { t } = useApp();
+  const { setPro } = useAds();
 
   const features = [
     { de: 'Detaillierte Erklärungen zu jeder Frage', en: 'Detailed explanations for every question', icon: Sparkles },
@@ -24,6 +27,14 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
     { de: 'Keine Werbung', en: 'No advertisements', icon: Check },
     { de: 'Offline-Modus für alle Inhalte', en: 'Offline mode for all content', icon: Check }
   ];
+
+  const handlePurchase = () => {
+    // TODO: Implement actual payment (Stripe, etc.)
+    // For now, just simulate purchase success
+    setPro(true);
+    toast.success(t('Pro-Version aktiviert!', 'Pro version activated!'));
+    onOpenChange(false);
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -68,7 +79,7 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
             <Button 
               className="w-full h-14 text-base font-display font-bold gap-2 rounded-xl shadow-button animate-pop" 
               size="lg"
-              onClick={() => onOpenChange(false)}
+              onClick={handlePurchase}
             >
               <Sparkles className="h-5 w-5" />
               {t('Pro für 4,99€ kaufen', 'Buy Pro for $4.99')}
