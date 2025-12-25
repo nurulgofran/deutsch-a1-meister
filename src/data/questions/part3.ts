@@ -552,14 +552,15 @@ export const part3Questions: Question[] = [
     text_de: "Welcher Stimmzettel wäre bei einer Bundestagswahl gültig?",
     text_en: "Which ballot would be valid in a federal election?",
     options: [
-      { de: "Bild 1 (nur eine Stimme markiert)", en: "Image 1 (only one vote marked)" },
-      { de: "Bild 2 (Erststimme und Zweitstimme markiert)", en: "Image 2 (first vote and second vote marked)" },
-      { de: "Bild 3 (mehrere Kreuze bei Erststimme)", en: "Image 3 (multiple crosses for first vote)" },
-      { de: "Bild 4 (mehrere Kreuze bei Zweitstimme)", en: "Image 4 (multiple crosses for second vote)" }
+      { de: "Bild 1 (nur eine Stimme markiert)", en: "Image 1 (only one vote marked)", image: "/ballots/ballot-one-vote.png" },
+      { de: "Bild 2 (Erststimme und Zweitstimme markiert)", en: "Image 2 (first vote and second vote marked)", image: "/ballots/ballot-valid.png" },
+      { de: "Bild 3 (mehrere Kreuze bei Erststimme)", en: "Image 3 (multiple crosses for first vote)", image: "/ballots/ballot-invalid-first.png" },
+      { de: "Bild 4 (mehrere Kreuze bei Zweitstimme)", en: "Image 4 (multiple crosses for second vote)", image: "/ballots/ballot-invalid-second.png" }
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    hasImages: true
   },
   {
     id: "131",
