@@ -14,6 +14,8 @@ export interface Question {
   isStateSpecific: boolean;
   state?: string;
   hasImages?: boolean; // flag for image-based questions
+  explanation_de?: string; // Pro feature: explanation in German
+  explanation_en?: string; // Pro feature: explanation in English
 }
 
 export const categories = [
