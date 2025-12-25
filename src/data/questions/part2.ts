@@ -13,7 +13,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Staat ist für die öffentliche Infrastruktur zuständig, wie Straßen und Schulen. Verkauf von Waren und Produktion sind Aufgaben der Privatwirtschaft.",
+    explanation_en: "The state is responsible for public infrastructure like roads and schools. Selling goods and production are tasks of the private sector."
   },
   {
     id: "47",
@@ -27,7 +29,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Staat bezahlt keine Urlaubsreisen für Bürger. Kindergeld, Museumsförderung und Sportförderung sind jedoch staatliche Aufgaben.",
+    explanation_en: "The state does not pay for citizens' vacations. However, child benefits, museum support, and athlete sponsorship are state tasks."
   },
   {
     id: "48",
@@ -41,7 +45,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine Bürgerversammlung ist kein Verfassungsorgan. Die Verfassungsorgane sind: Bundestag, Bundesrat, Bundespräsident, Bundesregierung und Bundesverfassungsgericht.",
+    explanation_en: "A citizens' assembly is not a constitutional organ. The constitutional organs are: Bundestag, Federal Council, Federal President, Federal Government, and Federal Constitutional Court."
   },
   {
     id: "49",
@@ -55,7 +61,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Bildungspolitik ist in Deutschland Ländersache. Jedes Bundesland hat eigene Schulgesetze und Lehrpläne (Kulturhoheit der Länder).",
+    explanation_en: "Education policy is a state matter in Germany. Each federal state has its own school laws and curricula (cultural sovereignty of the states)."
   },
   {
     id: "50",
@@ -69,7 +77,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland hat eine soziale Marktwirtschaft: freier Markt mit staatlichem Sozialschutz. Dies kombiniert wirtschaftliche Freiheit mit sozialer Absicherung.",
+    explanation_en: "Germany has a social market economy: free market with state social protection. This combines economic freedom with social security."
   },
   {
     id: "51",
@@ -83,7 +93,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine Privatpolizei, die ohne Grund verhaftet, ist illegal. Im Rechtsstaat hat nur die staatliche Polizei Verhaftungsbefugnisse und braucht dafür einen rechtlichen Grund.",
+    explanation_en: "A private police that arrests without reason is illegal. In a constitutional state, only state police have arrest powers and need a legal reason for it."
   },
   {
     id: "52",
@@ -97,7 +109,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 20 des Grundgesetzes: 'Alle Staatsgewalt geht vom Volke aus.' Das Volk ist der Souverän und legitimiert durch Wahlen die Staatsgewalt.",
+    explanation_en: "Article 20 of the Basic Law: 'All state power emanates from the people.' The people are sovereign and legitimize state power through elections."
   },
   {
     id: "53",
@@ -111,7 +125,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Im Rechtsstaat ist auch der Staat an Gesetze gebunden. Niemand steht über dem Gesetz – weder Bürger noch Regierung.",
+    explanation_en: "In a constitutional state, even the state is bound by laws. No one is above the law – neither citizens nor government."
   },
   {
     id: "54",
@@ -125,7 +141,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Es gibt drei Staatsgewalten: Legislative (Gesetzgebung), Exekutive (Regierung/Verwaltung) und Judikative (Rechtsprechung). 'Direktive' existiert nicht.",
+    explanation_en: "There are three state powers: Legislative (lawmaking), Executive (government/administration), and Judiciary (jurisdiction). 'Directive' does not exist."
   },
   {
     id: "55",
@@ -139,7 +157,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Reichstagsgebäude in Berlin ist der Sitz des Deutschen Bundestages. Es ist erkennbar an seiner Glaskuppel.",
+    explanation_en: "The Reichstag building in Berlin is the seat of the German Bundestag. It is recognizable by its glass dome."
   },
   {
     id: "56",
@@ -153,7 +173,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Ordnungsamt gehört zur Gemeindeverwaltung und kümmert sich um öffentliche Ordnung. Finanzamt (Bund/Land) und Auswärtiges Amt (Bund) sind keine Gemeindeämter.",
+    explanation_en: "The public order office belongs to local government and handles public order. Tax office (federal/state) and Foreign Office (federal) are not municipal offices."
   },
   {
     id: "57",
@@ -167,7 +189,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nach parlamentarischer Tradition stellt die stärkste Fraktion im Bundestag den Bundestagspräsidenten. Dies ist ein ungeschriebenes Gesetz.",
+    explanation_en: "According to parliamentary tradition, the strongest faction in the Bundestag provides the Bundestag President. This is an unwritten law."
   },
   {
     id: "58",
@@ -181,7 +205,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident ernennt und entlässt die Bundesminister auf Vorschlag des Bundeskanzlers (Art. 64 GG).",
+    explanation_en: "The Federal President appoints and dismisses federal ministers on the proposal of the Federal Chancellor (Art. 64 Basic Law)."
   },
   {
     id: "59",
@@ -195,7 +221,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Jüdische Gemeinden existieren in Deutschland seit der Römerzeit (um 321 n. Chr. in Köln dokumentiert). Das sind etwa 1700 Jahre.",
+    explanation_en: "Jewish communities have existed in Germany since Roman times (documented in Cologne around 321 AD). That is about 1700 years."
   },
   {
     id: "60",
@@ -209,7 +237,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Bundestag und Bundesrat sind die gesetzgebenden Organe (Legislative). Sie beschließen gemeinsam die Bundesgesetze.",
+    explanation_en: "Bundestag and Bundesrat are the legislative bodies (Legislature). They pass federal laws together."
   },
   {
     id: "61",
@@ -223,7 +253,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Volkssouveränität bedeutet, dass das Volk die höchste Macht im Staat hat. Die Bürger wählen ihre Vertreter und legitimieren so die Staatsgewalt.",
+    explanation_en: "Popular sovereignty means that the people have the highest power in the state. Citizens elect their representatives and thus legitimize state power."
   },
   {
     id: "62",
@@ -237,7 +269,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Wahl des Landesparlaments heißt Landtagswahl. Kommunalwahlen sind für Gemeinden, Bundestagswahlen für das Bundesparlament.",
+    explanation_en: "The election of the state parliament is called Landtagswahl. Local elections are for municipalities, federal elections for the national parliament."
   },
   {
     id: "63",
@@ -251,7 +285,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gerichte gehören zur Judikative (rechtsprechende Gewalt), nicht zur Exekutive. Polizei, Finanzamt und Ministerien sind Teil der ausführenden Gewalt.",
+    explanation_en: "Courts belong to the judiciary, not the executive. Police, tax office, and ministries are part of the executive branch."
   },
   {
     id: "64",
@@ -265,7 +301,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland hat einen föderalen Aufbau mit drei Ebenen: Bund (national), 16 Länder und Kommunen (Städte/Gemeinden).",
+    explanation_en: "Germany has a federal structure with three levels: Federation (national), 16 states, and municipalities (cities/communities)."
   },
   {
     id: "65",
@@ -279,7 +317,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Bundeskabinett wird vom Bundeskanzler gebildet, nicht vom Bundestag. Der Bundestag macht Gesetze, kontrolliert die Regierung und wählt den Kanzler.",
+    explanation_en: "The Federal Cabinet is formed by the Chancellor, not by the Bundestag. The Bundestag makes laws, controls the government, and elects the Chancellor."
   },
   {
     id: "66",
@@ -293,7 +333,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Berlin und München haben heute die größten jüdischen Gemeinden in Deutschland. Berlin hat über 10.000 Mitglieder.",
+    explanation_en: "Berlin and Munich have the largest Jewish communities in Germany today. Berlin has over 10,000 members."
   },
   {
     id: "67",
@@ -307,7 +349,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Schulpolitik ist Ländersache (Kulturhoheit). Verteidigung und Außenpolitik sind Bundesangelegenheiten.",
+    explanation_en: "Education policy is a state matter (cultural sovereignty). Defense and foreign policy are federal matters."
   },
   {
     id: "68",
@@ -321,7 +365,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 7 GG: 'Das gesamte Schulwesen steht unter der Aufsicht des Staates.' Dies ist eine verfassungsmäßige Pflicht.",
+    explanation_en: "Article 7 Basic Law: 'The entire school system is under state supervision.' This is a constitutional duty."
   },
   {
     id: "69",
@@ -335,7 +381,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die drei Ebenen sind: Bund, Länder, Gemeinden/Kommunen. Die Gemeinden bilden die unterste politische Ebene.",
+    explanation_en: "The three levels are: Federation, States, Municipalities/Communes. Municipalities form the lowest political level."
   },
   {
     id: "70",
@@ -349,7 +397,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident schlägt dem Bundestag einen Kanzlerkandidaten vor (Art. 63 GG). Die Regierungsgeschäfte führt der Bundeskanzler.",
+    explanation_en: "The Federal President proposes a Chancellor candidate to the Bundestag (Art. 63 Basic Law). The Chancellor conducts government business."
   },
   {
     id: "71",
@@ -363,7 +413,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Seit 1999 ist Berlin die Hauptstadt und Regierungssitz. Das Bundeskanzleramt und der Bundestag befinden sich dort.",
+    explanation_en: "Since 1999, Berlin has been the capital and seat of government. The Federal Chancellery and Bundestag are located there."
   },
   {
     id: "72",
@@ -377,7 +429,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Friedrich Merz ist der aktuelle Bundeskanzler Deutschlands. Er wurde 2025 gewählt.",
+    explanation_en: "Friedrich Merz is the current Federal Chancellor of Germany. He was elected in 2025."
   },
   {
     id: "73",
@@ -391,7 +445,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "CDU/CSU und AfD sind derzeit die beiden größten Fraktionen im Bundestag nach den Wahlergebnissen.",
+    explanation_en: "CDU/CSU and AfD are currently the two largest factions in the Bundestag according to election results."
   },
   {
     id: "74",
@@ -405,7 +461,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Deutsche Bundestag ist das Parlament der Bundesrepublik Deutschland. Er wird alle vier Jahre gewählt.",
+    explanation_en: "The German Bundestag is the parliament of the Federal Republic of Germany. It is elected every four years."
   },
   {
     id: "75",
@@ -419,7 +477,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Frank-Walter Steinmeier ist der Bundespräsident und damit das Staatsoberhaupt Deutschlands. Er wurde 2017 erstmals gewählt.",
+    explanation_en: "Frank-Walter Steinmeier is the Federal President and thus Germany's head of state. He was first elected in 2017."
   },
   {
     id: "76",
@@ -433,7 +493,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "CDU steht für Christlich Demokratische Union. Sie ist eine der großen Volksparteien Deutschlands, gegründet 1945.",
+    explanation_en: "CDU stands for Christian Democratic Union. It is one of Germany's major people's parties, founded in 1945."
   },
   {
     id: "77",
@@ -447,7 +509,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Bundeswehr ist die Armee der Bundesrepublik Deutschland. Sie wurde 1955 gegründet und untersteht dem Verteidigungsministerium.",
+    explanation_en: "The Bundeswehr is the army of the Federal Republic of Germany. It was founded in 1955 and is under the Ministry of Defense."
   },
   {
     id: "78",
@@ -461,7 +525,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "SPD steht für Sozialdemokratische Partei Deutschlands. Sie ist die älteste Partei Deutschlands, gegründet 1863.",
+    explanation_en: "SPD stands for Social Democratic Party of Germany. It is Germany's oldest party, founded in 1863."
   },
   {
     id: "79",
@@ -475,7 +541,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "FDP steht für Freie Demokratische Partei. Sie ist eine liberale Partei, die wirtschaftliche Freiheit betont.",
+    explanation_en: "FDP stands for Free Democratic Party. It is a liberal party that emphasizes economic freedom."
   },
   {
     id: "80",
@@ -489,7 +557,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Bundesverfassungsgericht in Karlsruhe ist der Hüter des Grundgesetzes. Es prüft, ob Gesetze verfassungskonform sind.",
+    explanation_en: "The Federal Constitutional Court in Karlsruhe is the guardian of the Basic Law. It reviews whether laws are constitutional."
   },
   {
     id: "81",
@@ -503,7 +573,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag wählt den Bundeskanzler auf Vorschlag des Bundespräsidenten (Art. 63 GG). Das Volk wählt nicht direkt.",
+    explanation_en: "The Bundestag elects the Chancellor on the proposal of the Federal President (Art. 63 Basic Law). The people do not vote directly."
   },
   {
     id: "82",
@@ -517,7 +589,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundeskanzler leitet das Bundeskabinett (die Bundesregierung) und bestimmt die Richtlinien der Politik (Kanzlerprinzip).",
+    explanation_en: "The Chancellor leads the Federal Cabinet (federal government) and determines policy guidelines (Chancellor principle)."
   },
   {
     id: "83",
@@ -531,7 +605,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag wählt den Bundeskanzler. Die Bundesversammlung wählt nur den Bundespräsidenten.",
+    explanation_en: "The Bundestag elects the Chancellor. The Federal Assembly only elects the Federal President."
   },
   {
     id: "84",
@@ -545,7 +621,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident ist das Staatsoberhaupt und repräsentiert Deutschland nach innen und außen. Er hat hauptsächlich repräsentative Aufgaben.",
+    explanation_en: "The Federal President is the head of state and represents Germany domestically and abroad. He mainly has representative duties."
   },
   {
     id: "85",
@@ -559,7 +637,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundesrat besteht aus Mitgliedern der Landesregierungen. Durch ihn wirken die Länder an der Bundesgesetzgebung mit.",
+    explanation_en: "The Federal Council consists of members of the state governments. Through it, the states participate in federal legislation."
   },
   {
     id: "86",
@@ -573,7 +653,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Bundesversammlung wählt den Bundespräsidenten. Sie besteht aus Bundestagsabgeordneten und gleich vielen Vertretern der Länder.",
+    explanation_en: "The Federal Assembly elects the Federal President. It consists of Bundestag members and an equal number of state representatives."
   },
   {
     id: "87",
@@ -587,7 +669,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident ist das Staatsoberhaupt. Der Bundeskanzler ist der Regierungschef – das sind zwei verschiedene Ämter.",
+    explanation_en: "The Federal President is the head of state. The Chancellor is the head of government – these are two different offices."
   },
   {
     id: "88",
@@ -601,7 +685,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Opposition kontrolliert die Regierung durch Anfragen, Untersuchungsausschüsse und öffentliche Kritik. Das ist wichtig für die Demokratie.",
+    explanation_en: "The opposition controls the government through inquiries, investigation committees, and public criticism. This is important for democracy."
   },
   {
     id: "89",
@@ -615,7 +701,9 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine Fraktion ist der Zusammenschluss von Abgeordneten einer Partei im Parlament. Mindestens 5% der Sitze sind nötig, um eine Fraktion zu bilden.",
+    explanation_en: "A faction is the association of members of a party in parliament. At least 5% of seats are needed to form a faction."
   },
   {
     id: "90",
@@ -629,6 +717,8 @@ export const part2Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundesrat vertritt die Länder auf Bundesebene. Viele Gesetze brauchen seine Zustimmung, besonders wenn sie die Länder betreffen.",
+    explanation_en: "The Federal Council represents the states at federal level. Many laws need its approval, especially those affecting the states."
   }
 ];
