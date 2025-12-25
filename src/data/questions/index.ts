@@ -6,14 +6,14 @@ import { part4Questions } from './part4';
 import { part5Questions } from './part5';
 import { part6Questions } from './part6';
 import { part7Questions } from './part7';
-// Import additional parts here as they are created:
-// import { part8Questions } from './part8';
-// etc.
+import { additionalStateQuestions } from './stateQuestions';
 
 export type { Question, Bundesland } from './types';
 export { categories, bundeslaender } from './types';
 
 // Merge all question parts into a single array
+// Total: 300 general + 160 state-specific (10 per state × 16 states) = 460 in DB
+// Each user sees: 300 general + 10 for their state = 310 questions
 export const questions = [
   ...part1Questions,
   ...part2Questions,
@@ -22,5 +22,5 @@ export const questions = [
   ...part5Questions,
   ...part6Questions,
   ...part7Questions,
-  // Add more parts as needed
+  ...additionalStateQuestions,
 ];
