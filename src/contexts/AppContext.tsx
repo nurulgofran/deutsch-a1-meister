@@ -5,6 +5,9 @@ interface AppContextType {
   progress: UserProgress;
   settings: AppSettings;
   isLoaded: boolean;
+  isStreakActiveToday: boolean;
+  streakJustIncremented: boolean;
+  clearStreakIncrement: () => void;
   recordAnswer: (questionId: string, category: string, isCorrect: boolean) => void;
   recordExamResult: (result: ExamResult) => void;
   toggleBookmark: (questionId: string) => void;

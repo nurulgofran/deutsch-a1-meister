@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Bundesland } from '@/data/questions/index';
 
 export interface UserProgress {
@@ -47,10 +47,19 @@ const detectLanguage = (): 'de' | 'en' => {
   return browserLang.startsWith('de') ? 'de' : 'en';
 };
 
+// Get today's date string
+const getTodayString = () => new Date().toISOString().split('T')[0];
+
 export function useAppStore() {
   const [progress, setProgress] = useState<UserProgress>(DEFAULT_PROGRESS);
   const [settings, setSettings] = useState<AppSettings>(DEFAULT_SETTINGS);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [streakJustIncremented, setStreakJustIncremented] = useState(false);
+
+  // Check if user has been active today (answered at least one question)
+  const isStreakActiveToday = useMemo(() => {
+    return progress.lastActiveDate === getTodayString();
+  }, [progress.lastActiveDate]);
 
   // Load from localStorage on mount
   useEffect(() => {
@@ -93,23 +102,38 @@ export function useAppStore() {
     }
   }, [settings, isLoaded]);
 
-  // Update streak
-  const updateStreak = useCallback(() => {
-    const today = new Date().toISOString().split('T')[0];
+  // Update streak - returns true if streak was incremented
+  const updateStreak = useCallback((): boolean => {
+    const today = getTodayString();
     const lastActive = progress.lastActiveDate;
 
-    if (lastActive === today) return;
+    // Already active today, no change needed
+    if (lastActive === today) return false;
 
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const yesterdayStr = yesterday.toISOString().split('T')[0];
 
+    const wasConsecutive = lastActive === yesterdayStr;
+    const newStreak = wasConsecutive ? progress.streak + 1 : 1;
+
     setProgress(prev => ({
       ...prev,
-      streak: lastActive === yesterdayStr ? prev.streak + 1 : 1,
+      streak: newStreak,
       lastActiveDate: today
     }));
-  }, [progress.lastActiveDate]);
+
+    // Trigger the confetti/celebration effect
+    setStreakJustIncremented(true);
+    setTimeout(() => setStreakJustIncremented(false), 3000);
+
+    return true;
+  }, [progress.lastActiveDate, progress.streak]);
+
+  // Clear the streak increment flag (for animations)
+  const clearStreakIncrement = useCallback(() => {
+    setStreakJustIncremented(false);
+  }, []);
 
   // Record answer
   const recordAnswer = useCallback((questionId: string, category: string, isCorrect: boolean) => {
@@ -196,6 +220,9 @@ export function useAppStore() {
     progress,
     settings,
     isLoaded,
+    isStreakActiveToday,
+    streakJustIncremented,
+    clearStreakIncrement,
     recordAnswer,
     recordExamResult,
     toggleBookmark,
