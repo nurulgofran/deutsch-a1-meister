@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Leben in Deutschland</string>
+    <string name="title_activity_main">Leben in Deutschland</string>
+    <string name="package_name">app.lovable.e20f80eb56fd4cd481ee98fa23f39d92</string>
+    <string name="custom_url_scheme">app.lovable.e20f80eb56fd4cd481ee98fa23f39d92</string>
+</resources>

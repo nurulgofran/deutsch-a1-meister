@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { bundeslaender, Bundesland } from '@/data/questions/index';
 import { cn } from '@/lib/utils';
 
+import { storage } from '@/lib/storage';
+
 interface WelcomeProps {
   onComplete: (bundesland: Bundesland) => void;
 }
@@ -16,7 +18,7 @@ export default function Welcome({ onComplete }: WelcomeProps) {
   const [selectedBundesland, setSelectedBundesland] = useState<Bundesland>('Berlin');
 
   const handleComplete = () => {
-    localStorage.setItem('hasSeenOnboarding', 'true');
+    storage.set('hasSeenOnboarding', 'true');
     onComplete(selectedBundesland);
     navigate('/');
   };

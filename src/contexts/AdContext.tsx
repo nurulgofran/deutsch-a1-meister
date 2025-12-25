@@ -1,34 +1,35 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
+import { AdMob, RewardAdPluginEvents, AdMobRewardItem } from '@capacitor-community/admob';
+import { Capacitor } from '@capacitor/core';
 
 interface AdContextType {
   isPro: boolean;
   setPro: (value: boolean) => void;
-  // Ad unit IDs - replace these with your actual ad unit IDs
   adUnitIds: {
     banner: string;
     interstitial: string;
     rewarded: string;
   };
-  // Interstitial ad control
   showInterstitial: boolean;
-  triggerInterstitial: () => void;
+  triggerInterstitial: () => Promise<void>;
   closeInterstitial: () => void;
-  // Rewarded ad control
   showRewarded: boolean;
   rewardedCallback: (() => void) | null;
-  triggerRewardedAd: (onReward: () => void) => void;
+  triggerRewardedAd: (onReward: () => void) => Promise<void>;
   closeRewardedAd: (claimed: boolean) => void;
-  // Ad frequency control
   lastInterstitialTime: number;
   canShowInterstitial: () => boolean;
 }
 
 const AdContext = createContext<AdContextType | undefined>(undefined);
 
+// REPLACE THESE WITH YOUR REAL AD UNIT IDS FOR PRODUCTION
+// CURRENTLY USING TEST IDS
 const AD_UNIT_IDS = {
-  banner: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
-  interstitial: 'ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ',
-  rewarded: 'ca-app-pub-XXXXXXXXXXXXXXXX/WWWWWWWWWW',
+  // Test IDs (Android)
+  banner: 'ca-app-pub-3940256099942544/6300978111', 
+  interstitial: 'ca-app-pub-3940256099942544/1033173712',
+  rewarded: 'ca-app-pub-3940256099942544/5224354917',
 };
 
 const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
@@ -39,10 +40,26 @@ export function AdProvider({ children }: { children: ReactNode }) {
     return saved === 'true';
   });
   
+  // These are mainly for UI state if needed, but AdMob handles its own views
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [showRewarded, setShowRewarded] = useState(false);
   const [rewardedCallback, setRewardedCallback] = useState<(() => void) | null>(null);
   const [lastInterstitialTime, setLastInterstitialTime] = useState(0);
+
+  useEffect(() => {
+    const initAdMob = async () => {
+      try {
+        await AdMob.initialize({
+          // requestTrackingAuthorization: true, // Not needed in init
+          // testingDevices: ['YOUR_DEVICE_ID'], // Add device ID for testing if needed
+          initializeForTesting: true, // Remove for production
+        });
+      } catch (error) {
+        console.error('AdMob init error', error);
+      }
+    };
+    initAdMob();
+  }, []);
 
   const setPro = useCallback((value: boolean) => {
     setIsPro(value);
@@ -55,34 +72,95 @@ export function AdProvider({ children }: { children: ReactNode }) {
     return now - lastInterstitialTime >= INTERSTITIAL_COOLDOWN;
   }, [isPro, lastInterstitialTime]);
 
-  const triggerInterstitial = useCallback(() => {
+  const triggerInterstitial = useCallback(async () => {
     if (isPro) return;
     if (!canShowInterstitial()) return;
-    setShowInterstitial(true);
-    setLastInterstitialTime(Date.now());
+
+    if (Capacitor.isNativePlatform()) {
+      try {
+        await AdMob.prepareInterstitial({
+          adId: AD_UNIT_IDS.interstitial,
+          isTesting: true, // Remove for production
+        });
+        await AdMob.showInterstitial();
+        setLastInterstitialTime(Date.now());
+        // Native ad shown, do not show React overlay
+      } catch (error) {
+        console.error('Interstitial failed', error);
+      }
+    } else {
+      // Web fallback: Show mock component
+      setShowInterstitial(true);
+      setLastInterstitialTime(Date.now());
+    }
   }, [isPro, canShowInterstitial]);
 
   const closeInterstitial = useCallback(() => {
     setShowInterstitial(false);
   }, []);
 
-  const triggerRewardedAd = useCallback((onReward: () => void) => {
+  // Helper to handle the reward event
+  useEffect(() => {
+    let handler: any; 
+
+    const setupListener = async () => {
+      // Only set up listener on native
+      if (Capacitor.isNativePlatform()) {
+          handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
+             console.log('User rewarded', item);
+             setRewardedCallback(prevCallback => {
+               if (prevCallback) {
+                 prevCallback();
+                 return null;
+               }
+               return prevCallback;
+             });
+          });
+      }
+    };
+    
+    setupListener();
+
+    return () => {
+      if (handler) {
+        handler.remove();
+      }
+    };
+  }, []); // Remove dependency on rewardedCallback to avoid re-binding
+
+  const triggerRewardedAd = useCallback(async (onReward: () => void) => {
     if (isPro) {
-      // Pro users get reward without ad
       onReward();
       return;
     }
-    setRewardedCallback(() => onReward);
-    setShowRewarded(true);
+    
+    setRewardedCallback(() => onReward); // Store callback
+
+    if (Capacitor.isNativePlatform()) {
+      try {
+        await AdMob.prepareRewardVideoAd({
+          adId: AD_UNIT_IDS.rewarded,
+           isTesting: true, // Remove for production
+        });
+        await AdMob.showRewardVideoAd();
+        // Native ad shown, do not show React overlay
+      } catch (error) {
+        console.error('Rewarded ad failed', error);
+        setRewardedCallback(null); 
+      }
+    } else {
+      // Web fallback: Show mock component
+      setShowRewarded(true);
+    }
   }, [isPro]);
 
   const closeRewardedAd = useCallback((claimed: boolean) => {
-    if (claimed && rewardedCallback) {
-      rewardedCallback();
-    }
+    // This is less relevant with native UI, but good for cleanup
     setShowRewarded(false);
-    setRewardedCallback(null);
-  }, [rewardedCallback]);
+    if (!claimed) { // If closed without reward (though AdMob handles this mostly)
+        setRewardedCallback(null);
+    }
+  }, []);
 
   return (
     <AdContext.Provider
