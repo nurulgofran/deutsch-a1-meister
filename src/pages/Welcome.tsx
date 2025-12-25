@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GraduationCap, BookOpen, ChevronRight, Sparkles, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,8 +17,22 @@ export default function Welcome({ onComplete }: WelcomeProps) {
   const [step, setStep] = useState(0);
   const [selectedBundesland, setSelectedBundesland] = useState<Bundesland>('Berlin');
 
+  // Persist current onboarding step
+  useEffect(() => {
+    const savedStep = storage.get<number>('lid-onboarding-step', 0);
+    if (savedStep > 0 && savedStep < 3) {
+      setStep(savedStep);
+    }
+  }, []);
+
+  // Save step changes
+  useEffect(() => {
+    storage.set('lid-onboarding-step', step);
+  }, [step]);
+
   const handleComplete = () => {
     storage.set('hasSeenOnboarding', 'true');
+    storage.remove('lid-onboarding-step');
     onComplete(selectedBundesland);
     navigate('/');
   };

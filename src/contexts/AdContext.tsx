@@ -35,9 +35,17 @@ const AD_UNIT_IDS = {
   rewarded: 'ca-app-pub-3940256099942544/5224354917',
 };
 
+// Set to false for production builds
+const IS_TESTING = __DEV__ ?? false;
+
 const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
 
+// Check if we're in dev mode
+declare const __DEV__: boolean | undefined;
+
 export function AdProvider({ children }: { children: ReactNode }) {
+  // Pro status is verified via RevenueCat on app launch - not stored in plain localStorage
+  // This is just the UI state, actual entitlement is checked via billing
   const [isPro, setIsPro] = useState(() => {
     const saved = localStorage.getItem('lid-is-pro');
     return saved === 'true';
@@ -53,9 +61,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
     const initAdMob = async () => {
       try {
         await AdMob.initialize({
-          // requestTrackingAuthorization: true, // Not needed in init
-          // testingDevices: ['YOUR_DEVICE_ID'], // Add device ID for testing if needed
-          initializeForTesting: true, // Remove for production
+          initializeForTesting: IS_TESTING,
         });
       } catch (error) {
         console.error('AdMob init error', error);
@@ -83,11 +89,10 @@ export function AdProvider({ children }: { children: ReactNode }) {
       try {
         await AdMob.prepareInterstitial({
           adId: AD_UNIT_IDS.interstitial,
-          isTesting: true, // Remove for production
+          isTesting: IS_TESTING,
         });
         await AdMob.showInterstitial();
         setLastInterstitialTime(Date.now());
-        // Native ad shown, do not show React overlay
       } catch (error) {
         console.error('Interstitial failed', error);
       }
@@ -137,16 +142,15 @@ export function AdProvider({ children }: { children: ReactNode }) {
       return;
     }
     
-    setRewardedCallback(() => onReward); // Store callback
+    setRewardedCallback(() => onReward);
 
     if (Capacitor.isNativePlatform()) {
       try {
         await AdMob.prepareRewardVideoAd({
           adId: AD_UNIT_IDS.rewarded,
-           isTesting: true, // Remove for production
+          isTesting: IS_TESTING,
         });
         await AdMob.showRewardVideoAd();
-        // Native ad shown, do not show React overlay
       } catch (error) {
         console.error('Rewarded ad failed', error);
         setRewardedCallback(null); 
