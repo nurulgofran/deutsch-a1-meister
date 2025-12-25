@@ -2,8 +2,9 @@
 import { part1Questions } from './part1';
 import { part2Questions } from './part2';
 import { part3Questions } from './part3';
+import { part4Questions } from './part4';
 // Import additional parts here as they are created:
-// import { part4Questions } from './part4';
+// import { part5Questions } from './part5';
 // etc.
 
 export type { Question, Bundesland } from './types';
@@ -14,5 +15,6 @@ export const questions = [
   ...part1Questions,
   ...part2Questions,
   ...part3Questions,
+  ...part4Questions,
   // Add more parts as needed
 ];
