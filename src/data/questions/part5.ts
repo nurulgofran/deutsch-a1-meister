@@ -13,7 +13,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die DDR hatte eine Planwirtschaft: Der Staat plante Produktion und Preise. Es gab keinen freien Markt.",
+    explanation_en: "The GDR had a planned economy: The state planned production and prices. There was no free market."
   },
   {
     id: "182",
@@ -27,7 +29,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlen in der DDR waren nicht frei. Die SED kontrollierte das Ergebnis – echte Wahlalternativen gab es nicht.",
+    explanation_en: "Elections in the GDR were not free. The SED controlled the results – there were no real electoral alternatives."
   },
   {
     id: "183",
@@ -41,7 +45,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die SED (Sozialistische Einheitspartei Deutschlands) war die alleinherrschende Partei der DDR.",
+    explanation_en: "The SED (Socialist Unity Party of Germany) was the sole ruling party of the GDR."
   },
   {
     id: "184",
@@ -55,7 +61,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die DDR war eine Diktatur mit Einparteienherrschaft der SED. Meinungsfreiheit gab es nicht, die Stasi überwachte die Bürger.",
+    explanation_en: "The GDR was a dictatorship with one-party rule by the SED. There was no freedom of speech; the Stasi monitored citizens."
   },
   {
     id: "185",
@@ -69,7 +77,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die EU wurde 1993 durch den Vertrag von Maastricht gegründet. 1957 wurde die EWG (Vorläufer) gegründet.",
+    explanation_en: "The EU was founded in 1993 through the Maastricht Treaty. In 1957, the EEC (predecessor) was founded."
   },
   {
     id: "186",
@@ -83,7 +93,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Euro wurde am 1. Januar 2002 als Bargeld eingeführt. Seit 1999 gab es ihn bereits als Buchgeld.",
+    explanation_en: "The Euro was introduced as cash on January 1, 2002. It had existed as book money since 1999."
   },
   {
     id: "187",
@@ -97,7 +109,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Deutsche Mark (D-Mark) war von 1948 bis 2002 die Währung der Bundesrepublik Deutschland.",
+    explanation_en: "The Deutsche Mark (D-Mark) was the currency of the Federal Republic of Germany from 1948 to 2002."
   },
   {
     id: "188",
@@ -111,7 +125,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die EU hat 27 Mitgliedstaaten. Nach dem Brexit (2020) ist Großbritannien nicht mehr Mitglied.",
+    explanation_en: "The EU has 27 member states. After Brexit (2020), Great Britain is no longer a member."
   },
   {
     id: "189",
@@ -125,7 +141,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Europäische Parlament hat seinen Hauptsitz in Straßburg (Frankreich). Es tagt auch in Brüssel.",
+    explanation_en: "The European Parliament has its main seat in Strasbourg (France). It also meets in Brussels."
   },
   {
     id: "190",
@@ -139,7 +157,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die EU ist ein Zusammenschluss von 27 europäischen Staaten zur politischen und wirtschaftlichen Zusammenarbeit.",
+    explanation_en: "The EU is a union of 27 European states for political and economic cooperation."
   },
   {
     id: "191",
@@ -153,7 +173,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland ist Gründungsmitglied der EWG (1957) und damit auch der EU. Es war von Anfang an dabei.",
+    explanation_en: "Germany is a founding member of the EEC (1957) and thus also of the EU. It was there from the beginning."
   },
   {
     id: "192",
@@ -167,7 +189,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "EU-Mitglieder genießen freien Handel, Reisefreiheit und Arbeitnehmerfreizügigkeit im Binnenmarkt.",
+    explanation_en: "EU members enjoy free trade, freedom of travel, and freedom of movement for workers in the single market."
   },
   {
     id: "193",
@@ -181,7 +205,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die NATO (Nordatlantikpakt) ist ein Militärbündnis westlicher Staaten zur gemeinsamen Verteidigung.",
+    explanation_en: "NATO (North Atlantic Treaty Organization) is a military alliance of Western states for collective defense."
   },
   {
     id: "194",
@@ -195,7 +221,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die UNO (Vereinte Nationen) ist eine internationale Organisation mit dem Ziel, Frieden und Sicherheit zu fördern.",
+    explanation_en: "The UN (United Nations) is an international organization with the goal of promoting peace and security."
   },
   {
     id: "195",
@@ -209,7 +237,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die UNESCO ist eine UN-Organisation für Bildung, Wissenschaft und Kultur. Sie schützt auch Welterbestätten.",
+    explanation_en: "UNESCO is a UN organization for education, science, and culture. It also protects World Heritage sites."
   },
   {
     id: "196",
@@ -223,7 +253,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Schweiz ist kein EU-Mitglied. Sie hat ihre Neutralität und Unabhängigkeit bewahrt.",
+    explanation_en: "Switzerland is not an EU member. It has preserved its neutrality and independence."
   },
   {
     id: "197",
@@ -237,7 +269,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Polen ist seit 2004 EU-Mitglied. Russland, Norwegen und die Schweiz sind nicht in der EU.",
+    explanation_en: "Poland has been an EU member since 2004. Russia, Norway, and Switzerland are not in the EU."
   },
   {
     id: "198",
@@ -251,7 +285,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nicht alle EU-Länder haben den Euro. Manche wie Polen, Schweden und Ungarn behalten ihre eigene Währung.",
+    explanation_en: "Not all EU countries have the Euro. Some like Poland, Sweden, and Hungary keep their own currency."
   },
   {
     id: "199",
@@ -265,7 +301,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Frankreich war 1957 eines der sechs Gründungsmitglieder der EWG, zusammen mit Deutschland, Italien, Belgien, Niederlande und Luxemburg.",
+    explanation_en: "France was one of the six founding members of the EEC in 1957, along with Germany, Italy, Belgium, Netherlands, and Luxembourg."
   },
   {
     id: "200",
@@ -279,7 +317,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die EU-Flagge ist blau mit 12 goldenen Sternen im Kreis. Die 12 Sterne stehen für Einheit, nicht für die Anzahl der Mitglieder.",
+    explanation_en: "The EU flag is blue with 12 golden stars in a circle. The 12 stars represent unity, not the number of members."
   },
   {
     id: "201",
@@ -293,7 +333,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Europäische Gerichtshof (EuGH) hat seinen Sitz in Luxemburg. Er ist das höchste Gericht der EU.",
+    explanation_en: "The European Court of Justice (ECJ) is located in Luxembourg. It is the highest court of the EU."
   },
   {
     id: "202",
@@ -307,7 +349,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die ersten Direktwahlen zum Europäischen Parlament fanden 1979 statt. Seitdem werden die EU-Abgeordneten alle 5 Jahre gewählt.",
+    explanation_en: "The first direct elections to the European Parliament took place in 1979. Since then, MEPs are elected every 5 years."
   },
   {
     id: "203",
@@ -321,7 +365,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Europäische Zentralbank (EZB) hat ihren Sitz in Frankfurt am Main. Sie ist für die Euro-Geldpolitik zuständig.",
+    explanation_en: "The European Central Bank (ECB) is located in Frankfurt am Main. It is responsible for Euro monetary policy."
   },
   {
     id: "204",
@@ -335,7 +381,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Großbritannien verließ die EU am 31. Januar 2020 (Brexit). Es war das erste Land, das die EU verließ.",
+    explanation_en: "Great Britain left the EU on January 31, 2020 (Brexit). It was the first country to leave the EU."
   },
   {
     id: "205",
@@ -349,7 +397,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Im Schengen-Raum gibt es keine Grenzkontrollen zwischen den Mitgliedsstaaten. Man kann frei reisen.",
+    explanation_en: "In the Schengen Area, there are no border controls between member states. You can travel freely."
   },
   {
     id: "206",
@@ -363,7 +413,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Sauerkraut ist ein traditionelles deutsches Gericht aus fermentiertem Weißkohl. Es wird oft zu Fleischgerichten serviert.",
+    explanation_en: "Sauerkraut is a traditional German dish made from fermented cabbage. It is often served with meat dishes."
   },
   {
     id: "207",
@@ -377,7 +429,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Oktoberfest in München ist das größte Volksfest der Welt. Es findet jährlich im September und Oktober statt.",
+    explanation_en: "The Oktoberfest in Munich is the world's largest folk festival. It takes place annually in September and October."
   },
   {
     id: "208",
@@ -391,7 +445,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Oktoberfest findet jährlich in München auf der Theresienwiese statt. Es ist das größte Volksfest der Welt.",
+    explanation_en: "The Oktoberfest takes place annually in Munich at the Theresienwiese. It is the world's largest folk festival."
   },
   {
     id: "209",
@@ -405,7 +461,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Karneval (Fasching) ist ein Volksfest vor der Fastenzeit mit Umzügen, Kostümen und Feiern.",
+    explanation_en: "Carnival is a folk festival before Lent with parades, costumes, and celebrations."
   },
   {
     id: "210",
@@ -419,7 +477,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Karneval wird besonders im Rheinland gefeiert, vor allem in Köln, Düsseldorf und Mainz.",
+    explanation_en: "Carnival is especially celebrated in the Rhineland, particularly in Cologne, Düsseldorf, and Mainz."
   },
   {
     id: "211",
@@ -433,7 +493,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Johann Sebastian Bach (1685-1750) war ein berühmter deutscher Komponist des Barock. Mozart war Österreicher.",
+    explanation_en: "Johann Sebastian Bach (1685-1750) was a famous German Baroque composer. Mozart was Austrian."
   },
   {
     id: "212",
@@ -447,7 +509,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Ludwig van Beethoven (1770-1827) war ein berühmter deutscher Komponist. Seine 9. Symphonie enthält die Ode an die Freude.",
+    explanation_en: "Ludwig van Beethoven (1770-1827) was a famous German composer. His 9th Symphony contains the Ode to Joy."
   },
   {
     id: "213",
@@ -461,7 +525,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Goethe (1749-1832) war der bedeutendste deutsche Dichter. Sein bekanntestes Werk ist 'Faust'.",
+    explanation_en: "Goethe (1749-1832) was the most important German poet. His most famous work is 'Faust'."
   },
   {
     id: "214",
@@ -475,7 +541,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "'Faust' ist Goethes bekanntestes Drama. Die Zauberflöte ist von Mozart, Die Räuber von Schiller, Nathan von Lessing.",
+    explanation_en: "'Faust' is Goethe's most famous drama. The Magic Flute is by Mozart, The Robbers by Schiller, Nathan by Lessing."
   },
   {
     id: "215",
@@ -489,7 +557,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Friedrich Schiller (1759-1805) war ein bedeutender deutscher Dichter und Dramatiker, bekannt für 'Die Räuber' und 'Wilhelm Tell'.",
+    explanation_en: "Friedrich Schiller (1759-1805) was an important German poet and playwright, known for 'The Robbers' and 'William Tell'."
   },
   {
     id: "216",
@@ -503,7 +573,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Martin Luther (1483-1546) begann 1517 die Reformation. Er übersetzte die Bibel ins Deutsche und gründete den Protestantismus.",
+    explanation_en: "Martin Luther (1483-1546) started the Reformation in 1517. He translated the Bible into German and founded Protestantism."
   },
   {
     id: "217",
@@ -517,7 +589,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Reformation begann 1517 im 16. Jahrhundert, als Martin Luther seine 95 Thesen veröffentlichte.",
+    explanation_en: "The Reformation began in 1517 in the 16th century when Martin Luther published his 95 theses."
   },
   {
     id: "218",
@@ -531,7 +605,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Albert Einstein (1879-1955) war ein berühmter deutscher Physiker. Er entwickelte die Relativitätstheorie.",
+    explanation_en: "Albert Einstein (1879-1955) was a famous German physicist. He developed the theory of relativity."
   },
   {
     id: "219",
@@ -545,7 +621,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Einstein erhielt 1921 den Nobelpreis für Physik für seine Erklärung des photoelektrischen Effekts.",
+    explanation_en: "Einstein received the Nobel Prize for Physics in 1921 for his explanation of the photoelectric effect."
   },
   {
     id: "220",
@@ -559,7 +637,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Johannes Gutenberg erfand um 1450 den Buchdruck mit beweglichen Lettern. Dies revolutionierte die Verbreitung von Wissen.",
+    explanation_en: "Johannes Gutenberg invented the printing press with movable type around 1450. This revolutionized the spread of knowledge."
   },
   {
     id: "221",
@@ -573,7 +653,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Johannes Gutenberg lebte von etwa 1400 bis 1468 im 15. Jahrhundert. Er erfand den modernen Buchdruck.",
+    explanation_en: "Johannes Gutenberg lived from about 1400 to 1468 in the 15th century. He invented modern printing."
   },
   {
     id: "222",
@@ -587,7 +669,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Fußball ist der beliebteste Sport in Deutschland. Die Bundesliga gehört zu den besten Ligen der Welt.",
+    explanation_en: "Football (soccer) is the most popular sport in Germany. The Bundesliga is among the best leagues in the world."
   },
   {
     id: "223",
@@ -601,7 +685,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland ist weltweit für seine Automobilindustrie bekannt: Mercedes-Benz, BMW, Volkswagen, Audi, Porsche.",
+    explanation_en: "Germany is known worldwide for its automobile industry: Mercedes-Benz, BMW, Volkswagen, Audi, Porsche."
   },
   {
     id: "224",
@@ -615,7 +701,9 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "BMW und Mercedes-Benz sind deutsche Automarken. Auch VW, Audi, Porsche und Opel sind deutsche Hersteller.",
+    explanation_en: "BMW and Mercedes-Benz are German car brands. VW, Audi, Porsche, and Opel are also German manufacturers."
   },
   {
     id: "225",
@@ -629,6 +717,8 @@ export const part5Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Autobahn ist ein Schnellstraßennetz in Deutschland. Auf vielen Abschnitten gibt es kein generelles Tempolimit.",
+    explanation_en: "The Autobahn is a highway network in Germany. On many sections, there is no general speed limit."
   }
 ];

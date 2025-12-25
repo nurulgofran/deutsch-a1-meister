@@ -13,7 +13,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Harz ist ein Mittelgebirge in Deutschland. Die Alpen sind ein Hochgebirge, Pyrenäen und Karpaten liegen nicht in Deutschland.",
+    explanation_en: "The Harz is a low mountain range in Germany. The Alps are high mountains; the Pyrenees and Carpathians are not in Germany."
   },
   {
     id: "227",
@@ -27,7 +29,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Rhein ist einer der wichtigsten Flüsse Deutschlands. Er fließt von der Schweiz durch Deutschland bis zur Nordsee.",
+    explanation_en: "The Rhine is one of Germany's most important rivers. It flows from Switzerland through Germany to the North Sea."
   },
   {
     id: "228",
@@ -41,7 +45,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bodensee liegt in Deutschland (sowie in Österreich und der Schweiz). Er ist der drittgrößte See Mitteleuropas.",
+    explanation_en: "Lake Constance is in Germany (as well as Austria and Switzerland). It is the third largest lake in Central Europe."
   },
   {
     id: "229",
@@ -55,7 +61,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Alpen bilden die Grenze zwischen Deutschland und Österreich. Die Zugspitze ist Deutschlands höchster Berg.",
+    explanation_en: "The Alps form the border between Germany and Austria. The Zugspitze is Germany's highest mountain."
   },
   {
     id: "230",
@@ -69,7 +77,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Zugspitze (2.962 m) in Bayern ist der höchste Berg Deutschlands. Der Großglockner liegt in Österreich.",
+    explanation_en: "The Zugspitze (2,962 m) in Bavaria is Germany's highest mountain. The Großglockner is in Austria."
   },
   {
     id: "231",
@@ -83,7 +93,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Frankfurt am Main ist keine Landeshauptstadt. Die Hauptstadt von Hessen ist Wiesbaden.",
+    explanation_en: "Frankfurt am Main is not a state capital. The capital of Hesse is Wiesbaden."
   },
   {
     id: "232",
@@ -97,7 +109,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "München ist die Landeshauptstadt von Bayern und mit etwa 1,5 Millionen Einwohnern die drittgrößte Stadt Deutschlands.",
+    explanation_en: "Munich is the state capital of Bavaria and with about 1.5 million inhabitants, Germany's third largest city."
   },
   {
     id: "233",
@@ -111,7 +125,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Berlin ist mit etwa 3,6 Millionen Einwohnern die größte Stadt Deutschlands. Es ist auch die Hauptstadt.",
+    explanation_en: "Berlin is Germany's largest city with about 3.6 million inhabitants. It is also the capital."
   },
   {
     id: "234",
@@ -125,7 +141,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland hat etwa 84 Millionen Einwohner. Es ist das bevölkerungsreichste Land der EU.",
+    explanation_en: "Germany has about 84 million inhabitants. It is the most populous country in the EU."
   },
   {
     id: "235",
@@ -139,7 +157,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nordrhein-Westfalen (NRW) hat etwa 18 Millionen Einwohner und ist damit das bevölkerungsreichste Bundesland.",
+    explanation_en: "North Rhine-Westphalia (NRW) has about 18 million inhabitants and is thus the most populous federal state."
   },
   {
     id: "236",
@@ -153,7 +173,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Bayern ist mit etwa 70.500 km² das flächenmäßig größte Bundesland Deutschlands.",
+    explanation_en: "Bavaria is the largest federal state in Germany by area with about 70,500 km²."
   },
   {
     id: "237",
@@ -167,7 +189,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Berlin, Hamburg und Bremen sind Stadtstaaten – sie sind gleichzeitig Stadt und Bundesland.",
+    explanation_en: "Berlin, Hamburg, and Bremen are city-states – they are both a city and a federal state."
   },
   {
     id: "238",
@@ -181,7 +205,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Portugal liegt an der Atlantikküste und hat keine Grenze mit Deutschland. Es liegt neben Spanien.",
+    explanation_en: "Portugal is on the Atlantic coast and does not border Germany. It is next to Spain."
   },
   {
     id: "239",
@@ -195,21 +221,25 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland hat 9 Nachbarländer: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien, Niederlande.",
+    explanation_en: "Germany has 9 neighboring countries: Denmark, Poland, Czech Republic, Austria, Switzerland, France, Luxembourg, Belgium, Netherlands."
   },
   {
     id: "240",
-    text_de: "Woran__(Lücke)__ man in Deutschland, dass__(Lücke)____(Lücke)__?",
+    text_de: "Woran erkennt man in Deutschland, dass es Advent ist?",
     text_en: "How do you know that it is Advent in Germany?",
     options: [
-      { de: "an den__(Lücke)__ Ostereiern", en: "from the Easter eggs" },
+      { de: "an den Ostereiern", en: "from the Easter eggs" },
       { de: "an den Adventskränzen", en: "from the Advent wreaths" },
       { de: "an den Karnevalsumzügen", en: "from the carnival parades" },
       { de: "an den Maibäumen", en: "from the maypoles" }
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Adventskränze mit 4 Kerzen zeigen den Advent an. Jeden Sonntag vor Weihnachten wird eine weitere Kerze angezündet.",
+    explanation_en: "Advent wreaths with 4 candles indicate Advent. Each Sunday before Christmas, another candle is lit."
   },
   {
     id: "241",
@@ -223,7 +253,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Weihnachten wird am 25. und 26. Dezember gefeiert. In Deutschland ist auch der 26. Dezember ein gesetzlicher Feiertag.",
+    explanation_en: "Christmas is celebrated on December 25 and 26. In Germany, December 26 is also a public holiday."
   },
   {
     id: "242",
@@ -237,11 +269,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der 1. Mai (Tag der Arbeit) ist ein gesetzlicher Feiertag in ganz Deutschland.",
+    explanation_en: "May 1 (Labor Day) is a public holiday throughout Germany."
   },
   {
     id: "243",
-    text_de: "Wie heißt der__(Lücke)__ Feiertag, der__(Lücke)__ Deutschland__(Lücke)__ wird?",
+    text_de: "Wie heißt der nationale Feiertag, der in Deutschland gefeiert wird?",
     text_en: "What is the name of the national holiday celebrated in Germany?",
     options: [
       { de: "Tag der Arbeit", en: "Labor Day" },
@@ -251,7 +285,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Tag der Deutschen Einheit am 3. Oktober ist der Nationalfeiertag Deutschlands zur Erinnerung an die Wiedervereinigung 1990.",
+    explanation_en: "German Unity Day on October 3 is Germany's national holiday commemorating reunification in 1990."
   },
   {
     id: "244",
@@ -265,7 +301,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Tag der Deutschen Einheit ist am 3. Oktober, dem Tag der Wiedervereinigung 1990.",
+    explanation_en: "German Unity Day is on October 3, the day of reunification in 1990."
   },
   {
     id: "245",
@@ -279,7 +317,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundesadler ist das Wappentier Deutschlands. Er war schon Symbol des Heiligen Römischen Reiches.",
+    explanation_en: "The Federal Eagle is Germany's heraldic animal. It was already a symbol of the Holy Roman Empire."
   },
   {
     id: "246",
@@ -293,7 +333,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die deutsche Flagge ist schwarz-rot-gold. Diese Farben entstammen der Freiheitsbewegung des 19. Jahrhunderts.",
+    explanation_en: "The German flag is black-red-gold. These colors come from the freedom movement of the 19th century."
   },
   {
     id: "247",
@@ -307,7 +349,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Deutschlandlied (3. Strophe: 'Einigkeit und Recht und Freiheit') ist die Nationalhymne Deutschlands.",
+    explanation_en: "The Deutschlandlied (3rd verse: 'Unity and Justice and Freedom') is Germany's national anthem."
   },
   {
     id: "248",
@@ -321,11 +365,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Bundesregierung arbeitet seit 1999 in Berlin. Einige Ministerien haben noch Zweitsitze in Bonn.",
+    explanation_en: "The Federal Government has been working in Berlin since 1999. Some ministries still have secondary offices in Bonn."
   },
   {
     id: "249",
-    text_de: "Wie heißt das__(Lücke)__ des__(Lücke)__?",
+    text_de: "Wie heißt das Gebäude, in dem der Bundestag tagt?",
     text_en: "What is the building where the Bundestag meets called?",
     options: [
       { de: "Reichstag", en: "Reichstag" },
@@ -335,7 +381,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag tagt im Reichstagsgebäude in Berlin. Es ist bekannt für seine gläserne Kuppel.",
+    explanation_en: "The Bundestag meets in the Reichstag building in Berlin. It is known for its glass dome."
   },
   {
     id: "250",
@@ -349,11 +397,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident wohnt und arbeitet im Schloss Bellevue in Berlin. Es ist sein Amtssitz.",
+    explanation_en: "The Federal President lives and works in Bellevue Palace in Berlin. It is his official residence."
   },
   {
     id: "251",
-    text_de: "An welchem Ort__(Lücke)__ die__(Lücke)?",
+    text_de: "An welchem Ort entstand die deutsche Verfassung?",
     text_en: "Where did the German constitution originate?",
     options: [
       { de: "Berlin", en: "Berlin" },
@@ -363,11 +413,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "history",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Grundgesetz wurde 1949 in Bonn verabschiedet. Bonn war bis 1999 auch die Hauptstadt der Bundesrepublik.",
+    explanation_en: "The Basic Law was adopted in Bonn in 1949. Bonn was also the capital of the Federal Republic until 1999."
   },
   {
     id: "252",
-    text_de: "Wer__(Lücke)__ das Recht auf__(Lücke)?",
+    text_de: "Wer hat das Recht auf Asyl?",
     text_en: "Who has the right of asylum?",
     options: [
       { de: "alle Ausländer", en: "all foreigners" },
@@ -377,7 +429,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nach Art. 16a GG haben politisch Verfolgte ein Recht auf Asyl. Wirtschaftliche Gründe allein reichen nicht.",
+    explanation_en: "According to Art. 16a Basic Law, politically persecuted people have a right to asylum. Economic reasons alone are not sufficient."
   },
   {
     id: "253",
@@ -391,11 +445,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Mit 18 Jahren wird man in Deutschland volljährig. Man erhält volle Geschäftsfähigkeit und das aktive Wahlrecht.",
+    explanation_en: "At 18, one becomes an adult in Germany. You receive full legal capacity and the right to vote."
   },
   {
     id: "254",
-    text_de: "Was__(Lücke)__ man mit__(Lücke)__ Jahren__(Lücke)__ Deutschland nicht tun?",
+    text_de: "Was kann man mit 16 Jahren in Deutschland nicht tun?",
     text_en: "What can you not do in Germany at 16 years old?",
     options: [
       { de: "Bier trinken", en: "drink beer" },
@@ -405,25 +461,29 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Den Autoführerschein kann man in Deutschland erst mit 17 (begleitetes Fahren) oder 18 Jahren machen.",
+    explanation_en: "You can only get a car driver's license in Germany at 17 (accompanied driving) or 18 years old."
   },
   {
     id: "255",
-    text_de: "Was muss man in Deutschland machen, wenn man__(Lücke)__ umzieht?",
+    text_de: "Was muss man in Deutschland machen, wenn man umzieht?",
     text_en: "What must you do in Germany when you move?",
     options: [
-      { de: "eine Party__(Lücke)__", en: "throw a party" },
-      { de: "sich__(Lücke)__ Einwohnermeldeamt anmelden", en: "register at the residents' registration office" },
-      { de: "die Nachbarn__(Lücke)__", en: "inform the neighbors" },
+      { de: "eine Party feiern", en: "throw a party" },
+      { de: "sich beim Einwohnermeldeamt anmelden", en: "register at the residents' registration office" },
+      { de: "die Nachbarn informieren", en: "inform the neighbors" },
       { de: "einen Deutschkurs besuchen", en: "attend a German course" }
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nach einem Umzug muss man sich innerhalb von 2 Wochen beim Einwohnermeldeamt anmelden. Das ist Pflicht.",
+    explanation_en: "After moving, you must register at the residents' registration office within 2 weeks. This is mandatory."
   },
   {
     id: "256",
-    text_de: "Was ist__(Lücke)__ Deutschland__(Lücke)?",
+    text_de: "Was ist in Deutschland Pflicht?",
     text_en: "What is compulsory in Germany?",
     options: [
       { de: "das Tragen einer Uniform", en: "wearing a uniform" },
@@ -433,7 +493,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "In Deutschland besteht Schulpflicht. Wehrdienst wurde 2011 ausgesetzt, Wahlpflicht gibt es nicht.",
+    explanation_en: "In Germany, education is compulsory. Military service was suspended in 2011; there is no compulsory voting."
   },
   {
     id: "257",
@@ -447,7 +509,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Vollzeitschulpflicht dauert in den meisten Bundesländern 9 Jahre. Danach folgt oft noch Berufsschulpflicht.",
+    explanation_en: "Full-time compulsory education lasts 9 years in most federal states. Vocational school obligation often follows."
   },
   {
     id: "258",
@@ -461,7 +525,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Zum Autofahren braucht man in Deutschland einen gültigen Führerschein. Fahren ohne Führerschein ist strafbar.",
+    explanation_en: "To drive a car in Germany, you need a valid driver's license. Driving without a license is a criminal offense."
   },
   {
     id: "259",
@@ -475,11 +541,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine Kfz-Haftpflichtversicherung ist in Deutschland Pflicht für alle Autobesitzer.",
+    explanation_en: "Car liability insurance is mandatory in Germany for all car owners."
   },
   {
     id: "260",
-    text_de: "In Deutschland__(Lücke)__ die__(Lücke)__ Ehe gesetzlich erlaubt?",
+    text_de: "Ist die gleichgeschlechtliche Ehe in Deutschland gesetzlich erlaubt?",
     text_en: "Is same-sex marriage legally allowed in Germany?",
     options: [
       { de: "Nein, sie ist verboten.", en: "No, it is forbidden." },
@@ -489,21 +557,25 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Seit Oktober 2017 ist die gleichgeschlechtliche Ehe in Deutschland legal. Vorher gab es nur eingetragene Partnerschaften.",
+    explanation_en: "Since October 2017, same-sex marriage has been legal in Germany. Before that, there were only civil partnerships."
   },
   {
     id: "261",
     text_de: "Was bedeutet 'Gleichberechtigung von Mann und Frau' in Deutschland?",
     text_en: "What does 'equality of men and women' mean in Germany?",
     options: [
-      { de: "Frauen__(Lücke)__ weniger als Männer.", en: "Women earn less than men." },
+      { de: "Frauen verdienen weniger als Männer.", en: "Women earn less than men." },
       { de: "Männer und Frauen haben die gleichen Rechte.", en: "Men and women have the same rights." },
       { de: "Frauen dürfen nicht arbeiten.", en: "Women are not allowed to work." },
       { de: "Nur Männer dürfen wählen.", en: "Only men may vote." }
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Art. 3 GG garantiert die Gleichberechtigung von Mann und Frau. Beide haben die gleichen Rechte und Pflichten.",
+    explanation_en: "Art. 3 Basic Law guarantees equality of men and women. Both have the same rights and obligations."
   },
   {
     id: "262",
@@ -517,7 +589,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Zwangsheirat ist in Deutschland verboten und strafbar. Jeder hat das Recht, frei über eine Heirat zu entscheiden.",
+    explanation_en: "Forced marriage is prohibited and punishable in Germany. Everyone has the right to decide freely about marriage."
   },
   {
     id: "263",
@@ -531,11 +605,13 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Alle Erwachsenen dürfen in Deutschland heiraten, wenn sie freiwillig zustimmen. Zwangsheirat ist verboten.",
+    explanation_en: "All adults may marry in Germany if they consent voluntarily. Forced marriage is prohibited."
   },
   {
     id: "264",
-    text_de: "Wer darf in Deutschland__(Lücke)__ bei einer Eheschließung anwesend sein?",
+    text_de: "Wer muss bei einer Eheschließung in Deutschland anwesend sein?",
     text_en: "Who must be present at a wedding in Germany?",
     options: [
       { de: "ein Pfarrer", en: "a priest" },
@@ -545,7 +621,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine rechtsgültige Ehe wird vor einem Standesbeamten geschlossen. Die kirchliche Trauung ist optional.",
+    explanation_en: "A legally valid marriage is performed before a registrar. Church wedding is optional."
   },
   {
     id: "265",
@@ -559,7 +637,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Körperliche Bestrafung von Kindern ist in Deutschland seit 2000 verboten. Kinder haben ein Recht auf gewaltfreie Erziehung.",
+    explanation_en: "Physical punishment of children has been prohibited in Germany since 2000. Children have a right to non-violent upbringing."
   },
   {
     id: "266",
@@ -573,7 +653,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gewalt gegen Kinder ist strafbar. Kinder haben ein Recht auf gewaltfreie Erziehung (§ 1631 BGB).",
+    explanation_en: "Violence against children is punishable. Children have a right to non-violent upbringing (§ 1631 BGB)."
   },
   {
     id: "267",
@@ -587,21 +669,25 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Kindergarten ist eine Einrichtung für Kinder vor der Schule (meist 3-6 Jahre). Das Wort stammt aus Deutschland.",
+    explanation_en: "Kindergarten is an institution for children before school (usually 3-6 years). The word comes from Germany."
   },
   {
     id: "268",
     text_de: "Was bedeutet 'Mutterschutz' in Deutschland?",
     text_en: "What does 'maternity protection' mean in Germany?",
     options: [
-      { de: "Schutz__(Lücke)__ ältere Frauen", en: "protection for older women" },
-      { de: "Schutz für__(Lücke)__ und__(Lücke)__ Frauen", en: "protection for pregnant women and new mothers" },
+      { de: "Schutz für ältere Frauen", en: "protection for older women" },
+      { de: "Schutz für schwangere und stillende Frauen", en: "protection for pregnant women and new mothers" },
       { de: "Schutz für alleinerziehende Väter", en: "protection for single fathers" },
       { de: "Schutz für Großmütter", en: "protection for grandmothers" }
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Mutterschutz schützt schwangere und stillende Frauen vor Kündigung und gefährlicher Arbeit.",
+    explanation_en: "Maternity protection protects pregnant and breastfeeding women from dismissal and dangerous work."
   },
   {
     id: "269",
@@ -615,7 +701,9 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Elternzeit ist unbezahlte Freistellung von der Arbeit zur Kinderbetreuung. Eltern können bis zu 3 Jahre Elternzeit nehmen.",
+    explanation_en: "Parental leave is unpaid leave from work for childcare. Parents can take up to 3 years of parental leave."
   },
   {
     id: "270",
@@ -629,6 +717,8 @@ export const part6Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Kindergeld ist eine staatliche Leistung für Familien mit Kindern. Es wird monatlich pro Kind gezahlt.",
+    explanation_en: "Child benefit is a state benefit for families with children. It is paid monthly per child."
   }
 ];
