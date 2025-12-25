@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -6,10 +7,11 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Crown, Check, Sparkles, Zap } from 'lucide-react';
+import { Crown, Sparkles, Ban, Lightbulb, RotateCcw, Loader2 } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
 import { toast } from 'sonner';
+import { purchasePro, restorePurchases, BILLING_CONFIG } from '@/lib/billing';
 
 interface ProModalProps {
   open: boolean;
@@ -17,22 +19,87 @@ interface ProModalProps {
 }
 
 export function ProModal({ open, onOpenChange }: ProModalProps) {
-  const { t } = useApp();
+  const { t, settings } = useApp();
   const { setPro } = useAds();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isRestoring, setIsRestoring] = useState(false);
 
+  // Only Pro-exclusive features (things free users DON'T get)
   const features = [
-    { de: 'Detaillierte Erklärungen zu jeder Frage', en: 'Detailed explanations for every question', icon: Sparkles },
-    { de: 'Alle 460 offiziellen Fragen', en: 'All 460 official questions', icon: Check },
-    { de: 'Unbegrenzte Prüfungssimulationen', en: 'Unlimited exam simulations', icon: Zap },
-    { de: 'Keine Werbung', en: 'No advertisements', icon: Check },
-    { de: 'Offline-Modus für alle Inhalte', en: 'Offline mode for all content', icon: Check }
+    { 
+      de: 'Detaillierte Erklärungen zu jeder Frage', 
+      en: 'Detailed explanations for every question', 
+      icon: Lightbulb 
+    },
+    { 
+      de: 'Keine Werbung', 
+      en: 'No advertisements', 
+      icon: Ban 
+    },
+    { 
+      de: 'Kostenlose Hinweise (ohne Videos)', 
+      en: 'Free hints (no video ads)', 
+      icon: Sparkles 
+    },
   ];
 
-  const handlePurchase = () => {
-    setPro(true);
-    toast.success(t('Pro-Version aktiviert!', 'Pro version activated!'));
-    onOpenChange(false);
+  const handlePurchase = async () => {
+    setIsLoading(true);
+    
+    try {
+      const result = await purchasePro();
+      
+      if (result.success) {
+        setPro(true);
+        toast.success(t('Pro-Version aktiviert! 🎉', 'Pro version activated! 🎉'));
+        onOpenChange(false);
+      } else if (result.error === 'cancelled') {
+        // User cancelled, do nothing
+      } else {
+        toast.error(t(
+          'Kauf fehlgeschlagen. Bitte versuche es erneut.',
+          'Purchase failed. Please try again.'
+        ));
+      }
+    } catch (error) {
+      toast.error(t(
+        'Ein Fehler ist aufgetreten.',
+        'An error occurred.'
+      ));
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  const handleRestore = async () => {
+    setIsRestoring(true);
+    
+    try {
+      const result = await restorePurchases();
+      
+      if (result.success) {
+        setPro(true);
+        toast.success(t('Kauf wiederhergestellt! 🎉', 'Purchase restored! 🎉'));
+        onOpenChange(false);
+      } else {
+        toast.info(t(
+          'Kein vorheriger Kauf gefunden.',
+          'No previous purchase found.'
+        ));
+      }
+    } catch (error) {
+      toast.error(t(
+        'Wiederherstellung fehlgeschlagen.',
+        'Restore failed.'
+      ));
+    } finally {
+      setIsRestoring(false);
+    }
+  };
+
+  const priceDisplay = settings.language === 'de' 
+    ? BILLING_CONFIG.priceDE 
+    : BILLING_CONFIG.price;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -48,7 +115,7 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
               {t('Pro Version', 'Pro Version')}
             </DialogTitle>
             <DialogDescription className="text-white/90 font-medium mt-1">
-              {t('Schalte alle Funktionen frei', 'Unlock all features')}
+              {t('Lerne ohne Unterbrechungen', 'Learn without interruptions')}
             </DialogDescription>
           </div>
         </div>
@@ -75,18 +142,49 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
               className="w-full h-14 text-base font-display font-bold gap-2 rounded-xl shadow-button animate-pop" 
               size="lg"
               onClick={handlePurchase}
+              disabled={isLoading || isRestoring}
             >
-              <Sparkles className="h-5 w-5" />
-              {t('Pro für 4,99€ kaufen', 'Buy Pro for $4.99')}
+              {isLoading ? (
+                <Loader2 className="h-5 w-5 animate-spin" />
+              ) : (
+                <Sparkles className="h-5 w-5" />
+              )}
+              {isLoading 
+                ? t('Wird verarbeitet...', 'Processing...') 
+                : t(`Pro für ${priceDisplay} kaufen`, `Buy Pro for ${priceDisplay}`)
+              }
             </Button>
+            
+            <Button 
+              variant="outline" 
+              className="w-full h-10 text-sm font-medium gap-2"
+              onClick={handleRestore}
+              disabled={isLoading || isRestoring}
+            >
+              {isRestoring ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <RotateCcw className="h-4 w-4" />
+              )}
+              {t('Kauf wiederherstellen', 'Restore purchase')}
+            </Button>
+            
             <Button 
               variant="ghost" 
-              className="w-full h-12 font-medium"
+              className="w-full h-10 font-medium text-muted-foreground"
               onClick={() => onOpenChange(false)}
+              disabled={isLoading || isRestoring}
             >
               {t('Später', 'Maybe later')}
             </Button>
           </div>
+          
+          <p className="text-xs text-center text-muted-foreground mt-4">
+            {t(
+              'Einmaliger Kauf. Keine Abos.',
+              'One-time purchase. No subscriptions.'
+            )}
+          </p>
         </div>
       </DialogContent>
     </Dialog>
