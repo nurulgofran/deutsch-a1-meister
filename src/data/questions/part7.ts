@@ -572,9 +572,9 @@ export const part7Questions: Question[] = [
     isStateSpecific: true,
     state: "Baden-Württemberg"
   },
-  // Bayern (Bavaria) coat of arms question
+  // Bayern (Bavaria) - Q301 coat of arms
   {
-    id: "311",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Bayern?",
     text_en: "Which coat of arms belongs to the federal state of Bavaria?",
     options: [
@@ -589,9 +589,9 @@ export const part7Questions: Question[] = [
     state: "Bayern",
     hasImages: true
   },
-  // Berlin coat of arms question
+  // Berlin - Q301 coat of arms
   {
-    id: "312",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Berlin?",
     text_en: "Which coat of arms belongs to the federal state of Berlin?",
     options: [
@@ -606,9 +606,9 @@ export const part7Questions: Question[] = [
     state: "Berlin",
     hasImages: true
   },
-  // Brandenburg coat of arms question
+  // Brandenburg - Q301 coat of arms
   {
-    id: "313",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Brandenburg?",
     text_en: "Which coat of arms belongs to the federal state of Brandenburg?",
     options: [
@@ -623,9 +623,9 @@ export const part7Questions: Question[] = [
     state: "Brandenburg",
     hasImages: true
   },
-  // Bremen coat of arms question
+  // Bremen - Q301 coat of arms
   {
-    id: "314",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Bremen?",
     text_en: "Which coat of arms belongs to the federal state of Bremen?",
     options: [
@@ -640,9 +640,9 @@ export const part7Questions: Question[] = [
     state: "Bremen",
     hasImages: true
   },
-  // Hamburg coat of arms question
+  // Hamburg - Q301 coat of arms
   {
-    id: "315",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Hamburg?",
     text_en: "Which coat of arms belongs to the federal state of Hamburg?",
     options: [
@@ -657,9 +657,9 @@ export const part7Questions: Question[] = [
     state: "Hamburg",
     hasImages: true
   },
-  // Hessen coat of arms question
+  // Hessen - Q301 coat of arms
   {
-    id: "316",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Hessen?",
     text_en: "Which coat of arms belongs to the federal state of Hesse?",
     options: [
@@ -674,9 +674,9 @@ export const part7Questions: Question[] = [
     state: "Hessen",
     hasImages: true
   },
-  // Mecklenburg-Vorpommern coat of arms question
+  // Mecklenburg-Vorpommern - Q301 coat of arms
   {
-    id: "317",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
     text_en: "Which coat of arms belongs to the federal state of Mecklenburg-Western Pomerania?",
     options: [
@@ -691,9 +691,9 @@ export const part7Questions: Question[] = [
     state: "Mecklenburg-Vorpommern",
     hasImages: true
   },
-  // Niedersachsen coat of arms question
+  // Niedersachsen - Q301 coat of arms
   {
-    id: "318",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Niedersachsen?",
     text_en: "Which coat of arms belongs to the federal state of Lower Saxony?",
     options: [
@@ -708,9 +708,9 @@ export const part7Questions: Question[] = [
     state: "Niedersachsen",
     hasImages: true
   },
-  // Nordrhein-Westfalen coat of arms question
+  // Nordrhein-Westfalen - Q301 coat of arms
   {
-    id: "319",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
     text_en: "Which coat of arms belongs to the federal state of North Rhine-Westphalia?",
     options: [
@@ -725,9 +725,9 @@ export const part7Questions: Question[] = [
     state: "Nordrhein-Westfalen",
     hasImages: true
   },
-  // Rheinland-Pfalz coat of arms question
+  // Rheinland-Pfalz - Q301 coat of arms
   {
-    id: "320",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
     text_en: "Which coat of arms belongs to the federal state of Rhineland-Palatinate?",
     options: [
@@ -742,9 +742,9 @@ export const part7Questions: Question[] = [
     state: "Rheinland-Pfalz",
     hasImages: true
   },
-  // Saarland coat of arms question
+  // Saarland - Q301 coat of arms
   {
-    id: "321",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Saarland?",
     text_en: "Which coat of arms belongs to the federal state of Saarland?",
     options: [
@@ -759,9 +759,9 @@ export const part7Questions: Question[] = [
     state: "Saarland",
     hasImages: true
   },
-  // Sachsen coat of arms question
+  // Sachsen - Q301 coat of arms
   {
-    id: "322",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Sachsen?",
     text_en: "Which coat of arms belongs to the federal state of Saxony?",
     options: [
@@ -776,9 +776,9 @@ export const part7Questions: Question[] = [
     state: "Sachsen",
     hasImages: true
   },
-  // Sachsen-Anhalt coat of arms question
+  // Sachsen-Anhalt - Q301 coat of arms
   {
-    id: "323",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
     text_en: "Which coat of arms belongs to the federal state of Saxony-Anhalt?",
     options: [
@@ -793,9 +793,9 @@ export const part7Questions: Question[] = [
     state: "Sachsen-Anhalt",
     hasImages: true
   },
-  // Schleswig-Holstein coat of arms question
+  // Schleswig-Holstein - Q301 coat of arms
   {
-    id: "324",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
     text_en: "Which coat of arms belongs to the federal state of Schleswig-Holstein?",
     options: [
@@ -810,9 +810,9 @@ export const part7Questions: Question[] = [
     state: "Schleswig-Holstein",
     hasImages: true
   },
-  // Thüringen coat of arms question
+  // Thüringen - Q301 coat of arms
   {
-    id: "325",
+    id: "301",
     text_de: "Welches Wappen gehört zum Bundesland Thüringen?",
     text_en: "Which coat of arms belongs to the federal state of Thuringia?",
     options: [
