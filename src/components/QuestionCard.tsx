@@ -57,7 +57,7 @@ export function QuestionCard({
     const isSelected = selected === index;
     const isCorrect = index === question.correctIndex;
     
-    const baseClasses = "w-full min-h-[60px] p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop";
+    const baseClasses = "w-full min-h-[60px] h-auto p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop flex items-center gap-3";
     
     if (!showResult || !showFeedback) {
       return cn(
@@ -127,14 +127,14 @@ export function QuestionCard({
                 disabled={showResult && showFeedback}
               >
                 <span className={cn(
-                  "inline-flex items-center justify-center w-8 h-8 mr-3 rounded-lg text-sm font-bold shrink-0 transition-colors",
+                  "inline-flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold shrink-0 transition-colors",
                   selected === index 
                     ? "bg-primary text-primary-foreground" 
                     : "bg-muted text-muted-foreground"
                 )}>
                   {String.fromCharCode(65 + index)}
                 </span>
-                <span className="text-left font-medium">
+                <span className="text-left font-medium flex-1 whitespace-normal break-words">
                   {settings.language === 'de' ? option.de : option.en}
                 </span>
               </Button>
