@@ -150,10 +150,10 @@ export default function Welcome({ onComplete }: WelcomeProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-gradient-to-b from-primary/5 via-background to-accent/5 flex flex-col">
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-40 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/3 right-20 w-24 h-24 bg-success/10 rounded-full blur-2xl" />
+      {/* Decorative elements - pointer-events-none to prevent blocking clicks */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-40 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-20 w-24 h-24 bg-success/10 rounded-full blur-2xl pointer-events-none" />
       
       {/* Progress dots */}
       <div className="flex justify-center gap-2 pt-12 pb-8">
