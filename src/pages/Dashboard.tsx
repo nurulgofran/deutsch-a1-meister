@@ -27,9 +27,9 @@ export default function Dashboard() {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background pointer-events-none" />
       
-      {/* Decorative circles */}
-      <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute top-1/2 -left-32 w-48 h-48 rounded-full bg-accent/10 blur-3xl" />
+      {/* Decorative circles - pointer-events-none to prevent blocking clicks */}
+      <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 -left-32 w-48 h-48 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative px-5 pt-8 pb-6">

@@ -128,10 +128,10 @@ export default function Study() {
 
   return (
     <div className="min-h-screen pb-24 safe-area-top relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-politics/10 blur-3xl" />
-      <div className="absolute top-1/3 -left-40 w-60 h-60 rounded-full bg-history/10 blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 rounded-full bg-society/10 blur-3xl" />
+      {/* Background decoration - pointer-events-none to prevent blocking clicks */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-politics/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 -left-40 w-60 h-60 rounded-full bg-history/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-48 h-48 rounded-full bg-society/10 blur-3xl pointer-events-none" />
 
       {/* Header */}
       <div className="relative px-5 pt-8 pb-6">
