@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe, MapPin, RotateCcw, Info } from 'lucide-react';
+import { Globe, MapPin, RotateCcw, Info, Mail, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -175,6 +175,38 @@ export default function Settings() {
                 <p className="font-medium">Leben in Deutschland</p>
                 <p className="text-sm text-muted-foreground">Version 1.0.0</p>
               </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Developer/Author Section */}
+        <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+          <CardContent className="p-4">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center">
+                <User className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p className="font-medium text-primary">
+                  {t('Entwickelt von', 'Developed by')}
+                </p>
+                <p className="text-sm font-semibold">Md Norul Gofran</p>
+              </div>
+            </div>
+            <div className="pl-13 space-y-2">
+              <a 
+                href="mailto:nurulgofran@gmail.com?subject=Leben%20in%20Deutschland%20App%20-%20Feedback"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                nurulgofran@gmail.com
+              </a>
+              <p className="text-xs text-muted-foreground">
+                {t(
+                  'Haben Sie einen Fehler gefunden oder einen Vorschlag? Schreiben Sie mir gerne!',
+                  'Found a bug or have a suggestion? Feel free to reach out!'
+                )}
+              </p>
             </div>
           </CardContent>
         </Card>

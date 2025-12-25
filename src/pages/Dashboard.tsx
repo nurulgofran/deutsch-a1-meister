@@ -10,11 +10,16 @@ import { questions } from '@/data/questions/index';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { progress, getReadinessScore, getMasteredCount, t } = useApp();
+  const { progress, settings, getReadinessScore, getMasteredCount, t } = useApp();
   
   const readinessScore = getReadinessScore();
   const masteredCount = getMasteredCount();
-  const totalQuestions = questions.length;
+  
+  // Filter questions: 300 general + 10 state-specific for user's Bundesland
+  const filteredQuestions = questions.filter(q => 
+    !q.isStateSpecific || q.state === settings.bundesland
+  );
+  const totalQuestions = filteredQuestions.length;
   const examsPassed = progress.examHistory.filter(e => e.passed).length;
 
   return (
