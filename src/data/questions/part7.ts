@@ -571,5 +571,260 @@ export const part7Questions: Question[] = [
     category: "society",
     isStateSpecific: true,
     state: "Baden-Württemberg"
+  },
+  // Bayern (Bavaria) coat of arms question
+  {
+    id: "311",
+    text_de: "Welches Wappen gehört zum Bundesland Bayern?",
+    text_en: "Which coat of arms belongs to the federal state of Bavaria?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/bavaria.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/baden-wuerttemberg.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/berlin.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/brandenburg.png" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Bayern",
+    hasImages: true
+  },
+  // Berlin coat of arms question
+  {
+    id: "312",
+    text_de: "Welches Wappen gehört zum Bundesland Berlin?",
+    text_en: "Which coat of arms belongs to the federal state of Berlin?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/bremen.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/berlin.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/hamburg.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/hesse.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Berlin",
+    hasImages: true
+  },
+  // Brandenburg coat of arms question
+  {
+    id: "313",
+    text_de: "Welches Wappen gehört zum Bundesland Brandenburg?",
+    text_en: "Which coat of arms belongs to the federal state of Brandenburg?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/saxony.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/thueringen.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/brandenburg.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/sachsen-anhalt.png" }
+    ],
+    correctIndex: 2,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Brandenburg",
+    hasImages: true
+  },
+  // Bremen coat of arms question
+  {
+    id: "314",
+    text_de: "Welches Wappen gehört zum Bundesland Bremen?",
+    text_en: "Which coat of arms belongs to the federal state of Bremen?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/hamburg.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/berlin.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/saarland.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/bremen.png" }
+    ],
+    correctIndex: 3,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Bremen",
+    hasImages: true
+  },
+  // Hamburg coat of arms question
+  {
+    id: "315",
+    text_de: "Welches Wappen gehört zum Bundesland Hamburg?",
+    text_en: "Which coat of arms belongs to the federal state of Hamburg?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/hamburg.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/bremen.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/schleswig-holstein.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/niedersachsen.png" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Hamburg",
+    hasImages: true
+  },
+  // Hessen coat of arms question
+  {
+    id: "316",
+    text_de: "Welches Wappen gehört zum Bundesland Hessen?",
+    text_en: "Which coat of arms belongs to the federal state of Hesse?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/rheinland-pfalz.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/hesse.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/thueringen.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/nrw.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Hessen",
+    hasImages: true
+  },
+  // Mecklenburg-Vorpommern coat of arms question
+  {
+    id: "317",
+    text_de: "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
+    text_en: "Which coat of arms belongs to the federal state of Mecklenburg-Western Pomerania?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/brandenburg.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/schleswig-holstein.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/mecklenburg-vorpommern.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/niedersachsen.png" }
+    ],
+    correctIndex: 2,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Mecklenburg-Vorpommern",
+    hasImages: true
+  },
+  // Niedersachsen coat of arms question
+  {
+    id: "318",
+    text_de: "Welches Wappen gehört zum Bundesland Niedersachsen?",
+    text_en: "Which coat of arms belongs to the federal state of Lower Saxony?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/nrw.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/niedersachsen.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/schleswig-holstein.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/hesse.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Niedersachsen",
+    hasImages: true
+  },
+  // Nordrhein-Westfalen coat of arms question
+  {
+    id: "319",
+    text_de: "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
+    text_en: "Which coat of arms belongs to the federal state of North Rhine-Westphalia?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/rheinland-pfalz.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/saarland.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/nrw.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/niedersachsen.png" }
+    ],
+    correctIndex: 2,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Nordrhein-Westfalen",
+    hasImages: true
+  },
+  // Rheinland-Pfalz coat of arms question
+  {
+    id: "320",
+    text_de: "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
+    text_en: "Which coat of arms belongs to the federal state of Rhineland-Palatinate?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/rheinland-pfalz.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/baden-wuerttemberg.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/saarland.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/hesse.png" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Rheinland-Pfalz",
+    hasImages: true
+  },
+  // Saarland coat of arms question
+  {
+    id: "321",
+    text_de: "Welches Wappen gehört zum Bundesland Saarland?",
+    text_en: "Which coat of arms belongs to the federal state of Saarland?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/rheinland-pfalz.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/nrw.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/saarland.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/baden-wuerttemberg.png" }
+    ],
+    correctIndex: 2,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Saarland",
+    hasImages: true
+  },
+  // Sachsen coat of arms question
+  {
+    id: "322",
+    text_de: "Welches Wappen gehört zum Bundesland Sachsen?",
+    text_en: "Which coat of arms belongs to the federal state of Saxony?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/sachsen-anhalt.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/thueringen.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/brandenburg.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/saxony.png" }
+    ],
+    correctIndex: 3,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Sachsen",
+    hasImages: true
+  },
+  // Sachsen-Anhalt coat of arms question
+  {
+    id: "323",
+    text_de: "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
+    text_en: "Which coat of arms belongs to the federal state of Saxony-Anhalt?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/saxony.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/sachsen-anhalt.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/thueringen.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/brandenburg.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Sachsen-Anhalt",
+    hasImages: true
+  },
+  // Schleswig-Holstein coat of arms question
+  {
+    id: "324",
+    text_de: "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
+    text_en: "Which coat of arms belongs to the federal state of Schleswig-Holstein?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/niedersachsen.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/mecklenburg-vorpommern.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/hamburg.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/schleswig-holstein.png" }
+    ],
+    correctIndex: 3,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Schleswig-Holstein",
+    hasImages: true
+  },
+  // Thüringen coat of arms question
+  {
+    id: "325",
+    text_de: "Welches Wappen gehört zum Bundesland Thüringen?",
+    text_en: "Which coat of arms belongs to the federal state of Thuringia?",
+    options: [
+      { de: "Bild 1", en: "Image 1", image: "/coat-of-arms/thueringen.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/sachsen-anhalt.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/saxony.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/hesse.png" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Thüringen",
+    hasImages: true
   }
 ];
