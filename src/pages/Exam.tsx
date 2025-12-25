@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { QuestionCard } from '@/components/QuestionCard';
-import { AdSpace } from '@/components/AdSpace';
+import { BannerAd } from '@/components/ads';
 import { useApp } from '@/contexts/AppContext';
+import { useAds } from '@/contexts/AdContext';
 import { questions } from '@/data/questions/index';
 import {
   AlertDialog,
@@ -28,6 +29,7 @@ const PASSING_SCORE = 17;
 export default function Exam() {
   const navigate = useNavigate();
   const { settings, recordExamResult, t } = useApp();
+  const { triggerInterstitial } = useAds();
   
   const [examState, setExamState] = useState<ExamState>('intro');
   const [examQuestions, setExamQuestions] = useState<typeof questions>([]);
@@ -100,6 +102,9 @@ export default function Exam() {
     });
 
     setExamState('results');
+    
+    // Show interstitial ad after exam completion
+    triggerInterstitial();
   };
 
   const handleSelectAnswer = (index: number) => {
@@ -338,7 +343,7 @@ export default function Exam() {
             {t('Zurück zur Übersicht', 'Back to Overview')}
           </Button>
 
-          <AdSpace className="mt-6" />
+          <BannerAd className="mt-6" />
         </div>
       </div>
     );

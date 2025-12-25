@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CircularProgress } from '@/components/CircularProgress';
 import { StreakBadge } from '@/components/StreakBadge';
-import { AdSpace } from '@/components/AdSpace';
+import { BannerAd } from '@/components/ads';
 import { useApp } from '@/contexts/AppContext';
 import { questions } from '@/data/questions/index';
 
@@ -143,9 +143,9 @@ export default function Dashboard() {
           </Card>
         </div>
 
-        {/* Ad Space */}
+        {/* Banner Ad */}
         <div className="px-5">
-          <AdSpace />
+          <BannerAd />
         </div>
       </div>
     </div>

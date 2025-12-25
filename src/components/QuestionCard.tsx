@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Bookmark, BookmarkCheck, Lightbulb } from 'lucide-react';
+import { Bookmark, BookmarkCheck, Lightbulb, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Question } from '@/data/questions/index';
 import { useApp } from '@/contexts/AppContext';
+import { useAds } from '@/contexts/AdContext';
 import { ProModal } from '@/components/ProModal';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 interface QuestionCardProps {
   question: Question;
@@ -25,9 +27,12 @@ export function QuestionCard({
   showBookmark = true
 }: QuestionCardProps) {
   const { settings, progress, toggleBookmark, t } = useApp();
+  const { triggerRewardedAd, isPro } = useAds();
   const [localSelected, setLocalSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showProModal, setShowProModal] = useState(false);
+  const [hintUsed, setHintUsed] = useState(false);
+  const [hintIndex, setHintIndex] = useState<number | null>(null);
 
   const selected = selectedAnswer ?? localSelected;
   const isBookmarked = progress.bookmarkedQuestions.includes(question.id);
@@ -35,6 +40,8 @@ export function QuestionCard({
   useEffect(() => {
     setLocalSelected(null);
     setShowResult(false);
+    setHintUsed(false);
+    setHintIndex(null);
   }, [question.id]);
 
   const handleSelect = (index: number) => {
@@ -53,11 +60,36 @@ export function QuestionCard({
     }
   };
 
+  const handleGetHint = () => {
+    triggerRewardedAd(() => {
+      // Eliminate one wrong answer as hint
+      const wrongAnswers = question.options
+        .map((_, index) => index)
+        .filter(index => index !== question.correctIndex);
+      
+      if (wrongAnswers.length > 0) {
+        const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+        setHintIndex(randomWrong);
+        setHintUsed(true);
+        toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
+      }
+    });
+  };
+
   const getOptionClasses = (index: number) => {
     const isSelected = selected === index;
     const isCorrect = index === question.correctIndex;
+    const isHintedWrong = hintIndex === index;
     
     const baseClasses = "w-full min-h-[60px] h-auto p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop flex items-center gap-3";
+    
+    // Show hint - crossed out wrong answer
+    if (isHintedWrong && !showResult) {
+      return cn(
+        baseClasses,
+        "bg-muted/50 border-muted text-muted-foreground opacity-50 line-through cursor-not-allowed"
+      );
+    }
     
     if (!showResult || !showFeedback) {
       return cn(
@@ -117,6 +149,22 @@ export function QuestionCard({
             )}
           </div>
 
+          {/* Hint button - show before answering */}
+          {showFeedback && !showResult && !hintUsed && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="mb-4 gap-2 text-accent border-accent/30 hover:bg-accent/10"
+              onClick={handleGetHint}
+            >
+              <Play className="h-4 w-4" />
+              {isPro 
+                ? t('Hinweis anzeigen', 'Show hint') 
+                : t('Video ansehen für Hinweis', 'Watch video for hint')
+              }
+            </Button>
+          )}
+
           <div className={cn(
             "space-y-3",
             question.hasImages && "grid grid-cols-2 gap-3 space-y-0"
@@ -130,7 +178,7 @@ export function QuestionCard({
                   question.hasImages && "flex-col h-auto py-3"
                 )}
                 onClick={() => handleSelect(index)}
-                disabled={showResult && showFeedback}
+                disabled={(showResult && showFeedback) || hintIndex === index}
               >
                 {question.hasImages && option.image && (
                   <img 
@@ -144,12 +192,16 @@ export function QuestionCard({
                   question.hasImages ? "w-6 h-6" : "w-8 h-8",
                   selected === index 
                     ? "bg-primary text-primary-foreground" 
-                    : "bg-muted text-muted-foreground"
+                    : "bg-muted text-muted-foreground",
+                  hintIndex === index && "line-through"
                 )}>
                   {String.fromCharCode(65 + index)}
                 </span>
                 {!question.hasImages && (
-                  <span className="text-left font-medium flex-1 whitespace-normal break-words">
+                  <span className={cn(
+                    "text-left font-medium flex-1 whitespace-normal break-words",
+                    hintIndex === index && "line-through"
+                  )}>
                     {settings.language === 'de' ? option.de : option.en}
                   </span>
                 )}

@@ -5,7 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppProvider } from "@/contexts/AppContext";
+import { AdProvider } from "@/contexts/AdContext";
 import { BottomNav } from "@/components/BottomNav";
+import { InterstitialAd, RewardedAd } from "@/components/ads";
 import Dashboard from "./pages/Dashboard";
 import Study from "./pages/Study";
 import Exam from "./pages/Exam";
@@ -53,6 +55,9 @@ function AppContent() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BottomNav />
+      {/* Global ad overlays */}
+      <InterstitialAd />
+      <RewardedAd />
     </div>
   );
 }
@@ -63,9 +68,11 @@ function App() {
       <BrowserRouter>
         <TooltipProvider>
           <AppProvider>
-            <Toaster />
-            <Sonner />
-            <AppContent />
+            <AdProvider>
+              <Toaster />
+              <Sonner />
+              <AppContent />
+            </AdProvider>
           </AppProvider>
         </TooltipProvider>
       </BrowserRouter>
