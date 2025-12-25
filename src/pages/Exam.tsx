@@ -46,9 +46,17 @@ export default function Exam() {
       q => q.isStateSpecific && q.state === settings.bundesland
     );
 
-    // Shuffle and select
-    const shuffledGeneral = [...generalQuestions].sort(() => Math.random() - 0.5);
-    const shuffledState = [...stateQuestions].sort(() => Math.random() - 0.5);
+    // Fisher-Yates shuffle for unbiased randomization
+    const shuffledGeneral = [...generalQuestions];
+    for (let i = shuffledGeneral.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledGeneral[i], shuffledGeneral[j]] = [shuffledGeneral[j], shuffledGeneral[i]];
+    }
+    const shuffledState = [...stateQuestions];
+    for (let i = shuffledState.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledState[i], shuffledState[j]] = [shuffledState[j], shuffledState[i]];
+    }
 
     const selectedGeneral = shuffledGeneral.slice(0, Math.min(30, shuffledGeneral.length));
     const selectedState = shuffledState.slice(0, Math.min(3, shuffledState.length));
