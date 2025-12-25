@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bookmark, BookmarkCheck, Lightbulb, Play } from 'lucide-react';
+import { Bookmark, BookmarkCheck, Lightbulb, Play, ChevronDown, ChevronUp, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Question } from '@/data/questions/index';
@@ -33,6 +33,7 @@ export function QuestionCard({
   const [showProModal, setShowProModal] = useState(false);
   const [hintUsed, setHintUsed] = useState(false);
   const [hintIndex, setHintIndex] = useState<number | null>(null);
+  const [showExplanation, setShowExplanation] = useState(false);
 
   const selected = selectedAnswer ?? localSelected;
   const isBookmarked = progress.bookmarkedQuestions.includes(question.id);
@@ -42,6 +43,7 @@ export function QuestionCard({
     setShowResult(false);
     setHintUsed(false);
     setHintIndex(null);
+    setShowExplanation(false);
   }, [question.id]);
 
   const handleSelect = (index: number) => {
@@ -61,8 +63,8 @@ export function QuestionCard({
   };
 
   const handleGetHint = () => {
-    triggerRewardedAd(() => {
-      // Eliminate one wrong answer as hint
+    if (isPro) {
+      // Pro users get hints for free
       const wrongAnswers = question.options
         .map((_, index) => index)
         .filter(index => index !== question.correctIndex);
@@ -73,7 +75,29 @@ export function QuestionCard({
         setHintUsed(true);
         toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
       }
-    });
+    } else {
+      // Non-pro users watch an ad
+      triggerRewardedAd(() => {
+        const wrongAnswers = question.options
+          .map((_, index) => index)
+          .filter(index => index !== question.correctIndex);
+        
+        if (wrongAnswers.length > 0) {
+          const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+          setHintIndex(randomWrong);
+          setHintUsed(true);
+          toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
+        }
+      });
+    }
+  };
+
+  const handleShowExplanation = () => {
+    if (isPro) {
+      setShowExplanation(!showExplanation);
+    } else {
+      setShowProModal(true);
+    }
   };
 
   const getOptionClasses = (index: number) => {
@@ -120,6 +144,8 @@ export function QuestionCard({
   };
 
   const questionText = settings.language === 'de' ? question.text_de : question.text_en;
+  const explanationText = settings.language === 'de' ? question.explanation_de : question.explanation_en;
+  const hasExplanation = !!(question.explanation_de || question.explanation_en);
 
   return (
     <>
@@ -211,14 +237,59 @@ export function QuestionCard({
 
           {/* Show explanation button after answering */}
           {showResult && showFeedback && (
-            <Button
-              variant="ghost"
-              className="w-full mt-4 h-12 gap-2 text-muted-foreground hover:text-primary"
-              onClick={() => setShowProModal(true)}
-            >
-              <Lightbulb className="h-5 w-5" />
-              {t('Erklärung anzeigen', 'Show explanation')}
-            </Button>
+            <div className="mt-4 space-y-3">
+              <Button
+                variant="ghost"
+                className={cn(
+                  "w-full h-12 gap-2",
+                  isPro 
+                    ? "text-primary hover:bg-primary/10" 
+                    : "text-muted-foreground hover:text-primary"
+                )}
+                onClick={handleShowExplanation}
+              >
+                {isPro ? (
+                  showExplanation ? (
+                    <ChevronUp className="h-5 w-5" />
+                  ) : (
+                    <Lightbulb className="h-5 w-5" />
+                  )
+                ) : (
+                  <Lock className="h-5 w-5" />
+                )}
+                {isPro
+                  ? (showExplanation 
+                      ? t('Erklärung ausblenden', 'Hide explanation') 
+                      : t('Erklärung anzeigen', 'Show explanation'))
+                  : t('Erklärung anzeigen (Pro)', 'Show explanation (Pro)')
+                }
+              </Button>
+
+              {/* Explanation content for Pro users */}
+              {isPro && showExplanation && (
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 animate-fade-in">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
+                      <Lightbulb className="h-4 w-4 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-display font-bold text-sm mb-1 text-primary">
+                        {t('Erklärung', 'Explanation')}
+                      </h4>
+                      <p className="text-sm text-foreground leading-relaxed">
+                        {hasExplanation 
+                          ? explanationText 
+                          : t(
+                              'Erklärung wird bald hinzugefügt.',
+                              'Explanation will be added soon.'
+                            )
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           )}
 
           {question.isStateSpecific && (

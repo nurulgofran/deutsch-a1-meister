@@ -13,7 +13,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 5 des Grundgesetzes garantiert die Meinungsfreiheit. Das bedeutet, jeder darf seine Meinung frei äußern – auch Kritik an der Regierung.",
+    explanation_en: "Article 5 of the Basic Law guarantees freedom of speech. This means everyone can freely express their opinion – including criticism of the government."
   },
   {
     id: "2",
@@ -27,7 +29,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Religionsfreiheit erlaubt Eltern, über die religiöse Erziehung ihrer Kinder zu entscheiden. Ab 14 Jahren dürfen Kinder selbst entscheiden.",
+    explanation_en: "Freedom of religion allows parents to decide about their children's religious education. From age 14, children can decide for themselves."
   },
   {
     id: "3",
@@ -41,7 +45,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Im Rechtsstaat sind alle an Gesetze gebunden – Bürger und Staat gleichermaßen. Niemand steht über dem Gesetz.",
+    explanation_en: "In a constitutional state, everyone is bound by laws – citizens and the state alike. No one is above the law."
   },
   {
     id: "4",
@@ -55,7 +61,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Meinungsfreiheit ist in Artikel 5 des Grundgesetzes verankert. Waffenbesitz, Faustrecht und Selbstjustiz sind keine Grundrechte.",
+    explanation_en: "Freedom of speech is enshrined in Article 5 of the Basic Law. Gun ownership, law of the fist, and vigilante justice are not basic rights."
   },
   {
     id: "5",
@@ -69,7 +77,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Freie Wahlen bedeuten, dass niemand Druck auf Wähler ausüben darf. Jeder entscheidet selbst, ohne Zwang oder Nachteile befürchten zu müssen.",
+    explanation_en: "Free elections mean no one may pressure voters. Everyone decides freely without fear of coercion or disadvantages."
   },
   {
     id: "6",
@@ -83,7 +93,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die deutsche Verfassung heißt Grundgesetz (GG). Es wurde 1949 verabschiedet und bildet die rechtliche Grundlage der Bundesrepublik.",
+    explanation_en: "The German constitution is called the Basic Law (Grundgesetz). It was adopted in 1949 and forms the legal foundation of the Federal Republic."
   },
   {
     id: "7",
@@ -97,7 +109,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 4 des Grundgesetzes garantiert die Glaubens- und Gewissensfreiheit. Unterhaltung, Arbeit und Wohnung sind keine Grundrechte.",
+    explanation_en: "Article 4 of the Basic Law guarantees freedom of faith and conscience. Entertainment, work, and housing are not basic rights."
   },
   {
     id: "8",
@@ -111,7 +125,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Grundgesetz garantiert keine Vermögensgleichheit. Es schützt aber Menschenwürde, Meinungsfreiheit und Gleichheit vor dem Gesetz.",
+    explanation_en: "The Basic Law does not guarantee equal wealth. However, it protects human dignity, freedom of speech, and equality before the law."
   },
   {
     id: "9",
@@ -125,7 +141,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Asylrecht nach Artikel 16a gilt nur für politisch Verfolgte aus dem Ausland. Deutsche Staatsbürger können kein Asyl in Deutschland beantragen.",
+    explanation_en: "The right to asylum under Article 16a applies only to politically persecuted foreigners. German citizens cannot apply for asylum in Germany."
   },
   {
     id: "10",
@@ -139,7 +157,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Nur die Geldstrafe ist erlaubt. Das Grundgesetz verbietet Folter, Todesstrafe und körperliche Bestrafung (Artikel 102, 104).",
+    explanation_en: "Only monetary fines are allowed. The Basic Law prohibits torture, death penalty, and corporal punishment (Articles 102, 104)."
   },
   {
     id: "11",
@@ -153,7 +173,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Verfassung heißt offiziell Grundgesetz für die Bundesrepublik Deutschland (GG). Es trat am 23. Mai 1949 in Kraft.",
+    explanation_en: "The constitution is officially called the Basic Law for the Federal Republic of Germany (GG). It came into force on May 23, 1949."
   },
   {
     id: "12",
@@ -167,7 +189,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Pressefreiheit (Artikel 5 GG) ist durch die Ewigkeitsklausel (Artikel 79) geschützt und kann niemals abgeschafft werden.",
+    explanation_en: "Freedom of the press (Article 5) is protected by the eternity clause (Article 79) and can never be abolished."
   },
   {
     id: "13",
@@ -181,7 +205,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Opposition sind alle Parteien im Parlament, die nicht an der Regierung beteiligt sind. Sie kontrolliert die Regierung und bietet Alternativen.",
+    explanation_en: "The opposition consists of all parties in parliament not in government. They monitor the government and offer alternatives."
   },
   {
     id: "14",
@@ -195,7 +221,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Meinungsfreiheit erlaubt das Äußern von Meinungen, auch online. Sie schützt aber keine Beleidigungen oder verfassungsfeindliche Symbole.",
+    explanation_en: "Freedom of speech allows expressing opinions, including online. However, it does not protect insults or anti-constitutional symbols."
   },
   {
     id: "15",
@@ -209,7 +237,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 12 des Grundgesetzes verbietet Zwangsarbeit. Freie Berufswahl ist dagegen ein Grundrecht.",
+    explanation_en: "Article 12 of the Basic Law prohibits forced labor. Free choice of profession, on the other hand, is a basic right."
   },
   {
     id: "16",
@@ -223,7 +253,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Meinungsfreiheit endet bei Verleumdung und übler Nachrede. Kritik an Regierung, Religion oder Staat ist aber erlaubt.",
+    explanation_en: "Freedom of speech ends at defamation and slander. However, criticism of government, religion, or the state is allowed."
   },
   {
     id: "17",
@@ -237,7 +269,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 3 des Grundgesetzes verbietet Diskriminierung durch den Staat. Meinungsfreiheit, Petitionsrecht und Versammlungsfreiheit sind geschützt.",
+    explanation_en: "Article 3 of the Basic Law prohibits discrimination by the state. Freedom of speech, petition rights, and assembly are protected."
   },
   {
     id: "18",
@@ -251,7 +285,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 1 beginnt mit: Die Würde des Menschen ist unantastbar. Dies ist das wichtigste Grundrecht und Fundament aller anderen Rechte.",
+    explanation_en: "Article 1 begins with: Human dignity is inviolable. This is the most important basic right and foundation of all other rights."
   },
   {
     id: "19",
@@ -265,7 +301,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Freizügigkeit (Artikel 11 GG) bedeutet, dass man in ganz Deutschland frei reisen und seinen Wohnort frei wählen kann.",
+    explanation_en: "Freedom of movement (Article 11) means you can travel freely throughout Germany and choose your place of residence."
   },
   {
     id: "20",
@@ -279,7 +317,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Eine Partei, die die Demokratie abschaffen will, verstößt gegen das Grundgesetz und kann vom Bundesverfassungsgericht verboten werden.",
+    explanation_en: "A party that wants to abolish democracy violates the Basic Law and can be banned by the Federal Constitutional Court."
   },
   {
     id: "21",
@@ -294,7 +334,9 @@ export const part1Questions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: false,
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Der Bundesadler ist das Wappen Deutschlands. Er hat schwarze Federn, einen roten Schnabel und rote Krallen auf goldenem Grund.",
+    explanation_en: "The Federal Eagle is Germany's coat of arms. It has black feathers, a red beak, and red claws on a golden background."
   },
   {
     id: "22",
@@ -308,7 +350,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland ist eine Republik, was bedeutet, dass das Staatsoberhaupt (Bundespräsident) gewählt wird und kein König oder Kaiser ist.",
+    explanation_en: "Germany is a republic, meaning the head of state (Federal President) is elected and is not a king or emperor."
   },
   {
     id: "23",
@@ -322,7 +366,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 3,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die meisten Menschen in Deutschland sind Arbeitnehmer bei Unternehmen oder im öffentlichen Dienst, nicht selbstständig oder ehrenamtlich.",
+    explanation_en: "Most people in Germany are employees at companies or in public service, not self-employed or volunteers."
   },
   {
     id: "24",
@@ -336,7 +382,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland besteht aus 16 Bundesländern, darunter drei Stadtstaaten (Berlin, Hamburg, Bremen) und 13 Flächenländer.",
+    explanation_en: "Germany consists of 16 federal states, including three city-states (Berlin, Hamburg, Bremen) and 13 territorial states."
   },
   {
     id: "25",
@@ -350,7 +398,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Elsass-Lothringen gehört seit 1945 zu Frankreich. Es war früher deutsches Gebiet, ist aber heute kein deutsches Bundesland.",
+    explanation_en: "Alsace-Lorraine has belonged to France since 1945. It was formerly German territory but is not a German federal state today."
   },
   {
     id: "26",
@@ -364,7 +414,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 20 des Grundgesetzes definiert Deutschland als demokratischen und sozialen Bundesstaat mit föderaler Struktur.",
+    explanation_en: "Article 20 of the Basic Law defines Germany as a democratic and social federal state with a federal structure."
   },
   {
     id: "27",
@@ -378,7 +430,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Deutschland ist ein Bundesstaat (Föderation), bestehend aus 16 Bundesländern mit eigenen Regierungen und Parlamenten.",
+    explanation_en: "Germany is a federal state (federation) consisting of 16 states with their own governments and parliaments."
   },
   {
     id: "28",
@@ -392,7 +446,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 2,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "In einer Demokratie wählt das Volk seine Vertreter. Alle deutschen Staatsbürger ab 18 Jahren dürfen den Bundestag wählen.",
+    explanation_en: "In a democracy, the people elect their representatives. All German citizens aged 18 and older may vote for the Bundestag."
   },
   {
     id: "29",
@@ -406,7 +462,9 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Adler ist das deutsche Wappentier seit dem Mittelalter. Er symbolisiert Stärke und Freiheit.",
+    explanation_en: "The eagle has been Germany's heraldic animal since the Middle Ages. It symbolizes strength and freedom."
   },
   {
     id: "30",
@@ -420,216 +478,248 @@ export const part1Questions: Question[] = [
     ],
     correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Pressezensur ist verboten in einer Demokratie. Freie Presse, regelmäßige Wahlen und Parteienpluralismus sind demokratische Merkmale.",
+    explanation_en: "Press censorship is forbidden in a democracy. Free press, regular elections, and party pluralism are democratic characteristics."
   },
   {
     id: "31",
-    text_de: "Die Zusammenarbeit von Parteien zur Bildung einer Regierung nennt man in Deutschland …",
-    text_en: "The cooperation of parties to form a government is called in Germany ...",
+    text_de: "Die__(Lücke)____(Lücke)__ eines__(Lücke)__ nach demokratischen Grundsätzen__(Lücke)?",
+    text_en: "The Bundestag is elected according to democratic principles?",
     options: [
-      { de: "Einheit.", en: "Unity." },
-      { de: "Koalition.", en: "Coalition." },
-      { de: "Ministerium.", en: "Ministry." },
-      { de: "Fraktion.", en: "Faction." }
+      { de: "geheim", en: "secretly" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlen in Deutschland sind allgemein, unmittelbar, frei, gleich und geheim. Die geheime Wahl schützt vor Beeinflussung.",
+    explanation_en: "Elections in Germany are universal, direct, free, equal, and secret. Secret voting protects against influence."
   },
   {
     id: "32",
-    text_de: "Was ist keine staatliche Gewalt in Deutschland?",
-    text_en: "What is NOT a state power in Germany?",
+    text_de: "Welches Recht gehört zu den Grundrechten in Deutschland?",
+    text_en: "Which right is one of the basic rights in Germany?",
     options: [
-      { de: "Gesetzgebung", en: "Legislation" },
-      { de: "Regierung", en: "Government" },
-      { de: "Presse", en: "Press" },
-      { de: "Rechtsprechung", en: "Judiciary" }
+      { de: "Recht auf Glück", en: "Right to happiness" },
+      { de: "Versammlungsfreiheit", en: "Freedom of assembly" },
+      { de: "Recht auf Urlaub", en: "Right to vacation" },
+      { de: "Recht auf Reichtum", en: "Right to wealth" }
     ],
-    correctIndex: 2,
+    correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Artikel 8 des Grundgesetzes garantiert die Versammlungsfreiheit. Rechte auf Glück, Urlaub oder Reichtum sind keine Grundrechte.",
+    explanation_en: "Article 8 of the Basic Law guarantees freedom of assembly. Rights to happiness, vacation, or wealth are not basic rights."
   },
   {
     id: "33",
-    text_de: "Welche Aussage ist richtig? In Deutschland …",
-    text_en: "Which statement is correct? In Germany ...",
+    text_de: "Was ist eine Aufgabe von Wahlhelferinnen und Wahlhelfern in Deutschland?",
+    text_en: "What is a task of election helpers in Germany?",
     options: [
-      { de: "sind Staat und Religionsgemeinschaften voneinander getrennt.", en: "state and religious communities are separated." },
-      { de: "bilden die Religionsgemeinschaften den Staat.", en: "religious communities form the state." },
-      { de: "ist der Staat abhängig von den Religionsgemeinschaften.", en: "the state is dependent on religious communities." },
-      { de: "bilden Staat und Religionsgemeinschaften eine Einheit.", en: "state and religious communities form a unity." }
+      { de: "Sie__(Lücke)__ die Wähler.", en: "They advise voters." },
+      { de: "Sie__(Lücke)__ die Stimmen.", en: "They count the votes." },
+      { de: "Sie__(Lücke)__ die Kandidaten.", en: "They approve candidates." },
+      { de: "Sie__(Lücke)__ die Parteien.", en: "They register parties." }
     ],
-    correctIndex: 0,
+    correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Wahlhelfer zählen nach der Wahl die Stimmen aus und sorgen für einen ordnungsgemäßen Ablauf der Wahl.",
+    explanation_en: "Election helpers count votes after the election and ensure the proper conduct of the vote."
   },
   {
     id: "34",
-    text_de: "Was ist Deutschland nicht?",
-    text_en: "What is Germany NOT?",
+    text_de: "In Deutschland__(Lücke)__ Bundestag__(Lücke)?",
+    text_en: "In Germany, what does the Bundestag do?",
     options: [
-      { de: "eine Demokratie", en: "a democracy" },
-      { de: "ein Rechtsstaat", en: "a constitutional state" },
-      { de: "eine Monarchie", en: "a monarchy" },
-      { de: "ein Sozialstaat", en: "a welfare state" }
+      { de: "__(Lücke)__ Gesetze__(Lücke)__", en: "makes laws" },
+      { de: "__(Lücke)__ die__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 2,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag ist das deutsche Parlament und beschließt Gesetze. Er kontrolliert auch die Regierung und wählt den Bundeskanzler.",
+    explanation_en: "The Bundestag is the German parliament and passes laws. It also controls the government and elects the Chancellor."
   },
   {
     id: "35",
-    text_de: "Womit finanziert der deutsche Staat die Sozialversicherung?",
-    text_en: "How does the German state finance social insurance?",
+    text_de: "Welches ist das__(Lücke)__ der Bundesrepublik__(Lücke)?",
+    text_en: "What is the legislative body of the Federal Republic?",
     options: [
-      { de: "Kirchensteuer", en: "Church tax" },
-      { de: "Sozialabgaben", en: "Social contributions" },
-      { de: "Spendengeldern", en: "Donations" },
-      { de: "Vereinsbeiträgen", en: "Club fees" }
+      { de: "der Bundesrat", en: "the Bundesrat" },
+      { de: "der Bundestag", en: "the Bundestag" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
     correctIndex: 1,
-    category: "society",
-    isStateSpecific: false
+    category: "politics",
+    isStateSpecific: false,
+    explanation_de: "Der Bundestag ist das wichtigste Gesetzgebungsorgan. Der Bundesrat vertritt die Länder und wirkt bei manchen Gesetzen mit.",
+    explanation_en: "The Bundestag is the main legislative body. The Bundesrat represents the states and participates in some legislation."
   },
   {
     id: "36",
-    text_de: "Welche Maßnahme schafft in Deutschland soziale Sicherheit?",
-    text_en: "Which measure creates social security in Germany?",
+    text_de: "Was ist in Deutschland die \"__(Lücke)__\"?",
+    text_en: "What is the 'legislative' in Germany?",
     options: [
-      { de: "die Krankenversicherung", en: "health insurance" },
-      { de: "die Autoversicherung", en: "car insurance" },
-      { de: "die Gebäudeversicherung", en: "building insurance" },
-      { de: "die Haftpflichtversicherung", en: "liability insurance" }
+      { de: "die__(Lücke)__", en: "the government" },
+      { de: "die__(Lücke)__", en: "the courts" },
+      { de: "die gesetzgebende Gewalt", en: "the legislative power" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 0,
-    category: "society",
-    isStateSpecific: false
+    correctIndex: 2,
+    category: "politics",
+    isStateSpecific: false,
+    explanation_de: "Die Legislative (gesetzgebende Gewalt) macht die Gesetze. In Deutschland sind das Bundestag und Bundesrat.",
+    explanation_en: "The legislature (legislative power) makes laws. In Germany, this is the Bundestag and Bundesrat."
   },
   {
     id: "37",
-    text_de: "Wie werden die Regierungschefinnen/Regierungschefs der meisten Bundesländer in Deutschland genannt?",
-    text_en: "What are the heads of government of most German federal states called?",
+    text_de: "Was ist die \"__(Lücke)__\" in Deutschland?",
+    text_en: "What is the 'executive' in Germany?",
     options: [
-      { de: "Erste Ministerin/Erster Minister", en: "First Minister" },
-      { de: "Premierministerin/Premierminister", en: "Prime Minister" },
-      { de: "Senatorin/Senator", en: "Senator" },
-      { de: "Ministerpräsidentin/Ministerpräsident", en: "Minister-President" }
+      { de: "die__(Lücke)__", en: "the courts" },
+      { de: "die ausführende Gewalt", en: "the executive power" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 3,
+    correctIndex: 1,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Exekutive (ausführende Gewalt) führt die Gesetze aus. Dazu gehören Bundesregierung, Polizei und Behörden.",
+    explanation_en: "The executive (executive power) implements laws. This includes the federal government, police, and authorities."
   },
   {
     id: "38",
-    text_de: "Die Bundesrepublik Deutschland ist ein demokratischer und sozialer …",
-    text_en: "The Federal Republic of Germany is a democratic and social ...",
+    text_de: "Was ist die \"__(Lücke)__\" in Deutschland?",
+    text_en: "What is the 'judiciary' in Germany?",
     options: [
-      { de: "Staatenverbund.", en: "Confederation of states." },
-      { de: "Bundesstaat.", en: "Federal state." },
-      { de: "Staatenbund.", en: "League of states." },
-      { de: "Zentralstaat.", en: "Central state." }
+      { de: "die rechtsprechende Gewalt", en: "the judicial power" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Judikative (rechtsprechende Gewalt) spricht Recht und urteilt über Gesetzesverstöße. Gerichte sind unabhängig.",
+    explanation_en: "The judiciary (judicial power) administers justice and rules on law violations. Courts are independent."
   },
   {
     id: "39",
-    text_de: "Was hat jedes deutsche Bundesland?",
-    text_en: "What does every German federal state have?",
+    text_de: "Welche Aussage ist richtig? In Deutschland__(Lücke)?",
+    text_en: "Which statement is correct? In Germany...",
     options: [
-      { de: "eine eigene Außenministerin/einen eigenen Außenminister", en: "its own foreign minister" },
-      { de: "eine eigene Währung", en: "its own currency" },
-      { de: "eine eigene Armee", en: "its own army" },
-      { de: "eine eigene Regierung", en: "its own government" }
+      { de: "__(Lücke)__ Gewaltenteilung.", en: "there is separation of powers." },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 3,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Gewaltenteilung bedeutet: Legislative, Exekutive und Judikative sind getrennt. Das verhindert Machtmissbrauch.",
+    explanation_en: "Separation of powers means: legislative, executive, and judiciary are separate. This prevents abuse of power."
   },
   {
     id: "40",
-    text_de: "Mit welchen Worten beginnt die deutsche Nationalhymne?",
-    text_en: "With which words does the German national anthem begin?",
+    text_de: "Was bedeutet \"__(Lücke)__\" in Deutschland?",
+    text_en: "What does 'separation of powers' mean in Germany?",
     options: [
-      { de: "Völker, hört die Signale …", en: "Peoples, hear the signals ..." },
-      { de: "Einigkeit und Recht und Freiheit …", en: "Unity and justice and freedom ..." },
-      { de: "Freude schöner Götterfunken …", en: "Joy, beautiful spark of the gods ..." },
-      { de: "Deutschland einig Vaterland …", en: "Germany, united fatherland ..." }
+      { de: "__(Lücke)__ Staat__(Lücke)__ auf__(Lücke)__ Institutionen__(Lücke)__.", en: "State power is divided among several institutions." },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
-    category: "society",
-    isStateSpecific: false
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: false,
+    explanation_de: "Gewaltenteilung teilt die Staatsgewalt auf drei unabhängige Institutionen auf, die sich gegenseitig kontrollieren.",
+    explanation_en: "Separation of powers divides state authority among three independent institutions that check each other."
   },
   {
     id: "41",
-    text_de: "Warum gibt es in einer Demokratie mehr als eine Partei?",
-    text_en: "Why are there more than one party in a democracy?",
+    text_de: "Welche__(Lücke)__ ist in Deutschland__(Lücke)?",
+    text_en: "Which institution exists in Germany?",
     options: [
-      { de: "weil dadurch die unterschiedlichen Meinungen der Bürgerinnen und Bürger vertreten werden", en: "because this represents the different opinions of citizens" },
-      { de: "damit Bestechung in der Politik begrenzt wird", en: "to limit bribery in politics" },
-      { de: "um politische Demonstrationen zu verhindern", en: "to prevent political demonstrations" },
-      { de: "um wirtschaftlichen Wettbewerb anzuregen", en: "to encourage economic competition" }
+      { de: "das Bundesverfassungsgericht", en: "the Federal Constitutional Court" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
     correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Das Bundesverfassungsgericht in Karlsruhe prüft, ob Gesetze mit dem Grundgesetz vereinbar sind. Es schützt die Verfassung.",
+    explanation_en: "The Federal Constitutional Court in Karlsruhe checks if laws comply with the Basic Law. It protects the constitution."
   },
   {
     id: "42",
-    text_de: "Wer beschließt in Deutschland ein neues Gesetz?",
-    text_en: "Who passes a new law in Germany?",
+    text_de: "Wer__(Lücke)__ den Bundeskanzler/die__(Lücke)?",
+    text_en: "Who elects the Federal Chancellor?",
     options: [
-      { de: "die Regierung", en: "the government" },
-      { de: "das Parlament", en: "the parliament" },
-      { de: "die Gerichte", en: "the courts" },
-      { de: "die Polizei", en: "the police" }
+      { de: "der Bundestag", en: "the Bundestag" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundeskanzler wird vom Bundestag auf Vorschlag des Bundespräsidenten gewählt, nicht direkt vom Volk.",
+    explanation_en: "The Chancellor is elected by the Bundestag upon proposal of the Federal President, not directly by the people."
   },
   {
     id: "43",
-    text_de: "Wann kann in Deutschland eine Partei verboten werden?",
-    text_en: "When can a party be banned in Germany?",
+    text_de: "Wer__(Lücke)__ den Bundespräsidenten/__in?",
+    text_en: "Who elects the Federal President?",
     options: [
-      { de: "wenn ihr Wahlkampf zu teuer ist", en: "when its election campaign is too expensive" },
-      { de: "wenn sie gegen die Verfassung kämpft", en: "when it fights against the constitution" },
-      { de: "wenn sie Kritik am Staatsoberhaupt äußert", en: "when it criticizes the head of state" },
-      { de: "wenn ihr Programm eine neue Richtung vorschlägt", en: "when its program suggests a new direction" }
+      { de: "die Bundesversammlung", en: "the Federal Assembly" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Die Bundesversammlung besteht aus Bundestagsabgeordneten und gleich vielen Vertretern der Landtage. Sie wählt den Bundespräsidenten.",
+    explanation_en: "The Federal Assembly consists of Bundestag members and an equal number of state representatives. It elects the Federal President."
   },
   {
     id: "44",
-    text_de: "Wen kann man als Bürgerin/Bürger in Deutschland nicht direkt wählen?",
-    text_en: "Who cannot citizens in Germany directly elect?",
+    text_de: "Wer ist das__(Lücke)__ der Bundesrepublik Deutschland?",
+    text_en: "Who is the head of state of the Federal Republic of Germany?",
     options: [
-      { de: "Abgeordnete des EU-Parlaments", en: "Members of the EU Parliament" },
-      { de: "Die Bundespräsidentin/den Bundespräsidenten", en: "The Federal President" },
-      { de: "Landtagsabgeordnete", en: "State parliament members" },
-      { de: "Bundestagsabgeordnete", en: "Bundestag members" }
+      { de: "der Bundespräsident/die Bundespräsidentin", en: "the Federal President" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
-    correctIndex: 1,
+    correctIndex: 0,
     category: "politics",
-    isStateSpecific: false
+    isStateSpecific: false,
+    explanation_de: "Der Bundespräsident ist das Staatsoberhaupt Deutschlands. Er repräsentiert das Land, hat aber wenig politische Macht.",
+    explanation_en: "The Federal President is Germany's head of state. He represents the country but has little political power."
   },
   {
     id: "45",
-    text_de: "Zu welcher Versicherung gehört die Pflegeversicherung?",
-    text_en: "To which type of insurance does long-term care insurance belong?",
+    text_de: "Wer ist der__(Lücke)__ der deutschen__(Lücke)?",
+    text_en: "Who is the head of the German government?",
     options: [
-      { de: "Sozialversicherung", en: "Social insurance" },
-      { de: "Unfallversicherung", en: "Accident insurance" },
-      { de: "Hausratsversicherung", en: "Household insurance" },
-      { de: "Haftpflicht- und Feuerversicherung", en: "Liability and fire insurance" }
+      { de: "der Bundeskanzler/die Bundeskanzlerin", en: "the Federal Chancellor" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" },
+      { de: "__(Lücke)__", en: "__(Lücke)__" }
     ],
     correctIndex: 0,
-    category: "society",
-    isStateSpecific: false
+    category: "politics",
+    isStateSpecific: false,
+    explanation_de: "Der Bundeskanzler leitet die Regierung und bestimmt die Richtlinien der Politik (Richtlinienkompetenz).",
+    explanation_en: "The Federal Chancellor leads the government and determines policy guidelines (power to set policy direction)."
   }
 ];
