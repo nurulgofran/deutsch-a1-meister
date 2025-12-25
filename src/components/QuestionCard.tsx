@@ -117,26 +117,42 @@ export function QuestionCard({
             )}
           </div>
 
-          <div className="space-y-3">
+          <div className={cn(
+            "space-y-3",
+            question.hasImages && "grid grid-cols-2 gap-3 space-y-0"
+          )}>
             {question.options.map((option, index) => (
               <Button
                 key={index}
                 variant="outline"
-                className={getOptionClasses(index)}
+                className={cn(
+                  getOptionClasses(index),
+                  question.hasImages && "flex-col h-auto py-3"
+                )}
                 onClick={() => handleSelect(index)}
                 disabled={showResult && showFeedback}
               >
+                {question.hasImages && option.image && (
+                  <img 
+                    src={option.image} 
+                    alt={settings.language === 'de' ? option.de : option.en}
+                    className="w-16 h-16 object-contain mb-2"
+                  />
+                )}
                 <span className={cn(
-                  "inline-flex items-center justify-center w-8 h-8 rounded-lg text-sm font-bold shrink-0 transition-colors",
+                  "inline-flex items-center justify-center rounded-lg text-sm font-bold shrink-0 transition-colors",
+                  question.hasImages ? "w-6 h-6" : "w-8 h-8",
                   selected === index 
                     ? "bg-primary text-primary-foreground" 
                     : "bg-muted text-muted-foreground"
                 )}>
                   {String.fromCharCode(65 + index)}
                 </span>
-                <span className="text-left font-medium flex-1 whitespace-normal break-words">
-                  {settings.language === 'de' ? option.de : option.en}
-                </span>
+                {!question.hasImages && (
+                  <span className="text-left font-medium flex-1 whitespace-normal break-words">
+                    {settings.language === 'de' ? option.de : option.en}
+                  </span>
+                )}
               </Button>
             ))}
           </div>
