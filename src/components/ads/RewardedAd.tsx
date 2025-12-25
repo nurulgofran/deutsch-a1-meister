@@ -22,9 +22,7 @@ export function RewardedAd() {
 
   const handleWatchAd = () => {
     setAdState('playing');
-    
-    // Simulate ad playing (replace with actual ad SDK)
-    const duration = 5000; // 5 seconds simulation
+    const duration = 5000;
     const interval = 100;
     let elapsed = 0;
 
@@ -108,7 +106,6 @@ export function RewardedAd() {
             </div>
             <CardContent className="p-6">
               <div className="w-full aspect-video rounded-xl bg-muted/50 flex items-center justify-center mb-4 relative overflow-hidden">
-                {/* Animated background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 animate-pulse" />
                 <div className="relative text-center">
                   <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-background/80 flex items-center justify-center">
@@ -153,7 +150,6 @@ export function RewardedAd() {
         )}
       </Card>
 
-      {/* Close button for playing/completed states */}
       {adState !== 'ready' && (
         <Button
           variant="ghost"
@@ -165,22 +161,6 @@ export function RewardedAd() {
           <X className="h-5 w-5" />
         </Button>
       )}
-
-      {/* 
-        INTEGRATION INSTRUCTIONS:
-        Replace the simulation with actual rewarded ad logic.
-        
-        For Google AdMob (Capacitor):
-        import { AdMob, RewardAdPluginEvents } from '@capacitor-community/admob';
-        
-        const handleWatchAd = async () => {
-          await AdMob.showRewardVideoAd();
-        };
-        
-        AdMob.addListener(RewardAdPluginEvents.Rewarded, () => {
-          setAdState('completed');
-        });
-      */}
     </div>
   );
 }

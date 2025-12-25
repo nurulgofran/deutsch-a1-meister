@@ -29,8 +29,6 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
   ];
 
   const handlePurchase = () => {
-    // TODO: Implement actual payment (Stripe, etc.)
-    // For now, just simulate purchase success
     setPro(true);
     toast.success(t('Pro-Version aktiviert!', 'Pro version activated!'));
     onOpenChange(false);
@@ -39,12 +37,9 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[360px] rounded-3xl border-0 shadow-card p-0 overflow-hidden">
-        {/* Hero gradient */}
         <div className="bg-gradient-to-br from-accent via-accent to-accent/80 p-6 text-center relative overflow-hidden">
-          {/* Decorative circles */}
           <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/10 blur-2xl" />
           <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-white/10 blur-xl" />
-          
           <div className="relative">
             <div className="mx-auto w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-4 shadow-lg">
               <Crown className="h-10 w-10 text-white" />
