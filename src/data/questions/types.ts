@@ -1,15 +1,19 @@
+export interface QuestionOption {
+  de: string;
+  en: string;
+  image?: string; // path to image for image-based questions
+}
+
 export interface Question {
   id: string;
   text_de: string;
   text_en: string;
-  options: {
-    de: string;
-    en: string;
-  }[];
+  options: QuestionOption[];
   correctIndex: number;
   category: 'politics' | 'history' | 'society';
   isStateSpecific: boolean;
   state?: string;
+  hasImages?: boolean; // flag for image-based questions
 }
 
 export const categories = [

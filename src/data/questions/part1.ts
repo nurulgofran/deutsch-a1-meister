@@ -286,14 +286,15 @@ export const part1Questions: Question[] = [
     text_de: "Welches ist das Wappen der Bundesrepublik Deutschland?",
     text_en: "Which is the coat of arms of the Federal Republic of Germany?",
     options: [
-      { de: "Bild 1 (Adler)", en: "Image 1 (Eagle)" },
-      { de: "Bild 2", en: "Image 2" },
-      { de: "Bild 3", en: "Image 3" },
-      { de: "Bild 4", en: "Image 4" }
+      { de: "Bild 1 (Adler)", en: "Image 1 (Eagle)", image: "/coat-of-arms/germany.png" },
+      { de: "Bild 2", en: "Image 2", image: "/coat-of-arms/austria.png" },
+      { de: "Bild 3", en: "Image 3", image: "/coat-of-arms/poland.png" },
+      { de: "Bild 4", en: "Image 4", image: "/coat-of-arms/eu.png" }
     ],
     correctIndex: 0,
     category: "society",
-    isStateSpecific: false
+    isStateSpecific: false,
+    hasImages: true
   },
   {
     id: "22",
