@@ -155,12 +155,13 @@ export function AdProvider({ children }: { children: ReactNode }) {
   }, [isPro]);
 
   const closeRewardedAd = useCallback((claimed: boolean) => {
-    // This is less relevant with native UI, but good for cleanup
     setShowRewarded(false);
-    if (!claimed) { // If closed without reward (though AdMob handles this mostly)
-        setRewardedCallback(null);
+    if (claimed && rewardedCallback) {
+      // Web fallback: execute the reward callback when user claims
+      rewardedCallback();
     }
-  }, []);
+    setRewardedCallback(null);
+  }, [rewardedCallback]);
 
   return (
     <AdContext.Provider
