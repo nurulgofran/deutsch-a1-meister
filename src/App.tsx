@@ -18,8 +18,6 @@ import { Bundesland } from "@/data/questions/index";
 
 import { storage } from '@/lib/storage';
 
-// ... imports
-
 const queryClient = new QueryClient();
 
 function AppContent() {

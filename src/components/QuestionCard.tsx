@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Bookmark, BookmarkCheck, Lightbulb, Play, ChevronDown, ChevronUp, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,7 +6,7 @@ import { Question } from '@/data/questions/index';
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
 import { ProModal } from '@/components/ProModal';
-import { cn } from '@/lib/utils';
+import { cn, shuffleOptionsWithCorrectIndex } from '@/lib/utils';
 import { toast } from 'sonner';
 
 interface QuestionCardProps {
@@ -35,6 +35,15 @@ export function QuestionCard({
   const [hintIndex, setHintIndex] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
 
+  // Shuffle options once per question to prevent memorization
+  const { shuffledOptions, correctIndexShuffled } = useMemo(() => {
+    const result = shuffleOptionsWithCorrectIndex(question.options, question.correctIndex);
+    return {
+      shuffledOptions: result.shuffledOptions,
+      correctIndexShuffled: result.newCorrectIndex
+    };
+  }, [question.id, question.options, question.correctIndex]);
+
   const selected = selectedAnswer ?? localSelected;
   const isBookmarked = progress.bookmarkedQuestions.includes(question.id);
 
@@ -57,17 +66,17 @@ export function QuestionCard({
 
     if (showFeedback) {
       setShowResult(true);
-      const isCorrect = index === question.correctIndex;
+      const isCorrect = index === correctIndexShuffled;
       onAnswer?.(isCorrect);
     }
   };
 
   const handleGetHint = () => {
     if (isPro) {
-      // Pro users get hints for free
-      const wrongAnswers = question.options
+      // Pro users get hints for free - use shuffled options
+      const wrongAnswers = shuffledOptions
         .map((_, index) => index)
-        .filter(index => index !== question.correctIndex);
+        .filter(index => index !== correctIndexShuffled);
       
       if (wrongAnswers.length > 0) {
         const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
@@ -76,11 +85,11 @@ export function QuestionCard({
         toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
       }
     } else {
-      // Non-pro users watch an ad
+      // Non-pro users watch an ad - use shuffled options
       triggerRewardedAd(() => {
-        const wrongAnswers = question.options
+        const wrongAnswers = shuffledOptions
           .map((_, index) => index)
-          .filter(index => index !== question.correctIndex);
+          .filter(index => index !== correctIndexShuffled);
         
         if (wrongAnswers.length > 0) {
           const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
@@ -102,7 +111,7 @@ export function QuestionCard({
 
   const getOptionClasses = (index: number) => {
     const isSelected = selected === index;
-    const isCorrect = index === question.correctIndex;
+    const isCorrect = index === correctIndexShuffled;
     const isHintedWrong = hintIndex === index;
     
     const baseClasses = "w-full min-h-[60px] h-auto p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop flex items-center gap-3";
@@ -195,7 +204,7 @@ export function QuestionCard({
             "space-y-3",
             question.hasImages && "grid grid-cols-2 gap-3 space-y-0"
           )}>
-            {question.options.map((option, index) => (
+            {shuffledOptions.map((option, index) => (
               <Button
                 key={index}
                 variant="outline"

@@ -14,11 +14,6 @@ export function BottomNav() {
   const location = useLocation();
   const { t } = useApp();
 
-  // Hide nav during active quiz/exam
-  if (location.pathname.includes('/quiz') || location.pathname.includes('/exam-session')) {
-    return null;
-  }
-
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
       {/* Glass background */}

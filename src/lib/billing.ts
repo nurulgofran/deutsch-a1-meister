@@ -1,10 +1,13 @@
 import { Capacitor } from '@capacitor/core';
 import { CapacitorPurchases } from '@capgo/capacitor-purchases';
 
-// Google Play Billing configuration
-// REPLACE THESE WITH YOUR REAL VALUES IN VS CODE
+// ============================================
+// ⚠️ PRODUCTION CONFIGURATION REQUIRED ⚠️
+// Replace these placeholder values with your REAL RevenueCat configuration
+// Get your API key from: https://app.revenuecat.com/
+// ============================================
 const BILLING_CONFIG = {
-  // RevenueCat API Key (get from RevenueCat dashboard)
+  // RevenueCat API Key - REPLACE FOR PRODUCTION
   revenueCatApiKey: 'YOUR_REVENUECAT_API_KEY',
   
   // Entitlement ID (set up in RevenueCat)
