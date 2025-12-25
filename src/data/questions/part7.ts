@@ -420,5 +420,155 @@ export const part7Questions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: false
+  },
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
+    text_en: "Which coat of arms belongs to the federal state of Baden-Württemberg?",
+    options: [
+      { de: "Bild 1", en: "Image 1" },
+      { de: "Bild 2", en: "Image 2" },
+      { de: "Bild 3", en: "Image 3" },
+      { de: "Bild 4", en: "Image 4" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "302",
+    text_de: "Welches ist ein Landkreis in Baden-Württemberg?",
+    text_en: "Which is a district in Baden-Württemberg?",
+    options: [
+      { de: "Rhein-Sieg-Kreis", en: "Rhein-Sieg-Kreis" },
+      { de: "Oberbergischer Kreis", en: "Oberbergischer Kreis" },
+      { de: "__(Lücke)__-Kreis", en: "__(Lücke)__-Kreis" },
+      { de: "Enzkreis", en: "Enzkreis" }
+    ],
+    correctIndex: 3,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "303",
+    text_de: "Für__(Lücke)____(Lücke)__ Baden-Württemberg__(Lücke)?",
+    text_en: "What is Baden-Württemberg famous for?",
+    options: [
+      { de: "__(Lücke)__industrie", en: "car industry" },
+      { de: "__(Lücke)__industrie", en: "__(Lücke)__ industry" },
+      { de: "__(Lücke)__industrie", en: "__(Lücke)__ industry" },
+      { de: "__(Lücke)__industrie", en: "__(Lücke)__ industry" }
+    ],
+    correctIndex: 0,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "304",
+    text_de: "Welches Bundesland__(Lücke)__ Landeshauptstadt Stuttgart?",
+    text_en: "Which federal state has Stuttgart as its capital?",
+    options: [
+      { de: "Rheinland-Pfalz", en: "Rhineland-Palatinate" },
+      { de: "Baden-Württemberg", en: "Baden-Württemberg" },
+      { de: "Bayern", en: "Bavaria" },
+      { de: "Sachsen", en: "Saxony" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "305",
+    text_de: "Wie heißt__(Lücke)__ Ministerpräsident/__in__(Lücke)__ Baden-Württemberg?",
+    text_en: "What is the name of the Minister-President of Baden-Württemberg?",
+    options: [
+      { de: "Winfried Kretschmann", en: "Winfried Kretschmann" },
+      { de: "Markus Söder", en: "Markus Söder" },
+      { de: "Armin Laschet", en: "Armin Laschet" },
+      { de: "Olaf Scholz", en: "Olaf Scholz" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "306",
+    text_de: "Welche Nachbarländer hat Baden-Württemberg?",
+    text_en: "Which neighboring countries does Baden-Württemberg have?",
+    options: [
+      { de: "__(Lücke)__ und Polen", en: "__(Lücke)__ and Poland" },
+      { de: "Frankreich und Schweiz", en: "France and Switzerland" },
+      { de: "__(Lücke)__ und Belgien", en: "__(Lücke)__ and Belgium" },
+      { de: "Dänemark und__(Lücke)__", en: "Denmark and__(Lücke)__" }
+    ],
+    correctIndex: 1,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "307",
+    text_de: "Wie heißt das Landesparlament von Baden-Württemberg?",
+    text_en: "What is the name of the state parliament of Baden-Württemberg?",
+    options: [
+      { de: "Bürgerschaft", en: "Bürgerschaft" },
+      { de: "Landtag", en: "Landtag" },
+      { de: "Abgeordnetenhaus", en: "House of Representatives" },
+      { de: "Senat", en: "Senate" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "308",
+    text_de: "Welche Stadt__(Lücke)__ nicht in Baden-Württemberg?",
+    text_en: "Which city is not in Baden-Württemberg?",
+    options: [
+      { de: "Stuttgart", en: "Stuttgart" },
+      { de: "Mannheim", en: "Mannheim" },
+      { de: "Freiburg", en: "Freiburg" },
+      { de: "Augsburg", en: "Augsburg" }
+    ],
+    correctIndex: 3,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "309",
+    text_de: "Welcher__(Lücke)__ fließt durch Baden-Württemberg?",
+    text_en: "Which river flows through Baden-Württemberg?",
+    options: [
+      { de: "die__(Lücke)__", en: "the __(Lücke)__" },
+      { de: "der Neckar", en: "the Neckar" },
+      { de: "die Spree", en: "the Spree" },
+      { de: "die Weser", en: "the Weser" }
+    ],
+    correctIndex: 1,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "310",
+    text_de: "Welches Gebirge liegt in Baden-Württemberg?",
+    text_en: "Which mountain range is in Baden-Württemberg?",
+    options: [
+      { de: "der Harz", en: "the Harz" },
+      { de: "das Erzgebirge", en: "the Ore Mountains" },
+      { de: "der Schwarzwald", en: "the Black Forest" },
+      { de: "der Taunus", en: "the Taunus" }
+    ],
+    correctIndex: 2,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
   }
 ];
