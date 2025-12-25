@@ -35,7 +35,6 @@ export function InterstitialAd() {
 
   return (
     <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col">
-      {/* Header with close button */}
       <div className="flex items-center justify-between p-4 border-b border-border">
         <span className="text-sm text-muted-foreground font-medium">
           {t('Werbung', 'Advertisement')}
@@ -58,14 +57,12 @@ export function InterstitialAd() {
         )}
       </div>
 
-      {/* Ad content area */}
       <div className="flex-1 flex items-center justify-center p-6">
         <div 
           id="interstitial-ad-container"
           data-ad-unit-id={adUnitIds.interstitial}
           className="w-full max-w-md aspect-[4/5] rounded-3xl border-2 border-dashed border-border/50 bg-gradient-to-br from-muted/30 via-muted/50 to-muted/30 flex items-center justify-center"
         >
-          {/* Placeholder content */}
           <div className="text-center p-6">
             <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center">
               <span className="text-2xl">📺</span>
@@ -80,30 +77,11 @@ export function InterstitialAd() {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="p-4 text-center border-t border-border">
         <p className="text-xs text-muted-foreground">
           {t('Unterstütze uns mit dieser Werbung', 'Support us by viewing this ad')}
         </p>
       </div>
-
-      {/* 
-        INTEGRATION INSTRUCTIONS:
-        Replace the placeholder with actual interstitial ad logic.
-        
-        For Google AdMob (Capacitor):
-        import { AdMob, InterstitialAdPluginEvents } from '@capacitor-community/admob';
-        
-        useEffect(() => {
-          if (showInterstitial) {
-            AdMob.showInterstitial();
-          }
-        }, [showInterstitial]);
-        
-        AdMob.addListener(InterstitialAdPluginEvents.Dismissed, () => {
-          closeInterstitial();
-        });
-      */}
     </div>
   );
 }

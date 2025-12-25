@@ -25,14 +25,12 @@ interface AdContextType {
 
 const AdContext = createContext<AdContextType | undefined>(undefined);
 
-// Placeholder Ad Unit IDs - Replace with your actual IDs
 const AD_UNIT_IDS = {
-  banner: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',      // Banner ad unit
-  interstitial: 'ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ', // Interstitial ad unit
-  rewarded: 'ca-app-pub-XXXXXXXXXXXXXXXX/WWWWWWWWWW',     // Rewarded ad unit
+  banner: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
+  interstitial: 'ca-app-pub-XXXXXXXXXXXXXXXX/ZZZZZZZZZZ',
+  rewarded: 'ca-app-pub-XXXXXXXXXXXXXXXX/WWWWWWWWWW',
 };
 
-// Minimum time between interstitial ads (10 minutes in ms)
 const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
 
 export function AdProvider({ children }: { children: ReactNode }) {
