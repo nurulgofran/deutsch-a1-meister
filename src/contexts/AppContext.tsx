@@ -29,8 +29,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return store.settings.language === 'de' ? de : en;
   };
 
+  // Wrap getReadinessScore to automatically use current bundesland
+  const getReadinessScore = () => store.getReadinessScore(store.settings.bundesland);
+
   return (
-    <AppContext.Provider value={{ ...store, t }}>
+    <AppContext.Provider value={{ ...store, getReadinessScore, t }}>
       {children}
     </AppContext.Provider>
   );

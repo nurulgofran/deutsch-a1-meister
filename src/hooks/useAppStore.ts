@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Bundesland } from '@/data/questions/index';
-
+import { Bundesland, questions } from '@/data/questions/index';
 export interface UserProgress {
   questionsAnswered: Record<string, boolean>; // questionId -> correct/incorrect
   categoryProgress: Record<string, { correct: number; total: number }>;
@@ -202,13 +201,17 @@ export function useAppStore() {
     localStorage.removeItem('lid-progress');
   }, []);
 
-  // Calculate readiness score
-  const getReadinessScore = useCallback(() => {
-    const totalAnswered = Object.keys(progress.questionsAnswered).length;
-    const correctAnswers = Object.values(progress.questionsAnswered).filter(Boolean).length;
+  // Calculate readiness score based on mastered questions vs total questions
+  const getReadinessScore = useCallback((bundesland: Bundesland) => {
+    // Filter questions: 300 general + 10 state-specific for user's Bundesland
+    const filteredQuestions = questions.filter(q => 
+      !q.isStateSpecific || q.state === bundesland
+    );
+    const totalQuestions = filteredQuestions.length;
+    const masteredCount = Object.values(progress.questionsAnswered).filter(Boolean).length;
     
-    if (totalAnswered === 0) return 0;
-    return Math.round((correctAnswers / totalAnswered) * 100);
+    if (totalQuestions === 0) return 0;
+    return Math.round((masteredCount / totalQuestions) * 100);
   }, [progress.questionsAnswered]);
 
   // Get mastered questions count
