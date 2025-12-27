@@ -7,11 +7,12 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Crown, Sparkles, Ban, Lightbulb, RotateCcw, Loader2 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Crown, Sparkles, Ban, Lightbulb, RotateCcw, Loader2, Gift } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
 import { toast } from 'sonner';
-import { purchasePro, restorePurchases, BILLING_CONFIG } from '@/lib/billing';
+import { purchasePro, restorePurchases, redeemPromoCode, isAndroidPlatform, BILLING_CONFIG } from '@/lib/billing';
 
 interface ProModalProps {
   open: boolean;
@@ -23,6 +24,29 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
   const { setPro } = useAds();
   const [isLoading, setIsLoading] = useState(false);
   const [isRestoring, setIsRestoring] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
+  const [isRedeeming, setIsRedeeming] = useState(false);
+  
+  const isAndroid = isAndroidPlatform();
+
+  const handleRedeemPromoCode = async () => {
+    setIsRedeeming(true);
+    try {
+      await redeemPromoCode(promoCode);
+      toast.info(t(
+        'Nachdem du deinen Code eingelöst hast, klicke auf "Kauf wiederherstellen".',
+        'After redeeming your code, click "Restore purchase" below.'
+      ));
+    } catch (error) {
+      toast.error(t(
+        'Fehler beim Öffnen von Google Play.',
+        'Failed to open Google Play.'
+      ));
+    } finally {
+      setIsRedeeming(false);
+      setPromoCode('');
+    }
+  };
 
   // Only Pro-exclusive features (things free users DON'T get)
   const features = [
@@ -159,7 +183,7 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
               variant="outline" 
               className="w-full h-10 text-sm font-medium gap-2"
               onClick={handleRestore}
-              disabled={isLoading || isRestoring}
+              disabled={isLoading || isRestoring || isRedeeming}
             >
               {isRestoring ? (
                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -173,11 +197,59 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
               variant="ghost" 
               className="w-full h-10 font-medium text-muted-foreground"
               onClick={() => onOpenChange(false)}
-              disabled={isLoading || isRestoring}
+              disabled={isLoading || isRestoring || isRedeeming}
             >
               {t('Später', 'Maybe later')}
             </Button>
           </div>
+          
+          {/* Promo Code Section - Android Only */}
+          {isAndroid && (
+            <div className="mt-6 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 mb-3">
+                <Gift className="h-4 w-4 text-accent" />
+                <span className="text-sm font-medium">
+                  {t('Promo-Code einlösen', 'Redeem Promo Code')}
+                </span>
+              </div>
+              
+              <p className="text-xs text-muted-foreground mb-3">
+                {t(
+                  'Hast du einen Code? Löse ihn bei Google Play ein, um Pro freizuschalten.',
+                  'Have a code? Redeem it on Google Play to unlock Pro features.'
+                )}
+              </p>
+              
+              <div className="flex gap-2">
+                <Input
+                  placeholder={t('Code eingeben...', 'Enter code...')}
+                  value={promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
+                  className="flex-1 h-10"
+                  disabled={isRedeeming}
+                />
+                <Button
+                  variant="secondary"
+                  className="h-10 px-4"
+                  onClick={handleRedeemPromoCode}
+                  disabled={isLoading || isRestoring || isRedeeming}
+                >
+                  {isRedeeming ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    t('Einlösen', 'Redeem')
+                  )}
+                </Button>
+              </div>
+              
+              <p className="text-xs text-muted-foreground mt-2 italic">
+                {t(
+                  'Nach dem Einlösen bei Google Play, klicke oben auf "Kauf wiederherstellen".',
+                  'After redeeming on Google Play, click "Restore purchase" above.'
+                )}
+              </p>
+            </div>
+          )}
           
           <p className="text-xs text-center text-muted-foreground mt-4">
             {t(

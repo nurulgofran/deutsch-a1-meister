@@ -1,5 +1,6 @@
 import { Capacitor } from '@capacitor/core';
 import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
+import { Browser } from '@capacitor/browser';
 
 // ============================================
 // ⚠️ PRODUCTION CONFIGURATION REQUIRED ⚠️
@@ -132,7 +133,30 @@ export async function restorePurchases(): Promise<PurchaseResult> {
     return { success: false, error: 'No previous purchase found' };
   } catch (error: any) {
     console.error('Billing: Restore failed', error);
-    return { success: false, error: error.message || 'Restore failed' };
+  return { success: false, error: error.message || 'Restore failed' };
+  }
+}
+
+// Check if running on Android
+export function isAndroidPlatform(): boolean {
+  return Capacitor.getPlatform() === 'android';
+}
+
+// Redeem promo code via Google Play
+export async function redeemPromoCode(code?: string): Promise<void> {
+  const baseUrl = 'https://play.google.com/redeem';
+  const url = code?.trim() ? `${baseUrl}?code=${encodeURIComponent(code.trim())}` : baseUrl;
+  
+  if (Capacitor.isNativePlatform()) {
+    try {
+      await Browser.open({ url });
+    } catch (error) {
+      console.error('Billing: Failed to open browser', error);
+      // Fallback to window.open
+      window.open(url, '_blank');
+    }
+  } else {
+    window.open(url, '_blank');
   }
 }
 
