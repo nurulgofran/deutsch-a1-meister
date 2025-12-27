@@ -160,12 +160,28 @@ export default function Settings() {
             )}
              
             {isPro && (
-               <div className="p-3 bg-primary/10 rounded-lg border border-primary/20 text-center">
+              <div className="space-y-3">
+                <div className="p-3 bg-primary/10 rounded-lg border border-primary/20 text-center">
                   <p className="text-xs font-bold text-primary">
                     {t('Du nutzt die beste Version!', 'You are using the best version!')}
                   </p>
-               </div>
-            )} 
+                </div>
+                
+                {/* Debug: Reset Pro for testing */}
+                <Button 
+                  variant="outline"
+                  size="sm"
+                  className="w-full text-xs text-muted-foreground"
+                  onClick={() => {
+                    setPro(false);
+                    localStorage.removeItem('lid-is-pro');
+                    toast.info('Pro status reset for testing');
+                  }}
+                >
+                  🧪 Reset Pro (Testing)
+                </Button>
+              </div>
+            )}
           </CardContent>
         </Card>
 
