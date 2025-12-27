@@ -159,8 +159,8 @@ export function QuestionCard({
             )}
           </div>
 
-          {/* TOP CTA: Show only if answer is WRONG, Result is SHOWN, and user is NOT Pro/Unlocked */}
-          {showResult && !isCorrect && !isPro && !isExplanationUnlocked && (
+          {/* TOP CTA: Show if Result is SHOWN, and user is NOT Pro/Unlocked (Answer correctness doesn't matter) */}
+          {showResult && !isPro && !isExplanationUnlocked && (
             <Button
               variant="outline"
               size="sm"

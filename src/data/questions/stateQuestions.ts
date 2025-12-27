@@ -38,7 +38,7 @@ const badenWuerttembergQuestions: Question[] = [
   },
   {
     id: "303",
-    text_de: "Für__(Lücke)__ ist Baden-Württemberg__(Lücke)?",
+    text_de: "Wofür ist Baden-Württemberg bekannt?",
     text_en: "What is Baden-Württemberg famous for?",
     options: [
       { de: "Automobilindustrie und Schwarzwald", en: "Car industry and Black Forest" },
@@ -161,7 +161,7 @@ const badenWuerttembergQuestions: Question[] = [
 // Bayern (Bavaria)
 const bayernQuestions: Question[] = [
   {
-    id: "301",
+    id: "311",
     text_de: "Welches Wappen gehört zum Bundesland Bayern?",
     text_en: "Which coat of arms belongs to the federal state of Bavaria?",
     options: [
@@ -177,7 +177,7 @@ const bayernQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "312",
     text_de: "Welches ist ein Landkreis in Bayern?",
     text_en: "Which is a district in Bavaria?",
     options: [
@@ -192,8 +192,8 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Bayern__(Lücke)?",
+    id: "313",
+    text_de: "Wofür ist Bayern bekannt?",
     text_en: "What is Bavaria famous for?",
     options: [
       { de: "Automobilindustrie und Oktoberfest", en: "Car industry and Oktoberfest" },
@@ -207,7 +207,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "304",
+    id: "314",
     text_de: "Welches Bundesland hat die Landeshauptstadt München?",
     text_en: "Which federal state has Munich as its capital?",
     options: [
@@ -222,7 +222,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "305",
+    id: "315",
     text_de: "Wie heißt der/die Ministerpräsident/in von Bayern?",
     text_en: "What is the name of the Minister-President of Bavaria?",
     options: [
@@ -237,7 +237,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "306",
+    id: "316",
     text_de: "Welche Nachbarländer hat Bayern?",
     text_en: "Which neighboring countries does Bavaria have?",
     options: [
@@ -252,7 +252,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "307",
+    id: "317",
     text_de: "Wie heißt das Landesparlament von Bayern?",
     text_en: "What is the name of the state parliament of Bavaria?",
     options: [
@@ -267,7 +267,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "308",
+    id: "318",
     text_de: "Welche Stadt liegt nicht in Bayern?",
     text_en: "Which city is not in Bavaria?",
     options: [
@@ -282,7 +282,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "309",
+    id: "319",
     text_de: "Welcher Fluss fließt durch Bayern?",
     text_en: "Which river flows through Bavaria?",
     options: [
@@ -297,7 +297,7 @@ const bayernQuestions: Question[] = [
     state: "Bayern"
   },
   {
-    id: "310",
+    id: "320",
     text_de: "Welches Gebirge liegt in Bayern?",
     text_en: "Which mountain range is in Bavaria?",
     options: [
@@ -316,7 +316,7 @@ const bayernQuestions: Question[] = [
 // Berlin
 const berlinQuestions: Question[] = [
   {
-    id: "301",
+    id: "321",
     text_de: "Welches Wappen gehört zum Bundesland Berlin?",
     text_en: "Which coat of arms belongs to the federal state of Berlin?",
     options: [
@@ -332,7 +332,7 @@ const berlinQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "322",
     text_de: "Welches ist ein Bezirk von Berlin?",
     text_en: "Which is a district of Berlin?",
     options: [
@@ -347,8 +347,8 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Berlin__(Lücke)?",
+    id: "323",
+    text_de: "Wofür ist Berlin bekannt?",
     text_en: "What is Berlin famous for?",
     options: [
       { de: "Automobilindustrie", en: "Car industry" },
@@ -362,8 +362,8 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "304",
-    text_de: "Was ist__(Lücke)__ die Hauptstadt von Deutschland?",
+    id: "324",
+    text_de: "Was ist die Hauptstadt von Deutschland?",
     text_en: "What is the capital of Germany?",
     options: [
       { de: "München", en: "Munich" },
@@ -377,7 +377,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "305",
+    id: "325",
     text_de: "Wie heißt der/die Regierende Bürgermeister/in von Berlin?",
     text_en: "What is the name of the Governing Mayor of Berlin?",
     options: [
@@ -392,7 +392,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "306",
+    id: "326",
     text_de: "Welches Bundesland umgibt Berlin vollständig?",
     text_en: "Which federal state completely surrounds Berlin?",
     options: [
@@ -407,7 +407,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "307",
+    id: "327",
     text_de: "Wie heißt das Landesparlament von Berlin?",
     text_en: "What is the name of the state parliament of Berlin?",
     options: [
@@ -422,7 +422,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "308",
+    id: "328",
     text_de: "Welcher Stadtteil gehört nicht zu Berlin?",
     text_en: "Which district does not belong to Berlin?",
     options: [
@@ -437,7 +437,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "309",
+    id: "329",
     text_de: "Welcher Fluss fließt durch Berlin?",
     text_en: "Which river flows through Berlin?",
     options: [
@@ -452,7 +452,7 @@ const berlinQuestions: Question[] = [
     state: "Berlin"
   },
   {
-    id: "310",
+    id: "330",
     text_de: "Was ist ein bekanntes Wahrzeichen von Berlin?",
     text_en: "What is a famous landmark of Berlin?",
     options: [
@@ -471,7 +471,7 @@ const berlinQuestions: Question[] = [
 // Brandenburg
 const brandenburgQuestions: Question[] = [
   {
-    id: "301",
+    id: "331",
     text_de: "Welches Wappen gehört zum Bundesland Brandenburg?",
     text_en: "Which coat of arms belongs to the federal state of Brandenburg?",
     options: [
@@ -487,7 +487,7 @@ const brandenburgQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "332",
     text_de: "Welches ist ein Landkreis in Brandenburg?",
     text_en: "Which is a district in Brandenburg?",
     options: [
@@ -502,8 +502,8 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Brandenburg__(Lücke)?",
+    id: "333",
+    text_de: "Wofür ist Brandenburg bekannt?",
     text_en: "What is Brandenburg famous for?",
     options: [
       { de: "Seen und Wälder", en: "Lakes and forests" },
@@ -517,7 +517,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "304",
+    id: "334",
     text_de: "Welches Bundesland hat die Landeshauptstadt Potsdam?",
     text_en: "Which federal state has Potsdam as its capital?",
     options: [
@@ -532,7 +532,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "305",
+    id: "335",
     text_de: "Wie heißt der/die Ministerpräsident/in von Brandenburg?",
     text_en: "What is the name of the Minister-President of Brandenburg?",
     options: [
@@ -547,7 +547,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "306",
+    id: "336",
     text_de: "Welches Nachbarland hat Brandenburg?",
     text_en: "Which neighboring country does Brandenburg have?",
     options: [
@@ -562,7 +562,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "307",
+    id: "337",
     text_de: "Wie heißt das Landesparlament von Brandenburg?",
     text_en: "What is the name of the state parliament of Brandenburg?",
     options: [
@@ -577,7 +577,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "308",
+    id: "338",
     text_de: "Welche Stadt liegt nicht in Brandenburg?",
     text_en: "Which city is not in Brandenburg?",
     options: [
@@ -592,7 +592,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "309",
+    id: "339",
     text_de: "Welcher Fluss fließt durch Brandenburg?",
     text_en: "Which river flows through Brandenburg?",
     options: [
@@ -607,7 +607,7 @@ const brandenburgQuestions: Question[] = [
     state: "Brandenburg"
   },
   {
-    id: "310",
+    id: "340",
     text_de: "Was ist ein bekanntes Bauwerk in Brandenburg?",
     text_en: "What is a famous building in Brandenburg?",
     options: [
@@ -626,7 +626,7 @@ const brandenburgQuestions: Question[] = [
 // Bremen
 const bremenQuestions: Question[] = [
   {
-    id: "301",
+    id: "341",
     text_de: "Welches Wappen gehört zum Bundesland Bremen?",
     text_en: "Which coat of arms belongs to the federal state of Bremen?",
     options: [
@@ -642,7 +642,7 @@ const bremenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "342",
     text_de: "Aus welchen Städten besteht das Bundesland Bremen?",
     text_en: "Which cities make up the federal state of Bremen?",
     options: [
@@ -657,8 +657,8 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Bremen__(Lücke)?",
+    id: "343",
+    text_de: "Wofür ist Bremen bekannt?",
     text_en: "What is Bremen famous for?",
     options: [
       { de: "Hafen und Schifffahrt", en: "Port and shipping" },
@@ -672,7 +672,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "304",
+    id: "344",
     text_de: "Welches Bundesland ist ein Stadtstaat mit dem Namen Bremen?",
     text_en: "Which federal state is a city-state named Bremen?",
     options: [
@@ -687,7 +687,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "305",
+    id: "345",
     text_de: "Wie heißt der/die Bürgermeister/in von Bremen?",
     text_en: "What is the name of the Mayor of Bremen?",
     options: [
@@ -702,7 +702,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "306",
+    id: "346",
     text_de: "Welches Bundesland umgibt Bremen?",
     text_en: "Which federal state surrounds Bremen?",
     options: [
@@ -717,7 +717,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "307",
+    id: "347",
     text_de: "Wie heißt das Landesparlament von Bremen?",
     text_en: "What is the name of the state parliament of Bremen?",
     options: [
@@ -732,7 +732,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "308",
+    id: "348",
     text_de: "Welches bekannte Märchen ist mit Bremen verbunden?",
     text_en: "Which famous fairy tale is connected to Bremen?",
     options: [
@@ -747,7 +747,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "309",
+    id: "349",
     text_de: "Welcher Fluss fließt durch Bremen?",
     text_en: "Which river flows through Bremen?",
     options: [
@@ -762,7 +762,7 @@ const bremenQuestions: Question[] = [
     state: "Bremen"
   },
   {
-    id: "310",
+    id: "350",
     text_de: "Was ist das kleinste Bundesland nach Fläche?",
     text_en: "What is the smallest federal state by area?",
     options: [
@@ -781,7 +781,7 @@ const bremenQuestions: Question[] = [
 // Hamburg
 const hamburgQuestions: Question[] = [
   {
-    id: "301",
+    id: "351",
     text_de: "Welches Wappen gehört zum Bundesland Hamburg?",
     text_en: "Which coat of arms belongs to the federal state of Hamburg?",
     options: [
@@ -797,7 +797,7 @@ const hamburgQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "352",
     text_de: "Welches ist ein Bezirk von Hamburg?",
     text_en: "Which is a district of Hamburg?",
     options: [
@@ -812,8 +812,8 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Hamburg__(Lücke)?",
+    id: "353",
+    text_de: "Wofür ist Hamburg bekannt?",
     text_en: "What is Hamburg famous for?",
     options: [
       { de: "Hafen und Handel", en: "Port and trade" },
@@ -827,7 +827,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "304",
+    id: "354",
     text_de: "Welches Bundesland ist ein Stadtstaat mit dem Namen Hamburg?",
     text_en: "Which federal state is a city-state named Hamburg?",
     options: [
@@ -842,7 +842,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "305",
+    id: "355",
     text_de: "Wie heißt der/die Erste Bürgermeister/in von Hamburg?",
     text_en: "What is the name of the First Mayor of Hamburg?",
     options: [
@@ -857,7 +857,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "306",
+    id: "356",
     text_de: "Welche Bundesländer grenzen an Hamburg?",
     text_en: "Which federal states border Hamburg?",
     options: [
@@ -872,7 +872,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "307",
+    id: "357",
     text_de: "Wie heißt das Landesparlament von Hamburg?",
     text_en: "What is the name of the state parliament of Hamburg?",
     options: [
@@ -887,7 +887,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "308",
+    id: "358",
     text_de: "Was ist ein bekanntes Wahrzeichen von Hamburg?",
     text_en: "What is a famous landmark of Hamburg?",
     options: [
@@ -902,7 +902,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "309",
+    id: "359",
     text_de: "Welcher Fluss fließt durch Hamburg?",
     text_en: "Which river flows through Hamburg?",
     options: [
@@ -917,7 +917,7 @@ const hamburgQuestions: Question[] = [
     state: "Hamburg"
   },
   {
-    id: "310",
+    id: "360",
     text_de: "Was ist die Speicherstadt in Hamburg?",
     text_en: "What is the Speicherstadt in Hamburg?",
     options: [
@@ -936,7 +936,7 @@ const hamburgQuestions: Question[] = [
 // Hessen
 const hessenQuestions: Question[] = [
   {
-    id: "301",
+    id: "361",
     text_de: "Welches Wappen gehört zum Bundesland Hessen?",
     text_en: "Which coat of arms belongs to the federal state of Hesse?",
     options: [
@@ -952,7 +952,7 @@ const hessenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "362",
     text_de: "Welches ist ein Landkreis in Hessen?",
     text_en: "Which is a district in Hesse?",
     options: [
@@ -967,8 +967,8 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Hessen__(Lücke)?",
+    id: "363",
+    text_de: "Wofür ist Hessen bekannt?",
     text_en: "What is Hesse famous for?",
     options: [
       { de: "Finanzwesen und Apfelwein", en: "Finance and apple wine" },
@@ -982,7 +982,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "304",
+    id: "364",
     text_de: "Welches Bundesland hat die Landeshauptstadt Wiesbaden?",
     text_en: "Which federal state has Wiesbaden as its capital?",
     options: [
@@ -997,7 +997,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "305",
+    id: "365",
     text_de: "Wie heißt der/die Ministerpräsident/in von Hessen?",
     text_en: "What is the name of the Minister-President of Hesse?",
     options: [
@@ -1012,7 +1012,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "306",
+    id: "366",
     text_de: "Welche große Stadt liegt in Hessen?",
     text_en: "Which major city is located in Hesse?",
     options: [
@@ -1027,7 +1027,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "307",
+    id: "367",
     text_de: "Wie heißt das Landesparlament von Hessen?",
     text_en: "What is the name of the state parliament of Hesse?",
     options: [
@@ -1042,7 +1042,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "308",
+    id: "368",
     text_de: "Welche Stadt liegt nicht in Hessen?",
     text_en: "Which city is not in Hesse?",
     options: [
@@ -1057,7 +1057,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "309",
+    id: "369",
     text_de: "Welcher Fluss fließt durch Hessen?",
     text_en: "Which river flows through Hesse?",
     options: [
@@ -1072,7 +1072,7 @@ const hessenQuestions: Question[] = [
     state: "Hessen"
   },
   {
-    id: "310",
+    id: "370",
     text_de: "Welches Gebirge liegt in Hessen?",
     text_en: "Which mountain range is in Hesse?",
     options: [
@@ -1091,7 +1091,7 @@ const hessenQuestions: Question[] = [
 // Mecklenburg-Vorpommern
 const mecklenburgVorpommernQuestions: Question[] = [
   {
-    id: "301",
+    id: "371",
     text_de: "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
     text_en: "Which coat of arms belongs to the federal state of Mecklenburg-Western Pomerania?",
     options: [
@@ -1107,7 +1107,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "372",
     text_de: "Welches ist ein Landkreis in Mecklenburg-Vorpommern?",
     text_en: "Which is a district in Mecklenburg-Western Pomerania?",
     options: [
@@ -1122,8 +1122,8 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Mecklenburg-Vorpommern__(Lücke)?",
+    id: "373",
+    text_de: "Wofür ist Mecklenburg-Vorpommern bekannt?",
     text_en: "What is Mecklenburg-Western Pomerania famous for?",
     options: [
       { de: "Ostseeküste und Seen", en: "Baltic coast and lakes" },
@@ -1137,7 +1137,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "304",
+    id: "374",
     text_de: "Welches Bundesland hat die Landeshauptstadt Schwerin?",
     text_en: "Which federal state has Schwerin as its capital?",
     options: [
@@ -1152,7 +1152,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "305",
+    id: "375",
     text_de: "Wie heißt die/der Ministerpräsidentin/Ministerpräsident von Mecklenburg-Vorpommern?",
     text_en: "What is the name of the Minister-President of Mecklenburg-Western Pomerania?",
     options: [
@@ -1167,7 +1167,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "306",
+    id: "376",
     text_de: "An welches Meer grenzt Mecklenburg-Vorpommern?",
     text_en: "Which sea borders Mecklenburg-Western Pomerania?",
     options: [
@@ -1182,7 +1182,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "307",
+    id: "377",
     text_de: "Wie heißt das Landesparlament von Mecklenburg-Vorpommern?",
     text_en: "What is the name of the state parliament of Mecklenburg-Western Pomerania?",
     options: [
@@ -1197,7 +1197,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "308",
+    id: "378",
     text_de: "Welche Insel gehört zu Mecklenburg-Vorpommern?",
     text_en: "Which island belongs to Mecklenburg-Western Pomerania?",
     options: [
@@ -1212,7 +1212,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "309",
+    id: "379",
     text_de: "Welche Stadt liegt nicht in Mecklenburg-Vorpommern?",
     text_en: "Which city is not in Mecklenburg-Western Pomerania?",
     options: [
@@ -1227,7 +1227,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
     state: "Mecklenburg-Vorpommern"
   },
   {
-    id: "310",
+    id: "380",
     text_de: "Welches Nachbarland hat Mecklenburg-Vorpommern?",
     text_en: "Which neighboring country does Mecklenburg-Western Pomerania have?",
     options: [
@@ -1246,7 +1246,7 @@ const mecklenburgVorpommernQuestions: Question[] = [
 // Niedersachsen
 const niedersachsenQuestions: Question[] = [
   {
-    id: "301",
+    id: "381",
     text_de: "Welches Wappen gehört zum Bundesland Niedersachsen?",
     text_en: "Which coat of arms belongs to the federal state of Lower Saxony?",
     options: [
@@ -1262,7 +1262,7 @@ const niedersachsenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "382",
     text_de: "Welches ist ein Landkreis in Niedersachsen?",
     text_en: "Which is a district in Lower Saxony?",
     options: [
@@ -1277,8 +1277,8 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Niedersachsen__(Lücke)?",
+    id: "383",
+    text_de: "Wofür ist Niedersachsen bekannt?",
     text_en: "What is Lower Saxony famous for?",
     options: [
       { de: "Landwirtschaft und Automobilindustrie", en: "Agriculture and car industry" },
@@ -1292,7 +1292,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "304",
+    id: "384",
     text_de: "Welches Bundesland hat die Landeshauptstadt Hannover?",
     text_en: "Which federal state has Hanover as its capital?",
     options: [
@@ -1307,7 +1307,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "305",
+    id: "385",
     text_de: "Wie heißt der/die Ministerpräsident/in von Niedersachsen?",
     text_en: "What is the name of the Minister-President of Lower Saxony?",
     options: [
@@ -1322,7 +1322,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "306",
+    id: "386",
     text_de: "An welches Meer grenzt Niedersachsen?",
     text_en: "Which sea borders Lower Saxony?",
     options: [
@@ -1337,7 +1337,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "307",
+    id: "387",
     text_de: "Wie heißt das Landesparlament von Niedersachsen?",
     text_en: "What is the name of the state parliament of Lower Saxony?",
     options: [
@@ -1352,7 +1352,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "308",
+    id: "388",
     text_de: "Welche Stadt liegt nicht in Niedersachsen?",
     text_en: "Which city is not in Lower Saxony?",
     options: [
@@ -1367,7 +1367,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "309",
+    id: "389",
     text_de: "Welcher Fluss fließt durch Niedersachsen?",
     text_en: "Which river flows through Lower Saxony?",
     options: [
@@ -1382,7 +1382,7 @@ const niedersachsenQuestions: Question[] = [
     state: "Niedersachsen"
   },
   {
-    id: "310",
+    id: "390",
     text_de: "Welches ist das flächenmäßig zweitgrößte Bundesland?",
     text_en: "Which is the second largest federal state by area?",
     options: [
@@ -1401,7 +1401,7 @@ const niedersachsenQuestions: Question[] = [
 // Nordrhein-Westfalen
 const nordrheinWestfalenQuestions: Question[] = [
   {
-    id: "301",
+    id: "391",
     text_de: "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
     text_en: "Which coat of arms belongs to the federal state of North Rhine-Westphalia?",
     options: [
@@ -1417,7 +1417,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "392",
     text_de: "Welches ist ein Landkreis in Nordrhein-Westfalen?",
     text_en: "Which is a district in North Rhine-Westphalia?",
     options: [
@@ -1432,8 +1432,8 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Nordrhein-Westfalen__(Lücke)?",
+    id: "393",
+    text_de: "Wofür ist Nordrhein-Westfalen bekannt?",
     text_en: "What is North Rhine-Westphalia famous for?",
     options: [
       { de: "Industrie und Kultur", en: "Industry and culture" },
@@ -1447,7 +1447,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "304",
+    id: "394",
     text_de: "Welches Bundesland hat die Landeshauptstadt Düsseldorf?",
     text_en: "Which federal state has Düsseldorf as its capital?",
     options: [
@@ -1462,7 +1462,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "305",
+    id: "395",
     text_de: "Wie heißt der/die Ministerpräsident/in von Nordrhein-Westfalen?",
     text_en: "What is the name of the Minister-President of North Rhine-Westphalia?",
     options: [
@@ -1477,7 +1477,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "306",
+    id: "396",
     text_de: "Welche Nachbarländer hat Nordrhein-Westfalen?",
     text_en: "Which neighboring countries does North Rhine-Westphalia have?",
     options: [
@@ -1492,7 +1492,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "307",
+    id: "397",
     text_de: "Wie heißt das Landesparlament von Nordrhein-Westfalen?",
     text_en: "What is the name of the state parliament of North Rhine-Westphalia?",
     options: [
@@ -1507,7 +1507,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "308",
+    id: "398",
     text_de: "Welche Stadt liegt nicht in Nordrhein-Westfalen?",
     text_en: "Which city is not in North Rhine-Westphalia?",
     options: [
@@ -1522,7 +1522,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "309",
+    id: "399",
     text_de: "Welcher Fluss fließt durch Nordrhein-Westfalen?",
     text_en: "Which river flows through North Rhine-Westphalia?",
     options: [
@@ -1537,7 +1537,7 @@ const nordrheinWestfalenQuestions: Question[] = [
     state: "Nordrhein-Westfalen"
   },
   {
-    id: "310",
+    id: "400",
     text_de: "Welches ist das bevölkerungsreichste Bundesland?",
     text_en: "Which is the most populous federal state?",
     options: [
@@ -1556,7 +1556,7 @@ const nordrheinWestfalenQuestions: Question[] = [
 // Rheinland-Pfalz
 const rheinlandPfalzQuestions: Question[] = [
   {
-    id: "301",
+    id: "401",
     text_de: "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
     text_en: "Which coat of arms belongs to the federal state of Rhineland-Palatinate?",
     options: [
@@ -1572,7 +1572,7 @@ const rheinlandPfalzQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "402",
     text_de: "Welches ist ein Landkreis in Rheinland-Pfalz?",
     text_en: "Which is a district in Rhineland-Palatinate?",
     options: [
@@ -1587,8 +1587,8 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Rheinland-Pfalz__(Lücke)?",
+    id: "403",
+    text_de: "Wofür ist Rheinland-Pfalz bekannt?",
     text_en: "What is Rhineland-Palatinate famous for?",
     options: [
       { de: "Weinanbau", en: "Winemaking" },
@@ -1602,7 +1602,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "304",
+    id: "404",
     text_de: "Welches Bundesland hat die Landeshauptstadt Mainz?",
     text_en: "Which federal state has Mainz as its capital?",
     options: [
@@ -1617,7 +1617,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "305",
+    id: "405",
     text_de: "Wie heißt der/die Ministerpräsident/in von Rheinland-Pfalz?",
     text_en: "What is the name of the Minister-President of Rhineland-Palatinate?",
     options: [
@@ -1632,7 +1632,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "306",
+    id: "406",
     text_de: "Welche Nachbarländer hat Rheinland-Pfalz?",
     text_en: "Which neighboring countries does Rhineland-Palatinate have?",
     options: [
@@ -1647,7 +1647,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "307",
+    id: "407",
     text_de: "Wie heißt das Landesparlament von Rheinland-Pfalz?",
     text_en: "What is the name of the state parliament of Rhineland-Palatinate?",
     options: [
@@ -1662,7 +1662,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "308",
+    id: "408",
     text_de: "Welche Stadt liegt nicht in Rheinland-Pfalz?",
     text_en: "Which city is not in Rhineland-Palatinate?",
     options: [
@@ -1677,7 +1677,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "309",
+    id: "409",
     text_de: "Welcher Fluss fließt durch Rheinland-Pfalz?",
     text_en: "Which river flows through Rhineland-Palatinate?",
     options: [
@@ -1692,7 +1692,7 @@ const rheinlandPfalzQuestions: Question[] = [
     state: "Rheinland-Pfalz"
   },
   {
-    id: "310",
+    id: "410",
     text_de: "Welches Gebirge liegt in Rheinland-Pfalz?",
     text_en: "Which mountain range is in Rhineland-Palatinate?",
     options: [
@@ -1711,7 +1711,7 @@ const rheinlandPfalzQuestions: Question[] = [
 // Saarland
 const saarlandQuestions: Question[] = [
   {
-    id: "301",
+    id: "411",
     text_de: "Welches Wappen gehört zum Bundesland Saarland?",
     text_en: "Which coat of arms belongs to the federal state of Saarland?",
     options: [
@@ -1727,7 +1727,7 @@ const saarlandQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "412",
     text_de: "Welches ist ein Landkreis im Saarland?",
     text_en: "Which is a district in Saarland?",
     options: [
@@ -1742,8 +1742,8 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist das Saarland__(Lücke)?",
+    id: "413",
+    text_de: "Wofür ist das Saarland bekannt?",
     text_en: "What is Saarland famous for?",
     options: [
       { de: "Stahl- und Kohleindustrie", en: "Steel and coal industry" },
@@ -1757,7 +1757,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "304",
+    id: "414",
     text_de: "Welches Bundesland hat die Landeshauptstadt Saarbrücken?",
     text_en: "Which federal state has Saarbrücken as its capital?",
     options: [
@@ -1772,7 +1772,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "305",
+    id: "415",
     text_de: "Wie heißt die/der Ministerpräsidentin/Ministerpräsident des Saarlands?",
     text_en: "What is the name of the Minister-President of Saarland?",
     options: [
@@ -1787,7 +1787,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "306",
+    id: "416",
     text_de: "Welches Nachbarland hat das Saarland?",
     text_en: "Which neighboring country does Saarland have?",
     options: [
@@ -1802,7 +1802,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "307",
+    id: "417",
     text_de: "Wie heißt das Landesparlament des Saarlands?",
     text_en: "What is the name of the state parliament of Saarland?",
     options: [
@@ -1817,7 +1817,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "308",
+    id: "418",
     text_de: "Welche Stadt liegt nicht im Saarland?",
     text_en: "Which city is not in Saarland?",
     options: [
@@ -1832,7 +1832,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "309",
+    id: "419",
     text_de: "Welcher Fluss fließt durch das Saarland?",
     text_en: "Which river flows through Saarland?",
     options: [
@@ -1847,7 +1847,7 @@ const saarlandQuestions: Question[] = [
     state: "Saarland"
   },
   {
-    id: "310",
+    id: "420",
     text_de: "Das Saarland ist nach welchem Bundesland das kleinste Flächenland?",
     text_en: "After which federal state is Saarland the smallest territorial state?",
     options: [
@@ -1866,7 +1866,7 @@ const saarlandQuestions: Question[] = [
 // Sachsen
 const sachsenQuestions: Question[] = [
   {
-    id: "301",
+    id: "421",
     text_de: "Welches Wappen gehört zum Bundesland Sachsen?",
     text_en: "Which coat of arms belongs to the federal state of Saxony?",
     options: [
@@ -1882,7 +1882,7 @@ const sachsenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "422",
     text_de: "Welches ist ein Landkreis in Sachsen?",
     text_en: "Which is a district in Saxony?",
     options: [
@@ -1897,8 +1897,8 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Sachsen__(Lücke)?",
+    id: "423",
+    text_de: "Wofür ist Sachsen bekannt?",
     text_en: "What is Saxony famous for?",
     options: [
       { de: "Kultur, Industrie und Porzellan", en: "Culture, industry and porcelain" },
@@ -1912,7 +1912,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "304",
+    id: "424",
     text_de: "Welches Bundesland hat die Landeshauptstadt Dresden?",
     text_en: "Which federal state has Dresden as its capital?",
     options: [
@@ -1927,7 +1927,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "305",
+    id: "425",
     text_de: "Wie heißt der/die Ministerpräsident/in von Sachsen?",
     text_en: "What is the name of the Minister-President of Saxony?",
     options: [
@@ -1942,7 +1942,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "306",
+    id: "426",
     text_de: "Welche Nachbarländer hat Sachsen?",
     text_en: "Which neighboring countries does Saxony have?",
     options: [
@@ -1957,7 +1957,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "307",
+    id: "427",
     text_de: "Wie heißt das Landesparlament von Sachsen?",
     text_en: "What is the name of the state parliament of Saxony?",
     options: [
@@ -1972,7 +1972,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "308",
+    id: "428",
     text_de: "Welche Stadt liegt nicht in Sachsen?",
     text_en: "Which city is not in Saxony?",
     options: [
@@ -1987,7 +1987,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "309",
+    id: "429",
     text_de: "Welcher Fluss fließt durch Sachsen?",
     text_en: "Which river flows through Saxony?",
     options: [
@@ -2002,7 +2002,7 @@ const sachsenQuestions: Question[] = [
     state: "Sachsen"
   },
   {
-    id: "310",
+    id: "430",
     text_de: "Welches Gebirge liegt in Sachsen?",
     text_en: "Which mountain range is in Saxony?",
     options: [
@@ -2021,7 +2021,7 @@ const sachsenQuestions: Question[] = [
 // Sachsen-Anhalt
 const sachsenAnhaltQuestions: Question[] = [
   {
-    id: "301",
+    id: "431",
     text_de: "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
     text_en: "Which coat of arms belongs to the federal state of Saxony-Anhalt?",
     options: [
@@ -2037,7 +2037,7 @@ const sachsenAnhaltQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "432",
     text_de: "Welches ist ein Landkreis in Sachsen-Anhalt?",
     text_en: "Which is a district in Saxony-Anhalt?",
     options: [
@@ -2052,8 +2052,8 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Sachsen-Anhalt__(Lücke)?",
+    id: "433",
+    text_de: "Wofür ist Sachsen-Anhalt bekannt?",
     text_en: "What is Saxony-Anhalt famous for?",
     options: [
       { de: "Geschichte und Romanik", en: "History and Romanesque architecture" },
@@ -2067,7 +2067,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "304",
+    id: "434",
     text_de: "Welches Bundesland hat die Landeshauptstadt Magdeburg?",
     text_en: "Which federal state has Magdeburg as its capital?",
     options: [
@@ -2082,7 +2082,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "305",
+    id: "435",
     text_de: "Wie heißt der/die Ministerpräsident/in von Sachsen-Anhalt?",
     text_en: "What is the name of the Minister-President of Saxony-Anhalt?",
     options: [
@@ -2097,7 +2097,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "306",
+    id: "436",
     text_de: "Welche historische Person wurde in Sachsen-Anhalt geboren?",
     text_en: "Which historical person was born in Saxony-Anhalt?",
     options: [
@@ -2112,7 +2112,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "307",
+    id: "437",
     text_de: "Wie heißt das Landesparlament von Sachsen-Anhalt?",
     text_en: "What is the name of the state parliament of Saxony-Anhalt?",
     options: [
@@ -2127,7 +2127,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "308",
+    id: "438",
     text_de: "Welche Stadt liegt nicht in Sachsen-Anhalt?",
     text_en: "Which city is not in Saxony-Anhalt?",
     options: [
@@ -2142,7 +2142,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "309",
+    id: "439",
     text_de: "Welcher Fluss fließt durch Sachsen-Anhalt?",
     text_en: "Which river flows through Saxony-Anhalt?",
     options: [
@@ -2157,7 +2157,7 @@ const sachsenAnhaltQuestions: Question[] = [
     state: "Sachsen-Anhalt"
   },
   {
-    id: "310",
+    id: "440",
     text_de: "Welches Gebirge liegt in Sachsen-Anhalt?",
     text_en: "Which mountain range is in Saxony-Anhalt?",
     options: [
@@ -2176,7 +2176,7 @@ const sachsenAnhaltQuestions: Question[] = [
 // Schleswig-Holstein
 const schleswigHolsteinQuestions: Question[] = [
   {
-    id: "301",
+    id: "441",
     text_de: "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
     text_en: "Which coat of arms belongs to the federal state of Schleswig-Holstein?",
     options: [
@@ -2192,7 +2192,7 @@ const schleswigHolsteinQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "442",
     text_de: "Welches ist ein Kreis in Schleswig-Holstein?",
     text_en: "Which is a district in Schleswig-Holstein?",
     options: [
@@ -2207,8 +2207,8 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Schleswig-Holstein__(Lücke)?",
+    id: "443",
+    text_de: "Wofür ist Schleswig-Holstein bekannt?",
     text_en: "What is Schleswig-Holstein famous for?",
     options: [
       { de: "Küsten und Landwirtschaft", en: "Coasts and agriculture" },
@@ -2222,7 +2222,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "304",
+    id: "444",
     text_de: "Welches Bundesland hat die Landeshauptstadt Kiel?",
     text_en: "Which federal state has Kiel as its capital?",
     options: [
@@ -2237,7 +2237,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "305",
+    id: "445",
     text_de: "Wie heißt der/die Ministerpräsident/in von Schleswig-Holstein?",
     text_en: "What is the name of the Minister-President of Schleswig-Holstein?",
     options: [
@@ -2252,7 +2252,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "306",
+    id: "446",
     text_de: "An welche Meere grenzt Schleswig-Holstein?",
     text_en: "Which seas border Schleswig-Holstein?",
     options: [
@@ -2267,7 +2267,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "307",
+    id: "447",
     text_de: "Wie heißt das Landesparlament von Schleswig-Holstein?",
     text_en: "What is the name of the state parliament of Schleswig-Holstein?",
     options: [
@@ -2282,7 +2282,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "308",
+    id: "448",
     text_de: "Welche Insel gehört zu Schleswig-Holstein?",
     text_en: "Which island belongs to Schleswig-Holstein?",
     options: [
@@ -2297,7 +2297,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "309",
+    id: "449",
     text_de: "Welche Stadt liegt nicht in Schleswig-Holstein?",
     text_en: "Which city is not in Schleswig-Holstein?",
     options: [
@@ -2312,7 +2312,7 @@ const schleswigHolsteinQuestions: Question[] = [
     state: "Schleswig-Holstein"
   },
   {
-    id: "310",
+    id: "450",
     text_de: "Welches Nachbarland hat Schleswig-Holstein?",
     text_en: "Which neighboring country does Schleswig-Holstein have?",
     options: [
@@ -2331,7 +2331,7 @@ const schleswigHolsteinQuestions: Question[] = [
 // Thüringen
 const thueringenQuestions: Question[] = [
   {
-    id: "301",
+    id: "451",
     text_de: "Welches Wappen gehört zum Bundesland Thüringen?",
     text_en: "Which coat of arms belongs to the federal state of Thuringia?",
     options: [
@@ -2347,7 +2347,7 @@ const thueringenQuestions: Question[] = [
     hasImages: true
   },
   {
-    id: "302",
+    id: "452",
     text_de: "Welches ist ein Landkreis in Thüringen?",
     text_en: "Which is a district in Thuringia?",
     options: [
@@ -2362,8 +2362,8 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "303",
-    text_de: "Für__(Lücke)__ ist Thüringen__(Lücke)?",
+    id: "453",
+    text_de: "Wofür ist Thüringen bekannt?",
     text_en: "What is Thuringia famous for?",
     options: [
       { de: "Kultur, Geschichte und Wald", en: "Culture, history and forest" },
@@ -2377,7 +2377,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "304",
+    id: "454",
     text_de: "Welches Bundesland hat die Landeshauptstadt Erfurt?",
     text_en: "Which federal state has Erfurt as its capital?",
     options: [
@@ -2392,7 +2392,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "305",
+    id: "455",
     text_de: "Wie heißt der/die Ministerpräsident/in von Thüringen?",
     text_en: "What is the name of the Minister-President of Thuringia?",
     options: [
@@ -2407,7 +2407,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "306",
+    id: "456",
     text_de: "Welche historische Person lebte in Thüringen?",
     text_en: "Which historical person lived in Thuringia?",
     options: [
@@ -2422,7 +2422,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "307",
+    id: "457",
     text_de: "Wie heißt das Landesparlament von Thüringen?",
     text_en: "What is the name of the state parliament of Thuringia?",
     options: [
@@ -2437,7 +2437,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "308",
+    id: "458",
     text_de: "Welche Stadt liegt nicht in Thüringen?",
     text_en: "Which city is not in Thuringia?",
     options: [
@@ -2452,7 +2452,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "309",
+    id: "459",
     text_de: "Welcher Fluss fließt durch Thüringen?",
     text_en: "Which river flows through Thuringia?",
     options: [
@@ -2467,7 +2467,7 @@ const thueringenQuestions: Question[] = [
     state: "Thüringen"
   },
   {
-    id: "310",
+    id: "460",
     text_de: "Welches Gebirge liegt in Thüringen?",
     text_en: "Which mountain range is in Thuringia?",
     options: [

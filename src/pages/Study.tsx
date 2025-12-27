@@ -1,37 +1,64 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Sparkles, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CategoryCard } from '@/components/CategoryCard';
 import { QuestionCard } from '@/components/QuestionCard';
-import { Progress } from '@/components/ui/progress';
 import { useApp } from '@/contexts/AppContext';
-import { questions, categories } from '@/data/questions/index';
+import { questions, categories, Question } from '@/data/questions/index';
+import { shuffleArray } from '@/lib/utils';
+import { useAds } from '@/contexts/AdContext';
 
 type ViewMode = 'categories' | 'questions';
 
-import { useAds } from '@/contexts/AdContext';
-
 export default function Study() {
   const navigate = useNavigate();
-  const { recordAnswer, settings, t } = useApp();
+  const { recordAnswer, settings, t, progress } = useApp();
   const { triggerInterstitial } = useAds();
   const [viewMode, setViewMode] = useState<ViewMode>('categories');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [studyQueue, setStudyQueue] = useState<Question[]>([]);
+  const [isReviewMode, setIsReviewMode] = useState(false);
 
-  const categoryQuestions = selectedCategory
-    ? questions.filter(q => q.category === selectedCategory)
-    : [];
-
-  const currentQuestion = categoryQuestions[currentQuestionIndex];
+  const currentQuestion = studyQueue[currentQuestionIndex];
 
   const getQuestionsForCategory = (categoryId: string) => {
     return questions.filter(q => q.category === categoryId).length;
   };
 
+  const calculateMastery = (categoryId: string) => {
+    const catQuestions = questions.filter(q => q.category === categoryId);
+    const mastered = catQuestions.filter(q => progress.questionsAnswered[q.id]).length;
+    return mastered;
+  };
+
   const handleCategorySelect = (categoryId: string) => {
     setSelectedCategory(categoryId);
+    
+    // Smart Learning Logic:
+    // 1. Filter questions for this category
+    const catQuestions = questions.filter(q => q.category === categoryId);
+    
+    // 2. Separate into mastered (correctly answered) and unmastered (wrong or unseen)
+    const unmastered = catQuestions.filter(q => {
+      const isAnswered = q.id in progress.questionsAnswered;
+      const isCorrect = progress.questionsAnswered[q.id];
+      return !isAnswered || !isCorrect;
+    });
+
+    // 3. Determine pool: Prioritize unmastered. If all mastered, review all.
+    let queue: Question[] = [];
+    if (unmastered.length > 0) {
+      queue = shuffleArray(unmastered);
+      setIsReviewMode(false);
+    } else {
+      // All mastered! Review mode with full category shuffle
+      queue = shuffleArray(catQuestions);
+      setIsReviewMode(true);
+    }
+
+    setStudyQueue(queue);
     setCurrentQuestionIndex(0);
     setViewMode('questions');
   };
@@ -43,7 +70,7 @@ export default function Study() {
   };
 
   const handleNext = () => {
-    if (currentQuestionIndex < categoryQuestions.length - 1) {
+    if (currentQuestionIndex < studyQueue.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
     }
   };
@@ -56,11 +83,12 @@ export default function Study() {
       setViewMode('categories');
       setSelectedCategory(null);
       setCurrentQuestionIndex(0);
+      setStudyQueue([]);
     }
   };
 
-  const progressValue = categoryQuestions.length > 0 
-    ? ((currentQuestionIndex + 1) / categoryQuestions.length) * 100 
+  const progressValue = studyQueue.length > 0 
+    ? ((currentQuestionIndex + 1) / studyQueue.length) * 100 
     : 0;
 
   if (viewMode === 'questions' && currentQuestion) {
@@ -80,11 +108,16 @@ export default function Study() {
               <ArrowLeft className="h-5 w-5" />
             </Button>
             <div className="flex-1">
-              <h1 className="font-display font-bold text-lg">
+              <h1 className="font-display font-bold text-lg flex items-center gap-2">
                 {categoryInfo?.[settings.language === 'de' ? 'name_de' : 'name_en']}
+                {isReviewMode && (
+                  <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded-full border border-accent/20">
+                    Review
+                  </span>
+                )}
               </h1>
               <p className="text-sm text-muted-foreground font-medium">
-                {t('Frage', 'Question')} {currentQuestionIndex + 1} / {categoryQuestions.length}
+                {t('Frage', 'Question')} {currentQuestionIndex + 1} / {studyQueue.length}
               </p>
             </div>
           </div>
@@ -109,7 +142,7 @@ export default function Study() {
 
           {/* Next Button */}
           <div className="mt-6">
-            {currentQuestionIndex < categoryQuestions.length - 1 ? (
+            {currentQuestionIndex < studyQueue.length - 1 ? (
               <Button 
                 className="w-full h-14 text-base font-display font-bold rounded-xl shadow-button animate-pop gap-2"
                 onClick={handleNext}
@@ -151,17 +184,31 @@ export default function Study() {
 
       {/* Categories with stagger animation */}
       <div className="relative px-5 space-y-4 stagger-children">
-        {categories.map(category => (
-          <CategoryCard
-            key={category.id}
-            id={category.id}
-            name_de={category.name_de}
-            name_en={category.name_en}
-            icon={category.icon}
-            totalQuestions={getQuestionsForCategory(category.id)}
-            onClick={() => handleCategorySelect(category.id)}
-          />
-        ))}
+        {categories.map(category => {
+          const total = getQuestionsForCategory(category.id);
+          const mastered = calculateMastery(category.id);
+          const progressPercent = Math.round((mastered / total) * 100);
+          
+          return (
+            <div key={category.id} className="relative group">
+              <CategoryCard
+                id={category.id}
+                name_de={category.name_de}
+                name_en={category.name_en}
+                icon={category.icon}
+                totalQuestions={total}
+                onClick={() => handleCategorySelect(category.id)}
+              />
+              {/* Mastery Badge */}
+              {mastered > 0 && (
+                <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold shadow-sm border border-border flex items-center gap-1">
+                  <Trophy className="w-3 h-3 text-accent" />
+                  {progressPercent}%
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

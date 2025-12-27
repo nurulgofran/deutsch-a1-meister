@@ -32,7 +32,10 @@ export interface PurchaseResult {
 
 // Initialize billing - call this on app start
 export async function initializeBilling(): Promise<void> {
-  if (!Capacitor.isNativePlatform()) {
+  const isNative = Capacitor.isNativePlatform();
+
+
+  if (!isNative) {
     return;
   }
 
@@ -43,6 +46,10 @@ export async function initializeBilling(): Promise<void> {
     
     // Set log level to ERROR for production
     await Purchases.setLogLevel({ level: LOG_LEVEL.ERROR });
+
+    // Check initial status
+    const info = await Purchases.getCustomerInfo();
+
     
   } catch (error) {
     console.error('Billing: Failed to initialize', error);
@@ -51,7 +58,10 @@ export async function initializeBilling(): Promise<void> {
 
 // Purchase Pro version
 export async function purchasePro(): Promise<PurchaseResult> {
-  if (!Capacitor.isNativePlatform()) {
+  const isNative = Capacitor.isNativePlatform();
+
+
+  if (!isNative) {
     // Web fallback: simulate purchase for testing
     return { success: true };
   }
@@ -75,13 +85,16 @@ export async function purchasePro(): Promise<PurchaseResult> {
     }
 
     // Make the purchase
+
     const result = await Purchases.purchasePackage({
       aPackage: proPackage,
     });
 
+
     // Check if Pro entitlement is now active
     const entitlements = result.customerInfo.entitlements.active;
     if (entitlements && entitlements[BILLING_CONFIG.entitlementId]) {
+
       return { success: true };
     }
 

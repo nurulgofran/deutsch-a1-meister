@@ -116,7 +116,7 @@ export default function Dashboard() {
             size="lg"
             onClick={() => navigate('/study')}
           >
-            <span>{t('Weiter lernen', 'Continue Learning')}</span>
+            <span>{Object.keys(progress.questionsAnswered).length > 0 ? t('Weiter lernen', 'Continue Learning') : t('Lernen starten', 'Start Learning')}</span>
             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
