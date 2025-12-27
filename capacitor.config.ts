@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.e20f80eb56fd4cd481ee98fa23f39d92',
+  appId: 'com.nurulgofran.lebenindeutschland',
   appName: 'Leben in Deutschland',
   webDir: 'dist',
 

@@ -27,8 +27,6 @@
             android:grantUriPermissions="true">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
         </provider>
-        <!-- ⚠️ PRODUCTION: Replace with your real AdMob App ID from https://admob.google.com/ -->
-        <!-- Current value is TEST App ID - will show test ads only -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713"

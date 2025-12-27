@@ -4,7 +4,6 @@ import { ArrowLeft, Clock, AlertTriangle, Trophy, XCircle, ChevronRight } from '
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { BannerAd } from '@/components/ads';
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
 import { questions, Question } from '@/data/questions/index';
@@ -36,11 +35,18 @@ interface ShuffledQuestion {
 
 export default function Exam() {
   const navigate = useNavigate();
-  const { settings, recordExamResult, t } = useApp();
+  const { settings, recordExamResult, t, isLoaded } = useApp();
   const { triggerInterstitial } = useAds();
   
   const [examState, setExamState] = useState<ExamState>('intro');
   const [examQuestions, setExamQuestions] = useState<ShuffledQuestion[]>([]);
+
+  // Safety check: redirect to dashboard if visited directly without data loaded or settings
+  useEffect(() => {
+    if (isLoaded && !settings.bundesland) {
+      navigate('/', { replace: true });
+    }
+  }, [isLoaded, settings.bundesland, navigate]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [timeLeft, setTimeLeft] = useState(EXAM_DURATION);
@@ -204,7 +210,7 @@ export default function Exam() {
     return (
       <div className="min-h-screen pb-24 safe-area-top">
         <div className="px-5 pt-6 pb-4">
-          <h1 className="text-2xl font-bold mb-1">
+          <h1 className="text-2xl font-display font-bold mb-1">
             {t('Prüfungssimulation', 'Exam Simulation')}
           </h1>
           <p className="text-muted-foreground">
@@ -433,6 +439,7 @@ export default function Exam() {
             {t('Neue Prüfung starten', 'Start New Exam')}
           </Button>
 
+
           <Button 
             variant="outline"
             className="w-full h-12 text-base"
@@ -440,8 +447,6 @@ export default function Exam() {
           >
             {t('Zurück zur Übersicht', 'Back to Overview')}
           </Button>
-
-          <BannerAd className="mt-6" />
         </div>
       </div>
     );

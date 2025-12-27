@@ -36,12 +36,9 @@ const AD_UNIT_IDS = {
 };
 
 // Set to false for production builds
-const IS_TESTING = __DEV__ ?? false;
+const IS_TESTING = import.meta.env.DEV;
 
 const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
-
-// Check if we're in dev mode
-declare const __DEV__: boolean | undefined;
 
 export function AdProvider({ children }: { children: ReactNode }) {
   // Pro status is verified via RevenueCat on app launch - not stored in plain localStorage
@@ -115,7 +112,6 @@ export function AdProvider({ children }: { children: ReactNode }) {
       // Only set up listener on native
       if (Capacitor.isNativePlatform()) {
           handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
-             console.log('User rewarded', item);
              setRewardedCallback(prevCallback => {
                if (prevCallback) {
                  prevCallback();

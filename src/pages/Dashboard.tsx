@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CircularProgress } from '@/components/CircularProgress';
 import { StreakBadge } from '@/components/StreakBadge';
-import { BannerAd } from '@/components/ads';
 import { useApp } from '@/contexts/AppContext';
 import { questions } from '@/data/questions/index';
 
@@ -23,7 +22,7 @@ export default function Dashboard() {
   const examsPassed = progress.examHistory.filter(e => e.passed).length;
 
   return (
-    <div className="min-h-screen pb-24 safe-area-top relative overflow-hidden">
+    <div className="min-h-screen pb-20 safe-area-top relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background pointer-events-none" />
       
@@ -123,7 +122,7 @@ export default function Dashboard() {
         </div>
 
         {/* Exam Card */}
-        <div className="px-5 mb-6">
+        <div className="px-5">
           <Card 
             className="cursor-pointer border-0 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group"
             onClick={() => navigate('/exam')}
@@ -148,10 +147,6 @@ export default function Dashboard() {
           </Card>
         </div>
 
-        {/* Banner Ad */}
-        <div className="px-5">
-          <BannerAd />
-        </div>
       </div>
     </div>
   );

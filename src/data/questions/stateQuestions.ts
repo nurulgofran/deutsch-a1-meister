@@ -3,8 +3,179 @@ import { Question } from './types';
 // State-specific questions for all Bundesländer (10 questions each)
 // Questions 301-310 per state covering: coat of arms, districts, famous for, capital, minister-president, neighbors, parliament, cities, river, mountain/geography
 
+// Baden-Württemberg
+const badenWuerttembergQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Baden-Württemberg?",
+    text_en: "Which coat of arms belongs to the federal state of Baden-Württemberg?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/baden-wuerttemberg.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/bayern.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg",
+    hasImages: true
+  },
+  {
+    id: "302",
+    text_de: "Welches ist ein Landkreis in Baden-Württemberg?",
+    text_en: "Which is a district in Baden-Württemberg?",
+    options: [
+      { de: "Rhein-Neckar-Kreis", en: "Rhein-Neckar-Kreis" },
+      { de: "Altötting", en: "Altötting" },
+      { de: "Emsland", en: "Emsland" },
+      { de: "Prignitz", en: "Prignitz" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "303",
+    text_de: "Für__(Lücke)__ ist Baden-Württemberg__(Lücke)?",
+    text_en: "What is Baden-Württemberg famous for?",
+    options: [
+      { de: "Automobilindustrie und Schwarzwald", en: "Car industry and Black Forest" },
+      { de: "Schiffbau", en: "Shipbuilding" },
+      { de: "Kohleindustrie", en: "Coal industry" },
+      { de: "Fischerei", en: "Fishing" }
+    ],
+    correctIndex: 0,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "304",
+    text_de: "Welches Bundesland hat die Landeshauptstadt Stuttgart?",
+    text_en: "Which federal state has Stuttgart as its capital?",
+    options: [
+      { de: "Baden-Württemberg", en: "Baden-Württemberg" },
+      { de: "Bayern", en: "Bavaria" },
+      { de: "Hessen", en: "Hesse" },
+      { de: "Sachsen", en: "Saxony" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "305",
+    text_de: "Wie heißt der/die Ministerpräsident/in von Baden-Württemberg?",
+    text_en: "What is the name of the Minister-President of Baden-Württemberg?",
+    options: [
+      { de: "Winfried Kretschmann", en: "Winfried Kretschmann" },
+      { de: "Markus Söder", en: "Markus Söder" },
+      { de: "Boris Rhein", en: "Boris Rhein" },
+      { de: "Malu Dreyer", en: "Malu Dreyer" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "306",
+    text_de: "Welches Bundesland grenzt an Baden-Württemberg?",
+    text_en: "Which federal state borders Baden-Württemberg?",
+    options: [
+      { de: "Bayern", en: "Bavaria" },
+      { de: "Brandenburg", en: "Brandenburg" },
+      { de: "Sachsen", en: "Saxony" },
+      { de: "Niedersachsen", en: "Lower Saxony" }
+    ],
+    correctIndex: 0,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "307",
+    text_de: "Wie heißt das Landesparlament von Baden-Württemberg?",
+    text_en: "What is the name of the state parliament of Baden-Württemberg?",
+    options: [
+      { de: "Landtag", en: "Landtag" },
+      { de: "Bürgerschaft", en: "Bürgerschaft" },
+      { de: "Abgeordnetenhaus", en: "House of Representatives" },
+      { de: "Senat", en: "Senate" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "308",
+    text_de: "Welche Stadt liegt nicht in Baden-Württemberg?",
+    text_en: "Which city is not in Baden-Württemberg?",
+    options: [
+      { de: "Karlsruhe", en: "Karlsruhe" },
+      { de: "Heidelberg", en: "Heidelberg" },
+      { de: "Mannheim", en: "Mannheim" },
+      { de: "Frankfurt am Main", en: "Frankfurt am Main" }
+    ],
+    correctIndex: 3,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "309",
+    text_de: "Welcher Fluss fließt durch Baden-Württemberg?",
+    text_en: "Which river flows through Baden-Württemberg?",
+    options: [
+      { de: "der Neckar", en: "the Neckar" },
+      { de: "die Elbe", en: "the Elbe" },
+      { de: "die Weser", en: "the Weser" },
+      { de: "die Spree", en: "the Spree" }
+    ],
+    correctIndex: 0,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  },
+  {
+    id: "310",
+    text_de: "Welches Gebirge liegt in Baden-Württemberg?",
+    text_en: "Which mountain range is in Baden-Württemberg?",
+    options: [
+      { de: "der Schwarzwald", en: "the Black Forest" },
+      { de: "der Harz", en: "the Harz" },
+      { de: "der Thüringer Wald", en: "the Thuringian Forest" },
+      { de: "das Erzgebirge", en: "the Ore Mountains" }
+    ],
+    correctIndex: 0,
+    category: "society",
+    isStateSpecific: true,
+    state: "Baden-Württemberg"
+  }
+];
+
 // Bayern (Bavaria)
 const bayernQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Bayern?",
+    text_en: "Which coat of arms belongs to the federal state of Bavaria?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/bayern.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Bayern",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis in Bayern?",
@@ -145,6 +316,22 @@ const bayernQuestions: Question[] = [
 // Berlin
 const berlinQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Berlin?",
+    text_en: "Which coat of arms belongs to the federal state of Berlin?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/berlin.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/bayern.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Berlin",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Bezirk von Berlin?",
     text_en: "Which is a district of Berlin?",
@@ -283,6 +470,22 @@ const berlinQuestions: Question[] = [
 
 // Brandenburg
 const brandenburgQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Brandenburg?",
+    text_en: "Which coat of arms belongs to the federal state of Brandenburg?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/brandenburg.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Brandenburg",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis in Brandenburg?",
@@ -423,6 +626,22 @@ const brandenburgQuestions: Question[] = [
 // Bremen
 const bremenQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Bremen?",
+    text_en: "Which coat of arms belongs to the federal state of Bremen?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/berlin.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/bayern.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Bremen",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Aus welchen Städten besteht das Bundesland Bremen?",
     text_en: "Which cities make up the federal state of Bremen?",
@@ -561,6 +780,22 @@ const bremenQuestions: Question[] = [
 
 // Hamburg
 const hamburgQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Hamburg?",
+    text_en: "Which coat of arms belongs to the federal state of Hamburg?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/berlin.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/bayern.png" }
+    ],
+    correctIndex: 0,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Hamburg",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Bezirk von Hamburg?",
@@ -701,6 +936,22 @@ const hamburgQuestions: Question[] = [
 // Hessen
 const hessenQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Hessen?",
+    text_en: "Which coat of arms belongs to the federal state of Hesse?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/hessen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/bayern.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Hessen",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Landkreis in Hessen?",
     text_en: "Which is a district in Hesse?",
@@ -839,6 +1090,22 @@ const hessenQuestions: Question[] = [
 
 // Mecklenburg-Vorpommern
 const mecklenburgVorpommernQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Mecklenburg-Vorpommern?",
+    text_en: "Which coat of arms belongs to the federal state of Mecklenburg-Western Pomerania?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/mecklenburg-vorpommern.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Mecklenburg-Vorpommern",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis in Mecklenburg-Vorpommern?",
@@ -979,6 +1246,22 @@ const mecklenburgVorpommernQuestions: Question[] = [
 // Niedersachsen
 const niedersachsenQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Niedersachsen?",
+    text_en: "Which coat of arms belongs to the federal state of Lower Saxony?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/niedersachsen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Niedersachsen",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Landkreis in Niedersachsen?",
     text_en: "Which is a district in Lower Saxony?",
@@ -1117,6 +1400,22 @@ const niedersachsenQuestions: Question[] = [
 
 // Nordrhein-Westfalen
 const nordrheinWestfalenQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Nordrhein-Westfalen?",
+    text_en: "Which coat of arms belongs to the federal state of North Rhine-Westphalia?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/nordrhein-westfalen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Nordrhein-Westfalen",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis in Nordrhein-Westfalen?",
@@ -1257,6 +1556,22 @@ const nordrheinWestfalenQuestions: Question[] = [
 // Rheinland-Pfalz
 const rheinlandPfalzQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Rheinland-Pfalz?",
+    text_en: "Which coat of arms belongs to the federal state of Rhineland-Palatinate?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/rheinland-pfalz.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Rheinland-Pfalz",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Landkreis in Rheinland-Pfalz?",
     text_en: "Which is a district in Rhineland-Palatinate?",
@@ -1395,6 +1710,22 @@ const rheinlandPfalzQuestions: Question[] = [
 
 // Saarland
 const saarlandQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Saarland?",
+    text_en: "Which coat of arms belongs to the federal state of Saarland?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/saarland.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Saarland",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis im Saarland?",
@@ -1535,6 +1866,22 @@ const saarlandQuestions: Question[] = [
 // Sachsen
 const sachsenQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Sachsen?",
+    text_en: "Which coat of arms belongs to the federal state of Saxony?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/sachsen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Sachsen",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Landkreis in Sachsen?",
     text_en: "Which is a district in Saxony?",
@@ -1673,6 +2020,22 @@ const sachsenQuestions: Question[] = [
 
 // Sachsen-Anhalt
 const sachsenAnhaltQuestions: Question[] = [
+  {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Sachsen-Anhalt?",
+    text_en: "Which coat of arms belongs to the federal state of Saxony-Anhalt?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/sachsen-anhalt.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Sachsen-Anhalt",
+    hasImages: true
+  },
   {
     id: "302",
     text_de: "Welches ist ein Landkreis in Sachsen-Anhalt?",
@@ -1813,6 +2176,22 @@ const sachsenAnhaltQuestions: Question[] = [
 // Schleswig-Holstein
 const schleswigHolsteinQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Schleswig-Holstein?",
+    text_en: "Which coat of arms belongs to the federal state of Schleswig-Holstein?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/schleswig-holstein.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Schleswig-Holstein",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Kreis in Schleswig-Holstein?",
     text_en: "Which is a district in Schleswig-Holstein?",
@@ -1952,6 +2331,22 @@ const schleswigHolsteinQuestions: Question[] = [
 // Thüringen
 const thueringenQuestions: Question[] = [
   {
+    id: "301",
+    text_de: "Welches Wappen gehört zum Bundesland Thüringen?",
+    text_en: "Which coat of arms belongs to the federal state of Thuringia?",
+    options: [
+      { de: "Wappen 1", en: "Coat of arms 1", image: "/images/wappen/hamburg.png" },
+      { de: "Wappen 2", en: "Coat of arms 2", image: "/images/wappen/thueringen.png" },
+      { de: "Wappen 3", en: "Coat of arms 3", image: "/images/wappen/bremen.png" },
+      { de: "Wappen 4", en: "Coat of arms 4", image: "/images/wappen/berlin.png" }
+    ],
+    correctIndex: 1,
+    category: "politics",
+    isStateSpecific: true,
+    state: "Thüringen",
+    hasImages: true
+  },
+  {
     id: "302",
     text_de: "Welches ist ein Landkreis in Thüringen?",
     text_en: "Which is a district in Thuringia?",
@@ -2090,6 +2485,7 @@ const thueringenQuestions: Question[] = [
 
 // Export all additional state questions
 export const additionalStateQuestions: Question[] = [
+  ...badenWuerttembergQuestions,
   ...bayernQuestions,
   ...berlinQuestions,
   ...brandenburgQuestions,

@@ -10,9 +10,12 @@ import { questions, categories } from '@/data/questions/index';
 
 type ViewMode = 'categories' | 'questions';
 
+import { useAds } from '@/contexts/AdContext';
+
 export default function Study() {
   const navigate = useNavigate();
   const { recordAnswer, settings, t } = useApp();
+  const { triggerInterstitial } = useAds();
   const [viewMode, setViewMode] = useState<ViewMode>('categories');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -45,8 +48,11 @@ export default function Study() {
     }
   };
 
-  const handleBack = () => {
+  const handleBack = async () => {
     if (viewMode === 'questions') {
+      // Trigger session break ad
+      await triggerInterstitial();
+      
       setViewMode('categories');
       setSelectedCategory(null);
       setCurrentQuestionIndex(0);

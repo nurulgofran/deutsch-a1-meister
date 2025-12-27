@@ -8,6 +8,7 @@ import { useAds } from '@/contexts/AdContext';
 import { ProModal } from '@/components/ProModal';
 import { cn, shuffleOptionsWithCorrectIndex } from '@/lib/utils';
 import { toast } from 'sonner';
+import { useHaptics } from '@/hooks/useHaptics';
 
 interface QuestionCardProps {
   question: Question;
@@ -28,12 +29,13 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const { settings, progress, toggleBookmark, t } = useApp();
   const { triggerRewardedAd, isPro } = useAds();
+  const { impact, ImpactStyle } = useHaptics();
   const [localSelected, setLocalSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [showProModal, setShowProModal] = useState(false);
-  const [hintUsed, setHintUsed] = useState(false);
-  const [hintIndex, setHintIndex] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
+  // State for one-time explanation unlock via rewarded ad
+  const [isExplanationUnlocked, setIsExplanationUnlocked] = useState(false);
 
   // Shuffle options once per question to prevent memorization
   const { shuffledOptions, correctIndexShuffled } = useMemo(() => {
@@ -46,18 +48,21 @@ export function QuestionCard({
 
   const selected = selectedAnswer ?? localSelected;
   const isBookmarked = progress.bookmarkedQuestions.includes(question.id);
+  // Determine if the *current* selection is correct (for Top CTA logic)
+  const isCorrect = selected === correctIndexShuffled;
 
   useEffect(() => {
     setLocalSelected(null);
     setShowResult(false);
-    setHintUsed(false);
-    setHintIndex(null);
     setShowExplanation(false);
+    setIsExplanationUnlocked(false);
   }, [question.id]);
 
   const handleSelect = (index: number) => {
     if (showResult && showFeedback) return;
     
+    impact(ImpactStyle.Light);
+
     if (onSelectAnswer) {
       onSelectAnswer(index);
     } else {
@@ -66,63 +71,33 @@ export function QuestionCard({
 
     if (showFeedback) {
       setShowResult(true);
-      const isCorrect = index === correctIndexShuffled;
-      onAnswer?.(isCorrect);
+      const isCorrectNow = index === correctIndexShuffled;
+      onAnswer?.(isCorrectNow);
     }
   };
 
-  const handleGetHint = () => {
-    if (isPro) {
-      // Pro users get hints for free - use shuffled options
-      const wrongAnswers = shuffledOptions
-        .map((_, index) => index)
-        .filter(index => index !== correctIndexShuffled);
-      
-      if (wrongAnswers.length > 0) {
-        const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
-        setHintIndex(randomWrong);
-        setHintUsed(true);
-        toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
-      }
-    } else {
-      // Non-pro users watch an ad - use shuffled options
-      triggerRewardedAd(() => {
-        const wrongAnswers = shuffledOptions
-          .map((_, index) => index)
-          .filter(index => index !== correctIndexShuffled);
-        
-        if (wrongAnswers.length > 0) {
-          const randomWrong = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
-          setHintIndex(randomWrong);
-          setHintUsed(true);
-          toast.success(t('Hinweis: Eine falsche Antwort wurde markiert!', 'Hint: One wrong answer has been marked!'));
-        }
-      });
-    }
+  const handleUnlockExplanation = () => {
+    triggerRewardedAd(() => {
+      setIsExplanationUnlocked(true);
+      setShowExplanation(true); // Auto-show after unlock
+      toast.success(t('Erklärung freigeschaltet!', 'Explanation unlocked!'));
+    });
   };
 
   const handleShowExplanation = () => {
-    if (isPro) {
+    if (isPro || isExplanationUnlocked) {
       setShowExplanation(!showExplanation);
     } else {
-      setShowProModal(true);
+      // Trigger ad flow immediately if locked
+      handleUnlockExplanation();
     }
   };
 
   const getOptionClasses = (index: number) => {
     const isSelected = selected === index;
-    const isCorrect = index === correctIndexShuffled;
-    const isHintedWrong = hintIndex === index;
+    const isOptionCorrect = index === correctIndexShuffled;
     
     const baseClasses = "w-full min-h-[60px] h-auto p-4 text-left justify-start font-medium text-base transition-all duration-200 rounded-xl border-2 animate-pop flex items-center gap-3";
-    
-    // Show hint - crossed out wrong answer
-    if (isHintedWrong && !showResult) {
-      return cn(
-        baseClasses,
-        "bg-muted/50 border-muted text-muted-foreground opacity-50 line-through cursor-not-allowed"
-      );
-    }
     
     if (!showResult || !showFeedback) {
       return cn(
@@ -134,7 +109,7 @@ export function QuestionCard({
     }
 
     // Show feedback
-    if (isCorrect) {
+    if (isOptionCorrect) {
       return cn(
         baseClasses,
         "bg-success/10 border-success text-success",
@@ -142,7 +117,7 @@ export function QuestionCard({
       );
     }
 
-    if (isSelected && !isCorrect) {
+    if (isSelected && !isOptionCorrect) {
       return cn(
         baseClasses,
         "bg-destructive/10 border-destructive text-destructive animate-shake"
@@ -184,19 +159,16 @@ export function QuestionCard({
             )}
           </div>
 
-          {/* Hint button - show before answering */}
-          {showFeedback && !showResult && !hintUsed && (
+          {/* TOP CTA: Show only if answer is WRONG, Result is SHOWN, and user is NOT Pro/Unlocked */}
+          {showResult && !isCorrect && !isPro && !isExplanationUnlocked && (
             <Button
               variant="outline"
               size="sm"
-              className="mb-4 gap-2 text-accent border-accent/30 hover:bg-accent/10"
-              onClick={handleGetHint}
+              className="mb-4 w-full gap-2 text-accent border-accent/30 hover:bg-accent/10 h-10"
+              onClick={handleUnlockExplanation}
             >
               <Play className="h-4 w-4" />
-              {isPro 
-                ? t('Hinweis anzeigen', 'Show hint') 
-                : t('Video ansehen für Hinweis', 'Watch video for hint')
-              }
+              {t('Video ansehen für Erklärung', 'Watch video for explanation')}
             </Button>
           )}
 
@@ -213,7 +185,7 @@ export function QuestionCard({
                   question.hasImages && "flex-col h-auto py-3"
                 )}
                 onClick={() => handleSelect(index)}
-                disabled={(showResult && showFeedback) || hintIndex === index}
+                disabled={showResult && showFeedback}
               >
                 {question.hasImages && option.image && (
                   <img 
@@ -227,15 +199,13 @@ export function QuestionCard({
                   question.hasImages ? "w-6 h-6" : "w-8 h-8",
                   selected === index 
                     ? "bg-primary text-primary-foreground" 
-                    : "bg-muted text-muted-foreground",
-                  hintIndex === index && "line-through"
+                    : "bg-muted text-muted-foreground"
                 )}>
                   {String.fromCharCode(65 + index)}
                 </span>
                 {!question.hasImages && (
                   <span className={cn(
-                    "text-left font-medium flex-1 whitespace-normal break-words",
-                    hintIndex === index && "line-through"
+                    "text-left font-medium flex-1 whitespace-normal break-words"
                   )}>
                     {settings.language === 'de' ? option.de : option.en}
                   </span>
@@ -244,38 +214,27 @@ export function QuestionCard({
             ))}
           </div>
 
-          {/* Show explanation button after answering */}
-          {showResult && showFeedback && (
+          {/* Show explanation button after answering - ONLY if Pro or Unlocked */}
+          {showResult && showFeedback && (isPro || isExplanationUnlocked) && (
             <div className="mt-4 space-y-3">
               <Button
                 variant="ghost"
-                className={cn(
-                  "w-full h-12 gap-2",
-                  isPro 
-                    ? "text-primary hover:bg-primary/10" 
-                    : "text-muted-foreground hover:text-primary"
-                )}
+                className="w-full h-12 gap-2 text-primary hover:bg-primary/10"
                 onClick={handleShowExplanation}
               >
-                {isPro ? (
-                  showExplanation ? (
-                    <ChevronUp className="h-5 w-5" />
-                  ) : (
-                    <Lightbulb className="h-5 w-5" />
-                  )
+                {showExplanation ? (
+                  <ChevronUp className="h-5 w-5" />
                 ) : (
-                  <Lock className="h-5 w-5" />
+                  <Lightbulb className="h-5 w-5" />
                 )}
-                {isPro
-                  ? (showExplanation 
-                      ? t('Erklärung ausblenden', 'Hide explanation') 
-                      : t('Erklärung anzeigen', 'Show explanation'))
-                  : t('Erklärung anzeigen (Pro)', 'Show explanation (Pro)')
+                {showExplanation 
+                  ? t('Erklärung ausblenden', 'Hide explanation') 
+                  : t('Erklärung anzeigen', 'Show explanation')
                 }
               </Button>
 
               {/* Explanation content for Pro users */}
-              {isPro && showExplanation && (
+              {(isPro || isExplanationUnlocked) && showExplanation && (
                 <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 animate-fade-in">
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
@@ -298,6 +257,7 @@ export function QuestionCard({
                   </div>
                 </div>
               )}
+
             </div>
           )}
 

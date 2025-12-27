@@ -1,5 +1,5 @@
 import { Capacitor } from '@capacitor/core';
-import { CapacitorPurchases } from '@capgo/capacitor-purchases';
+import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
 
 // ============================================
 // ⚠️ PRODUCTION CONFIGURATION REQUIRED ⚠️
@@ -8,7 +8,7 @@ import { CapacitorPurchases } from '@capgo/capacitor-purchases';
 // ============================================
 const BILLING_CONFIG = {
   // RevenueCat API Key - REPLACE FOR PRODUCTION
-  revenueCatApiKey: 'YOUR_REVENUECAT_API_KEY',
+  revenueCatApiKey: 'test_kuTkdPXXvNACLVBSDMbojYXALYc',
   
   // Entitlement ID (set up in RevenueCat)
   entitlementId: 'pro',
@@ -32,19 +32,17 @@ export interface PurchaseResult {
 // Initialize billing - call this on app start
 export async function initializeBilling(): Promise<void> {
   if (!Capacitor.isNativePlatform()) {
-    console.log('Billing: Running on web, using mock mode');
     return;
   }
 
   try {
-    await CapacitorPurchases.setup({
+    await Purchases.configure({
       apiKey: BILLING_CONFIG.revenueCatApiKey,
     });
     
-    // Enable debug logs during development
-    await CapacitorPurchases.setDebugLogsEnabled({ enabled: true });
+    // Set log level to ERROR for production
+    await Purchases.setLogLevel({ level: LOG_LEVEL.ERROR });
     
-    console.log('Billing: RevenueCat initialized successfully');
   } catch (error) {
     console.error('Billing: Failed to initialize', error);
   }
@@ -54,13 +52,12 @@ export async function initializeBilling(): Promise<void> {
 export async function purchasePro(): Promise<PurchaseResult> {
   if (!Capacitor.isNativePlatform()) {
     // Web fallback: simulate purchase for testing
-    console.log('Billing: Web mock purchase');
     return { success: true };
   }
 
   try {
     // Get available packages
-    const { offerings } = await CapacitorPurchases.getOfferings();
+    const offerings = await Purchases.getOfferings();
     
     if (!offerings.current) {
       return { success: false, error: 'No offerings available' };
@@ -77,9 +74,8 @@ export async function purchasePro(): Promise<PurchaseResult> {
     }
 
     // Make the purchase
-    const result = await CapacitorPurchases.purchasePackage({
-      identifier: proPackage.identifier,
-      offeringIdentifier: proPackage.offeringIdentifier,
+    const result = await Purchases.purchasePackage({
+      aPackage: proPackage,
     });
 
     // Check if Pro entitlement is now active
@@ -93,7 +89,7 @@ export async function purchasePro(): Promise<PurchaseResult> {
     console.error('Billing: Purchase failed', error);
     
     // Handle user cancellation
-    if (error.code === 1 || error.message?.includes('cancelled') || error.message?.includes('canceled')) {
+    if (error.userCancelled) {
       return { success: false, error: 'cancelled' };
     }
     
@@ -109,7 +105,7 @@ export async function checkProStatus(): Promise<boolean> {
   }
 
   try {
-    const { customerInfo } = await CapacitorPurchases.getCustomerInfo();
+    const { customerInfo } = await Purchases.getCustomerInfo();
     const entitlements = customerInfo.entitlements.active;
     
     return !!(entitlements && entitlements[BILLING_CONFIG.entitlementId]);
@@ -126,7 +122,7 @@ export async function restorePurchases(): Promise<PurchaseResult> {
   }
 
   try {
-    const { customerInfo } = await CapacitorPurchases.restorePurchases();
+    const { customerInfo } = await Purchases.restorePurchases();
     const entitlements = customerInfo.entitlements.active;
     
     if (entitlements && entitlements[BILLING_CONFIG.entitlementId]) {

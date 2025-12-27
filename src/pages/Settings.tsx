@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe, MapPin, RotateCcw, Info, Mail, User } from 'lucide-react';
+import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -24,10 +24,15 @@ import {
 } from '@/components/ui/alert-dialog';
 import { useApp } from '@/contexts/AppContext';
 import { bundeslaender } from '@/data/questions/index';
+import { useAds } from '@/contexts/AdContext';
+import { purchasePro, restorePurchases } from '@/lib/billing';
+import { toast } from 'sonner';
 
 export default function Settings() {
   const { settings, updateSettings, resetProgress, t } = useApp();
+  const { isPro, setPro } = useAds();
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
+  const [isLoadingPro, setIsLoadingPro] = useState(false);
 
   const handleLanguageToggle = () => {
     updateSettings({ language: settings.language === 'de' ? 'en' : 'de' });
@@ -42,6 +47,39 @@ export default function Settings() {
     setResetConfirmOpen(false);
   };
 
+  const handleUpgrade = async () => {
+    setIsLoadingPro(true);
+    try {
+      const success = await purchasePro();
+      if (success) {
+        setPro(true); // <--- Update Context Immediately
+        toast.success(t('Willkommen bei Pro!', 'Welcome to Pro!'));
+      }
+    } catch (error) {
+      console.error('Purchase failed', error);
+      toast.error(t('Kauf fehlgeschlagen', 'Purchase failed'));
+    } finally {
+      setIsLoadingPro(false);
+    }
+  };
+
+  const handleRestore = async () => {
+    setIsLoadingPro(true);
+    try {
+      const success = await restorePurchases();
+      if (success) {
+        setPro(true); // <--- Update Context Immediately
+        toast.success(t('Einkäufe wiederhergestellt!', 'Purchases restored!'));
+      } else {
+        toast.info(t('Keine Einkäufe gefunden', 'No purchases found'));
+      }
+    } catch (error) {
+      toast.error(t('Fehler beim Wiederherstellen', 'Error restoring'));
+    } finally {
+      setIsLoadingPro(false);
+    }
+  };
+
   return (
     <div className="min-h-screen pb-24 safe-area-top">
       <div className="px-5 pt-6 pb-4">
@@ -54,6 +92,83 @@ export default function Settings() {
       </div>
 
       <div className="px-5 space-y-4">
+        
+        {/* PRO / PREMIUM Section */}
+        <Card className="border-2 border-primary/20 overflow-hidden relative">
+          {/* Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent pointer-events-none" />
+          
+          <CardContent className="p-5 relative">
+            <div className="flex items-start justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/20">
+                  <Crown className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-lg leading-tight">
+                    {isPro ? t('Pro ist aktiv! 🎉', 'Pro is active! 🎉') : t('Premium Version', 'Premium Version')}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-medium">
+                    {isPro 
+                      ? t('Danke für deine Unterstützung', 'Thanks for your support')
+                      : t('Schalte alle Vorteile frei', 'Unlock all benefits')
+                    }
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2 mb-6">
+              {[
+                { de: 'Keine Werbung (Banner, Video)', en: 'No Ads (Banner, Video)' },
+                { de: 'Sofortige Erklärungen', en: 'Instant Explanations' },
+                { de: 'Unbegrenzte Prüfungen', en: 'Unlimited Exams' },
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm">
+                  <div className="w-5 h-5 rounded-full bg-green-500/15 flex items-center justify-center shrink-0">
+                    <Check className="w-3 h-3 text-green-600" />
+                  </div>
+                  <span className="font-medium text-foreground/80">
+                    {t(feature.de, feature.en)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {!isPro && (
+              <div className="space-y-3">
+                <Button 
+                  className="w-full h-12 font-bold text-base shadow-lg shadow-primary/20" 
+                  onClick={handleUpgrade}
+                  disabled={isLoadingPro}
+                >
+                  {isLoadingPro ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    t('Jetzt upgraden - 4,99€', 'Upgrade Now - €4.99')
+                  )}
+                </Button>
+                
+                <button 
+                  onClick={handleRestore}
+                  disabled={isLoadingPro}
+                  className="w-full text-center text-xs font-semibold text-muted-foreground hover:text-primary transition-colors disabled:opacity-50"
+                >
+                  {t('Käufe wiederherstellen', 'Restore Purchases')}
+                </button>
+              </div>
+            )}
+             
+            {isPro && (
+               <div className="p-3 bg-primary/10 rounded-lg border border-primary/20 text-center">
+                  <p className="text-xs font-bold text-primary">
+                    {t('Du nutzt die beste Version!', 'You are using the best version!')}
+                  </p>
+               </div>
+            )} 
+          </CardContent>
+        </Card>
+
         {/* Language Toggle */}
         <Card>
           <CardContent className="p-4">
