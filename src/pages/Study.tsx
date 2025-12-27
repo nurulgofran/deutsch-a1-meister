@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, ChevronRight, Sparkles, Trophy } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Sparkles, Trophy, Search, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { CategoryCard } from '@/components/CategoryCard';
 import { QuestionCard } from '@/components/QuestionCard';
 import { useApp } from '@/contexts/AppContext';
@@ -9,7 +10,7 @@ import { questions, categories, Question } from '@/data/questions/index';
 import { shuffleArray } from '@/lib/utils';
 import { useAds } from '@/contexts/AdContext';
 
-type ViewMode = 'categories' | 'questions';
+type ViewMode = 'categories' | 'questions' | 'search';
 
 export default function Study() {
   const navigate = useNavigate();
@@ -20,6 +21,19 @@ export default function Study() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [studyQueue, setStudyQueue] = useState<Question[]>([]);
   const [isReviewMode, setIsReviewMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Filter questions based on search query
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const query = searchQuery.toLowerCase().trim();
+    return questions.filter(q => {
+      const textDe = q.text_de.toLowerCase();
+      const textEn = q.text_en.toLowerCase();
+      const id = q.id.toLowerCase();
+      return textDe.includes(query) || textEn.includes(query) || id === query;
+    });
+  }, [searchQuery]);
 
   const currentQuestion = studyQueue[currentQuestionIndex];
 
@@ -84,7 +98,17 @@ export default function Study() {
       setSelectedCategory(null);
       setCurrentQuestionIndex(0);
       setStudyQueue([]);
+    } else if (viewMode === 'search') {
+      setViewMode('categories');
+      setSearchQuery('');
     }
+  };
+
+  const handleSearchResultClick = (question: Question) => {
+    setStudyQueue([question]);
+    setCurrentQuestionIndex(0);
+    setViewMode('questions');
+    setIsReviewMode(false);
   };
 
   const progressValue = studyQueue.length > 0 
@@ -165,6 +189,106 @@ export default function Study() {
     );
   }
 
+  // Search view
+  if (viewMode === 'search') {
+    return (
+      <div className="min-h-screen pb-24 safe-area-top">
+        {/* Header */}
+        <div className="sticky top-0 z-10 glass border-b border-border/50 px-4 py-4">
+          <div className="flex items-center gap-3">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={handleBack}
+              className="rounded-xl hover:bg-primary/10"
+            >
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                autoFocus
+                placeholder={t('Frage suchen...', 'Search questions...')}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-10 h-11 rounded-xl border-border/50 bg-background/50"
+              />
+              {searchQuery && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 rounded-lg"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Search Results */}
+        <div className="p-5 space-y-3">
+          {searchQuery.trim() === '' ? (
+            <p className="text-center text-muted-foreground py-8">
+              {t('Gib einen Suchbegriff ein', 'Enter a search term')}
+            </p>
+          ) : searchResults.length === 0 ? (
+            <p className="text-center text-muted-foreground py-8">
+              {t('Keine Fragen gefunden', 'No questions found')}
+            </p>
+          ) : (
+            <>
+              <p className="text-sm text-muted-foreground mb-4">
+                {searchResults.length} {t('Fragen gefunden', 'questions found')}
+              </p>
+              {searchResults.slice(0, 20).map(question => {
+                const isAnswered = question.id in progress.questionsAnswered;
+                const isCorrect = progress.questionsAnswered[question.id];
+                const categoryInfo = categories.find(c => c.id === question.category);
+                
+                return (
+                  <button
+                    key={question.id}
+                    onClick={() => handleSearchResultClick(question)}
+                    className="w-full text-left p-4 rounded-xl border border-border/50 bg-card hover:bg-card/80 transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="text-xs font-bold text-muted-foreground bg-muted px-2 py-1 rounded-md shrink-0">
+                        #{question.id}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium leading-relaxed line-clamp-2">
+                          {settings.language === 'de' ? question.text_de : question.text_en}
+                        </p>
+                        <div className="flex items-center gap-2 mt-2">
+                          <span className="text-xs text-muted-foreground">
+                            {categoryInfo?.[settings.language === 'de' ? 'name_de' : 'name_en']}
+                          </span>
+                          {isAnswered && (
+                            <span className={`text-xs px-2 py-0.5 rounded-full ${isCorrect ? 'bg-green-500/10 text-green-600' : 'bg-red-500/10 text-red-600'}`}>
+                              {isCorrect ? '✓' : '✗'}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-1" />
+                    </div>
+                  </button>
+                );
+              })}
+              {searchResults.length > 20 && (
+                <p className="text-center text-sm text-muted-foreground py-2">
+                  {t('Zeige 20 von', 'Showing 20 of')} {searchResults.length} {t('Ergebnissen', 'results')}
+                </p>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen pb-24 safe-area-top relative overflow-hidden">
       {/* Background decoration - pointer-events-none to prevent blocking clicks */}
@@ -180,6 +304,19 @@ export default function Study() {
         <p className="text-muted-foreground font-medium">
           {t('Wähle eine Kategorie zum Üben', 'Choose a category to practice')}
         </p>
+      </div>
+
+      {/* Search Bar */}
+      <div className="relative px-5 mb-4">
+        <button
+          onClick={() => setViewMode('search')}
+          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-border/50 bg-card/50 hover:bg-card transition-colors"
+        >
+          <Search className="h-4 w-4 text-muted-foreground" />
+          <span className="text-muted-foreground text-sm">
+            {t('Frage suchen...', 'Search questions...')}
+          </span>
+        </button>
       </div>
 
       {/* Categories with stagger animation */}
