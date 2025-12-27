@@ -31,8 +31,8 @@ const AdContext = createContext<AdContextType | undefined>(undefined);
 const AD_UNIT_IDS = {
   // Test IDs (Android) - REPLACE FOR PRODUCTION
   banner: 'ca-app-pub-3940256099942544/6300978111', 
-  interstitial: 'ca-app-pub-3940256099942544/1033173712',
-  rewarded: 'ca-app-pub-3940256099942544/5224354917',
+  interstitial: 'ca-app-pub-4236881254988952/1536678955', // Production ID
+  rewarded: 'ca-app-pub-4236881254988952/1262165026', // Production ID
 };
 
 // Set to false for production builds

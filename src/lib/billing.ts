@@ -3,13 +3,11 @@ import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
 import { Browser } from '@capacitor/browser';
 
 // ============================================
-// ⚠️ PRODUCTION CONFIGURATION REQUIRED ⚠️
-// Replace these placeholder values with your REAL RevenueCat configuration
-// Get your API key from: https://app.revenuecat.com/
+// RevenueCat Configuration
 // ============================================
 const BILLING_CONFIG = {
-  // RevenueCat API Key - REPLACE FOR PRODUCTION
-  revenueCatApiKey: 'test_kuTkdPXXvNACLVBSDMbojYXALYc',
+  // RevenueCat Public API Key (Android)
+  revenueCatApiKey: 'goog_uNzZhuaPXvvBSjOxFithxuQVYvb',
   
   // Entitlement ID (set up in RevenueCat)
   entitlementId: 'pro',
