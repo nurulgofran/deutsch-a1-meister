@@ -26,12 +26,20 @@ const BILLING_CONFIG = {
 export interface PurchaseResult {
   success: boolean;
   error?: string;
+  pending?: boolean; // For offline/retry scenarios
 }
+
+// Safeguard flag to prevent multiple SDK initializations
+let isInitialized = false;
 
 // Initialize billing - call this on app start
 export async function initializeBilling(): Promise<void> {
-  const isNative = Capacitor.isNativePlatform();
+  // Prevent double initialization
+  if (isInitialized) {
+    return;
+  }
 
+  const isNative = Capacitor.isNativePlatform();
 
   if (!isNative) {
     return;
@@ -47,8 +55,8 @@ export async function initializeBilling(): Promise<void> {
 
     // Check initial status
     const info = await Purchases.getCustomerInfo();
-
     
+    isInitialized = true;
   } catch (error) {
     console.error('Billing: Failed to initialize', error);
   }
@@ -127,7 +135,10 @@ export async function checkProStatus(): Promise<boolean> {
 }
 
 // Restore purchases (for users who reinstall)
-export async function restorePurchases(): Promise<PurchaseResult> {
+// Includes retry logic for offline scenarios
+export async function restorePurchases(retryCount = 0): Promise<PurchaseResult> {
+  const MAX_RETRIES = 2;
+  
   if (!Capacitor.isNativePlatform()) {
     return { success: false, error: 'Not available on web' };
   }
@@ -143,7 +154,23 @@ export async function restorePurchases(): Promise<PurchaseResult> {
     return { success: false, error: 'No previous purchase found' };
   } catch (error: any) {
     console.error('Billing: Restore failed', error);
-  return { success: false, error: error.message || 'Restore failed' };
+    
+    // Check if it's a network error and we should retry
+    const isNetworkError = error.message?.includes('network') || 
+                           error.message?.includes('offline') ||
+                           error.code === 'NETWORK_ERROR';
+    
+    if (isNetworkError && retryCount < MAX_RETRIES) {
+      // Wait 2 seconds before retry
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      return restorePurchases(retryCount + 1);
+    }
+    
+    return { 
+      success: false, 
+      error: isNetworkError ? 'Please check your internet connection' : (error.message || 'Restore failed'),
+      pending: isNetworkError
+    };
   }
 }
 

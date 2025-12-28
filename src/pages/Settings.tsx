@@ -51,10 +51,12 @@ export default function Settings() {
   const handleUpgrade = async () => {
     setIsLoadingPro(true);
     try {
-      const success = await purchasePro();
-      if (success) {
+      const result = await purchasePro();
+      if (result.success) {
         setPro(true); // <--- Update Context Immediately
         toast.success(t('Willkommen bei Pro!', 'Welcome to Pro!'));
+      } else if (result.error && result.error !== 'cancelled') {
+        toast.error(t('Kauf fehlgeschlagen', 'Purchase failed'));
       }
     } catch (error) {
       console.error('Purchase failed', error);
@@ -67,8 +69,8 @@ export default function Settings() {
   const handleRestore = async () => {
     setIsLoadingPro(true);
     try {
-      const success = await restorePurchases();
-      if (success) {
+      const result = await restorePurchases();
+      if (result.success) {
         setPro(true); // <--- Update Context Immediately
         toast.success(t('Einkäufe wiederhergestellt!', 'Purchases restored!'));
       } else {
@@ -121,7 +123,7 @@ export default function Settings() {
 
             <div className="space-y-2 mb-6">
               {[
-                { de: 'Keine Werbung (Banner, Video)', en: 'No Ads (Banner, Video)' },
+                { de: 'Keine Werbung', en: 'No Ads' },
                 { de: 'Sofortige Erklärungen', en: 'Instant Explanations' },
                 { de: 'Unbegrenzte Prüfungen', en: 'Unlimited Exams' },
               ].map((feature, i) => (

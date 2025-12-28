@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
 import { AdMob, RewardAdPluginEvents, AdMobRewardItem } from '@capacitor-community/admob';
 import { Capacitor } from '@capacitor/core';
+import { checkProStatus } from '@/lib/billing';
 
 interface AdContextType {
   isPro: boolean;
   setPro: (value: boolean) => void;
   adUnitIds: {
-    banner: string;
     interstitial: string;
     rewarded: string;
   };
@@ -24,15 +24,11 @@ interface AdContextType {
 const AdContext = createContext<AdContextType | undefined>(undefined);
 
 // ============================================
-// ⚠️ PRODUCTION CONFIGURATION REQUIRED ⚠️
-// Replace these TEST ad unit IDs with your REAL AdMob IDs before building for production
-// Get your IDs from: https://admob.google.com/
+// AdMob Production Configuration
 // ============================================
 const AD_UNIT_IDS = {
-  // Test IDs (Android) - REPLACE FOR PRODUCTION
-  banner: 'ca-app-pub-3940256099942544/6300978111', 
-  interstitial: 'ca-app-pub-4236881254988952/1536678955', // Production ID
-  rewarded: 'ca-app-pub-4236881254988952/1262165026', // Production ID
+  interstitial: 'ca-app-pub-4236881254988952/1536678955',
+  rewarded: 'ca-app-pub-4236881254988952/1262165026',
 };
 
 // Set to false for production builds
@@ -76,6 +72,22 @@ export function AdProvider({ children }: { children: ReactNode }) {
       }
     };
     initAdMob();
+  }, []);
+
+  // Sync pro status from RevenueCat on app startup
+  useEffect(() => {
+    const syncProStatus = async () => {
+      try {
+        const hasPro = await checkProStatus();
+        if (hasPro) {
+          setIsPro(true);
+          localStorage.setItem('lid-is-pro', 'true');
+        }
+      } catch (error) {
+        console.error('Failed to sync pro status', error);
+      }
+    };
+    syncProStatus();
   }, []);
 
   const setPro = useCallback((value: boolean) => {
