@@ -58,10 +58,9 @@ export async function initializeBilling(): Promise<void> {
 export async function purchasePro(): Promise<PurchaseResult> {
   const isNative = Capacitor.isNativePlatform();
 
-
   if (!isNative) {
-    // Web fallback: simulate purchase for testing
-    return { success: true };
+    // Web: Purchase not available - must use native app
+    return { success: false, error: 'Purchase only available in the app' };
   }
 
   try {
