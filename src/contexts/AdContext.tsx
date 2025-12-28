@@ -104,11 +104,8 @@ export function AdProvider({ children }: { children: ReactNode }) {
       } catch (error) {
         console.error('Interstitial failed', error);
       }
-    } else {
-      // Web fallback: Show mock component
-      setShowInterstitial(true);
-      setLastInterstitialTime(Date.now());
     }
+    // No web fallback - ads only work on native
   }, [isPro, canShowInterstitial]);
 
   const closeInterstitial = useCallback(() => {
@@ -162,16 +159,13 @@ export function AdProvider({ children }: { children: ReactNode }) {
         console.error('Rewarded ad failed', error);
         setRewardedCallback(null); 
       }
-    } else {
-      // Web fallback: Show mock component
-      setShowRewarded(true);
     }
+    // No web fallback - ads only work on native
   }, [isPro]);
 
   const closeRewardedAd = useCallback((claimed: boolean) => {
     setShowRewarded(false);
     if (claimed && rewardedCallback) {
-      // Web fallback: execute the reward callback when user claims
       rewardedCallback();
     }
     setRewardedCallback(null);
