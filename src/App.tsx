@@ -19,6 +19,7 @@ import Welcome from "./pages/Welcome";
 import { Bundesland } from "@/data/questions/index";
 
 import { storage } from '@/lib/storage';
+import { initializeBilling, checkProStatus } from '@/lib/billing';
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,11 @@ function AppContent() {
 }
 
 function App() {
+  // Initialize RevenueCat on app startup
+  useEffect(() => {
+    initializeBilling();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>

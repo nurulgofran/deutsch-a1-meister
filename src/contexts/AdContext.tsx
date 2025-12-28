@@ -56,10 +56,21 @@ export function AdProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const initAdMob = async () => {
+      if (!Capacitor.isNativePlatform()) return;
+      
       try {
+        // 1. Initialize AdMob
         await AdMob.initialize({
           initializeForTesting: IS_TESTING,
         });
+        
+        // 2. Request consent info for GDPR (EEA/UK)
+        const consentInfo = await AdMob.requestConsentInfo();
+        
+        // 3. Show consent form if required and available
+        if (consentInfo.isConsentFormAvailable && !consentInfo.canRequestAds) {
+          await AdMob.showConsentForm();
+        }
       } catch (error) {
         console.error('AdMob init error', error);
       }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2 } from 'lucide-react';
+import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2, Shield, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -26,6 +26,7 @@ import { useApp } from '@/contexts/AppContext';
 import { bundeslaender } from '@/data/questions/index';
 import { useAds } from '@/contexts/AdContext';
 import { purchasePro, restorePurchases } from '@/lib/billing';
+import { Browser } from '@capacitor/browser';
 import { toast } from 'sonner';
 
 export default function Settings() {
@@ -291,6 +292,31 @@ export default function Settings() {
                 <p className="text-sm text-muted-foreground">Version 1.0.0</p>
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Privacy Policy */}
+        <Card>
+          <CardContent className="p-4">
+            <button 
+              onClick={() => Browser.open({ url: 'https://www.nurulgofran.dev/lebenindeutschland/privacypolicy/' })}
+              className="flex items-center justify-between w-full text-left"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
+                  <Shield className="h-5 w-5 text-secondary-foreground" />
+                </div>
+                <div>
+                  <p className="font-medium">
+                    {t('Datenschutzerklärung', 'Privacy Policy')}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('Lesen Sie unsere Datenschutzrichtlinien', 'Read our privacy guidelines')}
+                  </p>
+                </div>
+              </div>
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
+            </button>
           </CardContent>
         </Card>
 
