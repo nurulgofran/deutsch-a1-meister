@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2, Shield, ExternalLink } from 'lucide-react';
+import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2, Shield, ExternalLink, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import { Input } from '@/components/ui/input';
 import {
   Select,
   SelectContent,
@@ -29,11 +30,48 @@ import { purchasePro, restorePurchases } from '@/lib/billing';
 import { Browser } from '@capacitor/browser';
 import { toast } from 'sonner';
 
+// Launch Promo Code Configuration
+const PROMO_CONFIG = {
+  code: 'WELCOME',
+  expirationDate: new Date('2025-02-10T23:59:59'),
+};
+
 export default function Settings() {
   const { settings, updateSettings, resetProgress, t } = useApp();
   const { isPro, setPro } = useAds();
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
   const [isLoadingPro, setIsLoadingPro] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
+  const [isRedeemingPromo, setIsRedeemingPromo] = useState(false);
+
+  const handleRedeemPromoCode = async () => {
+    if (!promoCode.trim()) {
+      toast.error(t('Bitte gib einen Code ein', 'Please enter a code'));
+      return;
+    }
+
+    setIsRedeemingPromo(true);
+    
+    // Check if promo period has expired
+    if (new Date() > PROMO_CONFIG.expirationDate) {
+      toast.error(t('Dieser Code ist abgelaufen', 'This code has expired'));
+      setIsRedeemingPromo(false);
+      return;
+    }
+
+    // Validate the code (case-insensitive)
+    if (promoCode.trim().toUpperCase() === PROMO_CONFIG.code) {
+      setPro(true);
+      localStorage.setItem('lid-is-pro', 'true');
+      localStorage.setItem('lid-promo-redeemed', 'true');
+      toast.success(t('Pro-Version aktiviert! 🎉', 'Pro version activated! 🎉'));
+      setPromoCode('');
+    } else {
+      toast.error(t('Ungültiger Code', 'Invalid code'));
+    }
+    
+    setIsRedeemingPromo(false);
+  };
 
   const handleLanguageToggle = () => {
     updateSettings({ language: settings.language === 'de' ? 'en' : 'de' });
@@ -159,6 +197,37 @@ export default function Settings() {
                 >
                   {t('Käufe wiederherstellen', 'Restore Purchases')}
                 </button>
+
+                {/* Promo Code Section */}
+                <div className="mt-4 pt-4 border-t border-border">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Gift className="h-4 w-4 text-accent" />
+                    <span className="text-sm font-medium">
+                      {t('Promo-Code einlösen', 'Redeem Promo Code')}
+                    </span>
+                  </div>
+                  <div className="flex gap-2">
+                    <Input
+                      placeholder={t('Code eingeben...', 'Enter code...')}
+                      value={promoCode}
+                      onChange={(e) => setPromoCode(e.target.value)}
+                      className="flex-1 h-10"
+                      disabled={isRedeemingPromo}
+                    />
+                    <Button
+                      variant="secondary"
+                      className="h-10 px-4"
+                      onClick={handleRedeemPromoCode}
+                      disabled={isRedeemingPromo || isLoadingPro}
+                    >
+                      {isRedeemingPromo ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        t('Einlösen', 'Redeem')
+                      )}
+                    </Button>
+                  </div>
+                </div>
               </div>
             )}
              

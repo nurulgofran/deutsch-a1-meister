@@ -19,7 +19,9 @@ const badenWuerttembergQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Baden-Württemberg",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Wappen von Baden-Württemberg zeigt drei schwarze Löwen auf goldenem Grund, umrahmt von Hirsch und Greif.",
+    explanation_en: "Baden-Württemberg's coat of arms shows three black lions on a golden background, framed by a stag and a griffin."
   },
   {
     id: "302",
@@ -34,7 +36,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Der Rhein-Neckar-Kreis liegt in der Metropolregion Rhein-Neckar. Altötting ist in Bayern, Emsland in Niedersachsen, Prignitz in Brandenburg.",
+    explanation_en: "Rhein-Neckar-Kreis is in the Rhine-Neckar metropolitan region. Altötting is in Bavaria, Emsland in Lower Saxony, Prignitz in Brandenburg."
   },
   {
     id: "303",
@@ -49,7 +53,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Baden-Württemberg ist Heimat von Mercedes-Benz und Porsche. Der Schwarzwald ist ein beliebtes Urlaubsziel mit Kuckucksuhren und Schwarzwälder Kirschtorte.",
+    explanation_en: "Baden-Württemberg is home to Mercedes-Benz and Porsche. The Black Forest is a popular tourist destination known for cuckoo clocks and Black Forest cake."
   },
   {
     id: "304",
@@ -64,7 +70,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Stuttgart ist die Landeshauptstadt von Baden-Württemberg. München gehört zu Bayern, Wiesbaden zu Hessen, Dresden zu Sachsen.",
+    explanation_en: "Stuttgart is the capital of Baden-Württemberg. Munich belongs to Bavaria, Wiesbaden to Hesse, Dresden to Saxony."
   },
   {
     id: "305",
@@ -79,7 +87,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Winfried Kretschmann (Bündnis 90/Die Grünen) ist seit 2011 Ministerpräsident von Baden-Württemberg.",
+    explanation_en: "Winfried Kretschmann (Alliance 90/The Greens) has been Minister-President of Baden-Württemberg since 2011."
   },
   {
     id: "306",
@@ -94,7 +104,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Baden-Württemberg grenzt an Bayern im Osten. Brandenburg, Sachsen und Niedersachsen liegen im Norden/Osten Deutschlands.",
+    explanation_en: "Baden-Württemberg borders Bavaria to the east. Brandenburg, Saxony, and Lower Saxony are in the north/east of Germany."
   },
   {
     id: "307",
@@ -109,7 +121,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Das Landesparlament heißt Landtag. Bürgerschaft gibt es nur in Hamburg und Bremen. Das Abgeordnetenhaus ist in Berlin.",
+    explanation_en: "The state parliament is called Landtag. Bürgerschaft exists only in Hamburg and Bremen. The House of Representatives is in Berlin."
   },
   {
     id: "308",
@@ -124,7 +138,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 3,
     category: "society",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Frankfurt am Main liegt in Hessen, nicht in Baden-Württemberg. Karlsruhe, Heidelberg und Mannheim sind Städte in Baden-Württemberg.",
+    explanation_en: "Frankfurt am Main is in Hesse, not Baden-Württemberg. Karlsruhe, Heidelberg, and Mannheim are cities in Baden-Württemberg."
   },
   {
     id: "309",
@@ -139,7 +155,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Der Neckar fließt durch Stuttgart und Heidelberg. Die Elbe fließt durch Hamburg, die Weser durch Bremen, die Spree durch Berlin.",
+    explanation_en: "The Neckar flows through Stuttgart and Heidelberg. The Elbe flows through Hamburg, the Weser through Bremen, the Spree through Berlin."
   },
   {
     id: "310",
@@ -154,7 +172,9 @@ const badenWuerttembergQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Baden-Württemberg"
+    state: "Baden-Württemberg",
+    explanation_de: "Der Schwarzwald ist das größte und höchste Mittelgebirge in Baden-Württemberg. Der Harz liegt in Niedersachsen/Sachsen-Anhalt.",
+    explanation_en: "The Black Forest is the largest and highest low mountain range in Baden-Württemberg. The Harz is in Lower Saxony/Saxony-Anhalt."
   }
 ];
 
@@ -174,7 +194,9 @@ const bayernQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Bayern",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das bayerische Wappen zeigt weiß-blaue Rauten (die 'Bayerischen Rauten') und symbolisiert die Tradition des Freistaats.",
+    explanation_en: "The Bavarian coat of arms shows white-blue lozenges ('Bavarian Lozenges') symbolizing the Free State's tradition."
   },
   {
     id: "312",
@@ -189,7 +211,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Altötting ist ein Landkreis in Oberbayern, bekannt für den Wallfahrtsort. Enzkreis liegt in Baden-Württemberg, die anderen in Nordrhein-Westfalen.",
+    explanation_en: "Altötting is a district in Upper Bavaria, known for its pilgrimage site. Enzkreis is in Baden-Württemberg, the others in North Rhine-Westphalia."
   },
   {
     id: "313",
@@ -204,7 +228,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Bayern ist Heimat von BMW und Audi. Das Oktoberfest in München ist das größte Volksfest der Welt.",
+    explanation_en: "Bavaria is home to BMW and Audi. Oktoberfest in Munich is the world's largest folk festival."
   },
   {
     id: "314",
@@ -219,7 +245,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "München ist die Landeshauptstadt von Bayern und mit 1,5 Millionen Einwohnern die drittgrößte Stadt Deutschlands.",
+    explanation_en: "Munich is the capital of Bavaria and with 1.5 million inhabitants Germany's third-largest city."
   },
   {
     id: "315",
@@ -234,7 +262,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Markus Söder (CSU) ist seit 2018 Ministerpräsident von Bayern. Die CSU ist nur in Bayern politisch aktiv.",
+    explanation_en: "Markus Söder (CSU) has been Minister-President of Bavaria since 2018. The CSU is politically active only in Bavaria."
   },
   {
     id: "316",
@@ -249,7 +279,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Bayern grenzt im Süden/Osten an Österreich und Tschechien. Es ist das einzige deutsche Bundesland mit direkter Alpengrenze.",
+    explanation_en: "Bavaria borders Austria and Czech Republic to the south/east. It is the only German state with a direct Alpine border."
   },
   {
     id: "317",
@@ -264,7 +296,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Das bayerische Landesparlament heißt Landtag und sitzt im Maximilianeum in München.",
+    explanation_en: "The Bavarian state parliament is called Landtag and is located in the Maximilianeum in Munich."
   },
   {
     id: "318",
@@ -279,7 +313,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 3,
     category: "society",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Stuttgart ist die Hauptstadt von Baden-Württemberg. München, Nürnberg und Augsburg sind bayerische Städte.",
+    explanation_en: "Stuttgart is the capital of Baden-Württemberg. Munich, Nuremberg, and Augsburg are Bavarian cities."
   },
   {
     id: "319",
@@ -294,7 +330,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Die Donau fließt durch Bayern (z.B. Regensburg, Passau). Sie ist der zweitlängste Fluss Europas.",
+    explanation_en: "The Danube flows through Bavaria (e.g., Regensburg, Passau). It is Europe's second-longest river."
   },
   {
     id: "320",
@@ -309,7 +347,9 @@ const bayernQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Bayern"
+    state: "Bayern",
+    explanation_de: "Die Alpen liegen im Süden Bayerns mit der Zugspitze (2.962 m), dem höchsten Berg Deutschlands.",
+    explanation_en: "The Alps are in southern Bavaria with the Zugspitze (2,962 m), Germany's highest mountain."
   }
 ];
 
@@ -329,7 +369,9 @@ const berlinQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Berlin",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Berliner Wappen zeigt einen schwarzen Bären auf weißem Grund - den berühmten 'Berliner Bären'.",
+    explanation_en: "Berlin's coat of arms shows a black bear on a white background - the famous 'Berlin Bear'."
   },
   {
     id: "322",
@@ -344,7 +386,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Kreuzberg ist ein Bezirk in Berlin, bekannt für seine multikulturelle Atmosphäre. Altona gehört zu Hamburg.",
+    explanation_en: "Kreuzberg is a district in Berlin, known for its multicultural atmosphere. Altona belongs to Hamburg."
   },
   {
     id: "323",
@@ -359,7 +403,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Berlin ist Regierungssitz und kulturelles Zentrum mit Museen, Theater und bewegter Geschichte (Mauer, Kalter Krieg).",
+    explanation_en: "Berlin is the seat of government and cultural center with museums, theaters, and eventful history (Wall, Cold War)."
   },
   {
     id: "324",
@@ -374,7 +420,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Berlin ist seit 1990 (Wiedervereinigung) die Hauptstadt Deutschlands. Bonn war früher Hauptstadt der BRD.",
+    explanation_en: "Berlin has been Germany's capital since 1990 (reunification). Bonn was formerly the capital of West Germany."
   },
   {
     id: "325",
@@ -389,7 +437,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Kai Wegner (CDU) ist seit 2023 Regierender Bürgermeister von Berlin. Berlin ist ein Stadtstaat.",
+    explanation_en: "Kai Wegner (CDU) has been Governing Mayor of Berlin since 2023. Berlin is a city-state."
   },
   {
     id: "326",
@@ -404,7 +454,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Brandenburg umschließt Berlin vollständig. Berlin liegt als 'Insel' mitten in Brandenburg.",
+    explanation_en: "Brandenburg completely surrounds Berlin. Berlin lies as an 'island' in the middle of Brandenburg."
   },
   {
     id: "327",
@@ -419,7 +471,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Berlins Landesparlament heißt Abgeordnetenhaus. Dies ist einzigartig in Deutschland.",
+    explanation_en: "Berlin's state parliament is called Abgeordnetenhaus (House of Representatives). This is unique in Germany."
   },
   {
     id: "328",
@@ -434,7 +488,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Potsdam ist eine eigene Stadt in Brandenburg (Landeshauptstadt), nicht Teil von Berlin.",
+    explanation_en: "Potsdam is a separate city in Brandenburg (state capital), not part of Berlin."
   },
   {
     id: "329",
@@ -449,7 +505,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Die Spree fließt durch Berlin und mündet in die Havel. Der Reichstag und die Museumsinsel liegen an der Spree.",
+    explanation_en: "The Spree flows through Berlin and empties into the Havel. The Reichstag and Museum Island are on the Spree."
   },
   {
     id: "330",
@@ -464,7 +522,9 @@ const berlinQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Berlin"
+    state: "Berlin",
+    explanation_de: "Das Brandenburger Tor ist das bekannteste Wahrzeichen Berlins, Symbol für die deutsche Einheit.",
+    explanation_en: "The Brandenburg Gate is Berlin's most famous landmark, a symbol of German unity."
   }
 ];
 
@@ -484,7 +544,9 @@ const brandenburgQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Brandenburg",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Brandenburger Wappen zeigt einen roten Adler auf weißem Grund (Brandenburger Adler).",
+    explanation_en: "Brandenburg's coat of arms shows a red eagle on a white background (Brandenburg Eagle)."
   },
   {
     id: "332",
@@ -499,7 +561,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Potsdam-Mittelmark ist der flächengrößte Landkreis Brandenburgs, südwestlich von Berlin.",
+    explanation_en: "Potsdam-Mittelmark is Brandenburg's largest district by area, southwest of Berlin."
   },
   {
     id: "333",
@@ -514,7 +578,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Brandenburg hat über 3.000 Seen und ist eines der waldreichsten Bundesländer Deutschlands.",
+    explanation_en: "Brandenburg has over 3,000 lakes and is one of Germany's most forested federal states."
   },
   {
     id: "334",
@@ -529,7 +595,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Potsdam ist die Landeshauptstadt von Brandenburg, bekannt für Schloss Sanssouci und die Potsdamer Konferenz 1945.",
+    explanation_en: "Potsdam is Brandenburg's capital, known for Sanssouci Palace and the 1945 Potsdam Conference."
   },
   {
     id: "335",
@@ -544,7 +612,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Dietmar Woidke (SPD) ist seit 2013 Ministerpräsident von Brandenburg.",
+    explanation_en: "Dietmar Woidke (SPD) has been Minister-President of Brandenburg since 2013."
   },
   {
     id: "336",
@@ -559,7 +629,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Brandenburg grenzt im Osten an Polen (Oder-Neiße-Grenze). Diese Grenze wurde 1945 festgelegt.",
+    explanation_en: "Brandenburg borders Poland to the east (Oder-Neisse line). This border was established in 1945."
   },
   {
     id: "337",
@@ -574,7 +646,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Potsdam.",
+    explanation_en: "The state parliament is called Landtag and is located in Potsdam."
   },
   {
     id: "338",
@@ -589,7 +663,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Berlin ist ein eigenes Bundesland (Stadtstaat), nicht Teil von Brandenburg - obwohl es von Brandenburg umgeben ist.",
+    explanation_en: "Berlin is a separate federal state (city-state), not part of Brandenburg - although it is surrounded by Brandenburg."
   },
   {
     id: "339",
@@ -604,7 +680,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Die Havel fließt durch Brandenburg und verbindet Potsdam mit Berlin. Sie mündet in die Elbe.",
+    explanation_en: "The Havel flows through Brandenburg and connects Potsdam with Berlin. It empties into the Elbe."
   },
   {
     id: "340",
@@ -619,7 +697,9 @@ const brandenburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Brandenburg"
+    state: "Brandenburg",
+    explanation_de: "Schloss Sanssouci in Potsdam war die Sommerresidenz von Friedrich dem Großen. Es gehört zum UNESCO-Welterbe.",
+    explanation_en: "Sanssouci Palace in Potsdam was Frederick the Great's summer residence. It is a UNESCO World Heritage Site."
   }
 ];
 
@@ -639,7 +719,9 @@ const bremenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Bremen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Bremer Wappen zeigt einen silbernen Schlüssel auf rotem Grund - den 'Bremer Schlüssel'.",
+    explanation_en: "Bremen's coat of arms shows a silver key on a red background - the 'Bremen Key'."
   },
   {
     id: "342",
@@ -654,7 +736,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Bremen ist ein 'Zwei-Städte-Staat' bestehend aus Bremen und der Hafenstadt Bremerhaven (60 km entfernt).",
+    explanation_en: "Bremen is a 'two-city state' consisting of Bremen and the port city Bremerhaven (60 km away)."
   },
   {
     id: "343",
@@ -669,7 +753,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Bremen hat eine lange Seefahrtstradition. Bremerhaven hat einen der größten Containerhäfen Europas.",
+    explanation_en: "Bremen has a long seafaring tradition. Bremerhaven has one of the largest container ports in Europe."
   },
   {
     id: "344",
@@ -684,7 +770,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Bremen ist neben Hamburg und Berlin einer von drei Stadtstaaten in Deutschland.",
+    explanation_en: "Bremen is one of three city-states in Germany, along with Hamburg and Berlin."
   },
   {
     id: "345",
@@ -699,7 +787,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Andreas Bovenschulte (SPD) ist seit 2019 Bürgermeister und Präsident des Senats von Bremen.",
+    explanation_en: "Andreas Bovenschulte (SPD) has been Mayor and President of the Senate of Bremen since 2019."
   },
   {
     id: "346",
@@ -714,7 +804,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Das Bundesland Bremen ist vollständig von Niedersachsen umgeben.",
+    explanation_en: "The federal state of Bremen is completely surrounded by Lower Saxony."
   },
   {
     id: "347",
@@ -729,7 +821,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Das Landesparlament von Bremen heißt Bürgerschaft - genau wie in Hamburg.",
+    explanation_en: "Bremen's state parliament is called Bürgerschaft - the same as in Hamburg."
   },
   {
     id: "348",
@@ -744,7 +838,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Die Bremer Stadtmusikanten (Esel, Hund, Katze, Hahn) sind ein Märchen der Brüder Grimm. Eine bronze Statue steht am Rathaus.",
+    explanation_en: "The Bremen Town Musicians (donkey, dog, cat, rooster) is a Brothers Grimm fairy tale. A bronze statue stands at the town hall."
   },
   {
     id: "349",
@@ -759,7 +855,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Die Weser fließt durch Bremen und mündet bei Bremerhaven in die Nordsee.",
+    explanation_en: "The Weser flows through Bremen and empties into the North Sea near Bremerhaven."
   },
   {
     id: "350",
@@ -774,7 +872,9 @@ const bremenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Bremen"
+    state: "Bremen",
+    explanation_de: "Bremen ist mit 419 km² das kleinste deutsche Bundesland nach Fläche.",
+    explanation_en: "Bremen is Germany's smallest federal state by area at 419 km²."
   }
 ];
 
@@ -794,7 +894,9 @@ const hamburgQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Hamburg",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Hamburger Wappen zeigt eine weiße Burg auf rotem Grund - Symbol für die alte Befestigungsanlage.",
+    explanation_en: "Hamburg's coat of arms shows a white castle on a red background - a symbol of the old fortification."
   },
   {
     id: "352",
@@ -809,7 +911,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Altona ist ein Bezirk in Hamburg. Kreuzberg, Prenzlauer Berg und Schöneberg sind Berliner Stadtteile.",
+    explanation_en: "Altona is a district of Hamburg. Kreuzberg, Prenzlauer Berg, and Schöneberg are Berlin districts."
   },
   {
     id: "353",
@@ -824,7 +928,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Hamburg hat den größten Seehafen Deutschlands und ist ein wichtiges Handelszentrum seit dem Mittelalter.",
+    explanation_en: "Hamburg has Germany's largest seaport and has been an important trading center since the Middle Ages."
   },
   {
     id: "354",
@@ -839,7 +945,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Hamburg ist ein Stadtstaat und gleichzeitig Stadt und Bundesland. Es ist die zweitgrößte Stadt Deutschlands.",
+    explanation_en: "Hamburg is a city-state, being both a city and a federal state. It is Germany's second-largest city."
   },
   {
     id: "355",
@@ -854,7 +962,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Peter Tschentscher (SPD) ist seit 2018 Erster Bürgermeister von Hamburg.",
+    explanation_en: "Peter Tschentscher (SPD) has been First Mayor of Hamburg since 2018."
   },
   {
     id: "356",
@@ -869,7 +979,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Hamburg grenzt an Schleswig-Holstein im Norden und Niedersachsen im Süden.",
+    explanation_en: "Hamburg borders Schleswig-Holstein to the north and Lower Saxony to the south."
   },
   {
     id: "357",
@@ -884,7 +996,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Hamburgs Landesparlament heißt Bürgerschaft - wie in Bremen. Die anderen Flächenländer haben einen Landtag.",
+    explanation_en: "Hamburg's state parliament is called Bürgerschaft - as in Bremen. Other territorial states have a Landtag."
   },
   {
     id: "358",
@@ -899,7 +1013,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Die Elbphilharmonie ist ein 2017 eröffnetes Konzerthaus auf einem alten Speicher. Es ist Hamburgs neues Wahrzeichen.",
+    explanation_en: "The Elbphilharmonie is a concert hall opened in 2017 on an old warehouse. It is Hamburg's new landmark."
   },
   {
     id: "359",
@@ -914,7 +1030,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Die Elbe fließt durch Hamburg und mündet etwa 100 km nordwestlich in die Nordsee.",
+    explanation_en: "The Elbe flows through Hamburg and empties into the North Sea about 100 km to the northwest."
   },
   {
     id: "360",
@@ -929,7 +1047,9 @@ const hamburgQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Hamburg"
+    state: "Hamburg",
+    explanation_de: "Die Speicherstadt ist das größte zusammenhängende Lagerhausviertel der Welt und UNESCO-Welterbe.",
+    explanation_en: "The Speicherstadt is the world's largest contiguous warehouse district and a UNESCO World Heritage Site."
   }
 ];
 
@@ -949,7 +1069,9 @@ const hessenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Hessen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das hessische Wappen zeigt einen rot-weiß gestreiften Löwen auf blauem Grund.",
+    explanation_en: "Hesse's coat of arms shows a red and white striped lion on a blue background."
   },
   {
     id: "362",
@@ -964,7 +1086,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Der Wetteraukreis liegt nördlich von Frankfurt. Die anderen Kreise gehören zu Baden-Württemberg, NRW und Bayern.",
+    explanation_en: "Wetteraukreis is north of Frankfurt. The other districts belong to Baden-Württemberg, NRW, and Bavaria."
   },
   {
     id: "363",
@@ -979,7 +1103,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Frankfurt ist Deutschlands Finanzmetropole mit EZB und Börse. Apfelwein ('Ebbelwoi') ist typisch hessisch.",
+    explanation_en: "Frankfurt is Germany's financial center with ECB and stock exchange. Apple wine ('Ebbelwoi') is typically Hessian."
   },
   {
     id: "364",
@@ -994,7 +1120,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Wiesbaden ist die Landeshauptstadt von Hessen, nicht Frankfurt. Frankfurt ist aber die größte Stadt des Landes.",
+    explanation_en: "Wiesbaden is the capital of Hesse, not Frankfurt. However, Frankfurt is the state's largest city."
   },
   {
     id: "365",
@@ -1009,7 +1137,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Boris Rhein (CDU) ist seit 2022 Ministerpräsident von Hessen.",
+    explanation_en: "Boris Rhein (CDU) has been Minister-President of Hesse since 2022."
   },
   {
     id: "366",
@@ -1024,7 +1154,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Frankfurt am Main liegt in Hessen und ist Deutschlands wichtigstes Finanzzentrum.",
+    explanation_en: "Frankfurt am Main is in Hesse and is Germany's most important financial center."
   },
   {
     id: "367",
@@ -1039,7 +1171,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Das hessische Landesparlament heißt Landtag und sitzt in Wiesbaden.",
+    explanation_en: "Hesse's state parliament is called Landtag and is located in Wiesbaden."
   },
   {
     id: "368",
@@ -1054,7 +1188,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Mainz ist die Landeshauptstadt von Rheinland-Pfalz, nicht Hessen. Wiesbaden liegt gegenüber am Rhein.",
+    explanation_en: "Mainz is the capital of Rhineland-Palatinate, not Hesse. Wiesbaden is located opposite across the Rhine."
   },
   {
     id: "369",
@@ -1069,7 +1205,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Der Main fließt durch Frankfurt und mündet bei Mainz in den Rhein.",
+    explanation_en: "The Main flows through Frankfurt and empties into the Rhine near Mainz."
   },
   {
     id: "370",
@@ -1084,7 +1222,9 @@ const hessenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Hessen"
+    state: "Hessen",
+    explanation_de: "Der Taunus ist ein Mittelgebirge nördlich von Frankfurt, bekannt für Wandern und Kurorte wie Bad Homburg.",
+    explanation_en: "The Taunus is a low mountain range north of Frankfurt, known for hiking and spa towns like Bad Homburg."
   }
 ];
 
@@ -1104,7 +1244,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Mecklenburg-Vorpommern",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Wappen zeigt einen Stierkopf (Mecklenburg) und einen Greifen (Vorpommern).",
+    explanation_en: "The coat of arms shows a bull's head (Mecklenburg) and a griffin (Western Pomerania)."
   },
   {
     id: "372",
@@ -1119,7 +1261,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Vorpommern-Rügen umfasst die Insel Rügen und Teile Vorpommerns. Es ist einer von sechs Landkreisen.",
+    explanation_en: "Vorpommern-Rügen includes the island of Rügen and parts of Western Pomerania. It is one of six districts."
   },
   {
     id: "373",
@@ -1134,7 +1278,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Mecklenburg-Vorpommern ist ein beliebtes Urlaubsziel mit Ostseebädern wie Warnemünde und der Mecklenburgischen Seenplatte.",
+    explanation_en: "Mecklenburg-Western Pomerania is a popular vacation destination with Baltic resorts like Warnemünde and the Mecklenburg Lake District."
   },
   {
     id: "374",
@@ -1149,7 +1295,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Schwerin ist die Landeshauptstadt, obwohl Rostock die größte Stadt des Bundeslandes ist.",
+    explanation_en: "Schwerin is the capital, although Rostock is the largest city in the state."
   },
   {
     id: "375",
@@ -1164,7 +1312,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Manuela Schwesig (SPD) ist seit 2017 Ministerpräsidentin von Mecklenburg-Vorpommern.",
+    explanation_en: "Manuela Schwesig (SPD) has been Minister-President of Mecklenburg-Western Pomerania since 2017."
   },
   {
     id: "376",
@@ -1179,7 +1329,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Mecklenburg-Vorpommern grenzt an die Ostsee. Die Nordsee liegt an der Westküste Deutschlands.",
+    explanation_en: "Mecklenburg-Western Pomerania borders the Baltic Sea. The North Sea is on the west coast of Germany."
   },
   {
     id: "377",
@@ -1194,7 +1346,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt im Schweriner Schloss.",
+    explanation_en: "The state parliament is called Landtag and is located in Schwerin Castle."
   },
   {
     id: "378",
@@ -1209,7 +1363,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Rügen ist Deutschlands größte Insel. Sylt und Fehmarn gehören zu Schleswig-Holstein, Helgoland ebenfalls.",
+    explanation_en: "Rügen is Germany's largest island. Sylt and Fehmarn belong to Schleswig-Holstein, as does Helgoland."
   },
   {
     id: "379",
@@ -1224,7 +1380,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Lübeck liegt in Schleswig-Holstein. Rostock, Schwerin und Stralsund sind in Mecklenburg-Vorpommern.",
+    explanation_en: "Lübeck is in Schleswig-Holstein. Rostock, Schwerin, and Stralsund are in Mecklenburg-Western Pomerania."
   },
   {
     id: "380",
@@ -1239,7 +1397,9 @@ const mecklenburgVorpommernQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Mecklenburg-Vorpommern"
+    state: "Mecklenburg-Vorpommern",
+    explanation_de: "Mecklenburg-Vorpommern grenzt im Osten an Polen. Die Grenze verläuft entlang der Oder.",
+    explanation_en: "Mecklenburg-Western Pomerania borders Poland to the east. The border runs along the Oder."
   }
 ];
 
@@ -1259,7 +1419,9 @@ const niedersachsenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Niedersachsen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das nidersächsische Wappen zeigt ein weißes Sachsenross auf rotem Grund.",
+    explanation_en: "Lower Saxony's coat of arms shows a white Saxon steed on a red background."
   },
   {
     id: "382",
@@ -1274,7 +1436,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Osnabrück ist eine kreisfreie Stadt und ein Landkreis in Niedersachsen, bekannt für den Westfälischen Frieden.",
+    explanation_en: "Osnabrück is both a city and a district in Lower Saxony, known for the Peace of Westphalia."
   },
   {
     id: "383",
@@ -1289,7 +1453,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Niedersachsen ist Agrarland Nr. 1 in Deutschland. VW hat in Wolfsburg seinen Hauptsitz.",
+    explanation_en: "Lower Saxony is Germany's #1 agricultural state. VW has its headquarters in Wolfsburg."
   },
   {
     id: "384",
@@ -1304,7 +1470,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Hannover ist die Landeshauptstadt von Niedersachsen und bekannt für die Hannover Messe.",
+    explanation_en: "Hanover is the capital of Lower Saxony and is known for the Hannover Messe trade fair."
   },
   {
     id: "385",
@@ -1319,7 +1487,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Stephan Weil (SPD) ist seit 2013 Ministerpräsident von Niedersachsen.",
+    explanation_en: "Stephan Weil (SPD) has been Minister-President of Lower Saxony since 2013."
   },
   {
     id: "386",
@@ -1334,7 +1504,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Niedersachsen grenzt an die Nordsee mit den Ostfriesischen Inseln und dem Wattenmeer.",
+    explanation_en: "Lower Saxony borders the North Sea with the East Frisian Islands and Wadden Sea."
   },
   {
     id: "387",
@@ -1349,7 +1521,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt im Leineschloss in Hannover.",
+    explanation_en: "The state parliament is called Landtag and is located in Leineschloss in Hanover."
   },
   {
     id: "388",
@@ -1364,7 +1538,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Bremen ist ein eigener Stadtstaat. Hannover, Braunschweig und Osnabrück liegen in Niedersachsen.",
+    explanation_en: "Bremen is a separate city-state. Hanover, Braunschweig, and Osnabrück are in Lower Saxony."
   },
   {
     id: "389",
@@ -1379,7 +1555,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Die Weser fließt durch Niedersachsen und mündet bei Bremerhaven in die Nordsee.",
+    explanation_en: "The Weser flows through Lower Saxony and empties into the North Sea near Bremerhaven."
   },
   {
     id: "390",
@@ -1394,7 +1572,9 @@ const niedersachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Niedersachsen"
+    state: "Niedersachsen",
+    explanation_de: "Niedersachsen ist mit ca. 47.600 km² das zweitgrößte Bundesland nach Bayern.",
+    explanation_en: "Lower Saxony is the second largest federal state at about 47,600 km², after Bavaria."
   }
 ];
 
@@ -1414,7 +1594,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Nordrhein-Westfalen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das NRW-Wappen zeigt den Rhein (grüner Balken), Westfalen (weißes Ross) und Lippe (rote Rose).",
+    explanation_en: "NRW's coat of arms shows the Rhine (green stripe), Westphalia (white steed), and Lippe (red rose)."
   },
   {
     id: "392",
@@ -1429,7 +1611,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Der Rhein-Sieg-Kreis liegt südlich von Bonn. Enzkreis (BW), Altötting (BY), Potsdam-Mittelmark (BB).",
+    explanation_en: "Rhein-Sieg-Kreis is south of Bonn. Enzkreis (BW), Altötting (BY), Potsdam-Mittelmark (BB)."
   },
   {
     id: "393",
@@ -1444,7 +1628,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "NRW ist ein Industriezentrum (Ruhrgebiet) mit reicher Kultur. Köln hat den berühmten Dom und Karneval.",
+    explanation_en: "NRW is an industrial center (Ruhr area) with rich culture. Cologne has the famous cathedral and carnival."
   },
   {
     id: "394",
@@ -1459,7 +1645,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Düsseldorf ist die Landeshauptstadt von NRW, obwohl Köln die größte Stadt ist.",
+    explanation_en: "Düsseldorf is NRW's capital, although Cologne is the largest city."
   },
   {
     id: "395",
@@ -1474,7 +1662,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Hendrik Wüst (CDU) ist seit 2021 Ministerpräsident von Nordrhein-Westfalen.",
+    explanation_en: "Hendrik Wüst (CDU) has been Minister-President of North Rhine-Westphalia since 2021."
   },
   {
     id: "396",
@@ -1489,7 +1679,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "NRW grenzt im Westen an Belgien und die Niederlande. Es ist das einzige Bundesland mit zwei Nachbarländern.",
+    explanation_en: "NRW borders Belgium and the Netherlands to the west. It is the only state with two neighboring countries."
   },
   {
     id: "397",
@@ -1504,7 +1696,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Düsseldorf.",
+    explanation_en: "The state parliament is called Landtag and is located in Düsseldorf."
   },
   {
     id: "398",
@@ -1519,7 +1713,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Frankfurt liegt in Hessen. Köln, Dortmund und Düsseldorf sind Städte in NRW.",
+    explanation_en: "Frankfurt is in Hesse. Cologne, Dortmund, and Düsseldorf are cities in NRW."
   },
   {
     id: "399",
@@ -1534,7 +1730,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "Der Rhein fließt durch NRW (Köln, Düsseldorf, Bonn). Er ist Deutschlands längster Fluss.",
+    explanation_en: "The Rhine flows through NRW (Cologne, Düsseldorf, Bonn). It is Germany's longest river."
   },
   {
     id: "400",
@@ -1549,7 +1747,9 @@ const nordrheinWestfalenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Nordrhein-Westfalen"
+    state: "Nordrhein-Westfalen",
+    explanation_de: "NRW hat ca. 18 Millionen Einwohner - mehr als jedes andere Bundesland.",
+    explanation_en: "NRW has about 18 million inhabitants - more than any other federal state."
   }
 ];
 
@@ -1569,7 +1769,9 @@ const rheinlandPfalzQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Rheinland-Pfalz",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Wappen zeigt das Trierer Kreuz, den Mainzer Rad und den Pfälzer Löwen.",
+    explanation_en: "The coat of arms shows the Trier cross, the Mainz wheel, and the Palatinate lion."
   },
   {
     id: "402",
@@ -1584,7 +1786,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Der Landkreis Ahrweiler liegt an der Ahr und ist bekannt für seinen Rotwein.",
+    explanation_en: "Ahrweiler district is on the Ahr river and is known for its red wine."
   },
   {
     id: "403",
@@ -1599,7 +1803,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Rheinland-Pfalz ist das größte Weinanbaugebiet Deutschlands (Mosel, Rheinhessen, Pfalz).",
+    explanation_en: "Rhineland-Palatinate is Germany's largest wine-growing region (Moselle, Rheinhessen, Palatinate)."
   },
   {
     id: "404",
@@ -1614,7 +1820,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Mainz ist die Landeshauptstadt von Rheinland-Pfalz und bekannt für das ZDF und die Mainzer Fastnacht.",
+    explanation_en: "Mainz is the capital of Rhineland-Palatinate and is known for ZDF and Mainz Carnival."
   },
   {
     id: "405",
@@ -1629,7 +1837,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Alexander Schweitzer (SPD) ist seit 2024 Ministerpräsident von Rheinland-Pfalz.",
+    explanation_en: "Alexander Schweitzer (SPD) has been Minister-President of Rhineland-Palatinate since 2024."
   },
   {
     id: "406",
@@ -1644,7 +1854,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Rheinland-Pfalz grenzt an Frankreich, Belgien und Luxemburg - insgesamt drei Länder.",
+    explanation_en: "Rhineland-Palatinate borders France, Belgium, and Luxembourg - three countries in total."
   },
   {
     id: "407",
@@ -1659,7 +1871,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Mainz.",
+    explanation_en: "The state parliament is called Landtag and is located in Mainz."
   },
   {
     id: "408",
@@ -1674,7 +1888,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Saarbrücken ist die Hauptstadt des Saarlands. Mainz, Koblenz und Trier liegen in Rheinland-Pfalz.",
+    explanation_en: "Saarbrücken is the capital of Saarland. Mainz, Koblenz, and Trier are in Rhineland-Palatinate."
   },
   {
     id: "409",
@@ -1689,7 +1905,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Der Rhein bildet die östliche Grenze von Rheinland-Pfalz zu Hessen und Baden-Württemberg.",
+    explanation_en: "The Rhine forms the eastern border of Rhineland-Palatinate to Hesse and Baden-Württemberg."
   },
   {
     id: "410",
@@ -1704,7 +1922,9 @@ const rheinlandPfalzQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Rheinland-Pfalz"
+    state: "Rheinland-Pfalz",
+    explanation_de: "Die Eifel ist ein Mittelgebirge mit Vulkanseen (Maare). Auch der Hunsrück und Westerwald liegen in Rheinland-Pfalz.",
+    explanation_en: "The Eifel is a low mountain range with volcanic lakes (Maare). The Hunsrück and Westerwald are also in Rhineland-Palatinate."
   }
 ];
 
@@ -1724,7 +1944,9 @@ const saarlandQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Saarland",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Saarland-Wappen zeigt Symbole der historischen Territorien: Saarlouis, Merzig, Pfalz und Nassau.",
+    explanation_en: "Saarland's coat of arms shows symbols of historical territories: Saarlouis, Merzig, Palatinate, and Nassau."
   },
   {
     id: "412",
@@ -1739,7 +1961,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Der Saarpfalz-Kreis liegt im Südosten des Saarlands und grenzt an Rheinland-Pfalz.",
+    explanation_en: "Saarpfalz-Kreis is in the southeast of Saarland and borders Rhineland-Palatinate."
   },
   {
     id: "413",
@@ -1754,7 +1978,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Das Saarland war früher ein Zentrum der Kohle- und Stahlindustrie. Heute wandelt es sich zur Dienstleistungsregion.",
+    explanation_en: "Saarland was formerly a center of coal and steel. Today it is transforming into a service region."
   },
   {
     id: "414",
@@ -1769,7 +1995,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Saarbrücken ist die Landeshauptstadt des Saarlands und die größte Stadt des Bundeslandes.",
+    explanation_en: "Saarbrücken is the capital of Saarland and the largest city in the state."
   },
   {
     id: "415",
@@ -1784,7 +2012,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Anke Rehlinger (SPD) ist seit 2022 Ministerpräsidentin des Saarlands.",
+    explanation_en: "Anke Rehlinger (SPD) has been Minister-President of Saarland since 2022."
   },
   {
     id: "416",
@@ -1799,7 +2029,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Das Saarland grenzt an Frankreich (und Luxemburg). Die französische Kultur hat das Land stark geprägt.",
+    explanation_en: "Saarland borders France (and Luxembourg). French culture has strongly influenced the state."
   },
   {
     id: "417",
@@ -1814,7 +2046,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Saarbrücken.",
+    explanation_en: "The state parliament is called Landtag and is located in Saarbrücken."
   },
   {
     id: "418",
@@ -1829,7 +2063,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Trier liegt in Rheinland-Pfalz. Saarbrücken, Saarlouis und Neunkirchen sind saarländische Städte.",
+    explanation_en: "Trier is in Rhineland-Palatinate. Saarbrücken, Saarlouis, and Neunkirchen are Saarland cities."
   },
   {
     id: "419",
@@ -1844,7 +2080,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Die Saar fließt durch das Saarland und mündet in die Mosel. Sie gab dem Bundesland seinen Namen.",
+    explanation_en: "The Saar flows through Saarland and empties into the Moselle. It gave the state its name."
   },
   {
     id: "420",
@@ -1859,7 +2097,9 @@ const saarlandQuestions: Question[] = [
     correctIndex: 3,
     category: "society",
     isStateSpecific: true,
-    state: "Saarland"
+    state: "Saarland",
+    explanation_de: "Mit ca. 2.570 km² ist das Saarland das kleinste Flächenland (die Stadtstaaten sind kleiner, aber keine Flächenländer).",
+    explanation_en: "At about 2,570 km², Saarland is the smallest territorial state (city-states are smaller but not territorial states)."
   }
 ];
 
@@ -1879,7 +2119,9 @@ const sachsenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Sachsen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das sächsische Wappen zeigt den schwarz-goldenen Balkenschild mit dem grünen Rautenkranz.",
+    explanation_en: "Saxony's coat of arms shows the black-gold bar shield with the green wreath of rue."
   },
   {
     id: "422",
@@ -1894,7 +2136,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Der Erzgebirgskreis liegt an der tschechischen Grenze und ist nach dem Erzgebirge benannt.",
+    explanation_en: "Erzgebirgskreis is on the Czech border and is named after the Ore Mountains."
   },
   {
     id: "423",
@@ -1909,7 +2153,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Sachsen ist bekannt für Meißner Porzellan, die Semperoper in Dresden und die Messe Leipzig.",
+    explanation_en: "Saxony is known for Meissen porcelain, the Semperoper in Dresden, and the Leipzig Trade Fair."
   },
   {
     id: "424",
@@ -1924,7 +2170,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Dresden ist die Landeshauptstadt von Sachsen, bekannt als 'Elbflorenz' wegen seiner Barockarchitektur.",
+    explanation_en: "Dresden is the capital of Saxony, known as 'Florence on the Elbe' for its Baroque architecture."
   },
   {
     id: "425",
@@ -1939,7 +2187,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Michael Kretschmer (CDU) ist seit 2017 Ministerpräsident von Sachsen.",
+    explanation_en: "Michael Kretschmer (CDU) has been Minister-President of Saxony since 2017."
   },
   {
     id: "426",
@@ -1954,7 +2204,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Sachsen grenzt im Osten an Polen und im Süden an Tschechien.",
+    explanation_en: "Saxony borders Poland to the east and the Czech Republic to the south."
   },
   {
     id: "427",
@@ -1969,7 +2221,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Dresden.",
+    explanation_en: "The state parliament is called Landtag and is located in Dresden."
   },
   {
     id: "428",
@@ -1984,7 +2238,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Erfurt ist die Landeshauptstadt von Thüringen. Dresden, Leipzig und Chemnitz liegen in Sachsen.",
+    explanation_en: "Erfurt is the capital of Thuringia. Dresden, Leipzig, and Chemnitz are in Saxony."
   },
   {
     id: "429",
@@ -1999,7 +2255,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Die Elbe fließt durch Sachsen (Dresden) und mündet bei Hamburg in die Nordsee.",
+    explanation_en: "The Elbe flows through Saxony (Dresden) and empties into the North Sea near Hamburg."
   },
   {
     id: "430",
@@ -2014,7 +2272,9 @@ const sachsenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen"
+    state: "Sachsen",
+    explanation_de: "Das Erzgebirge liegt an der Grenze zu Tschechien und ist UNESCO-Welterbe (Bergbaugebiet).",
+    explanation_en: "The Ore Mountains are on the Czech border and are a UNESCO World Heritage Site (mining region)."
   }
 ];
 
@@ -2034,7 +2294,9 @@ const sachsenAnhaltQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Sachsen-Anhalt",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Wappen zeigt den sächsischen Säulenbalken und den Anhaltischen Bär.",
+    explanation_en: "The coat of arms shows the Saxon bar and the Anhalter bear."
   },
   {
     id: "432",
@@ -2049,7 +2311,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Der Landkreis Harz umfasst Teile des Harzes und Städte wie Wernigerode und Quedlinburg.",
+    explanation_en: "The Harz district includes parts of the Harz Mountains and cities like Wernigerode and Quedlinburg."
   },
   {
     id: "433",
@@ -2064,7 +2328,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Sachsen-Anhalt hat die größte Dichte an romanischen Bauwerken ('Straße der Romanik').",
+    explanation_en: "Saxony-Anhalt has the highest density of Romanesque buildings ('Romanesque Road')."
   },
   {
     id: "434",
@@ -2079,7 +2345,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Magdeburg ist die Landeshauptstadt von Sachsen-Anhalt. Halle ist die größte Stadt.",
+    explanation_en: "Magdeburg is the capital of Saxony-Anhalt. Halle is the largest city."
   },
   {
     id: "435",
@@ -2094,7 +2362,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Reiner Haseloff (CDU) ist seit 2011 Ministerpräsident von Sachsen-Anhalt.",
+    explanation_en: "Reiner Haseloff (CDU) has been Minister-President of Saxony-Anhalt since 2011."
   },
   {
     id: "436",
@@ -2109,7 +2379,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Martin Luther wurde 1483 in Eisleben (Sachsen-Anhalt) geboren und starb dort auch 1546.",
+    explanation_en: "Martin Luther was born in Eisleben (Saxony-Anhalt) in 1483 and also died there in 1546."
   },
   {
     id: "437",
@@ -2124,7 +2396,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Magdeburg.",
+    explanation_en: "The state parliament is called Landtag and is located in Magdeburg."
   },
   {
     id: "438",
@@ -2139,7 +2413,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Leipzig liegt in Sachsen. Magdeburg, Halle und Dessau sind Städte in Sachsen-Anhalt.",
+    explanation_en: "Leipzig is in Saxony. Magdeburg, Halle, and Dessau are cities in Saxony-Anhalt."
   },
   {
     id: "439",
@@ -2154,7 +2430,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Die Elbe fließt durch Sachsen-Anhalt (Magdeburg, Dessau, Wittenberg).",
+    explanation_en: "The Elbe flows through Saxony-Anhalt (Magdeburg, Dessau, Wittenberg)."
   },
   {
     id: "440",
@@ -2169,7 +2447,9 @@ const sachsenAnhaltQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Sachsen-Anhalt"
+    state: "Sachsen-Anhalt",
+    explanation_de: "Der Harz liegt teilweise in Sachsen-Anhalt. Der Brocken (1.141 m) ist der höchste Berg.",
+    explanation_en: "The Harz is partly in Saxony-Anhalt. The Brocken (1,141 m) is the highest peak."
   }
 ];
 
@@ -2189,7 +2469,9 @@ const schleswigHolsteinQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Schleswig-Holstein",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Wappen zeigt zwei Löwen (Schleswig und Holstein) und ein Nesselblatt (Holstein).",
+    explanation_en: "The coat of arms shows two lions (Schleswig and Holstein) and a nettle leaf (Holstein)."
   },
   {
     id: "442",
@@ -2204,7 +2486,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Nordfriesland liegt an der Nordseeküste und umfasst die Nordfriesischen Inseln (z.B. Sylt).",
+    explanation_en: "Nordfriesland is on the North Sea coast and includes the North Frisian Islands (e.g., Sylt)."
   },
   {
     id: "443",
@@ -2219,7 +2503,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Schleswig-Holstein hat zwei Küsten (Nordsee und Ostsee) und ist stark landwirtschaftlich geprägt.",
+    explanation_en: "Schleswig-Holstein has two coasts (North Sea and Baltic Sea) and is heavily agricultural."
   },
   {
     id: "444",
@@ -2234,7 +2520,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 2,
     category: "politics",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Kiel ist die Landeshauptstadt von Schleswig-Holstein, bekannt für die Kieler Woche (Segelregatta).",
+    explanation_en: "Kiel is the capital of Schleswig-Holstein, known for Kiel Week (sailing regatta)."
   },
   {
     id: "445",
@@ -2249,7 +2537,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Daniel Günther (CDU) ist seit 2017 Ministerpräsident von Schleswig-Holstein.",
+    explanation_en: "Daniel Günther (CDU) has been Minister-President of Schleswig-Holstein since 2017."
   },
   {
     id: "446",
@@ -2264,7 +2554,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Schleswig-Holstein ist das einzige deutsche Bundesland, das an zwei Meere grenzt: Nordsee und Ostsee.",
+    explanation_en: "Schleswig-Holstein is the only German state that borders two seas: the North Sea and the Baltic Sea."
   },
   {
     id: "447",
@@ -2279,7 +2571,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Kiel.",
+    explanation_en: "The state parliament is called Landtag and is located in Kiel."
   },
   {
     id: "448",
@@ -2294,7 +2588,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Sylt ist eine nordfriesische Insel in Schleswig-Holstein. Rügen und Usedom liegen in Mecklenburg-Vorpommern.",
+    explanation_en: "Sylt is a North Frisian island in Schleswig-Holstein. Rügen and Usedom are in Mecklenburg-Western Pomerania."
   },
   {
     id: "449",
@@ -2309,7 +2605,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Rostock liegt in Mecklenburg-Vorpommern. Kiel, Lübeck und Flensburg sind in Schleswig-Holstein.",
+    explanation_en: "Rostock is in Mecklenburg-Western Pomerania. Kiel, Lübeck, and Flensburg are in Schleswig-Holstein."
   },
   {
     id: "450",
@@ -2324,7 +2622,9 @@ const schleswigHolsteinQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Schleswig-Holstein"
+    state: "Schleswig-Holstein",
+    explanation_de: "Schleswig-Holstein grenzt im Norden an Dänemark. Es ist das nördlichste deutsche Bundesland.",
+    explanation_en: "Schleswig-Holstein borders Denmark to the north. It is Germany's northernmost federal state."
   }
 ];
 
@@ -2344,7 +2644,9 @@ const thueringenQuestions: Question[] = [
     category: "politics",
     isStateSpecific: true,
     state: "Thüringen",
-    hasImages: true
+    hasImages: true,
+    explanation_de: "Das Thüringer Wappen zeigt einen rot-weiß gestreiften Löwen mit goldener Krone auf blauem Grund.",
+    explanation_en: "Thuringia's coat of arms shows a red and white striped lion with a golden crown on a blue background."
   },
   {
     id: "452",
@@ -2359,7 +2661,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 0,
     category: "politics",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Der Wartburgkreis ist nach der berühmten Wartburg benannt, wo Martin Luther die Bibel übersetzte.",
+    explanation_en: "Wartburgkreis is named after the famous Wartburg, where Martin Luther translated the Bible."
   },
   {
     id: "453",
@@ -2374,7 +2678,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 0,
     category: "society",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Thüringen ist das 'grüne Herz Deutschlands' mit dem Thüringer Wald und Kulturstätten wie Weimar.",
+    explanation_en: "Thuringia is the 'green heart of Germany' with the Thuringian Forest and cultural sites like Weimar."
   },
   {
     id: "454",
@@ -2389,7 +2695,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Erfurt ist die Landeshauptstadt von Thüringen und die größte Stadt des Bundeslandes.",
+    explanation_en: "Erfurt is the capital of Thuringia and the state's largest city."
   },
   {
     id: "455",
@@ -2404,7 +2712,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 3,
     category: "politics",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Mario Voigt (CDU) ist seit 2024 Ministerpräsident von Thüringen.",
+    explanation_en: "Mario Voigt (CDU) has been Minister-President of Thuringia since 2024."
   },
   {
     id: "456",
@@ -2419,7 +2729,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Goethe lebte lange in Weimar (Thüringen) und schrieb dort seine wichtigsten Werke.",
+    explanation_en: "Goethe lived for a long time in Weimar (Thuringia) and wrote his most important works there."
   },
   {
     id: "457",
@@ -2434,7 +2746,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 1,
     category: "politics",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Das Landesparlament heißt Landtag und sitzt in Erfurt.",
+    explanation_en: "The state parliament is called Landtag and is located in Erfurt."
   },
   {
     id: "458",
@@ -2449,7 +2763,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 2,
     category: "society",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Kassel liegt in Hessen. Erfurt, Weimar und Jena sind Städte in Thüringen.",
+    explanation_en: "Kassel is in Hesse. Erfurt, Weimar, and Jena are cities in Thuringia."
   },
   {
     id: "459",
@@ -2464,7 +2780,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Die Saale fließt durch Thüringen (Jena, Saalfeld) und mündet in die Elbe.",
+    explanation_en: "The Saale flows through Thuringia (Jena, Saalfeld) and empties into the Elbe."
   },
   {
     id: "460",
@@ -2479,7 +2797,9 @@ const thueringenQuestions: Question[] = [
     correctIndex: 1,
     category: "society",
     isStateSpecific: true,
-    state: "Thüringen"
+    state: "Thüringen",
+    explanation_de: "Der Thüringer Wald ist ein Mittelgebirge mit dem Rennsteig, Deutschlands ältestem Wanderweg.",
+    explanation_en: "The Thuringian Forest is a low mountain range with the Rennsteig, Germany's oldest hiking trail."
   }
 ];
 
