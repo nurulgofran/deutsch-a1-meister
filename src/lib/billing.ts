@@ -73,18 +73,11 @@ export async function purchasePro(): Promise<PurchaseResult> {
 
   try {
     // Get available packages
-    console.log('[BILLING DEBUG] Getting offerings...');
     const offerings = await Purchases.getOfferings();
-    console.log('[BILLING DEBUG] Offerings:', JSON.stringify(offerings, null, 2));
     
     if (!offerings.current) {
-      console.log('[BILLING DEBUG] No current offering found!');
-      return { success: false, error: 'No offerings available. Please check RevenueCat setup.' };
+      return { success: false, error: 'No offerings available' };
     }
-
-    console.log('[BILLING DEBUG] Current offering:', offerings.current.identifier);
-    console.log('[BILLING DEBUG] Available packages:', offerings.current.availablePackages.map(p => p.identifier));
-    console.log('[BILLING DEBUG] Lifetime package:', offerings.current.lifetime?.identifier);
 
     // Find the Pro package (lifetime)
     const proPackage = offerings.current.lifetime || 
@@ -93,20 +86,13 @@ export async function purchasePro(): Promise<PurchaseResult> {
       );
 
     if (!proPackage) {
-      console.log('[BILLING DEBUG] Pro package not found! Expected:', BILLING_CONFIG.packageId);
-      return { success: false, error: 'Pro package not found. Check RevenueCat product setup.' };
+      return { success: false, error: 'Pro package not found' };
     }
 
-    console.log('[BILLING DEBUG] Found pro package:', proPackage.identifier);
-    console.log('[BILLING DEBUG] Package product:', proPackage.product?.identifier);
-
     // Make the purchase
-    console.log('[BILLING DEBUG] Starting purchase...');
     const result = await Purchases.purchasePackage({
       aPackage: proPackage,
     });
-
-    console.log('[BILLING DEBUG] Purchase result:', JSON.stringify(result.customerInfo.entitlements, null, 2));
 
     // Check if Pro entitlement is now active
     const entitlements = result.customerInfo.entitlements.active;
@@ -117,10 +103,7 @@ export async function purchasePro(): Promise<PurchaseResult> {
 
     return { success: false, error: 'Purchase not completed' };
   } catch (error: any) {
-    console.error('[BILLING DEBUG] Purchase error:', error);
-    console.error('[BILLING DEBUG] Error code:', error.code);
-    console.error('[BILLING DEBUG] Error message:', error.message);
-    console.error('[BILLING DEBUG] User cancelled:', error.userCancelled);
+    console.error('Billing: Purchase failed', error);
     
     // Handle user cancellation
     if (error.userCancelled) {
@@ -141,11 +124,6 @@ export async function checkProStatus(): Promise<boolean> {
   try {
     const { customerInfo } = await Purchases.getCustomerInfo();
     const entitlements = customerInfo.entitlements.active;
-    
-    // DEBUG: Log what RevenueCat returns (remove after debugging)
-    console.log('[BILLING DEBUG] Customer ID:', customerInfo.originalAppUserId);
-    console.log('[BILLING DEBUG] Active entitlements:', JSON.stringify(entitlements));
-    console.log('[BILLING DEBUG] Has pro:', !!(entitlements && entitlements[BILLING_CONFIG.entitlementId]));
     
     return !!(entitlements && entitlements[BILLING_CONFIG.entitlementId]);
   } catch (error) {
