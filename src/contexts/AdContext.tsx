@@ -75,14 +75,14 @@ export function AdProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Sync pro status from RevenueCat on app startup
+  // RevenueCat is the source of truth - always sync both true AND false
   useEffect(() => {
     const syncProStatus = async () => {
       try {
         const hasPro = await checkProStatus();
-        if (hasPro) {
-          setIsPro(true);
-          localStorage.setItem('lid-is-pro', 'true');
-        }
+        // Always sync from RevenueCat (source of truth)
+        setIsPro(hasPro);
+        localStorage.setItem('lid-is-pro', hasPro.toString());
       } catch (error) {
         console.error('Failed to sync pro status', error);
       }
