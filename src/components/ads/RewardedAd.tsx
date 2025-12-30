@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, forwardRef } from 'react';
 import { Gift, Play, X, CheckCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,7 +6,7 @@ import { Progress } from '@/components/ui/progress';
 import { useAds } from '@/contexts/AdContext';
 import { useApp } from '@/contexts/AppContext';
 
-export function RewardedAd() {
+export const RewardedAd = forwardRef<HTMLDivElement>(function RewardedAd(_, ref) {
   const { showRewarded, closeRewardedAd, adUnitIds, isPro } = useAds();
   const { t } = useApp();
   const [adState, setAdState] = useState<'ready' | 'playing' | 'completed'>('ready');
@@ -48,7 +48,7 @@ export function RewardedAd() {
   if (!showRewarded || isPro) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-6">
+    <div ref={ref} className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-6">
       <Card className="w-full max-w-sm border-0 shadow-card overflow-hidden">
         {adState === 'ready' && (
           <>
@@ -163,4 +163,4 @@ export function RewardedAd() {
       )}
     </div>
   );
-}
+});

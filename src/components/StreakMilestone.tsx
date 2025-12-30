@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, forwardRef } from 'react';
 import { Flame, Star, Trophy, Zap } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { cn } from '@/lib/utils';
@@ -30,7 +30,7 @@ function getMilestoneMessage(streak: number, t: (de: string, en: string) => stri
   return '';
 }
 
-export function StreakMilestone() {
+export const StreakMilestone = forwardRef<HTMLDivElement>(function StreakMilestone(_, ref) {
   const { progress, t } = useApp();
   const [showDialog, setShowDialog] = useState(false);
   const [celebratedStreak, setCelebratedStreak] = useState<number | null>(null);
@@ -84,4 +84,4 @@ export function StreakMilestone() {
       </DialogContent>
     </Dialog>
   );
-}
+});
