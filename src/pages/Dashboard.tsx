@@ -31,7 +31,7 @@ export default function Dashboard() {
       <div className="absolute top-1/2 -left-32 w-48 h-48 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="relative px-5 pt-8 pb-6">
+      <div className="relative px-5 pt-8 pb-6 max-w-2xl mx-auto">
         <div className="flex items-start justify-between mb-1">
           <div>
             <h1 className="text-3xl font-display font-extrabold tracking-tight">
@@ -46,7 +46,7 @@ export default function Dashboard() {
       </div>
 
       {/* Content with staggered animations */}
-      <div className="relative stagger-children">
+      <div className="relative stagger-children max-w-2xl mx-auto">
         {/* Readiness Score Card */}
         <div className="px-5 pb-6">
           <Card className="overflow-hidden border-0 shadow-card bg-gradient-to-br from-card via-card to-primary/5">
