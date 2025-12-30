@@ -132,17 +132,17 @@ export default function Settings() {
   };
 
   return (
-    <div className="min-h-screen pb-24 safe-area-top">
-      <div className="px-5 pt-6 pb-4">
-        <h1 className="text-2xl font-bold mb-1">
+    <div className="min-h-screen pb-28 safe-area-top overflow-y-auto">
+      <div className="px-5 pt-6 pb-3">
+        <h1 className="text-2xl font-bold mb-0.5">
           {t('Einstellungen', 'Settings')}
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-sm text-muted-foreground">
           {t('Passe die App an deine Bedürfnisse an', 'Customize the app to your needs')}
         </p>
       </div>
 
-      <div className="px-5 space-y-4">
+      <div className="px-5 space-y-3">
         
         {/* PRO / PREMIUM Section */}
         <Card className="border-2 border-primary/20 overflow-hidden relative">
@@ -367,7 +367,7 @@ export default function Settings() {
         <Card className="border-blue-500/30 bg-blue-500/5">
           <CardContent className="p-4">
             <button 
-              onClick={() => Browser.open({ url: 'https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-702Fragen.html' })}
+              onClick={() => Browser.open({ url: 'https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-lebenindeutschland.html' })}
               className="flex items-center justify-between w-full text-left"
             >
               <div className="flex items-center gap-3">
