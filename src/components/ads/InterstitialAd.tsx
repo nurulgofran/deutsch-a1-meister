@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, forwardRef } from 'react';
 import { X, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAds } from '@/contexts/AdContext';
 import { useApp } from '@/contexts/AppContext';
 
-export function InterstitialAd() {
+export const InterstitialAd = forwardRef<HTMLDivElement>(function InterstitialAd(_, ref) {
   const { showInterstitial, closeInterstitial, adUnitIds, isPro } = useAds();
   const { t } = useApp();
   const [countdown, setCountdown] = useState(5);
@@ -34,7 +34,7 @@ export function InterstitialAd() {
   if (!showInterstitial || isPro) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col">
+    <div ref={ref} className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex flex-col">
       <div className="flex items-center justify-between p-4 border-b border-border">
         <span className="text-sm text-muted-foreground font-medium">
           {t('Werbung', 'Advertisement')}
@@ -84,4 +84,4 @@ export function InterstitialAd() {
       </div>
     </div>
   );
-}
+});
