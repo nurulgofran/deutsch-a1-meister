@@ -32,6 +32,20 @@ export interface PurchaseResult {
 // Safeguard flag to prevent multiple SDK initializations
 let isInitialized = false;
 
+// Generate or retrieve a stable user ID for RevenueCat
+function getOrCreateUserId(): string {
+  const storageKey = 'lid-revenuecat-user-id';
+  let userId = localStorage.getItem(storageKey);
+  
+  if (!userId) {
+    // Generate a UUID v4
+    userId = 'lid_' + crypto.randomUUID();
+    localStorage.setItem(storageKey, userId);
+  }
+  
+  return userId;
+}
+
 // Initialize billing - call this on app start
 export async function initializeBilling(): Promise<void> {
   // Prevent double initialization
@@ -46,8 +60,12 @@ export async function initializeBilling(): Promise<void> {
   }
 
   try {
+    // Get or create a stable user ID for consistent analytics
+    const appUserID = getOrCreateUserId();
+    
     await Purchases.configure({
       apiKey: BILLING_CONFIG.revenueCatApiKey,
+      appUserID: appUserID,
     });
     
     // Set log level to ERROR for production
@@ -59,6 +77,37 @@ export async function initializeBilling(): Promise<void> {
     isInitialized = true;
   } catch (error) {
     console.error('Billing: Failed to initialize', error);
+  }
+}
+
+// Get the Pro product price from RevenueCat (dynamic, matches Play Console)
+export async function getProPrice(): Promise<string | null> {
+  if (!Capacitor.isNativePlatform()) {
+    return null;
+  }
+
+  try {
+    const offerings = await Purchases.getOfferings();
+    
+    if (!offerings.current) {
+      return null;
+    }
+
+    // Find the Pro package (lifetime)
+    const proPackage = offerings.current.lifetime || 
+      offerings.current.availablePackages.find(
+        pkg => pkg.identifier === BILLING_CONFIG.packageId
+      );
+
+    if (!proPackage) {
+      return null;
+    }
+
+    // Return the localized price string from RevenueCat
+    return proPackage.product.priceString;
+  } catch (error) {
+    console.error('Billing: Failed to get price', error);
+    return null;
   }
 }
 
@@ -108,6 +157,25 @@ export async function purchasePro(): Promise<PurchaseResult> {
     // Handle user cancellation
     if (error.userCancelled) {
       return { success: false, error: 'cancelled' };
+    }
+    
+    // Handle ITEM_ALREADY_OWNED - auto-trigger restore
+    const isAlreadyOwned = error.code === 'ITEM_ALREADY_OWNED' || 
+                           error.code === 6 || // Google Play ITEM_ALREADY_OWNED code
+                           error.message?.toLowerCase().includes('already own') ||
+                           error.message?.toLowerCase().includes('already purchased');
+    
+    if (isAlreadyOwned) {
+      console.log('Billing: Item already owned, triggering restore');
+      try {
+        const restoreResult = await restorePurchases();
+        if (restoreResult.success) {
+          return { success: true };
+        }
+      } catch (restoreError) {
+        console.error('Billing: Auto-restore failed', restoreError);
+      }
+      return { success: false, error: 'Item already owned. Please try "Restore Purchases".' };
     }
     
     return { success: false, error: error.message || 'Purchase failed' };

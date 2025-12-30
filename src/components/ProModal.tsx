@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import { Crown, Sparkles, Ban, Lightbulb, RotateCcw, Loader2, Gift } from 'lucid
 import { useApp } from '@/contexts/AppContext';
 import { useAds } from '@/contexts/AdContext';
 import { toast } from 'sonner';
-import { purchasePro, restorePurchases, redeemPromoCode, isAndroidPlatform, BILLING_CONFIG } from '@/lib/billing';
+import { purchasePro, restorePurchases, redeemPromoCode, isAndroidPlatform, getProPrice, BILLING_CONFIG } from '@/lib/billing';
 
 interface ProModalProps {
   open: boolean;
@@ -26,8 +26,20 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
   const [isRestoring, setIsRestoring] = useState(false);
   const [promoCode, setPromoCode] = useState('');
   const [isRedeeming, setIsRedeeming] = useState(false);
+  const [dynamicPrice, setDynamicPrice] = useState<string | null>(null);
   
   const isAndroid = isAndroidPlatform();
+
+  // Fetch dynamic price from RevenueCat when modal opens
+  useEffect(() => {
+    if (open && !dynamicPrice) {
+      getProPrice().then(price => {
+        if (price) {
+          setDynamicPrice(price);
+        }
+      });
+    }
+  }, [open, dynamicPrice]);
 
   const handleRedeemPromoCode = async () => {
     setIsRedeeming(true);
@@ -121,9 +133,10 @@ export function ProModal({ open, onOpenChange }: ProModalProps) {
     }
   };
 
-  const priceDisplay = settings.language === 'de' 
+  // Use dynamic price from RevenueCat, fallback to hardcoded for web
+  const priceDisplay = dynamicPrice || (settings.language === 'de' 
     ? BILLING_CONFIG.priceDE 
-    : BILLING_CONFIG.price;
+    : BILLING_CONFIG.price);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

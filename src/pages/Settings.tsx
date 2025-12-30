@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Globe, MapPin, RotateCcw, Info, Mail, User, Crown, Check, Loader2, Shield, ExternalLink, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -26,14 +26,14 @@ import {
 import { useApp } from '@/contexts/AppContext';
 import { bundeslaender } from '@/data/questions/index';
 import { useAds } from '@/contexts/AdContext';
-import { purchasePro, restorePurchases } from '@/lib/billing';
+import { purchasePro, restorePurchases, getProPrice } from '@/lib/billing';
 import { Browser } from '@capacitor/browser';
 import { toast } from 'sonner';
 
 // Launch Promo Code Configuration
 const PROMO_CONFIG = {
   code: 'WELCOME',
-  expirationDate: new Date('2025-02-10T23:59:59'),
+  expirationDate: new Date('2026-02-10T23:59:59'),
 };
 
 export default function Settings() {
@@ -43,6 +43,16 @@ export default function Settings() {
   const [isLoadingPro, setIsLoadingPro] = useState(false);
   const [promoCode, setPromoCode] = useState('');
   const [isRedeemingPromo, setIsRedeemingPromo] = useState(false);
+  const [dynamicPrice, setDynamicPrice] = useState<string | null>(null);
+
+  // Fetch dynamic price from RevenueCat on mount
+  useEffect(() => {
+    getProPrice().then(price => {
+      if (price) {
+        setDynamicPrice(price);
+      }
+    });
+  }, []);
 
   const handleRedeemPromoCode = async () => {
     if (!promoCode.trim()) {
@@ -186,7 +196,9 @@ export default function Settings() {
                   {isLoadingPro ? (
                     <Loader2 className="h-5 w-5 animate-spin" />
                   ) : (
-                    t('Jetzt upgraden - 4,99€', 'Upgrade Now - €4.99')
+                    dynamicPrice 
+                      ? t(`Jetzt upgraden - ${dynamicPrice}`, `Upgrade Now - ${dynamicPrice}`)
+                      : t('Jetzt upgraden', 'Upgrade Now')
                   )}
                 </Button>
                 
