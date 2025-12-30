@@ -363,6 +363,53 @@ export default function Settings() {
           </CardContent>
         </Card>
 
+        {/* Official Source */}
+        <Card className="border-blue-500/30 bg-blue-500/5">
+          <CardContent className="p-4">
+            <button 
+              onClick={() => Browser.open({ url: 'https://www.bamf.de/SharedDocs/Anlagen/DE/Integration/Einbuergerung/gesamtfragenkatalog-702Fragen.html' })}
+              className="flex items-center justify-between w-full text-left"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-blue-500/15 flex items-center justify-center">
+                  <Globe className="h-5 w-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="font-medium">
+                    {t('Offizielle Quelle', 'Official Source')}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('BAMF - Gesamtfragenkatalog', 'BAMF - Complete Question Catalog')}
+                  </p>
+                </div>
+              </div>
+              <ExternalLink className="h-4 w-4 text-muted-foreground" />
+            </button>
+          </CardContent>
+        </Card>
+
+        {/* Important Disclaimer */}
+        <Card className="border-amber-500/30 bg-amber-500/5">
+          <CardContent className="p-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-amber-500/15 flex items-center justify-center shrink-0">
+                <Info className="h-5 w-5 text-amber-600" />
+              </div>
+              <div>
+                <p className="font-medium text-amber-700 dark:text-amber-500">
+                  {t('Wichtiger Hinweis', 'Important Disclaimer')}
+                </p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {t(
+                    'Diese App ist KEINE offizielle Regierungsanwendung und steht in keiner Verbindung zum BAMF, zur deutschen Regierung oder einer anderen Regierungsbehörde. Alle Fragen basieren auf dem offiziellen Fragenkatalog des BAMF.',
+                    'This app is NOT an official government application and is not affiliated with BAMF, the German government, or any government entity. All questions are based on the official BAMF question catalog.'
+                  )}
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* App Info */}
         <Card className="bg-muted/30">
           <CardContent className="p-4">
