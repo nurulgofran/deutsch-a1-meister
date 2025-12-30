@@ -209,16 +209,17 @@ export default function Exam() {
   if (examState === 'intro') {
     return (
       <div className="min-h-screen pb-24 safe-area-top">
-        <div className="px-5 pt-6 pb-4">
-          <h1 className="text-2xl font-display font-bold mb-1">
-            {t('Prüfungssimulation', 'Exam Simulation')}
-          </h1>
-          <p className="text-muted-foreground">
-            {t('Teste dein Wissen unter echten Bedingungen', 'Test your knowledge under real conditions')}
-          </p>
-        </div>
+        <div className="max-w-2xl mx-auto">
+          <div className="px-5 pt-6 pb-4">
+            <h1 className="text-2xl font-display font-bold mb-1">
+              {t('Prüfungssimulation', 'Exam Simulation')}
+            </h1>
+            <p className="text-muted-foreground">
+              {t('Teste dein Wissen unter echten Bedingungen', 'Test your knowledge under real conditions')}
+            </p>
+          </div>
 
-        <div className="px-5 space-y-4">
+          <div className="px-5 space-y-4">
           <Card>
             <CardContent className="p-5 space-y-4">
               <div className="flex items-center gap-3">
@@ -274,6 +275,7 @@ export default function Exam() {
           >
             {t('Prüfung starten', 'Start Exam')}
           </Button>
+          </div>
         </div>
       </div>
     );
@@ -306,7 +308,7 @@ export default function Exam() {
         </div>
 
         {/* Question - Custom exam rendering to use shuffled options */}
-        <div className="p-5">
+        <div className="p-5 max-w-2xl mx-auto">
           <Card className="border-0 shadow-card overflow-hidden">
             <CardContent className="p-6">
               <h2 className="text-xl font-display font-bold leading-snug mb-6">
@@ -395,21 +397,22 @@ export default function Exam() {
   if (examState === 'results') {
     return (
       <div className="min-h-screen pb-24 safe-area-top">
-        <div className="px-5 pt-10 pb-6 text-center">
-          <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${passed ? 'bg-success/10' : 'bg-destructive/10'}`}>
-            {passed ? (
-              <Trophy className="h-10 w-10 text-success" />
-            ) : (
-              <XCircle className="h-10 w-10 text-destructive" />
-            )}
+        <div className="max-w-2xl mx-auto">
+          <div className="px-5 pt-10 pb-6 text-center">
+            <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${passed ? 'bg-success/10' : 'bg-destructive/10'}`}>
+              {passed ? (
+                <Trophy className="h-10 w-10 text-success" />
+              ) : (
+                <XCircle className="h-10 w-10 text-destructive" />
+              )}
+            </div>
+            <h1 className={`text-3xl font-bold mb-2 ${passed ? 'text-success' : 'text-destructive'}`}>
+              {passed ? t('Bestanden!', 'Passed!') : t('Nicht bestanden', 'Not Passed')}
+            </h1>
+            <p className="text-muted-foreground">
+              {t('Du hast', 'You scored')} <strong>{score}</strong> {t('von', 'out of')} <strong>{examQuestions.length}</strong> {t('Punkten erreicht', 'points')}
+            </p>
           </div>
-          <h1 className={`text-3xl font-bold mb-2 ${passed ? 'text-success' : 'text-destructive'}`}>
-            {passed ? t('Bestanden!', 'Passed!') : t('Nicht bestanden', 'Not Passed')}
-          </h1>
-          <p className="text-muted-foreground">
-            {t('Du hast', 'You scored')} <strong>{score}</strong> {t('von', 'out of')} <strong>{examQuestions.length}</strong> {t('Punkten erreicht', 'points')}
-          </p>
-        </div>
 
         <div className="px-5 space-y-4">
           <Card>
@@ -447,6 +450,7 @@ export default function Exam() {
           >
             {t('Zurück zur Übersicht', 'Back to Overview')}
           </Button>
+          </div>
         </div>
       </div>
     );

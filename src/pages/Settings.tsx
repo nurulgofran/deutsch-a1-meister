@@ -133,16 +133,17 @@ export default function Settings() {
 
   return (
     <div className="min-h-screen pb-28 safe-area-top overflow-y-auto">
-      <div className="px-5 pt-6 pb-3">
-        <h1 className="text-2xl font-bold mb-0.5">
-          {t('Einstellungen', 'Settings')}
-        </h1>
-        <p className="text-sm text-muted-foreground">
-          {t('Passe die App an deine Bedürfnisse an', 'Customize the app to your needs')}
-        </p>
-      </div>
+      <div className="max-w-2xl mx-auto">
+        <div className="px-5 pt-6 pb-3">
+          <h1 className="text-2xl font-bold mb-0.5">
+            {t('Einstellungen', 'Settings')}
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            {t('Passe die App an deine Bedürfnisse an', 'Customize the app to your needs')}
+          </p>
+        </div>
 
-      <div className="px-5 space-y-3">
+        <div className="px-5 space-y-3">
         
         {/* PRO / PREMIUM Section */}
         <Card className="border-2 border-primary/20 overflow-hidden relative">
@@ -481,6 +482,7 @@ export default function Settings() {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
     </div>
   );

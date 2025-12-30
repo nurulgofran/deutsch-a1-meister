@@ -156,7 +156,7 @@ export default function Study() {
         </div>
 
         {/* Question */}
-        <div className="p-5">
+        <div className="p-5 max-w-2xl mx-auto">
           <QuestionCard
             key={currentQuestion.id}
             question={currentQuestion}
@@ -228,7 +228,7 @@ export default function Study() {
         </div>
 
         {/* Search Results */}
-        <div className="p-5 space-y-3">
+        <div className="p-5 space-y-3 max-w-2xl mx-auto">
           {searchQuery.trim() === '' ? (
             <p className="text-center text-muted-foreground py-8">
               {t('Gib einen Suchbegriff ein', 'Enter a search term')}
@@ -297,7 +297,7 @@ export default function Study() {
       <div className="absolute bottom-1/4 right-0 w-48 h-48 rounded-full bg-society/10 blur-3xl pointer-events-none" />
 
       {/* Header */}
-      <div className="relative px-5 pt-8 pb-6">
+      <div className="relative px-5 pt-8 pb-6 max-w-2xl mx-auto">
         <h1 className="text-3xl font-display font-extrabold tracking-tight mb-2">
           {t('Übungsmodus', 'Study Mode')}
         </h1>
@@ -307,7 +307,7 @@ export default function Study() {
       </div>
 
       {/* Search Bar */}
-      <div className="relative px-5 mb-4">
+      <div className="relative px-5 mb-4 max-w-2xl mx-auto">
         <button
           onClick={() => setViewMode('search')}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border border-border/50 bg-card/50 hover:bg-card transition-colors"
@@ -320,7 +320,7 @@ export default function Study() {
       </div>
 
       {/* Categories with stagger animation */}
-      <div className="relative px-5 space-y-4 stagger-children">
+      <div className="relative px-5 space-y-4 stagger-children max-w-2xl mx-auto">
         {categories.map(category => {
           const total = getQuestionsForCategory(category.id);
           const mastered = calculateMastery(category.id);
