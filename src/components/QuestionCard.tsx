@@ -28,7 +28,7 @@ export function QuestionCard({
   showBookmark = true
 }: QuestionCardProps) {
   const { settings, progress, toggleBookmark, t } = useApp();
-  const { triggerRewardedAd, isPro } = useAds();
+  const { triggerInterstitialWithCallback, isPro } = useAds();
   const { impact, ImpactStyle } = useHaptics();
   const [localSelected, setLocalSelected] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -77,7 +77,7 @@ export function QuestionCard({
   };
 
   const handleUnlockExplanation = () => {
-    triggerRewardedAd(() => {
+    triggerInterstitialWithCallback(() => {
       setIsExplanationUnlocked(true);
       setShowExplanation(true); // Auto-show after unlock
       toast.success(t('Erklärung freigeschaltet!', 'Explanation unlocked!'));
@@ -168,7 +168,7 @@ export function QuestionCard({
               onClick={handleUnlockExplanation}
             >
               <Play className="h-4 w-4" />
-              {t('Video ansehen für Erklärung', 'Watch video for explanation')}
+              {t('Werbung für Erklärung ansehen', 'Watch ad for explanation')}
             </Button>
           )}
 

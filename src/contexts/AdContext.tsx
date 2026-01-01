@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect } from 'react';
-import { AdMob, RewardAdPluginEvents, AdMobRewardItem } from '@capacitor-community/admob';
+import React, { createContext, useContext, useState, useCallback, ReactNode, useEffect, useRef } from 'react';
+import { AdMob, RewardAdPluginEvents, AdMobRewardItem, InterstitialAdPluginEvents } from '@capacitor-community/admob';
 import { Capacitor } from '@capacitor/core';
 import { checkProStatus } from '@/lib/billing';
 
@@ -12,6 +12,7 @@ interface AdContextType {
   };
   showInterstitial: boolean;
   triggerInterstitial: () => Promise<void>;
+  triggerInterstitialWithCallback: (onComplete: () => void) => Promise<void>;
   closeInterstitial: () => void;
   showRewarded: boolean;
   rewardedCallback: (() => void) | null;
@@ -34,21 +35,23 @@ const AD_UNIT_IDS = {
 // Set to false for production builds
 const IS_TESTING = import.meta.env.DEV;
 
-const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
+// Cooldown between interstitial ads (3 minutes for explanation unlocks)
+const INTERSTITIAL_COOLDOWN = 3 * 60 * 1000;
 
 export function AdProvider({ children }: { children: ReactNode }) {
-  // Pro status is verified via RevenueCat on app launch - not stored in plain localStorage
-  // This is just the UI state, actual entitlement is checked via billing
+  // Pro status is verified via RevenueCat on app launch
   const [isPro, setIsPro] = useState(() => {
     const saved = localStorage.getItem('lid-is-pro');
     return saved === 'true';
   });
   
-  // These are mainly for UI state if needed, but AdMob handles its own views
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [showRewarded, setShowRewarded] = useState(false);
   const [rewardedCallback, setRewardedCallback] = useState<(() => void) | null>(null);
   const [lastInterstitialTime, setLastInterstitialTime] = useState(0);
+  
+  // Ref for interstitial callback (called when ad is dismissed)
+  const interstitialCallbackRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const initAdMob = async () => {
@@ -75,12 +78,10 @@ export function AdProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Sync pro status from RevenueCat on app startup
-  // RevenueCat is the source of truth - always sync both true AND false
   useEffect(() => {
     const syncProStatus = async () => {
       try {
         const hasPro = await checkProStatus();
-        // Always sync from RevenueCat (source of truth)
         setIsPro(hasPro);
         localStorage.setItem('lid-is-pro', hasPro.toString());
       } catch (error) {
@@ -88,6 +89,31 @@ export function AdProvider({ children }: { children: ReactNode }) {
       }
     };
     syncProStatus();
+  }, []);
+
+  // Listen for interstitial ad dismissed event
+  useEffect(() => {
+    let handler: any;
+
+    const setupListener = async () => {
+      if (Capacitor.isNativePlatform()) {
+        handler = await AdMob.addListener(InterstitialAdPluginEvents.Dismissed, () => {
+          // Call the callback when interstitial is dismissed
+          if (interstitialCallbackRef.current) {
+            interstitialCallbackRef.current();
+            interstitialCallbackRef.current = null;
+          }
+        });
+      }
+    };
+    
+    setupListener();
+
+    return () => {
+      if (handler) {
+        handler.remove();
+      }
+    };
   }, []);
 
   const setPro = useCallback((value: boolean) => {
@@ -117,8 +143,38 @@ export function AdProvider({ children }: { children: ReactNode }) {
         console.error('Interstitial failed', error);
       }
     }
-    // No web fallback - ads only work on native
   }, [isPro, canShowInterstitial]);
+
+  // New function: Show interstitial and call callback when dismissed
+  const triggerInterstitialWithCallback = useCallback(async (onComplete: () => void) => {
+    if (isPro) {
+      onComplete();
+      return;
+    }
+
+    // Store the callback
+    interstitialCallbackRef.current = onComplete;
+
+    if (Capacitor.isNativePlatform()) {
+      try {
+        await AdMob.prepareInterstitial({
+          adId: AD_UNIT_IDS.interstitial,
+          isTesting: IS_TESTING,
+        });
+        await AdMob.showInterstitial();
+        setLastInterstitialTime(Date.now());
+      } catch (error) {
+        console.error('Interstitial failed', error);
+        // Call callback anyway if ad fails
+        onComplete();
+        interstitialCallbackRef.current = null;
+      }
+    } else {
+      // On web, just call the callback
+      onComplete();
+      interstitialCallbackRef.current = null;
+    }
+  }, [isPro]);
 
   const closeInterstitial = useCallback(() => {
     setShowInterstitial(false);
@@ -129,17 +185,16 @@ export function AdProvider({ children }: { children: ReactNode }) {
     let handler: any; 
 
     const setupListener = async () => {
-      // Only set up listener on native
       if (Capacitor.isNativePlatform()) {
-          handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
-             setRewardedCallback(prevCallback => {
-               if (prevCallback) {
-                 prevCallback();
-                 return null;
-               }
-               return prevCallback;
-             });
+        handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
+          setRewardedCallback(prevCallback => {
+            if (prevCallback) {
+              prevCallback();
+              return null;
+            }
+            return prevCallback;
           });
+        });
       }
     };
     
@@ -150,7 +205,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
         handler.remove();
       }
     };
-  }, []); // Remove dependency on rewardedCallback to avoid re-binding
+  }, []);
 
   const triggerRewardedAd = useCallback(async (onReward: () => void) => {
     if (isPro) {
@@ -172,7 +227,6 @@ export function AdProvider({ children }: { children: ReactNode }) {
         setRewardedCallback(null); 
       }
     }
-    // No web fallback - ads only work on native
   }, [isPro]);
 
   const closeRewardedAd = useCallback((claimed: boolean) => {
@@ -191,6 +245,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
         adUnitIds: AD_UNIT_IDS,
         showInterstitial,
         triggerInterstitial,
+        triggerInterstitialWithCallback,
         closeInterstitial,
         showRewarded,
         rewardedCallback,
