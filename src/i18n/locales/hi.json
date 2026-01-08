@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "Deutsch A1 Meister",
+    "tagline": "गेमिफाइड लर्निंग के साथ जर्मन A1 में महारत हासिल करें"
+  },
+  "nav": {
+    "home": "होम",
+    "learn": "सीखें",
+    "practice": "अभ्यास",
+    "exam": "परीक्षा",
+    "settings": "सेटिंग्स"
+  },
+  "dashboard": {
+    "welcome": "वापस स्वागत है!",
+    "level": "लेवल",
+    "xp": "XP",
+    "streak": "दिन की स्ट्रीक",
+    "streakMessage": "हर दिन सीखते रहें!",
+    "todayGoal": "आज का लक्ष्य",
+    "continuelearning": "सीखना जारी रखें",
+    "startLearning": "सीखना शुरू करें"
+  },
+  "learningPath": {
+    "title": "लर्निंग पाथ",
+    "locked": "पहले पिछला पाठ पूरा करें",
+    "completed": "पूर्ण",
+    "inProgress": "जारी",
+    "start": "शुरू करें",
+    "continue": "जारी रखें",
+    "review": "समीक्षा करें"
+  },
+  "lessons": {
+    "greetings": "अभिवादन",
+    "personal": "व्यक्तिगत जानकारी",
+    "family": "परिवार",
+    "numbers": "संख्याएं",
+    "time": "समय और दिन",
+    "food": "खाना और पेय",
+    "shopping": "खरीदारी",
+    "living": "रहना",
+    "work": "काम और नौकरी",
+    "hobbies": "खाली समय",
+    "transport": "परिवहन",
+    "health": "स्वास्थ्य"
+  },
+  "flashcard": {
+    "seeAndListen": "देखें और सुनें",
+    "translate": "अनुवाद करें",
+    "typeMatch": "टाइप करें या मिलाएं",
+    "correct": "सही!",
+    "incorrect": "बिल्कुल सही नहीं",
+    "tryAgain": "फिर से कोशिश करें",
+    "next": "अगला",
+    "showAnswer": "उत्तर दिखाएं",
+    "tapToFlip": "पलटने के लिए टैप करें"
+  },
+  "grammar": {
+    "title": "व्याकरण",
+    "sentenceBuilder": "वाक्य निर्माता",
+    "dragWords": "वाक्य बनाने के लिए शब्दों को खींचें",
+    "checkAnswer": "उत्तर जांचें",
+    "hint": "संकेत"
+  },
+  "listening": {
+    "title": "सुनना लैब",
+    "playAudio": "ऑडियो चलाएं",
+    "replay": "फिर से चलाएं",
+    "question": "आपने क्या सुना?"
+  },
+  "exam": {
+    "title": "मॉक परीक्षा",
+    "subtitle": "Start Deutsch 1 सिमुलेशन",
+    "duration": "65 मिनट",
+    "sections": "3 खंड",
+    "startExam": "परीक्षा शुरू करें",
+    "listening": "सुनना",
+    "reading": "पढ़ना",
+    "writing": "लिखना",
+    "timeRemaining": "शेष समय",
+    "submit": "जमा करें",
+    "results": "परीक्षा परिणाम",
+    "passed": "पास!",
+    "failed": "पास नहीं",
+    "score": "स्कोर",
+    "tryAgain": "फिर से कोशिश करें",
+    "review": "उत्तर समीक्षा"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "subtitle": "अपने सीखने के अनुभव को कस्टमाइज़ करें",
+    "language": "भाषा",
+    "notifications": "दैनिक रिमाइंडर",
+    "notificationTime": "रिमाइंडर समय",
+    "premium": "प्रीमियम संस्करण",
+    "premiumActive": "प्रीमियम सक्रिय!",
+    "premiumSubtitle": "सभी सुविधाएं अनलॉक करें",
+    "upgrade": "अभी अपग्रेड करें",
+    "restore": "खरीदारी पुनर्स्थापित करें",
+    "reset": "प्रगति रीसेट करें",
+    "resetConfirm": "सारी प्रगति हटाएं?",
+    "resetWarning": "यह क्रिया पूर्ववत नहीं की जा सकती। आपकी सारी सीखने की प्रगति हट जाएगी।",
+    "cancel": "रद्द करें",
+    "confirm": "हां, हटाएं",
+    "officialSource": "आधिकारिक स्रोत",
+    "officialSourceSubtitle": "Goethe-Institut A1 पाठ्यक्रम",
+    "disclaimer": "महत्वपूर्ण सूचना",
+    "disclaimerText": "यह ऐप आधिकारिक Goethe-Institut एप्लिकेशन नहीं है और किसी सरकारी संस्था से संबद्ध नहीं है। सामग्री आधिकारिक A1 पाठ्यक्रम पर आधारित है।",
+    "privacy": "गोपनीयता नीति",
+    "developer": "डेवलपर",
+    "version": "संस्करण"
+  },
+  "premium": {
+    "features": {
+      "allLessons": "सभी 12 शब्दावली पाठ",
+      "grammar": "10 व्याकरण पैटर्न",
+      "listening": "सुनना लैब",
+      "mockExam": "मॉक परीक्षा",
+      "noAds": "कोई विज्ञापन नहीं"
+    }
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "एक त्रुटि हुई",
+    "retry": "पुनः प्रयास करें",
+    "back": "वापस",
+    "close": "बंद करें",
+    "save": "सहेजें",
+    "done": "हो गया"
+  }
+}

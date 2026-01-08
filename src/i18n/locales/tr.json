@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "Deutsch A1 Meister",
+    "tagline": "Oyunlaştırılmış öğrenme ile Almanca A1'i ustalaşın"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "learn": "Öğren",
+    "practice": "Pratik",
+    "exam": "Sınav",
+    "settings": "Ayarlar"
+  },
+  "dashboard": {
+    "welcome": "Tekrar hoş geldiniz!",
+    "level": "Seviye",
+    "xp": "XP",
+    "streak": "Günlük Seri",
+    "streakMessage": "Her gün öğrenmeye devam edin!",
+    "todayGoal": "Bugünün Hedefi",
+    "continuelearning": "Öğrenmeye Devam Et",
+    "startLearning": "Öğrenmeye Başla"
+  },
+  "learningPath": {
+    "title": "Öğrenme Yolu",
+    "locked": "Önce önceki dersi tamamlayın",
+    "completed": "Tamamlandı",
+    "inProgress": "Devam Ediyor",
+    "start": "Başla",
+    "continue": "Devam Et",
+    "review": "Tekrar Et"
+  },
+  "lessons": {
+    "greetings": "Selamlaşmalar",
+    "personal": "Kişisel Bilgiler",
+    "family": "Aile",
+    "numbers": "Sayılar",
+    "time": "Zaman ve Günler",
+    "food": "Yiyecek ve İçecek",
+    "shopping": "Alışveriş",
+    "living": "Yaşam",
+    "work": "İş ve Meslekler",
+    "hobbies": "Boş Zaman",
+    "transport": "Ulaşım",
+    "health": "Sağlık"
+  },
+  "flashcard": {
+    "seeAndListen": "Gör ve Dinle",
+    "translate": "Çevir",
+    "typeMatch": "Yaz veya Eşleştir",
+    "correct": "Doğru!",
+    "incorrect": "Tam doğru değil",
+    "tryAgain": "Tekrar Dene",
+    "next": "Sonraki",
+    "showAnswer": "Cevabı Göster",
+    "tapToFlip": "Çevirmek için dokun"
+  },
+  "grammar": {
+    "title": "Dilbilgisi",
+    "sentenceBuilder": "Cümle Oluşturucu",
+    "dragWords": "Cümle oluşturmak için kelimeleri sürükleyin",
+    "checkAnswer": "Cevabı Kontrol Et",
+    "hint": "İpucu"
+  },
+  "listening": {
+    "title": "Dinleme Laboratuvarı",
+    "playAudio": "Sesi Çal",
+    "replay": "Tekrar Oynat",
+    "question": "Ne duydunuz?"
+  },
+  "exam": {
+    "title": "Deneme Sınavı",
+    "subtitle": "Start Deutsch 1 Simülasyonu",
+    "duration": "65 dakika",
+    "sections": "3 bölüm",
+    "startExam": "Sınava Başla",
+    "listening": "Dinleme",
+    "reading": "Okuma",
+    "writing": "Yazma",
+    "timeRemaining": "Kalan Süre",
+    "submit": "Gönder",
+    "results": "Sınav Sonuçları",
+    "passed": "Geçti!",
+    "failed": "Geçemedi",
+    "score": "Puan",
+    "tryAgain": "Tekrar Dene",
+    "review": "Cevapları İncele"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "subtitle": "Öğrenme deneyiminizi özelleştirin",
+    "language": "Dil",
+    "notifications": "Günlük Hatırlatıcı",
+    "notificationTime": "Hatırlatıcı Zamanı",
+    "premium": "Premium Sürüm",
+    "premiumActive": "Premium Aktif!",
+    "premiumSubtitle": "Tüm özellikleri aç",
+    "upgrade": "Şimdi Yükselt",
+    "restore": "Satın Alımları Geri Yükle",
+    "reset": "İlerlemeyi Sıfırla",
+    "resetConfirm": "Tüm ilerleme silinsin mi?",
+    "resetWarning": "Bu işlem geri alınamaz. Tüm öğrenme ilerlemeniz silinecektir.",
+    "cancel": "İptal",
+    "confirm": "Evet, sil",
+    "officialSource": "Resmi Kaynak",
+    "officialSourceSubtitle": "Goethe-Institut A1 Müfredatı",
+    "disclaimer": "Önemli Uyarı",
+    "disclaimerText": "Bu uygulama resmi bir Goethe-Institut uygulaması DEĞİLDİR ve herhangi bir devlet kurumuyla bağlantılı değildir. İçerik resmi A1 müfredatına dayanmaktadır.",
+    "privacy": "Gizlilik Politikası",
+    "developer": "Geliştirici",
+    "version": "Sürüm"
+  },
+  "premium": {
+    "features": {
+      "allLessons": "Tüm 12 Kelime Dersi",
+      "grammar": "10 Dilbilgisi Kalıbı",
+      "listening": "Dinleme Laboratuvarı",
+      "mockExam": "Deneme Sınavı",
+      "noAds": "Reklam Yok"
+    }
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar Dene",
+    "back": "Geri",
+    "close": "Kapat",
+    "save": "Kaydet",
+    "done": "Bitti"
+  }
+}

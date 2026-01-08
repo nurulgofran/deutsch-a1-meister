@@ -1,22 +1,34 @@
-import React, { createContext, useContext, ReactNode } from 'react';
-import { useAppStore, UserProgress, AppSettings, ExamResult } from '@/hooks/useAppStore';
+import React, { createContext, useContext, ReactNode, useMemo } from 'react';
+import { useAppStore, UserProgress, AppSettings } from '@/hooks/useAppStore';
+import { LessonId } from '@/data';
+import { t as translate, Language, getTranslations } from '@/i18n';
 
 interface AppContextType {
+  // Progress & State
   progress: UserProgress;
   settings: AppSettings;
   isLoaded: boolean;
+  level: number;
+  levelProgress: number;
   isStreakActiveToday: boolean;
   streakJustIncremented: boolean;
+  
+  // Actions
   clearStreakIncrement: () => void;
-  recordAnswer: (questionId: string, category: string, isCorrect: boolean) => void;
-  recordExamResult: (result: ExamResult) => void;
-  toggleBookmark: (questionId: string) => void;
+  addXP: (amount: number) => void;
+  recordCorrectAnswer: (lessonId: LessonId, wordId: string) => void;
+  recordIncorrectAnswer: (lessonId: LessonId) => void;
+  completeLesson: (lessonId: LessonId) => void;
   addAchievement: (achievementId: string) => void;
   updateSettings: (settings: Partial<AppSettings>) => void;
   resetProgress: () => void;
-  getReadinessScore: () => number;
-  getMasteredCount: () => number;
-  t: (de: string, en: string) => string;
+  getLessonMastery: (lessonId: LessonId) => number;
+  isLessonCompleted: (lessonId: LessonId) => boolean;
+  
+  // i18n
+  t: (path: string) => string;
+  translations: ReturnType<typeof getTranslations>;
+  language: Language;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -24,16 +36,25 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: ReactNode }) {
   const store = useAppStore();
 
-  // Translation helper
-  const t = (de: string, en: string): string => {
-    return store.settings.language === 'de' ? de : en;
+  // Translation helper using current language
+  const t = (path: string): string => {
+    return translate(store.settings.language, path);
   };
 
-  // Wrap getReadinessScore to automatically use current bundesland
-  const getReadinessScore = () => store.getReadinessScore(store.settings.bundesland);
+  // Get all translations for current language
+  const translations = useMemo(() => {
+    return getTranslations(store.settings.language);
+  }, [store.settings.language]);
+
+  const contextValue: AppContextType = {
+    ...store,
+    t,
+    translations,
+    language: store.settings.language
+  };
 
   return (
-    <AppContext.Provider value={{ ...store, getReadinessScore, t }}>
+    <AppContext.Provider value={contextValue}>
       {children}
     </AppContext.Provider>
   );

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.nurulgofran.lebenindeutschland"
+    namespace = "com.nurulgofran.deutscha1meister"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.nurulgofran.lebenindeutschland"
+        applicationId "com.nurulgofran.deutscha1meister"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 9
+        versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
@@ -19,9 +19,9 @@ android {
     signingConfigs {
         release {
             storeFile file('release.keystore')
-            storePassword 'lebenindeutschland2024'
-            keyAlias 'leben-in-deutschland'
-            keyPassword 'lebenindeutschland2024'
+            storePassword 'deutscha1meister2024'
+            keyAlias 'deutsch-a1-meister'
+            keyPassword 'deutscha1meister2024'
         }
     }
     buildTypes {

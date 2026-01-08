@@ -1,4 +1,4 @@
-package com.nurulgofran.lebenindeutschland;
+package com.nurulgofran.deutscha1meister;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -1,152 +1,103 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Trophy, Target, BookOpen, Sparkles } from 'lucide-react';
+import { BookOpen, GraduationCap, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { CircularProgress } from '@/components/CircularProgress';
-import { StreakBadge } from '@/components/StreakBadge';
+import { XPDisplay } from '@/components/XPDisplay';
+import { StreakDisplay } from '@/components/StreakDisplay';
+import { LearningPath } from '@/components/LearningPath';
 import { useApp } from '@/contexts/AppContext';
-import { questions } from '@/data/questions/index';
+import { LessonId, lessons, isLessonUnlocked } from '@/data';
+import { useAds } from '@/contexts/AdContext';
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const { progress, settings, getReadinessScore, getMasteredCount, t } = useApp();
-  
-  const readinessScore = getReadinessScore();
-  const masteredCount = getMasteredCount();
-  
-  // Filter questions: 300 general + 10 state-specific for user's Bundesland
-  const filteredQuestions = questions.filter(q => 
-    !q.isStateSpecific || q.state === settings.bundesland
-  );
-  const totalQuestions = filteredQuestions.length;
-  const examsPassed = progress.examHistory.filter(e => e.passed).length;
+  const { t, progress, isLessonCompleted } = useApp();
+  const { isPro } = useAds();
+  const [showPath, setShowPath] = useState(false);
+
+  // Find the next lesson to continue
+  const getNextLesson = (): LessonId | null => {
+    for (const lesson of lessons) {
+      if (isLessonUnlocked(lesson.id, progress.xp, isPro) && !isLessonCompleted(lesson.id)) {
+        return lesson.id;
+      }
+    }
+    return lessons[0].id; // Fallback to first lesson
+  };
+
+  const handleSelectLesson = (lessonId: LessonId) => {
+    navigate(`/learn/${lessonId}`);
+  };
+
+  const handleContinueLearning = () => {
+    const nextLesson = getNextLesson();
+    if (nextLesson) {
+      navigate(`/learn/${nextLesson}`);
+    }
+  };
+
+  const completedLessons = lessons.filter(l => isLessonCompleted(l.id)).length;
 
   return (
-    <div className="min-h-screen pb-20 safe-area-top relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background pointer-events-none" />
-      
-      {/* Decorative circles - pointer-events-none to prevent blocking clicks */}
-      <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -left-32 w-48 h-48 rounded-full bg-accent/10 blur-3xl pointer-events-none" />
-
+    <div className="min-h-screen pb-24 safe-area-top">
       {/* Header */}
-      <div className="relative px-5 pt-8 pb-6 max-w-2xl mx-auto">
-        <div className="flex items-start justify-between mb-1">
-          <div>
-            <h1 className="text-3xl font-display font-extrabold tracking-tight">
-              {t('Willkommen!', 'Welcome!')} <span className="inline-block animate-float">👋</span>
-            </h1>
-            <p className="text-muted-foreground font-medium mt-1">
-              {t('Leben in Deutschland Test', 'Living in Germany Test')}
-            </p>
-          </div>
-          <StreakBadge streak={progress.streak} />
-        </div>
+      <div className="px-5 pt-6 pb-4">
+        <h1 className="text-2xl font-bold mb-1">
+          {t('dashboard.welcome')} 👋
+        </h1>
+        <p className="text-muted-foreground">
+          {t('app.tagline')}
+        </p>
       </div>
 
-      {/* Content with staggered animations */}
-      <div className="relative stagger-children max-w-2xl mx-auto">
-        {/* Readiness Score Card */}
-        <div className="px-5 pb-6">
-          <Card className="overflow-hidden border-0 shadow-card bg-gradient-to-br from-card via-card to-primary/5">
-            <CardContent className="p-6 flex flex-col items-center relative">
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 text-primary/10">
-                <Sparkles className="w-16 h-16" />
-              </div>
-              
-              <CircularProgress value={readinessScore} size={200} strokeWidth={16}>
-                <div className="text-center">
-                  <div className="text-5xl font-display font-extrabold text-gradient-primary">
-                    {readinessScore}%
-                  </div>
-                  <div className="text-sm text-muted-foreground font-semibold mt-1 uppercase tracking-wide">
-                    {t('Prüfungsbereit', 'Exam Ready')}
-                  </div>
-                </div>
-              </CircularProgress>
-            </CardContent>
-          </Card>
-        </div>
+      <div className="px-5 space-y-4">
+        {/* XP & Level Display */}
+        <XPDisplay />
 
-        {/* Stats Grid */}
-        <div className="px-5 grid grid-cols-3 gap-3 mb-6">
-          <Card className="border-0 shadow-card bg-card overflow-hidden group hover:shadow-card-hover transition-all duration-300">
-            <CardContent className="p-4 text-center relative">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-success/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Target className="h-6 w-6 text-success" />
+        {/* Streak Display */}
+        <StreakDisplay />
+
+        {/* Quick Stats */}
+        <div className="grid grid-cols-2 gap-3">
+          <Card>
+            <CardContent className="p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+                <BookOpen className="w-5 h-5 text-emerald-600" />
               </div>
-              <div className="text-2xl font-display font-extrabold">{masteredCount}</div>
-              <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide">
-                {t('Gemeistert', 'Mastered')}
+              <div>
+                <p className="text-2xl font-bold">{progress.wordsLearned.length}</p>
+                <p className="text-xs text-muted-foreground">Words Learned</p>
               </div>
             </CardContent>
           </Card>
-
-          <Card className="border-0 shadow-card bg-card overflow-hidden group hover:shadow-card-hover transition-all duration-300">
-            <CardContent className="p-4 text-center relative">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <BookOpen className="h-6 w-6 text-secondary-foreground" />
+          
+          <Card>
+            <CardContent className="p-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-purple-600" />
               </div>
-              <div className="text-2xl font-display font-extrabold">{totalQuestions}</div>
-              <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide">
-                {t('Gesamt', 'Total')}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-card bg-card overflow-hidden group hover:shadow-card-hover transition-all duration-300">
-            <CardContent className="p-4 text-center relative">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-accent/15 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Trophy className="h-6 w-6 text-accent" />
-              </div>
-              <div className="text-2xl font-display font-extrabold">{examsPassed}</div>
-              <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide">
-                {t('Bestanden', 'Passed')}
+              <div>
+                <p className="text-2xl font-bold">{completedLessons}/{lessons.length}</p>
+                <p className="text-xs text-muted-foreground">Lessons Done</p>
               </div>
             </CardContent>
           </Card>
         </div>
 
         {/* Continue Learning Button */}
-        <div className="px-5 mb-6">
-          <Button 
-            className="w-full h-16 text-lg font-display font-bold shadow-button hover:shadow-button-hover gap-3 rounded-2xl animate-pop group"
-            size="lg"
-            onClick={() => navigate('/study')}
-          >
-            <span>{Object.keys(progress.questionsAnswered).length > 0 ? t('Weiter lernen', 'Continue Learning') : t('Lernen starten', 'Start Learning')}</span>
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        <Button 
+          className="w-full h-14 text-lg font-bold shadow-lg shadow-primary/20"
+          onClick={handleContinueLearning}
+        >
+          <Play className="w-5 h-5 mr-2" />
+          {t('dashboard.continuelearning')}
+        </Button>
 
-        {/* Exam Card */}
-        <div className="px-5">
-          <Card 
-            className="cursor-pointer border-0 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden group"
-            onClick={() => navigate('/exam')}
-          >
-            <CardContent className="p-5 flex items-center gap-4 relative">
-              {/* Background accent */}
-              <div className="absolute inset-0 bg-gradient-to-r from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-destructive/20 to-destructive/10 flex items-center justify-center relative z-10 group-hover:scale-105 transition-transform">
-                <Trophy className="h-7 w-7 text-destructive" />
-              </div>
-              <div className="flex-1 relative z-10">
-                <h3 className="font-display font-bold text-lg">
-                  {t('Prüfungssimulation', 'Exam Simulation')}
-                </h3>
-                <p className="text-sm text-muted-foreground font-medium">
-                  {t('33 Fragen in 60 Minuten', '33 questions in 60 minutes')}
-                </p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all relative z-10" />
-            </CardContent>
-          </Card>
+        {/* Learning Path Section */}
+        <div className="pt-4">
+          <LearningPath onSelectLesson={handleSelectLesson} />
         </div>
-
       </div>
     </div>
   );

@@ -11,15 +11,14 @@ import { InterstitialAd, RewardedAd } from "@/components/ads";
 import { OfflineBanner } from "@/components/OfflineBanner";
 import { StreakMilestone } from "@/components/StreakMilestone";
 import Dashboard from "./pages/Dashboard";
-import Study from "./pages/Study";
+import Learn from "./pages/Learn";
 import Exam from "./pages/Exam";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 import Welcome from "./pages/Welcome";
-import { Bundesland } from "@/data/questions/index";
 
 import { storage } from '@/lib/storage';
-import { initializeBilling, checkProStatus } from '@/lib/billing';
+import { initializeBilling } from '@/lib/billing';
 
 const queryClient = new QueryClient();
 
@@ -32,10 +31,8 @@ function AppContent() {
     setHasSeenOnboarding(seen);
   }, []);
 
-  const handleOnboardingComplete = (bundesland: Bundesland) => {
-    const settings: any = storage.get('lid-settings', {});
-    settings.bundesland = bundesland;
-    storage.set('lid-settings', settings);
+  const handleOnboardingComplete = () => {
+    storage.set('hasSeenOnboarding', 'true');
     setHasSeenOnboarding(true);
   };
 
@@ -49,17 +46,20 @@ function AppContent() {
     return <Welcome onComplete={handleOnboardingComplete} />;
   }
 
+  // Hide bottom nav on learn pages
+  const hideBottomNav = location.pathname.startsWith('/learn/');
+
   return (
     <div className="min-h-screen bg-background">
       <OfflineBanner />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/study" element={<Study />} />
+        <Route path="/learn/:lessonId" element={<Learn />} />
         <Route path="/exam" element={<Exam />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <BottomNav />
+      {!hideBottomNav && <BottomNav />}
       {/* Global ad overlays */}
       <InterstitialAd />
       <RewardedAd />

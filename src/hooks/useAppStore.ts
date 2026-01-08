@@ -1,49 +1,53 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Bundesland, questions } from '@/data/questions/index';
+import { 
+  LessonId, 
+  LessonProgress,
+  XP_PER_CORRECT,
+  XP_LESSON_BONUS,
+  XP_STREAK_BONUS,
+  calculateLevel,
+  xpProgressPercent
+} from '@/data';
+import { Language } from '@/i18n';
+
 export interface UserProgress {
-  questionsAnswered: Record<string, boolean>; // questionId -> correct/incorrect
-  categoryProgress: Record<string, { correct: number; total: number }>;
-  examHistory: ExamResult[];
+  xp: number;
+  lessonProgress: Record<LessonId, LessonProgress>;
+  wordsLearned: string[]; // All learned word IDs
   streak: number;
   lastActiveDate: string;
   achievements: string[];
-  bookmarkedQuestions: string[];
-}
-
-export interface ExamResult {
-  date: string;
-  score: number;
-  total: number;
-  passed: boolean;
-  timeSpent: number; // in seconds
 }
 
 export interface AppSettings {
-  bundesland: Bundesland;
-  language: 'de' | 'en';
-  lastSessionCategory?: string;
-  lastSessionQuestionIndex?: number;
+  language: Language;
+  notificationTime?: string; // HH:mm format
+  notificationsEnabled: boolean;
 }
 
 const DEFAULT_PROGRESS: UserProgress = {
-  questionsAnswered: {},
-  categoryProgress: {},
-  examHistory: [],
+  xp: 0,
+  lessonProgress: {} as Record<LessonId, LessonProgress>,
+  wordsLearned: [],
   streak: 0,
   lastActiveDate: '',
-  achievements: [],
-  bookmarkedQuestions: []
+  achievements: []
 };
 
 const DEFAULT_SETTINGS: AppSettings = {
-  bundesland: 'Berlin',
-  language: 'de'
+  language: 'en',
+  notificationsEnabled: true,
+  notificationTime: '20:00'
 };
 
 // Detect browser language
-const detectLanguage = (): 'de' | 'en' => {
+const detectLanguage = (): Language => {
   const browserLang = navigator.language.toLowerCase();
-  return browserLang.startsWith('de') ? 'de' : 'en';
+  if (browserLang.startsWith('bn')) return 'bn';
+  if (browserLang.startsWith('tr')) return 'tr';
+  if (browserLang.startsWith('hi')) return 'hi';
+  if (browserLang.startsWith('ar')) return 'ar';
+  return 'en';
 };
 
 // Get today's date string
@@ -55,15 +59,19 @@ export function useAppStore() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [streakJustIncremented, setStreakJustIncremented] = useState(false);
 
-  // Check if user has been active today (answered at least one question)
+  // Derived values
+  const level = useMemo(() => calculateLevel(progress.xp), [progress.xp]);
+  const levelProgress = useMemo(() => xpProgressPercent(progress.xp), [progress.xp]);
+  
+  // Check if user has been active today
   const isStreakActiveToday = useMemo(() => {
     return progress.lastActiveDate === getTodayString();
   }, [progress.lastActiveDate]);
 
   // Load from localStorage on mount
   useEffect(() => {
-    const savedProgress = localStorage.getItem('lid-progress');
-    const savedSettings = localStorage.getItem('lid-settings');
+    const savedProgress = localStorage.getItem('a1m-progress');
+    const savedSettings = localStorage.getItem('a1m-settings');
 
     if (savedProgress) {
       try {
@@ -90,14 +98,14 @@ export function useAppStore() {
   // Save progress to localStorage
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem('lid-progress', JSON.stringify(progress));
+      localStorage.setItem('a1m-progress', JSON.stringify(progress));
     }
   }, [progress, isLoaded]);
 
   // Save settings to localStorage
   useEffect(() => {
     if (isLoaded) {
-      localStorage.setItem('lid-settings', JSON.stringify(settings));
+      localStorage.setItem('a1m-settings', JSON.stringify(settings));
     }
   }, [settings, isLoaded]);
 
@@ -119,64 +127,110 @@ export function useAppStore() {
     setProgress(prev => ({
       ...prev,
       streak: newStreak,
-      lastActiveDate: today
+      lastActiveDate: today,
+      xp: prev.xp + XP_STREAK_BONUS // Bonus XP for daily activity
     }));
 
-    // Trigger the confetti/celebration effect
     setStreakJustIncremented(true);
     setTimeout(() => setStreakJustIncremented(false), 3000);
 
     return true;
   }, [progress.lastActiveDate, progress.streak]);
 
-  // Clear the streak increment flag (for animations)
+  // Clear the streak increment flag
   const clearStreakIncrement = useCallback(() => {
     setStreakJustIncremented(false);
   }, []);
 
-  // Record answer
-  const recordAnswer = useCallback((questionId: string, category: string, isCorrect: boolean) => {
+  // Add XP
+  const addXP = useCallback((amount: number) => {
+    setProgress(prev => ({
+      ...prev,
+      xp: prev.xp + amount
+    }));
+  }, []);
+
+  // Record a correct answer
+  const recordCorrectAnswer = useCallback((lessonId: LessonId, wordId: string) => {
     updateStreak();
     
     setProgress(prev => {
-      const categoryStats = prev.categoryProgress[category] || { correct: 0, total: 0 };
-      const wasAnsweredBefore = questionId in prev.questionsAnswered;
-      
+      const lessonProgress = prev.lessonProgress[lessonId] || {
+        lessonId,
+        wordsLearned: [],
+        correctAnswers: 0,
+        totalAnswers: 0,
+        masteryPercent: 0
+      };
+
+      const isNewWord = !lessonProgress.wordsLearned.includes(wordId);
+      const newWordsLearned = isNewWord 
+        ? [...lessonProgress.wordsLearned, wordId]
+        : lessonProgress.wordsLearned;
+
       return {
         ...prev,
-        questionsAnswered: {
-          ...prev.questionsAnswered,
-          [questionId]: isCorrect
-        },
-        categoryProgress: {
-          ...prev.categoryProgress,
-          [category]: {
-            correct: wasAnsweredBefore 
-              ? (prev.questionsAnswered[questionId] ? categoryStats.correct - 1 : categoryStats.correct) + (isCorrect ? 1 : 0)
-              : categoryStats.correct + (isCorrect ? 1 : 0),
-            total: wasAnsweredBefore ? categoryStats.total : categoryStats.total + 1
+        xp: prev.xp + XP_PER_CORRECT,
+        wordsLearned: isNewWord ? [...prev.wordsLearned, wordId] : prev.wordsLearned,
+        lessonProgress: {
+          ...prev.lessonProgress,
+          [lessonId]: {
+            ...lessonProgress,
+            wordsLearned: newWordsLearned,
+            correctAnswers: lessonProgress.correctAnswers + 1,
+            totalAnswers: lessonProgress.totalAnswers + 1,
+            masteryPercent: Math.round((newWordsLearned.length / 20) * 100) // Assume 20 words per lesson avg
           }
         }
       };
     });
   }, [updateStreak]);
 
-  // Record exam result
-  const recordExamResult = useCallback((result: ExamResult) => {
-    setProgress(prev => ({
-      ...prev,
-      examHistory: [...prev.examHistory, result]
-    }));
-  }, []);
+  // Record an incorrect answer
+  const recordIncorrectAnswer = useCallback((lessonId: LessonId) => {
+    updateStreak();
+    
+    setProgress(prev => {
+      const lessonProgress = prev.lessonProgress[lessonId] || {
+        lessonId,
+        wordsLearned: [],
+        correctAnswers: 0,
+        totalAnswers: 0,
+        masteryPercent: 0
+      };
 
-  // Toggle bookmark
-  const toggleBookmark = useCallback((questionId: string) => {
-    setProgress(prev => ({
-      ...prev,
-      bookmarkedQuestions: prev.bookmarkedQuestions.includes(questionId)
-        ? prev.bookmarkedQuestions.filter(id => id !== questionId)
-        : [...prev.bookmarkedQuestions, questionId]
-    }));
+      return {
+        ...prev,
+        lessonProgress: {
+          ...prev.lessonProgress,
+          [lessonId]: {
+            ...lessonProgress,
+            totalAnswers: lessonProgress.totalAnswers + 1
+          }
+        }
+      };
+    });
+  }, [updateStreak]);
+
+  // Complete a lesson
+  const completeLesson = useCallback((lessonId: LessonId) => {
+    setProgress(prev => {
+      const lessonProgress = prev.lessonProgress[lessonId];
+      if (lessonProgress?.completedAt) return prev; // Already completed
+
+      return {
+        ...prev,
+        xp: prev.xp + XP_LESSON_BONUS,
+        lessonProgress: {
+          ...prev.lessonProgress,
+          [lessonId]: {
+            ...(lessonProgress || { lessonId, wordsLearned: [], correctAnswers: 0, totalAnswers: 0, masteryPercent: 100 }),
+            completedAt: new Date().toISOString(),
+            masteryPercent: 100
+          }
+        }
+      };
+    });
   }, []);
 
   // Add achievement
@@ -198,41 +252,38 @@ export function useAppStore() {
   // Reset all progress
   const resetProgress = useCallback(() => {
     setProgress(DEFAULT_PROGRESS);
-    localStorage.removeItem('lid-progress');
+    localStorage.removeItem('a1m-progress');
   }, []);
 
-  // Calculate readiness score based on mastered questions vs total questions
-  const getReadinessScore = useCallback((bundesland: Bundesland) => {
-    // Filter questions: 300 general + 10 state-specific for user's Bundesland
-    const filteredQuestions = questions.filter(q => 
-      !q.isStateSpecific || q.state === bundesland
-    );
-    const totalQuestions = filteredQuestions.length;
-    const masteredCount = Object.values(progress.questionsAnswered).filter(Boolean).length;
-    
-    if (totalQuestions === 0) return 0;
-    return Math.round((masteredCount / totalQuestions) * 100);
-  }, [progress.questionsAnswered]);
+  // Get lesson mastery percentage
+  const getLessonMastery = useCallback((lessonId: LessonId): number => {
+    return progress.lessonProgress[lessonId]?.masteryPercent || 0;
+  }, [progress.lessonProgress]);
 
-  // Get mastered questions count
-  const getMasteredCount = useCallback(() => {
-    return Object.values(progress.questionsAnswered).filter(Boolean).length;
-  }, [progress.questionsAnswered]);
+  // Check if lesson is completed
+  const isLessonCompleted = useCallback((lessonId: LessonId): boolean => {
+    return !!progress.lessonProgress[lessonId]?.completedAt;
+  }, [progress.lessonProgress]);
 
   return {
     progress,
     settings,
     isLoaded,
+    level,
+    levelProgress,
     isStreakActiveToday,
     streakJustIncremented,
     clearStreakIncrement,
-    recordAnswer,
-    recordExamResult,
-    toggleBookmark,
+    addXP,
+    recordCorrectAnswer,
+    recordIncorrectAnswer,
+    completeLesson,
     addAchievement,
     updateSettings,
     resetProgress,
-    getReadinessScore,
-    getMasteredCount
+    getLessonMastery,
+    isLessonCompleted
   };
 }
+
+export type AppStore = ReturnType<typeof useAppStore>;

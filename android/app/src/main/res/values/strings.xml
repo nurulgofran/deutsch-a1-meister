@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Leben in Deutschland</string>
-    <string name="title_activity_main">Leben in Deutschland</string>
-    <string name="package_name">com.nurulgofran.lebenindeutschland</string>
-    <string name="custom_url_scheme">com.nurulgofran.lebenindeutschland</string>
+    <string name="app_name">Deutsch A1 Meister</string>
+    <string name="title_activity_main">Deutsch A1 Meister</string>
+    <string name="package_name">com.nurulgofran.deutscha1meister</string>
+    <string name="custom_url_scheme">com.nurulgofran.deutscha1meister</string>
 </resources>

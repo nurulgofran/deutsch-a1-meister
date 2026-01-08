@@ -1,8 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "deutsch-a1-meister",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Gamified German A1 learning app based on Goethe-Institut curriculum",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

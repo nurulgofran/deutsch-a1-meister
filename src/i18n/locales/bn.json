@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "Deutsch A1 Meister",
+    "tagline": "গেমিফাইড শিক্ষার মাধ্যমে জার্মান A1 আয়ত্ত করুন"
+  },
+  "nav": {
+    "home": "হোম",
+    "learn": "শিখুন",
+    "practice": "অনুশীলন",
+    "exam": "পরীক্ষা",
+    "settings": "সেটিংস"
+  },
+  "dashboard": {
+    "welcome": "স্বাগতম!",
+    "level": "লেভেল",
+    "xp": "এক্সপি",
+    "streak": "দিনের স্ট্রিক",
+    "streakMessage": "প্রতিদিন শিখতে থাকুন!",
+    "todayGoal": "আজকের লক্ষ্য",
+    "continuelearning": "শেখা চালিয়ে যান",
+    "startLearning": "শেখা শুরু করুন"
+  },
+  "learningPath": {
+    "title": "শেখার পথ",
+    "locked": "আগে আগের পাঠ সম্পূর্ণ করুন",
+    "completed": "সম্পন্ন",
+    "inProgress": "চলমান",
+    "start": "শুরু",
+    "continue": "চালিয়ে যান",
+    "review": "পুনরায় দেখুন"
+  },
+  "lessons": {
+    "greetings": "অভিবাদন",
+    "personal": "ব্যক্তিগত তথ্য",
+    "family": "পরিবার",
+    "numbers": "সংখ্যা",
+    "time": "সময় ও দিন",
+    "food": "খাবার ও পানীয়",
+    "shopping": "কেনাকাটা",
+    "living": "বসবাস",
+    "work": "কাজ ও পেশা",
+    "hobbies": "অবসর সময়",
+    "transport": "পরিবহন",
+    "health": "স্বাস্থ্য"
+  },
+  "flashcard": {
+    "seeAndListen": "দেখুন ও শুনুন",
+    "translate": "অনুবাদ করুন",
+    "typeMatch": "টাইপ করুন বা মেলান",
+    "correct": "সঠিক!",
+    "incorrect": "ঠিক হয়নি",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "next": "পরবর্তী",
+    "showAnswer": "উত্তর দেখুন",
+    "tapToFlip": "উল্টাতে ট্যাপ করুন"
+  },
+  "grammar": {
+    "title": "ব্যাকরণ",
+    "sentenceBuilder": "বাক্য তৈরি",
+    "dragWords": "বাক্য তৈরি করতে শব্দ টেনে আনুন",
+    "checkAnswer": "উত্তর পরীক্ষা করুন",
+    "hint": "ইঙ্গিত"
+  },
+  "listening": {
+    "title": "শ্রবণ ল্যাব",
+    "playAudio": "অডিও চালান",
+    "replay": "আবার চালান",
+    "question": "আপনি কী শুনলেন?"
+  },
+  "exam": {
+    "title": "মক পরীক্ষা",
+    "subtitle": "Start Deutsch 1 সিমুলেশন",
+    "duration": "৬৫ মিনিট",
+    "sections": "৩টি বিভাগ",
+    "startExam": "পরীক্ষা শুরু করুন",
+    "listening": "শ্রবণ",
+    "reading": "পড়া",
+    "writing": "লেখা",
+    "timeRemaining": "অবশিষ্ট সময়",
+    "submit": "জমা দিন",
+    "results": "পরীক্ষার ফলাফল",
+    "passed": "পাস!",
+    "failed": "পাস হয়নি",
+    "score": "স্কোর",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "review": "উত্তর পর্যালোচনা"
+  },
+  "settings": {
+    "title": "সেটিংস",
+    "subtitle": "আপনার শেখার অভিজ্ঞতা কাস্টমাইজ করুন",
+    "language": "ভাষা",
+    "notifications": "দৈনিক রিমাইন্ডার",
+    "notificationTime": "রিমাইন্ডার সময়",
+    "premium": "প্রিমিয়াম সংস্করণ",
+    "premiumActive": "প্রিমিয়াম সক্রিয়!",
+    "premiumSubtitle": "সব ফিচার আনলক করুন",
+    "upgrade": "এখনই আপগ্রেড করুন",
+    "restore": "কেনাকাটা পুনরুদ্ধার করুন",
+    "reset": "অগ্রগতি রিসেট করুন",
+    "resetConfirm": "সব অগ্রগতি মুছবেন?",
+    "resetWarning": "এই ক্রিয়া পূর্বাবস্থায় ফেরানো যাবে না। আপনার সমস্ত শেখার অগ্রগতি মুছে যাবে।",
+    "cancel": "বাতিল",
+    "confirm": "হ্যাঁ, মুছুন",
+    "officialSource": "অফিসিয়াল সূত্র",
+    "officialSourceSubtitle": "Goethe-Institut A1 পাঠ্যক্রম",
+    "disclaimer": "গুরুত্বপূর্ণ বিজ্ঞপ্তি",
+    "disclaimerText": "এই অ্যাপটি Goethe-Institut-এর কোনো অফিসিয়াল অ্যাপ নয় এবং কোনো সরকারি সংস্থার সাথে সম্পর্কিত নয়। বিষয়বস্তু অফিসিয়াল A1 পাঠ্যক্রমের উপর ভিত্তি করে।",
+    "privacy": "গোপনীয়তা নীতি",
+    "developer": "ডেভেলপার",
+    "version": "সংস্করণ"
+  },
+  "premium": {
+    "features": {
+      "allLessons": "সব ১২টি শব্দভান্ডার পাঠ",
+      "grammar": "১০টি ব্যাকরণ প্যাটার্ন",
+      "listening": "শ্রবণ ল্যাব",
+      "mockExam": "মক পরীক্ষা",
+      "noAds": "বিজ্ঞাপন নেই"
+    }
+  },
+  "common": {
+    "loading": "লোড হচ্ছে...",
+    "error": "একটি ত্রুটি ঘটেছে",
+    "retry": "পুনরায় চেষ্টা করুন",
+    "back": "পিছনে",
+    "close": "বন্ধ করুন",
+    "save": "সংরক্ষণ করুন",
+    "done": "সম্পন্ন"
+  }
+}

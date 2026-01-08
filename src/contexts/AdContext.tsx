@@ -24,27 +24,37 @@ interface AdContextType {
 const AdContext = createContext<AdContextType | undefined>(undefined);
 
 // ============================================
-// AdMob Production Configuration
+// AdMob Configuration for Deutsch A1 Meister
 // ============================================
+// TODO: Replace with actual AdMob ad unit IDs after creating them
+// Steps:
+// 1. Go to https://admob.google.com
+// 2. Create new app "Deutsch A1 Meister" (Android, com.nurulgofran.deutscha1meister)
+// 3. Create Interstitial ad unit
+// 4. Create Rewarded ad unit
+// 5. Copy the ad unit IDs here
+
 const AD_UNIT_IDS = {
-  interstitial: 'ca-app-pub-4236881254988952/1536678955',
-  rewarded: 'ca-app-pub-4236881254988952/1262165026',
+  // PLACEHOLDERS - Replace after setting up AdMob
+  // Format: ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY
+  interstitial: 'ca-app-pub-4236881254988952/PLACEHOLDER_INTERSTITIAL',
+  rewarded: 'ca-app-pub-4236881254988952/PLACEHOLDER_REWARDED',
 };
 
 // Set to false for production builds
 const IS_TESTING = import.meta.env.DEV;
 
+// Cooldown between interstitial ads (10 minutes)
 const INTERSTITIAL_COOLDOWN = 10 * 60 * 1000;
 
 export function AdProvider({ children }: { children: ReactNode }) {
-  // Pro status is verified via RevenueCat on app launch - not stored in plain localStorage
-  // This is just the UI state, actual entitlement is checked via billing
+  // Pro status is verified via RevenueCat on app launch
   const [isPro, setIsPro] = useState(() => {
-    const saved = localStorage.getItem('lid-is-pro');
+    const saved = localStorage.getItem('a1m-is-pro');
     return saved === 'true';
   });
   
-  // These are mainly for UI state if needed, but AdMob handles its own views
+  // UI state for ads
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [showRewarded, setShowRewarded] = useState(false);
   const [rewardedCallback, setRewardedCallback] = useState<(() => void) | null>(null);
@@ -53,6 +63,12 @@ export function AdProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const initAdMob = async () => {
       if (!Capacitor.isNativePlatform()) return;
+      
+      // Skip if placeholders
+      if (AD_UNIT_IDS.interstitial.includes('PLACEHOLDER')) {
+        console.warn('AdMob: Ad unit IDs not configured');
+        return;
+      }
       
       try {
         // 1. Initialize AdMob
@@ -75,14 +91,12 @@ export function AdProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Sync pro status from RevenueCat on app startup
-  // RevenueCat is the source of truth - always sync both true AND false
   useEffect(() => {
     const syncProStatus = async () => {
       try {
         const hasPro = await checkProStatus();
-        // Always sync from RevenueCat (source of truth)
         setIsPro(hasPro);
-        localStorage.setItem('lid-is-pro', hasPro.toString());
+        localStorage.setItem('a1m-is-pro', hasPro.toString());
       } catch (error) {
         console.error('Failed to sync pro status', error);
       }
@@ -92,11 +106,12 @@ export function AdProvider({ children }: { children: ReactNode }) {
 
   const setPro = useCallback((value: boolean) => {
     setIsPro(value);
-    localStorage.setItem('lid-is-pro', value.toString());
+    localStorage.setItem('a1m-is-pro', value.toString());
   }, []);
 
   const canShowInterstitial = useCallback(() => {
     if (isPro) return false;
+    if (AD_UNIT_IDS.interstitial.includes('PLACEHOLDER')) return false;
     const now = Date.now();
     return now - lastInterstitialTime >= INTERSTITIAL_COOLDOWN;
   }, [isPro, lastInterstitialTime]);
@@ -105,7 +120,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
     if (isPro) return;
     if (!canShowInterstitial()) return;
 
-    if (Capacitor.isNativePlatform()) {
+    if (Capacitor.isNativePlatform() && !AD_UNIT_IDS.interstitial.includes('PLACEHOLDER')) {
       try {
         await AdMob.prepareInterstitial({
           adId: AD_UNIT_IDS.interstitial,
@@ -117,7 +132,6 @@ export function AdProvider({ children }: { children: ReactNode }) {
         console.error('Interstitial failed', error);
       }
     }
-    // No web fallback - ads only work on native
   }, [isPro, canShowInterstitial]);
 
   const closeInterstitial = useCallback(() => {
@@ -129,17 +143,16 @@ export function AdProvider({ children }: { children: ReactNode }) {
     let handler: any; 
 
     const setupListener = async () => {
-      // Only set up listener on native
-      if (Capacitor.isNativePlatform()) {
-          handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
-             setRewardedCallback(prevCallback => {
-               if (prevCallback) {
-                 prevCallback();
-                 return null;
-               }
-               return prevCallback;
-             });
+      if (Capacitor.isNativePlatform() && !AD_UNIT_IDS.rewarded.includes('PLACEHOLDER')) {
+        handler = await AdMob.addListener(RewardAdPluginEvents.Rewarded, (item: AdMobRewardItem) => {
+          setRewardedCallback(prevCallback => {
+            if (prevCallback) {
+              prevCallback();
+              return null;
+            }
+            return prevCallback;
           });
+        });
       }
     };
     
@@ -150,7 +163,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
         handler.remove();
       }
     };
-  }, []); // Remove dependency on rewardedCallback to avoid re-binding
+  }, []);
 
   const triggerRewardedAd = useCallback(async (onReward: () => void) => {
     if (isPro) {
@@ -160,7 +173,7 @@ export function AdProvider({ children }: { children: ReactNode }) {
     
     setRewardedCallback(() => onReward);
 
-    if (Capacitor.isNativePlatform()) {
+    if (Capacitor.isNativePlatform() && !AD_UNIT_IDS.rewarded.includes('PLACEHOLDER')) {
       try {
         await AdMob.prepareRewardVideoAd({
           adId: AD_UNIT_IDS.rewarded,
@@ -172,7 +185,6 @@ export function AdProvider({ children }: { children: ReactNode }) {
         setRewardedCallback(null); 
       }
     }
-    // No web fallback - ads only work on native
   }, [isPro]);
 
   const closeRewardedAd = useCallback((claimed: boolean) => {

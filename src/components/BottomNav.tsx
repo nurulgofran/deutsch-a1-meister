@@ -1,18 +1,17 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, BookOpen, ClipboardList, Settings } from 'lucide-react';
+import { Home, GraduationCap, Settings } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { cn } from '@/lib/utils';
-
-const navItems = [
-  { path: '/', icon: Home, label_de: 'Home', label_en: 'Home' },
-  { path: '/study', icon: BookOpen, label_de: 'Üben', label_en: 'Study' },
-  { path: '/exam', icon: ClipboardList, label_de: 'Prüfung', label_en: 'Exam' },
-  { path: '/settings', icon: Settings, label_de: 'Einstellungen', label_en: 'Settings' }
-];
 
 export function BottomNav() {
   const location = useLocation();
   const { t } = useApp();
+
+  const navItems = [
+    { path: '/', icon: Home, labelKey: 'nav.home' },
+    { path: '/exam', icon: GraduationCap, labelKey: 'nav.exam' },
+    { path: '/settings', icon: Settings, labelKey: 'nav.settings' }
+  ];
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
@@ -20,7 +19,7 @@ export function BottomNav() {
       <div className="absolute inset-0 bg-card/80 backdrop-blur-xl border-t border-border/50" />
       
       <div className="relative flex items-center justify-around h-16 max-w-lg mx-auto px-2">
-        {navItems.map(({ path, icon: Icon, label_de, label_en }) => {
+        {navItems.map(({ path, icon: Icon, labelKey }) => {
           const isActive = location.pathname === path;
           
           return (
@@ -57,7 +56,7 @@ export function BottomNav() {
                   "text-[10px] mt-0.5 font-semibold tracking-wide transition-colors duration-200",
                   isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
                 )}>
-                  {t(label_de, label_en)}
+                  {t(labelKey)}
                 </span>
               </div>
             </NavLink>

@@ -1,0 +1,130 @@
+{
+  "app": {
+    "name": "Deutsch A1 Meister",
+    "tagline": "أتقن اللغة الألمانية A1 مع التعلم الممتع"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "learn": "تعلم",
+    "practice": "تدرب",
+    "exam": "اختبار",
+    "settings": "الإعدادات"
+  },
+  "dashboard": {
+    "welcome": "مرحباً بعودتك!",
+    "level": "المستوى",
+    "xp": "نقاط الخبرة",
+    "streak": "سلسلة الأيام",
+    "streakMessage": "استمر في التعلم يومياً!",
+    "todayGoal": "هدف اليوم",
+    "continuelearning": "استمر في التعلم",
+    "startLearning": "ابدأ التعلم"
+  },
+  "learningPath": {
+    "title": "مسار التعلم",
+    "locked": "أكمل الدرس السابق أولاً",
+    "completed": "مكتمل",
+    "inProgress": "قيد التقدم",
+    "start": "ابدأ",
+    "continue": "استمر",
+    "review": "مراجعة"
+  },
+  "lessons": {
+    "greetings": "التحيات",
+    "personal": "المعلومات الشخصية",
+    "family": "العائلة",
+    "numbers": "الأرقام",
+    "time": "الوقت والأيام",
+    "food": "الطعام والشراب",
+    "shopping": "التسوق",
+    "living": "السكن",
+    "work": "العمل والمهن",
+    "hobbies": "وقت الفراغ",
+    "transport": "المواصلات",
+    "health": "الصحة"
+  },
+  "flashcard": {
+    "seeAndListen": "شاهد واستمع",
+    "translate": "ترجم",
+    "typeMatch": "اكتب أو طابق",
+    "correct": "صحيح!",
+    "incorrect": "ليس صحيحاً تماماً",
+    "tryAgain": "حاول مرة أخرى",
+    "next": "التالي",
+    "showAnswer": "أظهر الإجابة",
+    "tapToFlip": "انقر للقلب"
+  },
+  "grammar": {
+    "title": "القواعد",
+    "sentenceBuilder": "بناء الجملة",
+    "dragWords": "اسحب الكلمات لبناء الجملة",
+    "checkAnswer": "تحقق من الإجابة",
+    "hint": "تلميح"
+  },
+  "listening": {
+    "title": "معمل الاستماع",
+    "playAudio": "شغل الصوت",
+    "replay": "أعد التشغيل",
+    "question": "ماذا سمعت؟"
+  },
+  "exam": {
+    "title": "اختبار تجريبي",
+    "subtitle": "محاكاة Start Deutsch 1",
+    "duration": "65 دقيقة",
+    "sections": "3 أقسام",
+    "startExam": "ابدأ الاختبار",
+    "listening": "الاستماع",
+    "reading": "القراءة",
+    "writing": "الكتابة",
+    "timeRemaining": "الوقت المتبقي",
+    "submit": "إرسال",
+    "results": "نتائج الاختبار",
+    "passed": "ناجح!",
+    "failed": "لم ينجح",
+    "score": "النتيجة",
+    "tryAgain": "حاول مرة أخرى",
+    "review": "مراجعة الإجابات"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "subtitle": "خصص تجربة التعلم الخاصة بك",
+    "language": "اللغة",
+    "notifications": "تذكير يومي",
+    "notificationTime": "وقت التذكير",
+    "premium": "النسخة المميزة",
+    "premiumActive": "النسخة المميزة مفعلة!",
+    "premiumSubtitle": "افتح جميع الميزات",
+    "upgrade": "ترقية الآن",
+    "restore": "استعادة المشتريات",
+    "reset": "إعادة تعيين التقدم",
+    "resetConfirm": "حذف كل التقدم؟",
+    "resetWarning": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف كل تقدم التعلم الخاص بك.",
+    "cancel": "إلغاء",
+    "confirm": "نعم، احذف",
+    "officialSource": "المصدر الرسمي",
+    "officialSourceSubtitle": "منهج Goethe-Institut A1",
+    "disclaimer": "إشعار مهم",
+    "disclaimerText": "هذا التطبيق ليس تطبيقاً رسمياً من Goethe-Institut وغير تابع لأي جهة حكومية. المحتوى مبني على منهج A1 الرسمي.",
+    "privacy": "سياسة الخصوصية",
+    "developer": "المطور",
+    "version": "الإصدار"
+  },
+  "premium": {
+    "features": {
+      "allLessons": "جميع دروس المفردات الـ 12",
+      "grammar": "10 أنماط قواعد",
+      "listening": "معمل الاستماع",
+      "mockExam": "اختبار تجريبي",
+      "noAds": "بدون إعلانات"
+    }
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ",
+    "retry": "إعادة المحاولة",
+    "back": "رجوع",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "done": "تم"
+  }
+}

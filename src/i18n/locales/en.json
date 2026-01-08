@@ -1,0 +1,131 @@
+{
+  "app": {
+    "name": "Deutsch A1 Meister",
+    "tagline": "Master German A1 with gamified learning"
+  },
+  "nav": {
+    "home": "Home",
+    "learn": "Learn",
+    "practice": "Practice",
+    "exam": "Exam",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "welcome": "Welcome back!",
+    "level": "Level",
+    "xp": "XP",
+    "streak": "Day Streak",
+    "streakMessage": "Keep learning daily!",
+    "todayGoal": "Today's Goal",
+    "continuelearning": "Continue Learning",
+    "startLearning": "Start Learning"
+  },
+  "learningPath": {
+    "title": "Learning Path",
+    "locked": "Complete previous lesson first",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "start": "Start",
+    "continue": "Continue",
+    "review": "Review"
+  },
+  "lessons": {
+    "greetings": "Greetings",
+    "personal": "Personal Info",
+    "family": "Family",
+    "numbers": "Numbers",
+    "time": "Time & Days",
+    "food": "Food & Drink",
+    "shopping": "Shopping",
+    "living": "Living",
+    "work": "Work & Jobs",
+    "hobbies": "Free Time",
+    "transport": "Transport",
+    "health": "Health"
+  },
+  "flashcard": {
+    "seeAndListen": "See & Listen",
+    "translate": "Translate",
+    "typeMatch": "Type or Match",
+    "correct": "Correct!",
+    "incorrect": "Not quite right",
+    "tryAgain": "Try Again",
+    "next": "Next",
+    "showAnswer": "Show Answer",
+    "tapToFlip": "Tap to flip"
+  },
+  "grammar": {
+    "title": "Grammar",
+    "sentenceBuilder": "Sentence Builder",
+    "dragWords": "Drag words to build the sentence",
+    "checkAnswer": "Check Answer",
+    "hint": "Hint"
+  },
+  "listening": {
+    "title": "Listening Lab",
+    "playAudio": "Play Audio",
+    "replay": "Replay",
+    "question": "What did you hear?"
+  },
+  "exam": {
+    "title": "Mock Exam",
+    "subtitle": "Start Deutsch 1 Simulation",
+    "duration": "65 minutes",
+    "sections": "3 sections",
+    "startExam": "Start Exam",
+    "listening": "Listening",
+    "reading": "Reading",
+    "writing": "Writing",
+    "timeRemaining": "Time Remaining",
+    "submit": "Submit",
+    "results": "Exam Results",
+    "passed": "Passed!",
+    "failed": "Not Passed",
+    "score": "Score",
+    "tryAgain": "Try Again",
+    "review": "Review Answers"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your learning experience",
+    "language": "Language",
+    "notifications": "Daily Reminder",
+    "notificationTime": "Reminder Time",
+    "premium": "Premium Version",
+    "premiumActive": "Premium Active!",
+    "premiumSubtitle": "Unlock all features",
+    "upgrade": "Upgrade Now",
+    "restore": "Restore Purchases",
+    "reset": "Reset Progress",
+    "resetConfirm": "Delete all progress?",
+    "resetWarning": "This action cannot be undone. All your learning progress will be deleted.",
+    "cancel": "Cancel",
+    "confirm": "Yes, delete",
+    "officialSource": "Official Source",
+    "officialSourceSubtitle": "Goethe-Institut A1 Curriculum",
+    "disclaimer": "Important Disclaimer",
+    "disclaimerText": "This app is NOT an official Goethe-Institut application and is not affiliated with any government entity. Content is based on the official A1 curriculum.",
+    "privacy": "Privacy Policy",
+    "developer": "Developed by",
+    "version": "Version"
+  },
+  "premium": {
+    "features": {
+      "allLessons": "All 12 Vocabulary Lessons",
+      "grammar": "10 Grammar Patterns",
+      "listening": "Listening Lab",
+      "mockExam": "Mock Exam",
+      "noAds": "No Ads"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "close": "Close",
+    "save": "Save",
+    "done": "Done",
+    "words": "words"
+  }
+}

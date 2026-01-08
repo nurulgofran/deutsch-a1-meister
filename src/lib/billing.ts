@@ -3,11 +3,23 @@ import { Purchases, LOG_LEVEL } from '@revenuecat/purchases-capacitor';
 import { Browser } from '@capacitor/browser';
 
 // ============================================
-// RevenueCat Configuration
+// RevenueCat Configuration for Deutsch A1 Meister
 // ============================================
+// TODO: Replace with actual RevenueCat API key after creating the app in RevenueCat dashboard
+// Steps:
+// 1. Go to https://app.revenuecat.com
+// 2. Create new project "Deutsch A1 Meister"
+// 3. Add Android app with package ID: com.nurulgofran.deutscha1meister
+// 4. Create entitlement "pro"
+// 5. Create offering "default" with lifetime package
+// 6. Create product with ID "deutscha1_lifetime_pro" in Google Play Console
+// 7. Link product in RevenueCat
+// 8. Copy Android Public API Key here
+
 const BILLING_CONFIG = {
   // RevenueCat Public API Key (Android)
-  revenueCatApiKey: 'goog_uNzZhuaPXvvBSjOxFithxuQVYvb',
+  // PLACEHOLDER - Replace after setting up RevenueCat project
+  revenueCatApiKey: 'goog_REPLACE_WITH_YOUR_REVENUECAT_API_KEY',
   
   // Entitlement ID (set up in RevenueCat)
   entitlementId: 'pro',
@@ -18,7 +30,10 @@ const BILLING_CONFIG = {
   // Package identifier for one-time purchase
   packageId: '$rc_lifetime',
   
-  // Price display
+  // Product ID in Google Play Console
+  productId: 'deutscha1_lifetime_pro',
+  
+  // Price display (fallback if RevenueCat fails)
   price: '$4.99',
   priceDE: '4,99€',
 };
@@ -34,12 +49,12 @@ let isInitialized = false;
 
 // Generate or retrieve a stable user ID for RevenueCat
 function getOrCreateUserId(): string {
-  const storageKey = 'lid-revenuecat-user-id';
+  const storageKey = 'a1m-revenuecat-user-id';
   let userId = localStorage.getItem(storageKey);
   
   if (!userId) {
     // Generate a UUID v4
-    userId = 'lid_' + crypto.randomUUID();
+    userId = 'a1m_' + crypto.randomUUID();
     localStorage.setItem(storageKey, userId);
   }
   
@@ -56,6 +71,12 @@ export async function initializeBilling(): Promise<void> {
   const isNative = Capacitor.isNativePlatform();
 
   if (!isNative) {
+    return;
+  }
+
+  // Skip if API key is placeholder
+  if (BILLING_CONFIG.revenueCatApiKey.includes('REPLACE')) {
+    console.warn('Billing: RevenueCat API key not configured');
     return;
   }
 
@@ -84,6 +105,11 @@ export async function initializeBilling(): Promise<void> {
 export async function getProPrice(): Promise<string | null> {
   if (!Capacitor.isNativePlatform()) {
     return null;
+  }
+
+  // Return fallback if not configured
+  if (BILLING_CONFIG.revenueCatApiKey.includes('REPLACE')) {
+    return BILLING_CONFIG.price;
   }
 
   try {
@@ -118,6 +144,11 @@ export async function purchasePro(): Promise<PurchaseResult> {
   if (!isNative) {
     // Web: Purchase not available - must use native app
     return { success: false, error: 'Purchase only available in the app' };
+  }
+
+  // Return error if not configured
+  if (BILLING_CONFIG.revenueCatApiKey.includes('REPLACE')) {
+    return { success: false, error: 'Billing not configured yet' };
   }
 
   try {
@@ -186,7 +217,12 @@ export async function purchasePro(): Promise<PurchaseResult> {
 export async function checkProStatus(): Promise<boolean> {
   if (!Capacitor.isNativePlatform()) {
     // Web: check localStorage
-    return localStorage.getItem('lid-is-pro') === 'true';
+    return localStorage.getItem('a1m-is-pro') === 'true';
+  }
+
+  // Return cached status if not configured
+  if (BILLING_CONFIG.revenueCatApiKey.includes('REPLACE')) {
+    return localStorage.getItem('a1m-is-pro') === 'true';
   }
 
   try {
@@ -207,6 +243,11 @@ export async function restorePurchases(retryCount = 0): Promise<PurchaseResult> 
   
   if (!Capacitor.isNativePlatform()) {
     return { success: false, error: 'Not available on web' };
+  }
+
+  // Return error if not configured
+  if (BILLING_CONFIG.revenueCatApiKey.includes('REPLACE')) {
+    return { success: false, error: 'Billing not configured yet' };
   }
 
   try {
