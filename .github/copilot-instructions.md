@@ -1,78 +1,57 @@
 # Deutsch A1 Meister - AI Coding Instructions
 
-A gamified German A1 learning mobile app built with Capacitor + React + TypeScript + Vite, targeting Android via Google Play Store.
+## 1. Project Overview & Architecture
+To successfully contribute to this codebase, you must understand the following high-level architecture:
 
-## Architecture Overview
+-   **Core Stack**: React 18 (Vite) + TypeScript + TailwindCSS.
+-   **Mobile Integration**: Capacitor (Android) wraps the React app. Native functionality (billing, ads, status bar) is accessed via Capacitor plugins.
+-   **State Management**: `AppContext` (React Context) + `src/hooks/useAppStore.ts` for global state. Re-renders are acceptable for this app size; avoid over-optimization unless necessary.
+-   **Data Storage**:
+    -   **Persistence**: `src/lib/storage.ts` wraps `localStorage`. **ALWAYS** use this wrapper. Never use `localStorage` directly.
+    -   **Static Data**: Course content (vocab, grammar, exams) lives in typed TypeScript files in `src/data/`. This is the "database" for the app.
+-   **Monetization**:
+    -   **Billing**: `src/lib/billing.ts` abstracts RevenueCat. All purchase logic MUST go through this.
+    -   **Ads**: `src/contexts/AdContext.tsx` handles AdMob state.
 
-```
-src/
-├── App.tsx              # Provider hierarchy: QueryClient → BrowserRouter → AppProvider → AdProvider
-├── pages/               # Route pages (Dashboard, Learn, Exam, Settings, Welcome)
-├── components/          # UI components (custom + shadcn/ui in components/ui/)
-│   └── ads/             # InterstitialAd, RewardedAd overlays
-├── contexts/            # AppContext (progress), AdContext (monetization + Pro status)
-├── hooks/               # useAppStore (central state), useAds, useHaptics
-├── data/                # Lesson/vocab content + types.ts (XP system, Lesson definitions)
-├── lib/                 # billing.ts (RevenueCat), storage.ts, utils.ts
-└── i18n/                # Custom translation system (en, bn, tr, hi, ar)
-```
+## 2. Critical Workflows
+Use these specific commands for development and verification:
 
-## Key Patterns
+-   **Start Dev Server**: `npm run dev` (Runs on port 8080)
+-   **Build for Web**: `npm run build`
+-   **Sync to Android**: `npx cap sync android` (Run this after `npm run build` to update the native project)
+-   **Mobile Preview**: To test native features, you usually need to run on a device/emulator via Android Studio (`npx cap open android`).
 
-### State Management
-- **User progress** persists in `localStorage` via `useAppStore` hook (XP, streaks, lesson progress)
-- **Pro status** synced from RevenueCat on app launch, cached in `localStorage` key `a1m-is-pro`
-- React Context for cross-component state (`AppContext`, `AdContext`)
+## 3. Project-Specific Conventions
 
-### i18n System
-- Custom implementation in `src/i18n/` - NOT react-i18next
-- Use `t(language, 'path.to.key')` function for translations
-- All content supports 5 languages via `Record<Language, string>` pattern:
-```typescript
-translations: {
-  en: "Hello",
-  bn: "হ্যালো",
-  tr: "Merhaba",
-  hi: "नमस्ते",
-  ar: "مرحبا"
-}
-```
+### A. Data & Logic
+-   **Translations**: Use the `t()` function from the `useApp()` hook.
+    ```typescript
+    const { t } = useApp();
+    return <h1>{t('welcome.title')}</h1>;
+    ```
+-   **New Content**: When adding lessons or grammar, follow the types in `src/data/types.ts`. All IDs must be unique.
 
-### UI Components
-- **shadcn/ui** components in `src/components/ui/` - add via `npx shadcn@latest add <component>`
-- Tailwind + CSS variables for theming (see `tailwind.config.ts`, `index.css`)
-- Use existing semantic colors: `primary`, `secondary`, `success`, `warning`, `destructive`
+### B. UI Components
+-   **Library**: Shadcn/UI (found in `src/components/ui`). Do not install new UI libraries without permission.
+-   **Tailwind**: Use standard utility classes. Start with mobile-first responsive design.
+-   **Icons**: Use `lucide-react`.
 
-### Monetization (Pro Features)
-```typescript
-// Check Pro status
-import { useAds } from '@/contexts/AdContext';
-const { isPro } = useAds();
+### C. Native Features
+-   **Billing Checks**: Use `checkProStatus()` from `@/lib/billing` or the `isPro` flag from `useApp()` to gate content.
+    ```typescript
+    if (!isPro && isLocked) {
+      return <ProModal />;
+    }
+    ```
 
-// Lessons gated by isPremium flag - see src/data/types.ts
-```
-- RevenueCat handles billing in `src/lib/billing.ts`
-- AdMob ads show only for non-Pro users (10-min cooldown for interstitials)
+## 4. Key Directories
+-   `src/components/ads`: AdSpecific components (Interstitial, Rewarded).
+-   `src/data`: The static content database.
+-   `src/lib`: Core infrastructure (billing, storage).
+-   `src/pages`: Top-level route components.
+-   `android/`: Native Android project files.
 
-### Data Structure
-- Lessons defined in `src/data/types.ts` with XP requirements
-- Vocabulary organized by lesson in `src/data/vocab/`
-- XP constants: `XP_PER_CORRECT=5`, `XP_LESSON_BONUS=25`, `XP_STREAK_BONUS=10`
-
-## Development Commands
-
-```bash
-npm run dev          # Start Vite dev server (web preview)
-npm run build        # Build for production (outputs to dist/)
-npm run lint         # ESLint check
-
-# Android (after npm run build)
-npx cap sync android && npx cap open android
-```
-
-## Critical Notes
-
-1. **Native-only features**: RevenueCat billing and AdMob only work on Android - check `Capacitor.isNativePlatform()` before calling
-2. **localStorage keys**: Prefix with `a1m-` (e.g., `a1m-progress`, `a1m-settings`, `a1m-is-pro`)
-3. **Path aliases**: Use `@/` for imports (configured in `tsconfig.json`, `vite.config.ts`)
-4. **No backend**: All user data is client-side localStorage - there's no server/database
+## 5. Common "Gotchas"
+-   **Capacitor APIs**: Web APIs might not work as expected on Android. Always check if a Capacitor plugin is required (stored in `package.json`).
+-   **Safe Area**: Mobile devices have notches. Ensure top/bottom padding accounts for safe areas if not handled by the layout container.
+-   **Offline First**: The app must work offline. All critical data matches this requirement by being bundled or cached.

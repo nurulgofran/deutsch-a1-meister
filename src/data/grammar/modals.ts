@@ -88,6 +88,38 @@ export const modalsGrammar: GrammarPattern = {
         hi: '"ihr" के लिए "können", "könnt" बन जाता है।',
         ar: 'يصبح "können" هو "könnt" مع "ihr".'
       }
+    },
+    {
+      id: 'modal_006',
+      type: 'fill-blank',
+      prompt: {
+        german: 'Du ___ (sollen) zum Arzt gehen.',
+        translations: { en: 'You should go to the doctor.', bn: 'তোমার ডাক্তারের কাছে যাওয়া উচিত।', tr: 'Doktora gitmelisin.', hi: 'तुम्हें डॉक्टर के पास जाना चाहिए।', ar: 'يجب أن تذهب إلى الطبيب.' }
+      },
+      correctAnswer: ['sollst'],
+      explanation: {
+        en: '"sollen" (should) for "du": du sollst.',
+        bn: '"du" এর জন্য "sollen" (উচিত): du sollst।',
+        tr: '"du" için "sollen" (meli/malı): du sollst.',
+        hi: '"du" के लिए "sollen" (चाहिए): du sollst।',
+        ar: '"sollen" (يجب) مع "du": du sollst.'
+      }
+    },
+    {
+      id: 'modal_007',
+      type: 'fill-blank',
+      prompt: {
+        german: 'Hier ___ man nicht rauchen. (dürfen)',
+        translations: { en: 'One is not allowed to smoke here.', bn: 'এখানে ধুমপান করা নিষেধ।', tr: 'Burada sigara içilmez.', hi: 'यहाँ धूम्रपान करने की अनुमति नहीं है।', ar: 'لا يُسمح بالتدخين هنا.' }
+      },
+      correctAnswer: ['darf'],
+      explanation: {
+        en: '"dürfen" (to be allowed) is irregular: man darf (a -> a).',
+        bn: '"dürfen" (অনুমতি থাকা) অনিয়মিত: man darf (a -> a)।',
+        tr: '"dürfen" (izinli olmak) düzensizdir: man darf (a -> a).',
+        hi: '"dürfen" (अनुमति होना) अनियमित है: man darf (a -> a)।',
+        ar: '"dürfen" (يسمح) شاذ: man darf (a -> a).'
+      }
     }
   ]
 };
