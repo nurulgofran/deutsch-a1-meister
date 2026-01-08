@@ -145,6 +145,153 @@ export const livingVocab: VocabWord[] = [
     article: 'die',
     translations: { en: 'address', bn: 'ঠিকানা', tr: 'adres', hi: 'पता', ar: 'العنوان' },
     category: 'living'
+  },
+  {
+    id: 'liv_101',
+    german: 'Sofa',
+    article: 'das',
+    plural: 'Sofas',
+    translations: { en: 'sofa', bn: 'সোফা', tr: 'kanepe', hi: 'सोफा', ar: 'أريكة' },
+    category: 'living'
+  },
+  {
+    id: 'liv_102',
+    german: 'Lampe',
+    article: 'die',
+    plural: 'Lampen',
+    translations: { en: 'lamp', bn: 'বাতি', tr: 'lamba', hi: 'दीपक', ar: 'مصباح' },
+    category: 'living'
+  },
+  {
+    id: 'liv_103',
+    german: 'Teppich',
+    article: 'der',
+    plural: 'Teppiche',
+    translations: { en: 'carpet', bn: 'গালিচা', tr: 'halı', hi: 'कालीन', ar: 'سجادة' },
+    category: 'living'
+  },
+  {
+    id: 'liv_104',
+    german: 'Bild',
+    article: 'das',
+    plural: 'Bilder',
+    translations: { en: 'picture', bn: 'ছবি', tr: 'resim', hi: 'चित्र', ar: 'صورة' },
+    category: 'living'
+  },
+  {
+    id: 'liv_105',
+    german: 'Schlüssel',
+    article: 'der',
+    plural: 'Schlüssel',
+    translations: { en: 'key', bn: 'চাবি', tr: 'anahtar', hi: 'चाबी', ar: 'مفتاح' },
+    category: 'living'
+  },
+  {
+    id: 'liv_106',
+    german: 'Fernseher',
+    article: 'der',
+    plural: 'Fernseher',
+    translations: { en: 'TV/television', bn: 'টেলিভিশন', tr: 'televizyon', hi: 'टेलीविज़न', ar: 'تلفاز' },
+    category: 'living'
+  },
+  {
+    id: 'liv_107',
+    german: 'Kühlschrank',
+    article: 'der',
+    plural: 'Kühlschränke',
+    translations: { en: 'fridge/refrigerator', bn: 'ফ্রিজ', tr: 'buzdolabı', hi: 'फ्रिज', ar: 'ثلاجة' },
+    category: 'living'
+  },
+  {
+    id: 'liv_108',
+    german: 'Herd',
+    article: 'der',
+    plural: 'Herde',
+    translations: { en: 'stove', bn: 'চুলা', tr: 'ocak', hi: 'चुल्हा', ar: 'موقد' },
+    category: 'living'
+  },
+  {
+    id: 'liv_109',
+    german: 'Toilette',
+    article: 'die',
+    plural: 'Toiletten',
+    translations: { en: 'toilet', bn: 'টয়লেট', tr: 'tuvalet', hi: 'शौचालय', ar: 'مرحاض' },
+    category: 'living'
+  },
+  {
+    id: 'liv_110',
+    german: 'Flur',
+    article: 'der',
+    plural: 'Flure',
+    translations: { en: 'hallway', bn: 'বারান্দা/করিডোর', tr: 'koridor', hi: 'गलियारा', ar: 'ردهة' },
+    category: 'living'
+  },
+  {
+    id: 'liv_111',
+    german: 'Keller',
+    article: 'der',
+    plural: 'Keller',
+    translations: { en: 'basement', bn: 'বেসমেন্ট', tr: 'bodrum', hi: 'तहखाना', ar: 'قبو' },
+    category: 'living'
+  },
+  {
+    id: 'liv_112',
+    german: 'Garage',
+    article: 'die',
+    plural: 'Garagen',
+    translations: { en: 'garage', bn: 'গ্যারেজ', tr: 'garaj', hi: 'गेराज', ar: 'مرآب' },
+    category: 'living'
+  },
+  {
+    id: 'liv_113',
+    german: 'Stock',
+    article: 'der',
+    translations: { en: 'floor/story', bn: 'তলা', tr: 'kat', hi: 'मंजिल', ar: 'طابق' },
+    category: 'living'
+  },
+  {
+    id: 'liv_114',
+    german: 'sauber',
+    translations: { en: 'clean', bn: 'পরিষ্কার', tr: 'temiz', hi: 'साफ', ar: 'نظيف' },
+    category: 'living'
+  },
+  {
+    id: 'liv_115',
+    german: 'schmutzig',
+    translations: { en: 'dirty', bn: 'নোংরা', tr: 'kirli', hi: 'गंदा', ar: 'قذر' },
+    category: 'living'
+  },
+  {
+    id: 'liv_116',
+    german: 'aufräumen',
+    translations: { en: 'to tidy up', bn: 'পরিষ্কার করা', tr: 'toplamak (evi)', hi: 'सफाई करना', ar: 'يرتب' },
+    category: 'living'
+  },
+  {
+    id: 'liv_117',
+    german: 'putzen',
+    translations: { en: 'to clean', bn: 'মুছা/পরিষ্কার করা', tr: 'temizlemek', hi: 'साफ करना', ar: 'ينظف' },
+    category: 'living'
+  },
+  {
+    id: 'liv_118',
+    german: 'mieten',
+    translations: { en: 'to rent', bn: 'ভাড়া নেওয়া', tr: 'kiralamak', hi: 'किराये पर लेना', ar: 'يستأجر' },
+    category: 'living'
+  },
+  {
+    id: 'liv_119',
+    german: 'umziehen',
+    translations: { en: 'to move (house)', bn: 'বাসা পরিবর্তন করা', tr: 'taşınmak', hi: 'घर बदलना', ar: 'ينتقل (منزل)' },
+    category: 'living'
+  },
+  {
+    id: 'liv_120',
+    german: 'Briefkasten',
+    article: 'der',
+    plural: 'Briefkästen',
+    translations: { en: 'mailbox', bn: 'চিঠির বাক্স', tr: 'posta kutusu', hi: 'मेलबॉक्स', ar: 'صندوق بريد' },
+    category: 'living'
   }
 ];
 

@@ -139,6 +139,157 @@ export const transportVocab: VocabWord[] = [
     article: 'die',
     translations: { en: 'map/card', bn: 'মানচিত্র', tr: 'harita', hi: 'नक्शा', ar: 'خريطة' },
     category: 'transport'
+  },
+  {
+    id: 'trans_101',
+    german: 'Reise',
+    article: 'die',
+    plural: 'Reisen',
+    translations: { en: 'trip/journey', bn: 'ভ্রমণ', tr: 'seyahat', hi: 'यात्रा', ar: 'رحلة' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_102',
+    german: 'Gepäck',
+    article: 'das',
+    translations: { en: 'luggage', bn: 'মালপত্র', tr: 'bagaj', hi: 'सामान', ar: 'أمتعة' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_103',
+    german: 'Koffer',
+    article: 'der',
+    plural: 'Koffer',
+    translations: { en: 'suitcase', bn: 'স্যুটকেস', tr: 'bavul', hi: 'सूटकेस', ar: 'حقيبة سفر' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_104',
+    german: 'Pass',
+    article: 'der',
+    plural: 'Pässe',
+    translations: { en: 'passport', bn: 'পাসপোর্ট', tr: 'pasaport', hi: 'पासपोर्ट', ar: 'جواز سفر' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_105',
+    german: 'Hotel',
+    article: 'das',
+    plural: 'Hotels',
+    translations: { en: 'hotel', bn: 'হোটেল', tr: 'otel', hi: 'होटल', ar: 'فندق' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_106',
+    german: 'buchen',
+    translations: { en: 'to book', bn: 'বুক করা', tr: 'rezervasyon yapmak', hi: 'बुक करना', ar: 'يحجز' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_107',
+    german: 'Stadt',
+    article: 'die',
+    plural: 'Städte',
+    translations: { en: 'city', bn: 'শহর', tr: 'şehir', hi: 'शहर', ar: 'مدينة' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_108',
+    german: 'Land',
+    article: 'das',
+    plural: 'Länder',
+    translations: { en: 'country', bn: 'দেশ', tr: 'ülke', hi: 'देश', ar: 'بلد' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_109',
+    german: 'Meer',
+    article: 'das',
+    plural: 'Meere',
+    translations: { en: 'sea', bn: 'সাগর', tr: 'deniz', hi: 'समुद्र', ar: 'بحر' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_110',
+    german: 'Strand',
+    article: 'der',
+    plural: 'Strände',
+    translations: { en: 'beach', bn: 'সমুদ্র সৈকত', tr: 'plaj', hi: 'समुद्र तट', ar: 'شاطئ' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_111',
+    german: 'Berg',
+    article: 'der',
+    plural: 'Berge',
+    translations: { en: 'mountain', bn: 'পাহাড়', tr: 'dağ', hi: 'पहाड़', ar: 'جبل' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_112',
+    german: 'weit',
+    translations: { en: 'far', bn: 'দূরে', tr: 'uzak', hi: 'दूर', ar: 'بعيد' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_113',
+    german: 'nah',
+    translations: { en: 'near', bn: 'কাছে', tr: 'yakın', hi: 'पास', ar: 'قريب' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_114',
+    german: 'hier',
+    translations: { en: 'here', bn: 'এখানে', tr: 'burada', hi: 'यहाँ', ar: 'هنا' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_115',
+    german: 'da',
+    translations: { en: 'there', bn: 'সেখানে', tr: 'orada', hi: 'वहाँ', ar: 'هناك' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_116',
+    german: 'oben',
+    translations: { en: 'up/above', bn: 'উপরে', tr: 'yukarıda', hi: 'ऊपर', ar: 'فوق' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_117',
+    german: 'unten',
+    translations: { en: 'down/below', bn: 'নিচে', tr: 'aşağıda', hi: 'नीचे', ar: 'تحت' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_118',
+    german: 'vorne',
+    translations: { en: 'in front', bn: 'সামনে', tr: 'önde', hi: 'सामने', ar: 'أمام' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_119',
+    german: 'hinten',
+    translations: { en: 'behind', bn: 'পিছনে', tr: 'arkada', hi: 'पीछे', ar: 'خلف' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_120',
+    german: 'abfahren',
+    translations: { en: 'to depart', bn: 'রওনা হওয়া', tr: 'hareket etmek', hi: 'रवाना होना', ar: 'يغادر' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_121',
+    german: 'ankommen',
+    translations: { en: 'to arrive', bn: 'পৌঁছানো', tr: 'varmak', hi: 'पहुंचना', ar: 'يصل' },
+    category: 'transport'
+  },
+  {
+    id: 'trans_122',
+    german: 'umsteigen',
+    translations: { en: 'to transfer/change', bn: 'পরিবর্তন করা', tr: 'aktarma yapmak', hi: 'बदलना (वाहन)', ar: 'يبدل' },
+    category: 'transport'
   }
 ];
 

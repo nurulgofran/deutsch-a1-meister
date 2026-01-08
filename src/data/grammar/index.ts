@@ -6,6 +6,9 @@ import { sentenceStructureGrammar } from './sentence_structure';
 import { verbsMoreGrammar } from './verbs_more';
 import { imperativeGrammar } from './imperative';
 import { perfectTenseGrammar } from './perfect_tense';
+import { prepositionsGrammar } from './prepositions';
+import { possessiveGrammar } from './possessive';
+import { separableVerbsGrammar } from './separable_verbs';
 
 export const grammarPatterns = [
   articlesGrammar,
@@ -15,7 +18,10 @@ export const grammarPatterns = [
   sentenceStructureGrammar,
   verbsMoreGrammar,
   imperativeGrammar,
-  perfectTenseGrammar
+  perfectTenseGrammar,
+  prepositionsGrammar,
+  possessiveGrammar,
+  separableVerbsGrammar
 ];
 
 export * from './articles';
@@ -26,3 +32,6 @@ export * from './sentence_structure';
 export * from './verbs_more';
 export * from './imperative';
 export * from './perfect_tense';
+export * from './prepositions';
+export * from './possessive';
+export * from './separable_verbs';

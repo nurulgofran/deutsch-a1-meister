@@ -88,6 +88,89 @@ export const verbsGrammar: GrammarPattern = {
         hi: '"ihr" (तुम सब) के लिए, क्रिया का अंत "-t" है (Ihr trinkt)।',
         ar: 'مع "ihr" (أنتم)، ينتهي الفعل بـ "-t" (Ihr trinkt).'
       }
+    },
+    {
+      id: 'verb_006',
+      type: 'sentence-builder',
+      prompt: {
+        german: 'Du ___ (nehmen) den Bus.',
+        translations: { en: 'You take the bus.', bn: 'তুমি বাস নিচ্ছ।', tr: 'Otobüse biniyorsun.', hi: 'तुम बस लेते हो।', ar: 'أنت تأخذ الحافلة.' }
+      },
+      correctAnswer: ['nimmst'],
+      options: ['nimmst', 'nehmt', 'nehme', 'nimmt'],
+      explanation: {
+        en: '"nehmen" is irregular. du nimmst (e -> i).',
+        bn: '"nehmen" একটি অনিয়মিত ক্রিয়া। du nimmst (e -> i)।',
+        tr: '"nehmen" düzensizdir. du nimmst (e -> i).',
+        hi: '"nehmen" अनियमित है। du nimmst (e -> i).',
+        ar: '"nehmen" هو فعل شاذ. du nimmst (e -> i).'
+      }
+    },
+    {
+      id: 'verb_007',
+      type: 'sentence-builder',
+      prompt: {
+        german: 'Er ___ (nehmen) ein Buch.',
+        translations: { en: 'He takes a book.', bn: 'সে একটি বই নিচ্ছে।', tr: 'O bir kitap alıyor.', hi: 'वह एक किताब लेता है।', ar: 'هو يأخذ كتابًا.' }
+      },
+      correctAnswer: ['nimmt'],
+      options: ['nimmt', 'nehmt', 'nimmst', 'nehmen'],
+      explanation: {
+        en: '"nehmen" is irregular. er/sie/es nimmt (e -> i).',
+        bn: '"nehmen" একটি অনিয়মিত ক্রিয়া। er/sie/es nimmt (e -> i)।',
+        tr: '"nehmen" düzensizdir. er/sie/es nimmt (e -> i).',
+        hi: '"nehmen" अनियमित है। er/sie/es nimmt (e -> i).',
+        ar: '"nehmen" هو فعل شاذ. er/sie/es nimmt (e -> i).'
+      }
+    },
+    {
+      id: 'verb_008',
+      type: 'sentence-builder',
+      prompt: {
+        german: 'Du ___ (haben) Zeit.',
+        translations: { en: 'You have time.', bn: 'তোমার সময় আছে।', tr: 'Zamanın var.', hi: 'तुम्हारे पास समय है।', ar: 'لديك وقت.' }
+      },
+      correctAnswer: ['hast'],
+      options: ['hast', 'hat', 'habe', 'habt'],
+      explanation: {
+        en: '"haben" is irregular. du hast (b is removed).',
+        bn: '"haben" একটি অনিয়মিত ক্রিয়া। du hast ("b" বাদ যায়)।',
+        tr: '"haben" düzensizdir. du hast (b kaldırılır).',
+        hi: '"haben" अनियमित है। du hast ("b" हटा दिया गया है)।',
+        ar: '"haben" هو فعل شاذ. du hast (تتم إزالة "b").'
+      }
+    },
+    {
+      id: 'verb_009',
+      type: 'fill-blank',
+      prompt: {
+        german: 'Ich ___ (mögen) Tee.',
+        translations: { en: 'I like tea.', bn: 'আমি চা পছন্দ করি।', tr: 'Çay severim.', hi: 'मुझे चाय पसंद है।', ar: 'أنا أحب الشاي.' }
+      },
+      correctAnswer: ['mag'],
+      explanation: {
+        en: '"mögen" is irregular. ich mag.',
+        bn: '"mögen" একটি অনিয়মিত ক্রিয়া। ich mag।',
+        tr: '"mögen" düzensizdir. ich mag.',
+        hi: '"mögen" अनियमित है। ich mag।',
+        ar: '"mögen" هو فعل شاذ. ich mag.'
+      }
+    },
+    {
+      id: 'verb_010',
+      type: 'fill-blank',
+      prompt: {
+        german: 'Er ___ (mögen) Kaffee.',
+        translations: { en: 'He likes coffee.', bn: 'সে কফি পছন্দ করে।', tr: 'Kahve sever.', hi: 'उसे कॉफी पसंद है।', ar: 'هو يحب القهوة.' }
+      },
+      correctAnswer: ['mag'],
+      explanation: {
+        en: '"mögen" is irregular. er/sie/es mag (same as "ich").',
+        bn: '"mögen" একটি অনিয়মিত ক্রিয়া। er/sie/es mag ("ich" এর মতোই)।',
+        tr: '"mögen" düzensizdir. er/sie/es mag ("ich" ile aynı).',
+        hi: '"mögen" अनियमित है। er/sie/es mag ("ich" के समान)।',
+        ar: '"mögen" هو فعل شاذ. er/sie/es mag (مثل "ich").'
+      }
     }
   ]
 };

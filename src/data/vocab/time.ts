@@ -141,6 +141,154 @@ export const timeVocab: VocabWord[] = [
     article: 'die',
     translations: { en: 'night', bn: 'রাত', tr: 'gece', hi: 'रात', ar: 'الليل' },
     category: 'time'
+  },
+  {
+    id: 'time_101',
+    german: 'Wetter',
+    article: 'das',
+    translations: { en: 'weather', bn: 'আবহাওয়া', tr: 'hava durumu', hi: 'मौसम', ar: 'طقس' },
+    category: 'time'
+  },
+  {
+    id: 'time_102',
+    german: 'Sonne',
+    article: 'die',
+    translations: { en: 'sun', bn: 'সূর্য', tr: 'güneş', hi: 'सूरज', ar: 'شمس' },
+    category: 'time'
+  },
+  {
+    id: 'time_103',
+    german: 'Regen',
+    article: 'der',
+    translations: { en: 'rain', bn: 'বৃষ্টি', tr: 'yağmur', hi: 'बारिश', ar: 'مطر' },
+    category: 'time'
+  },
+  {
+    id: 'time_104',
+    german: 'Schnee',
+    article: 'der',
+    translations: { en: 'snow', bn: 'তুষার', tr: 'kar', hi: 'बर्फ', ar: 'ثلج' },
+    category: 'time'
+  },
+  {
+    id: 'time_105',
+    german: 'Wind',
+    article: 'der',
+    translations: { en: 'wind', bn: 'বাতাস', tr: 'rüzgar', hi: 'हवा', ar: 'رياح' },
+    category: 'time'
+  },
+  {
+    id: 'time_106',
+    german: 'Wolke',
+    article: 'die',
+    plural: 'Wolken',
+    translations: { en: 'cloud', bn: 'মেঘ', tr: 'bulut', hi: 'बादल', ar: 'سحابة' },
+    category: 'time'
+  },
+  {
+    id: 'time_107',
+    german: 'warm',
+    translations: { en: 'warm', bn: 'উষ্ণ', tr: 'ılık/sıcak', hi: 'गर्म', ar: 'دافئ' },
+    category: 'time'
+  },
+  {
+    id: 'time_108',
+    german: 'kalt',
+    translations: { en: 'cold', bn: 'ঠান্ডা', tr: 'soğuk', hi: 'ठंडा', ar: 'بارد' },
+    category: 'time'
+  },
+  {
+    id: 'time_109',
+    german: 'heiß',
+    translations: { en: 'hot', bn: 'গরম', tr: 'çok sıcak', hi: 'बहुत गरम', ar: 'حار' },
+    category: 'time'
+  },
+  {
+    id: 'time_110',
+    german: 'Frühling',
+    article: 'der',
+    translations: { en: 'spring', bn: 'বসন্ত', tr: 'ilkbahar', hi: 'वसंत', ar: 'ربيع' },
+    category: 'time'
+  },
+  {
+    id: 'time_111',
+    german: 'Sommer',
+    article: 'der',
+    translations: { en: 'summer', bn: 'গ্রীষ্ম', tr: 'yaz', hi: 'गर्मी', ar: 'صيف' },
+    category: 'time'
+  },
+  {
+    id: 'time_112',
+    german: 'Herbst',
+    article: 'der',
+    translations: { en: 'autumn/fall', bn: 'শরৎ', tr: 'sonbahar', hi: 'पतझड़', ar: 'خريف' },
+    category: 'time'
+  },
+  {
+    id: 'time_113',
+    german: 'Winter',
+    article: 'der',
+    translations: { en: 'winter', bn: 'শীত', tr: 'kış', hi: 'सर्दी', ar: 'شتاء' },
+    category: 'time'
+  },
+  {
+    id: 'time_114',
+    german: 'Datum',
+    article: 'das',
+    plural: 'Daten',
+    translations: { en: 'date', bn: 'তারিখ', tr: 'tarih', hi: 'तारीख', ar: 'تاريخ' },
+    category: 'time'
+  },
+  {
+    id: 'time_115',
+    german: 'Kalender',
+    article: 'der',
+    plural: 'Kalender',
+    translations: { en: 'calendar', bn: 'ক্যালেন্ডার', tr: 'takvim', hi: 'कैलेंडर', ar: 'تقويم' },
+    category: 'time'
+  },
+  {
+    id: 'time_116',
+    german: 'Geburtstag',
+    article: 'der',
+    plural: 'Geburtstage',
+    translations: { en: 'birthday', bn: 'জন্মদিন', tr: 'doğum günü', hi: 'जन्मदिन', ar: 'عيد ميلاد' },
+    category: 'time'
+  },
+  {
+    id: 'time_117',
+    german: 'Ferien',
+    article: 'die',
+    translations: { en: 'holidays/vacation (school)', bn: 'ছুটির দিন', tr: 'tatil (okul)', hi: 'छुट्टियां', ar: 'عطلة' },
+    category: 'time'
+  },
+  {
+    id: 'time_118',
+    german: 'Feiertag',
+    article: 'der',
+    plural: 'Feiertage',
+    translations: { en: 'public holiday', bn: 'সরকারি ছুটির দিন', tr: 'resmi tatil', hi: 'सार्वजनिक अवकाश', ar: 'عطلة رسمية' },
+    category: 'time'
+  },
+  {
+    id: 'time_119',
+    german: 'regnen',
+    translations: { en: 'to rain', bn: 'বৃষ্টি হওয়া', tr: 'yağmur yağmak', hi: 'बारिश होना', ar: 'يمطر' },
+    example: {
+      german: 'Es regnet.',
+      translations: { en: 'It is raining.', bn: 'বৃষ্টি হচ্ছে।', tr: 'Yağmur yağıyor.', hi: 'बारिश हो रही है।', ar: 'إنها تمطر.' }
+    },
+    category: 'time'
+  },
+  {
+    id: 'time_120',
+    german: 'schneien',
+    translations: { en: 'to snow', bn: 'তুষারপাত হওয়া', tr: 'kar yağmak', hi: 'बर्फ गिरना', ar: 'يثلج' },
+    example: {
+      german: 'Es schneit.',
+      translations: { en: 'It is snowing.', bn: 'তুষার পড়ছে।', tr: 'Kar yağıyor.', hi: 'बर्फ गिर रही है।', ar: 'إنها تثلج.' }
+    },
+    category: 'time'
   }
 ];
 

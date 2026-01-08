@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+  <metadata xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dc:title>Deutsche Grammatik auf Bengalisch</dc:title>
+    <dc:creator opf:file-as="Ahmed, Sarfuddin" opf:role="aut">Sarfuddin Ahmed</dc:creator>
+    <dc:contributor opf:role="bkp">calibre (6.14.1) [https://calibre-ebook.com]</dc:contributor>
+    <dc:publisher>andersseitig</dc:publisher>
+    <dc:date>2024-04-07T22:00:00+00:00</dc:date>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">ef29fb3e-dec9-4065-8977-3485d58c9c74</dc:identifier>
+    <dc:subject>জার্মান কোর্স</dc:subject>
+    <dc:subject>জার্মান পাঠ</dc:subject>
+    <dc:subject>জার্মান শিখ</dc:subject>
+    <dc:language>en</dc:language>
+    <dc:identifier opf:scheme="calibre">ef29fb3e-dec9-4065-8977-3485d58c9c74</dc:identifier>
+    <meta content="2024-04-08T08:54:37.204308+00:00" name="calibre:timestamp" />
+    <meta content="Deutsche Grammatik auf Bengalisch" name="calibre:title_sort" />
+    <meta name="cover" content="cover" />
+    <meta content="{&quot;Sarfuddin Ahmed&quot;: &quot;&quot;}" name="calibre:author_link_map" />
+    <meta content="0.7.4" name="Sigil version" />
+    <dc:date opf:event="modification">2024-04-11</dc:date>
+  </metadata>
+  <manifest>
+    <item href="Text/titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml" />
+    <item href="Text/index_split_000.html" id="index_split_000.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0013.html" id="Section0013.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0014.html" id="Section0014.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0015.html" id="Section0015.html" media-type="application/xhtml+xml" />
+    <item href="Text/TOC.xhtml" id="TOC.xhtml" media-type="application/xhtml+xml" />
+    <item href="Text/Section0016.html" id="Section0016.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0012.html" id="Section0012.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_000.html" id="Section0001.html7" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_001.html" id="Section0001.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_002.html" id="Section0001.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_003.html" id="Section0001.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_004.html" id="Section0001.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_005.html" id="Section0001.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0001_split_006.html" id="Section0001.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_000.html" id="Section0002.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_001.html" id="Section0002.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_002.html" id="Section0002.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_003.html" id="Section0002.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_004.html" id="Section0002.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0002_split_005.html" id="Section0002.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_000.html" id="Section0003.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_001.html" id="Section0003.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_002.html" id="Section0003.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_003.html" id="Section0003.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_004.html" id="Section0003.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0003_split_005.html" id="Section0003.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_000.html" id="Section0004.html8" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_001.html" id="Section0004.html7" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_002.html" id="Section0004.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_003.html" id="Section0004.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_004.html" id="Section0004.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_005.html" id="Section0004.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_006.html" id="Section0004.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0004_split_007.html" id="Section0004.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_000.html" id="Section0005.html8" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_001.html" id="Section0005.html7" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_002.html" id="Section0005.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_003.html" id="Section0005.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_004.html" id="Section0005.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_005.html" id="Section0005.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_006.html" id="Section0005.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0005_split_007.html" id="Section0005.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0006_split_000.html" id="Section0006.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0006_split_001.html" id="Section0006.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0006_split_002.html" id="Section0006.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0006_split_003.html" id="Section0006.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_000.html" id="Section0007.html8" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_001.html" id="Section0007.html7" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_002.html" id="Section0007.html6" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_003.html" id="Section0007.html5" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_004.html" id="Section0007.html4" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_005.html" id="Section0007.html3" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_006.html" id="Section0007.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0007_split_007.html" id="Section0007.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0008_split_000.html" id="Section0008.html2" media-type="application/xhtml+xml" />
+    <item href="Text/Section0008_split_001.html" id="Section0008.html1" media-type="application/xhtml+xml" />
+    <item href="Text/Section0009.html" id="Section0009.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0011.html" id="Section0011.html" media-type="application/xhtml+xml" />
+    <item href="Text/Section0010.html" id="Section0010.html" media-type="application/xhtml+xml" />
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+    <item href="Styles/page_styles.css" id="page_css" media-type="text/css" />
+    <item href="Styles/stylesheet.css" id="css" media-type="text/css" />
+    <item href="Images/cover.jpeg" id="cover" media-type="image/jpeg" />
+    <item href="Images/image1.jpeg" id="id3" media-type="image/jpeg" />
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage" />
+    <itemref idref="index_split_000.html" />
+    <itemref idref="Section0013.html" />
+    <itemref idref="Section0014.html" />
+    <itemref idref="Section0015.html" />
+    <itemref idref="TOC.xhtml" />
+    <itemref idref="Section0016.html" />
+    <itemref idref="Section0012.html" />
+    <itemref idref="Section0001.html7" />
+    <itemref idref="Section0001.html6" />
+    <itemref idref="Section0001.html5" />
+    <itemref idref="Section0001.html4" />
+    <itemref idref="Section0001.html3" />
+    <itemref idref="Section0001.html2" />
+    <itemref idref="Section0001.html1" />
+    <itemref idref="Section0002.html6" />
+    <itemref idref="Section0002.html5" />
+    <itemref idref="Section0002.html4" />
+    <itemref idref="Section0002.html3" />
+    <itemref idref="Section0002.html2" />
+    <itemref idref="Section0002.html1" />
+    <itemref idref="Section0003.html6" />
+    <itemref idref="Section0003.html5" />
+    <itemref idref="Section0003.html4" />
+    <itemref idref="Section0003.html3" />
+    <itemref idref="Section0003.html2" />
+    <itemref idref="Section0003.html1" />
+    <itemref idref="Section0004.html8" />
+    <itemref idref="Section0004.html7" />
+    <itemref idref="Section0004.html6" />
+    <itemref idref="Section0004.html5" />
+    <itemref idref="Section0004.html4" />
+    <itemref idref="Section0004.html3" />
+    <itemref idref="Section0004.html2" />
+    <itemref idref="Section0004.html1" />
+    <itemref idref="Section0005.html8" />
+    <itemref idref="Section0005.html7" />
+    <itemref idref="Section0005.html6" />
+    <itemref idref="Section0005.html5" />
+    <itemref idref="Section0005.html4" />
+    <itemref idref="Section0005.html3" />
+    <itemref idref="Section0005.html2" />
+    <itemref idref="Section0005.html1" />
+    <itemref idref="Section0006.html4" />
+    <itemref idref="Section0006.html3" />
+    <itemref idref="Section0006.html2" />
+    <itemref idref="Section0006.html1" />
+    <itemref idref="Section0007.html8" />
+    <itemref idref="Section0007.html7" />
+    <itemref idref="Section0007.html6" />
+    <itemref idref="Section0007.html5" />
+    <itemref idref="Section0007.html4" />
+    <itemref idref="Section0007.html3" />
+    <itemref idref="Section0007.html2" />
+    <itemref idref="Section0007.html1" />
+    <itemref idref="Section0008.html2" />
+    <itemref idref="Section0008.html1" />
+    <itemref idref="Section0009.html" />
+    <itemref idref="Section0011.html" />
+    <itemref idref="Section0010.html" />
+  </spine>
+  <guide>
+    <reference href="Text/TOC.xhtml" title="Table Of Contents" type="toc" />
+    <reference href="Text/titlepage.xhtml" title="Cover" type="cover" />
+  </guide>
+</package>

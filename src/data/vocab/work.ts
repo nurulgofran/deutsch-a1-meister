@@ -142,6 +142,151 @@ export const workVocab: VocabWord[] = [
     article: 'der',
     translations: { en: 'student', bn: 'ছাত্র', tr: 'öğrenci', hi: 'छात्र', ar: 'طالب' },
     category: 'work'
+  },
+  {
+    id: 'work_101',
+    german: 'Schule',
+    article: 'die',
+    plural: 'Schulen',
+    translations: { en: 'school', bn: 'স্কুল', tr: 'okul', hi: 'स्कूल', ar: 'مدرسة' },
+    category: 'work'
+  },
+  {
+    id: 'work_102',
+    german: 'Universität',
+    article: 'die',
+    plural: 'Universitäten',
+    translations: { en: 'university', bn: 'বিশ্ববিদ্যালয়', tr: 'üniversite', hi: 'विश्वविद्यालय', ar: 'جامعة' },
+    category: 'work'
+  },
+  {
+    id: 'work_103',
+    german: 'Klasse',
+    article: 'die',
+    plural: 'Klassen',
+    translations: { en: 'class/grade', bn: 'শ্রেণী', tr: 'sınıf', hi: 'कक्षा', ar: 'صف' },
+    category: 'work'
+  },
+  {
+    id: 'work_104',
+    german: 'Unterricht',
+    article: 'der',
+    translations: { en: 'lesson/class', bn: 'ক্লাস/পাঠ', tr: 'ders', hi: 'पाठ', ar: 'درس' },
+    category: 'work'
+  },
+  {
+    id: 'work_105',
+    german: 'Hausaufgabe',
+    article: 'die',
+    plural: 'Hausaufgaben',
+    translations: { en: 'homework', bn: 'বাড়ির কাজ', tr: 'ev ödevi', hi: 'गृहकार्य', ar: 'واجب منزلي' },
+    category: 'work'
+  },
+  {
+    id: 'work_106',
+    german: 'Prüfung',
+    article: 'die',
+    plural: 'Prüfungen',
+    translations: { en: 'exam/test', bn: 'পরীক্ষা', tr: 'sınav', hi: 'परीक्षा', ar: 'امتحان' },
+    category: 'work'
+  },
+  {
+    id: 'work_107',
+    german: 'lernen',
+    translations: { en: 'to learn', bn: 'শেখা', tr: 'öğrenmek', hi: 'सीखना', ar: 'يتعلم' },
+    category: 'work'
+  },
+  {
+    id: 'work_108',
+    german: 'studieren',
+    translations: { en: 'to study (university)', bn: 'অধ্যয়ন করা', tr: 'okumak (üniversite)', hi: 'अध्ययन करना', ar: 'يدرس' },
+    category: 'work'
+  },
+  {
+    id: 'work_109',
+    german: 'Schüler',
+    article: 'der',
+    plural: 'Schüler',
+    translations: { en: 'pupil/student', bn: 'ছাত্র', tr: 'öğrenci', hi: 'छात्र', ar: 'تلميذ' },
+    category: 'work'
+  },
+  {
+    id: 'work_110',
+    german: 'Buch',
+    article: 'das',
+    plural: 'Bücher',
+    translations: { en: 'book', bn: 'বই', tr: 'kitap', hi: 'किताब', ar: 'كتاب' },
+    category: 'work'
+  },
+  {
+    id: 'work_111',
+    german: 'Stift',
+    article: 'der',
+    plural: 'Stifte',
+    translations: { en: 'pen', bn: 'কলম', tr: 'kalem', hi: 'कलम', ar: 'قلم' },
+    category: 'work'
+  },
+  {
+    id: 'work_112',
+    german: 'Computer',
+    article: 'der',
+    plural: 'Computer',
+    translations: { en: 'computer', bn: 'কম্পিউটার', tr: 'bilgisayar', hi: 'कंप्यूटर', ar: 'حاسوب' },
+    category: 'work'
+  },
+  {
+    id: 'work_113',
+    german: 'Friseur',
+    article: 'der',
+    plural: 'Friseure',
+    translations: { en: 'hairdresser', bn: 'নাপিত', tr: 'kuaför', hi: 'नाई', ar: 'حلاق' },
+    category: 'work'
+  },
+  {
+    id: 'work_114',
+    german: 'Fahrer',
+    article: 'der',
+    plural: 'Fahrer',
+    translations: { en: 'driver', bn: 'চালক', tr: 'şoför', hi: 'चालक', ar: 'سائق' },
+    category: 'work'
+  },
+  {
+    id: 'work_115',
+    german: 'Krankenpfleger',
+    article: 'der',
+    plural: 'Krankenpfleger',
+    translations: { en: 'nurse (male)', bn: 'নার্স (পুরুষ)', tr: 'erkek hemşire', hi: 'नर्स (पुरुष)', ar: 'ممرض' },
+    category: 'work'
+  },
+  {
+    id: 'work_116',
+    german: 'Journalist',
+    article: 'der',
+    plural: 'Journalisten',
+    translations: { en: 'journalist', bn: 'সাংবাদিক', tr: 'gazeteci', hi: 'पत्रकार', ar: 'صحفي' },
+    category: 'work'
+  },
+  {
+    id: 'work_117',
+    german: 'verdienen',
+    translations: { en: 'to earn', bn: 'উপার্জন করা', tr: 'kazanmak (para)', hi: 'कमाना', ar: 'يكسب' },
+    category: 'work'
+  },
+  {
+    id: 'work_118',
+    german: 'Stelle',
+    article: 'die',
+    plural: 'Stellen',
+    translations: { en: 'job/position', bn: 'চাকরি/পদ', tr: 'pozisyon/iş', hi: 'नौकरी', ar: 'وظيفة' },
+    category: 'work'
+  },
+  {
+    id: 'work_119',
+    german: 'Bewerbung',
+    article: 'die',
+    plural: 'Bewerbungen',
+    translations: { en: 'application', bn: 'আবেদন', tr: 'başvuru', hi: 'आवेदन', ar: 'طلب' },
+    category: 'work'
   }
 ];
 

@@ -83,6 +83,15 @@
     },
     "perfect_tense": {
       "title": "Past Tense (Perfekt)"
+    },
+    "prepositions": {
+      "title": "Prepositions (in, um, aus...)"
+    },
+    "possessive": {
+      "title": "Possessive (My, Your...)"
+    },
+    "separable_verbs": {
+      "title": "Separable Verbs"
     }
   },
   "listening": {
