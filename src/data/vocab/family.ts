@@ -74,6 +74,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_010',
     german: 'Großmutter',
     article: 'die',
+    plural: 'Großmütter',
     translations: { en: 'grandmother', bn: 'দাদি/নানি', tr: 'büyükanne', hi: 'दादी/नानी', ar: 'الجدة' },
     category: 'family'
   },
@@ -81,6 +82,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_011',
     german: 'Großvater',
     article: 'der',
+    plural: 'Großväter',
     translations: { en: 'grandfather', bn: 'দাদা/নানা', tr: 'büyükbaba', hi: 'दादा/नाना', ar: 'الجد' },
     category: 'family'
   },
@@ -94,6 +96,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_013',
     german: 'Ehemann',
     article: 'der',
+    plural: 'Ehemänner',
     translations: { en: 'husband', bn: 'স্বামী', tr: 'koca', hi: 'पति', ar: 'الزوج' },
     category: 'family'
   },
@@ -101,6 +104,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_014',
     german: 'Ehefrau',
     article: 'die',
+    plural: 'Ehefrauen',
     translations: { en: 'wife', bn: 'স্ত্রী', tr: 'eş (kadın)', hi: 'पत्नी', ar: 'الزوجة' },
     category: 'family'
   },
@@ -130,6 +134,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_018',
     german: 'Onkel',
     article: 'der',
+    plural: 'Onkel',
     translations: { en: 'uncle', bn: 'চাচা/মামা', tr: 'amca/dayı', hi: 'चाचा/मामा', ar: 'العم/الخال' },
     category: 'family'
   },
@@ -137,6 +142,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_019',
     german: 'Tante',
     article: 'die',
+    plural: 'Tanten',
     translations: { en: 'aunt', bn: 'চাচি/মামি', tr: 'teyze/hala', hi: 'चाची/मामी', ar: 'العمة/الخالة' },
     category: 'family'
   },
@@ -144,6 +150,7 @@ export const familyVocab: VocabWord[] = [
     id: 'fam_020',
     german: 'Cousin',
     article: 'der',
+    plural: 'Cousins',
     translations: { en: 'cousin (male)', bn: 'চাচাতো/মামাতো ভাই', tr: 'kuzen (erkek)', hi: 'चचेरा/ममेरा भाई', ar: 'ابن العم' },
     category: 'family'
   }

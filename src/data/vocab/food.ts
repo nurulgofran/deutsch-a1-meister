@@ -5,6 +5,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_001',
     german: 'Brot',
     article: 'das',
+    plural: 'Brote',
     translations: { en: 'bread', bn: 'রুটি', tr: 'ekmek', hi: 'रोटी', ar: 'خبز' },
     category: 'food'
   },
@@ -40,6 +41,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_006',
     german: 'Apfel',
     article: 'der',
+    plural: 'Äpfel',
     translations: { en: 'apple', bn: 'আপেল', tr: 'elma', hi: 'सेब', ar: 'تفاحة' },
     category: 'food'
   },
@@ -47,6 +49,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_007',
     german: 'Banane',
     article: 'die',
+    plural: 'Bananen',
     translations: { en: 'banana', bn: 'কলা', tr: 'muz', hi: 'केला', ar: 'موز' },
     category: 'food'
   },
@@ -61,6 +64,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_009',
     german: 'Fisch',
     article: 'der',
+    plural: 'Fische',
     translations: { en: 'fish', bn: 'মাছ', tr: 'balık', hi: 'मछली', ar: 'سمك' },
     category: 'food'
   },
@@ -89,6 +93,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_013',
     german: 'Käse',
     article: 'der',
+    plural: 'Käse',
     translations: { en: 'cheese', bn: 'পনির', tr: 'peynir', hi: 'पनीर', ar: 'جبن' },
     category: 'food'
   },
@@ -111,6 +116,7 @@ export const foodVocab: VocabWord[] = [
     id: 'food_016',
     german: 'Salat',
     article: 'der',
+    plural: 'Salate',
     translations: { en: 'salad', bn: 'সালাদ', tr: 'salata', hi: 'सलाद', ar: 'سلطة' },
     category: 'food'
   },

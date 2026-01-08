@@ -4,6 +4,7 @@ import {
   LessonProgress,
   XP_PER_CORRECT,
   XP_LESSON_BONUS,
+  XP_GRAMMAR_BONUS,
   XP_STREAK_BONUS,
   calculateLevel,
   xpProgressPercent
@@ -17,6 +18,7 @@ export interface UserProgress {
   streak: number;
   lastActiveDate: string;
   achievements: string[];
+  grammarProgress: Record<string, boolean>; // patternId -> completed
 }
 
 export interface AppSettings {
@@ -31,7 +33,8 @@ const DEFAULT_PROGRESS: UserProgress = {
   wordsLearned: [],
   streak: 0,
   lastActiveDate: '',
-  achievements: []
+  achievements: [],
+  grammarProgress: {}
 };
 
 const DEFAULT_SETTINGS: AppSettings = {
@@ -233,6 +236,22 @@ export function useAppStore() {
     });
   }, []);
 
+  // Complete a grammar unit
+  const completeGrammar = useCallback((patternId: string) => {
+    setProgress(prev => {
+      if (prev.grammarProgress && prev.grammarProgress[patternId]) return prev; // Already completed
+
+      return {
+        ...prev,
+        xp: prev.xp + XP_GRAMMAR_BONUS,
+        grammarProgress: {
+          ...(prev.grammarProgress || {}),
+          [patternId]: true
+        }
+      };
+    });
+  }, []);
+
   // Add achievement
   const addAchievement = useCallback((achievementId: string) => {
     setProgress(prev => {
@@ -278,6 +297,7 @@ export function useAppStore() {
     recordCorrectAnswer,
     recordIncorrectAnswer,
     completeLesson,
+    completeGrammar,
     addAchievement,
     updateSettings,
     resetProgress,

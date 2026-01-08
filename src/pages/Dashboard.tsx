@@ -58,8 +58,24 @@ export default function Dashboard() {
         {/* Streak Display */}
         <StreakDisplay />
 
-        {/* Quick Stats */}
+        {/* Quick Stats & Grammar */}
         <div className="grid grid-cols-2 gap-3">
+          {/* Grammar Card */}
+          <Card className="col-span-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border-indigo-500/20" onClick={() => navigate('/grammar')}>
+            <CardContent className="p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/15 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="font-bold text-lg">{t('grammar.title')}</p>
+                  <p className="text-xs text-muted-foreground">Master the rules</p>
+                </div>
+              </div>
+              <Play className="w-4 h-4 text-muted-foreground" />
+            </CardContent>
+          </Card>
+
           <Card>
             <CardContent className="p-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">

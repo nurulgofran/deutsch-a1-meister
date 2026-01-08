@@ -12,6 +12,8 @@ import { OfflineBanner } from "@/components/OfflineBanner";
 import { StreakMilestone } from "@/components/StreakMilestone";
 import Dashboard from "./pages/Dashboard";
 import Learn from "./pages/Learn";
+import GrammarHub from "./pages/GrammarHub";
+import GrammarLesson from "./pages/GrammarLesson";
 import Exam from "./pages/Exam";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
@@ -55,6 +57,8 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/learn/:lessonId" element={<Learn />} />
+        <Route path="/grammar" element={<GrammarHub />} />
+        <Route path="/grammar/:patternId" element={<GrammarLesson />} />
         <Route path="/exam" element={<Exam />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="*" element={<NotFound />} />

@@ -19,6 +19,7 @@ interface AppContextType {
   recordCorrectAnswer: (lessonId: LessonId, wordId: string) => void;
   recordIncorrectAnswer: (lessonId: LessonId) => void;
   completeLesson: (lessonId: LessonId) => void;
+  completeGrammar: (patternId: string) => void;
   addAchievement: (achievementId: string) => void;
   updateSettings: (settings: Partial<AppSettings>) => void;
   resetProgress: () => void;

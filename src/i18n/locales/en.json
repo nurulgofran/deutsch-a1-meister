@@ -59,7 +59,31 @@
     "sentenceBuilder": "Sentence Builder",
     "dragWords": "Drag words to build the sentence",
     "checkAnswer": "Check Answer",
-    "hint": "Hint"
+    "hint": "Hint",
+    "articles": {
+      "title": "Definite Articles"
+    },
+    "verbs": {
+      "title": "Verb Conjugation"
+    },
+    "modals": {
+      "title": "Modal Verbs"
+    },
+    "accusative": {
+      "title": "Accusative Case"
+    },
+    "sentence_structure": {
+      "title": "Sentence Structure"
+    },
+    "verbs_more": {
+      "title": "Essential Verbs (Sein/Haben)"
+    },
+    "imperative": {
+      "title": "Imperative (Commands)"
+    },
+    "perfect_tense": {
+      "title": "Past Tense (Perfekt)"
+    }
   },
   "listening": {
     "title": "Listening Lab",
